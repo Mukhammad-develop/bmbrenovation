@@ -366,17 +366,18 @@ CLEAN_SCRIPT = """
       const orig = btn ? btn.textContent : '';
       if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
       const payload = JSON.stringify({
-        _subject: 'New Quote - BMB Renovation (' + window.location.pathname + ')',
+        access_key: 'b2398a20-017d-459d-a1bf-858b83488b97',
+        subject: 'New Quote - BMB Renovation (' + window.location.pathname + ')',
+        from_name: 'BMB Renovation Website',
         name: name, phone: phone,
         email: val('email') || '(not provided)',
         project: val('project') || '(not specified)',
         postcode: val('postcode') || '(not provided)',
         message: val('message') || '(no message)',
         contact_time: val('contact_time') || 'Any time',
-        page_url: window.location.href,
-        _template: 'table'
+        page_url: window.location.href
       });
-      fetch('https://formsubmit.co/ajax/admin@bmbrenovation.co.uk', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: payload

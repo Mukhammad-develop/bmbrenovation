@@ -21,16 +21,17 @@ export default function ContactClient() {
     }
     setSending(true)
     try {
-      const res = await fetch('https://formsubmit.co/ajax/admin@bmbrenovation.co.uk', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-          _subject: `New Enquiry from ${form.name} — BMB Renovation`,
+          access_key: 'b2398a20-017d-459d-a1bf-858b83488b97',
+          subject: `New Enquiry from ${form.name} — BMB Renovation`,
+          from_name: 'BMB Renovation Website',
           name: form.name,
           phone: form.phone,
           email: form.email || '(not provided)',
           message: form.message || '(no message)',
-          _template: 'table',
         }),
       })
       const data = await res.json()

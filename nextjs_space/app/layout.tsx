@@ -12,6 +12,7 @@ const jakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-di
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bmbrenovation.co.uk'),
   title: 'BMB Renovation | Premium Home Renovation & Building Services in Watford & London',
   description: 'Expert home, kitchen & bathroom remodeling services in London & Watford. BMB Renovation transforms homes with elegance and functionality.',
   icons: {

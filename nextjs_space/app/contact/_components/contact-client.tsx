@@ -15,16 +15,36 @@ export default function ContactClient() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e?.preventDefault?.()
-    if (!form?.name || !form?.email) {
-      toast?.error?.('Please fill in your name and email.')
+    if (!form?.name || !form?.phone) {
+      toast?.error?.('Please fill in your name and phone number.')
       return
     }
     setSending(true)
-    // Simulate form submission
-    await new Promise((r: any) => setTimeout(r, 1500))
-    setSending(false)
-    setSubmitted(true)
-    toast?.success?.('Message sent successfully!')
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/contact@bmbrenovation.co.uk', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `New Enquiry from ${form.name} — BMB Renovation`,
+          name: form.name,
+          phone: form.phone,
+          email: form.email || '(not provided)',
+          message: form.message || '(no message)',
+          _template: 'table',
+        }),
+      })
+      const data = await res.json()
+      if (data?.success === 'true' || data?.success === true || res.ok) {
+        setSubmitted(true)
+        toast?.success?.('Message sent! We will be in touch shortly.')
+      } else {
+        throw new Error('Submission failed')
+      }
+    } catch {
+      toast?.error?.('Something went wrong. Please call us directly on +44 7775 758 717.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (

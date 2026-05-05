@@ -314,16 +314,14 @@ COMBINED_SECTION = """
 # ── JAVASCRIPT (clean, updated success message) ───────────────────────────────
 
 CLEAN_SCRIPT = """
-  // ── Header: always scrolled/white style ──
+  // -- Header: always scrolled/white style --
   const header = document.getElementById('site-header');
   if (header) {
     header.classList.add('scrolled');
-    window.addEventListener('scroll', () => {
-      header.classList.add('scrolled');
-    }, { passive: true });
+    window.addEventListener('scroll', () => { header.classList.add('scrolled'); }, { passive: true });
   }
 
-  // ── Hamburger ──
+  // -- Hamburger --
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
   if (hamburger && mobileMenu) {
@@ -333,61 +331,63 @@ CLEAN_SCRIPT = """
     });
   }
 
-  // ── FAQ accordion ──
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
+  // -- FAQ accordion --
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
       const item = btn.closest('.faq-item');
       const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(i => {
+      document.querySelectorAll('.faq-item.open').forEach(function(i) {
         i.classList.remove('open');
         i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
       });
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
     });
   });
 
-  // ── Scroll reveal ──
+  // -- Scroll reveal --
   const reveals = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revealObserver.unobserve(e.target);
-      }
+  const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => revealObserver.observe(el));
+  reveals.forEach(function(el) { revealObserver.observe(el); });
 
-  // ── Form submission ──
-  // Handle all quote forms: main-quote-form, hero-form, contact-quote-form
-  ['main-quote-form', 'hero-form', 'contact-quote-form'].forEach(id => {
+  // -- Form submission: POST to Formsubmit.co -> contact@bmbrenovation.co.uk --
+  ['main-quote-form', 'hero-form', 'contact-quote-form'].forEach(function(id) {
     const form = document.getElementById(id);
     if (!form) return;
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      const name = (form.querySelector('[name="name"]') || {}).value || '';
-      const phone = (form.querySelector('[name="phone"]') || {}).value || '';
-      if (!name.trim() || !phone.trim()) {
-        alert('Please enter your name and phone number.');
-        return;
-      }
-      const serviceText = form.closest('section') && form.closest('section').querySelector('h2')
-        ? form.closest('section').querySelector('h2').textContent.replace('Get a Free Quote for ', '')
-        : 'your renovation project';
-      form.innerHTML = `
-        <div style="text-align:center;padding:3rem 1rem;">
-          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
-          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name.trim()}!</h3>
-          <p style="color:#6B7280;font-size:0.9375rem;line-height:1.7;max-width:480px;margin:0 auto;">
-            We have received your enquiry and will be in touch shortly to discuss ${serviceText}.
-          </p>
-          <p style="color:#9CA3AF;font-size:0.875rem;margin-top:1.25rem;font-style:italic;">
-            You can get in touch yourself anytime before our team calls you back.
-          </p>
-        </div>`;
+      function val(n) { const el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
+      const name = val('name'), phone = val('phone');
+      if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+      const btn = form.querySelector('[type="submit"]');
+      const orig = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      const payload = JSON.stringify({
+        _subject: 'New Quote - BMB Renovation (' + window.location.pathname + ')',
+        name: name, phone: phone,
+        email: val('email') || '(not provided)',
+        project: val('project') || '(not specified)',
+        postcode: val('postcode') || '(not provided)',
+        message: val('message') || '(no message)',
+        contact_time: val('contact_time') || 'Any time',
+        page_url: window.location.href,
+        _template: 'table'
+      });
+      fetch('https://formsubmit.co/ajax/contact@bmbrenovation.co.uk', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: payload
+      }).then(function(res) { return res.json(); }).then(function(data) {
+        if (data && (data.success === 'true' || data.success === true)) {
+          form.innerHTML = '<div style="text-align:center;padding:3rem 1rem;"><div style="font-size:3rem;margin-bottom:1rem;">&#x2705;</div><h3 style="font-family:\'Plus Jakarta Sans\',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ' + name + '!</h3><p style="color:#6B7280;font-size:0.9375rem;line-height:1.7;max-width:480px;margin:0 auto;">We have received your enquiry and will be in touch shortly.</p><p style="color:#9CA3AF;font-size:0.875rem;margin-top:1.25rem;font-style:italic;">You can get in touch yourself anytime before our team calls you back.</p></div>';
+        } else { throw new Error('failed'); }
+      }).catch(function() {
+        if (btn) { btn.disabled = false; btn.textContent = orig; }
+        alert('Something went wrong. Please call us on +44 7775 758 717 or email contact@bmbrenovation.co.uk');
+      });
     });
   });
 """

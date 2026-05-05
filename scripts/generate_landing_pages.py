@@ -376,7 +376,7 @@ CLEAN_SCRIPT = """
         page_url: window.location.href,
         _template: 'table'
       });
-      fetch('https://formsubmit.co/ajax/contact@bmbrenovation.co.uk', {
+      fetch('https://formsubmit.co/ajax/admin@bmbrenovation.co.uk', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: payload
@@ -403,7 +403,7 @@ CLEAN_SCRIPT = """
         } else { throw new Error('failed'); }
       }).catch(function() {
         if (btn) { btn.disabled = false; btn.textContent = orig; }
-        alert('Something went wrong. Please call us on +44 7775 758 717 or email contact@bmbrenovation.co.uk');
+        alert('Something went wrong. Please call us on +44 7775 758 717 or email admin@bmbrenovation.co.uk');
       });
     });
   });

@@ -21,7 +21,7 @@ export default function ContactClient() {
     }
     setSending(true)
     try {
-      const res = await fetch('https://formsubmit.co/ajax/contact@bmbrenovation.co.uk', {
+      const res = await fetch('https://formsubmit.co/ajax/admin@bmbrenovation.co.uk', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({

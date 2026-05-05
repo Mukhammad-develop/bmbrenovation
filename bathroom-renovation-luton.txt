@@ -1,0 +1,1358 @@
+5:I[4707,[],""]
+6:I[6423,[],""]
+7:I[2798,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ThemeProvider"]
+8:I[3606,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"Toaster"]
+9:I[4215,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ChunkLoadErrorHandler"]
+2:T6517,
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: #141414; background: #fff;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── TOKENS ── */
+    :root {
+      --gold: #C8A97E; --gold-dark: #B8996E;
+      --gold-light: rgba(200,169,126,0.12);
+      --dark: #0a0a0a;
+      --gray-950: #0a0a0a; --gray-900: #111827;
+      --gray-700: #374151; --gray-600: #4B5563;
+      --gray-500: #6B7280; --gray-400: #9CA3AF;
+      --gray-200: #E5E7EB; --gray-100: #F3F4F6; --gray-50: #F9FAFB;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0/0.04),0 1px 3px 0 rgb(0 0 0/0.08);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0/0.06),0 2px 4px -2px rgb(0 0 0/0.06);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0/0.08),0 4px 6px -4px rgb(0 0 0/0.06);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px -6px rgb(0 0 0/0.06);
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.025em; line-height: 1.15; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.75rem); font-weight: 800; }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; }
+    h3 { font-size: 1.25rem; font-weight: 700; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    p  { line-height: 1.7; color: var(--gray-600); }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+    @media(min-width:640px){ .container { padding: 0 1.5rem; } }
+    .section { padding: 5rem 0; }
+    .section-sm { padding: 3.5rem 0; }
+    .section-lg { padding: 6rem 0; }
+    @media(min-width:768px){ .section { padding: 7rem 0; } }
+
+    /* ── LABEL CHIP ── */
+    .section-label {
+      display: inline-block; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.75rem;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.875rem 2rem; border-radius: 9999px;
+      font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.9375rem;
+      cursor: pointer; border: none; transition: all 0.2s ease; white-space: nowrap;
+    }
+    .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 4px 16px rgba(200,169,126,0.35); }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .btn-dark { background: var(--gray-900); color: #fff; }
+    .btn-dark:hover { background: #1f2937; transform: translateY(-1px); }
+    .btn-ghost { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+    .btn-sm { padding: 0.625rem 1.375rem; font-size: 0.875rem; }
+    .btn-lg { padding: 1rem 2.25rem; font-size: 1rem; }
+
+    /* ── HEADER ── */
+    #site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 999; transition: background 0.3s ease, box-shadow 0.3s ease; }
+    #site-header.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo { display: flex; align-items: center; }
+    .logo-bmb { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; transition: color 0.3s; }
+    #site-header.scrolled .logo-bmb { color: var(--gray-900); }
+    .logo-reno { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 300; letter-spacing: -0.03em; color: var(--gold); margin-left: 4px; }
+    .header-nav { display: none; gap: 0.25rem; }
+    @media(min-width:1024px){ .header-nav { display: flex; } }
+    .nav-link { padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.88); transition: all 0.2s; }
+    .nav-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    #site-header.scrolled .nav-link { color: var(--gray-700); }
+    #site-header.scrolled .nav-link:hover { color: var(--gold); background: var(--gray-100); }
+    .header-cta { display: flex; align-items: center; gap: 0.75rem; }
+    .header-call { display: none; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; background: #fff; color: var(--gray-900); transition: all 0.2s; }
+    @media(min-width:640px){ .header-call { display: flex; } }
+    #site-header.scrolled .header-call { background: var(--gray-900); color: #fff; }
+    .header-call:hover { opacity: 0.9; transform: translateY(-1px); }
+    .hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; border: none; background: transparent; cursor: pointer; border-radius: 8px; padding: 8px; }
+    .hamburger span { display: block; height: 2px; width: 24px; border-radius: 2px; background: #fff; transition: all 0.3s; }
+    #site-header.scrolled .hamburger span { background: var(--gray-900); }
+    @media(min-width:1024px){ .hamburger { display: none; } }
+    #mobile-menu { display: none; background: #fff; border-top: 1px solid var(--gray-100); box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 1.5rem; }
+    #mobile-menu.open { display: block; }
+    .mobile-nav-link { display: block; padding: 0.75rem 1rem; font-size: 1rem; font-weight: 500; color: var(--gray-700); border-radius: 0.5rem; transition: all 0.2s; }
+    .mobile-nav-link:hover { color: var(--gold); background: var(--gold-light); }
+    .mobile-cta { display: block; margin-top: 1rem; padding: 0.875rem; text-align: center; background: var(--gray-900); color: #fff; border-radius: 0.75rem; font-weight: 700; font-size: 0.9375rem; }
+
+    /* ── LOCAL BANNER ── */
+    .local-banner { background: var(--gold-light); border-bottom: 1px solid rgba(200,169,126,0.2); padding: 0.625rem 0; text-align: center; font-size: 0.8125rem; color: var(--gray-700); font-weight: 500; }
+    .local-banner a { color: var(--gold); font-weight: 700; text-decoration: underline; }
+
+    /* ── HERO ── */
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.25) 100%); }
+    .hero-content { position: relative; z-index: 2; width: 100%; padding-top: 80px; }
+    .hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+    @media(min-width:1024px){ .hero-grid { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); font-size: 0.8125rem; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+    .hero-eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .hero-h1 { color: #fff; margin-bottom: 1.25rem; }
+    .hero-h1 span { color: var(--gold); }
+    .hero-sub { font-size: 1.0625rem; color: rgba(255,255,255,0.78); margin-bottom: 2rem; max-width: 460px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 0.875rem; margin-bottom: 2.5rem; }
+    .trust-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .badge { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.375rem 0.875rem; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(6px); font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.85); }
+    .badge-check { color: var(--gold); font-size: 0.875rem; }
+
+    /* ── QUOTE FORM CARD ── */
+    .quote-card { background: #fff; border-radius: 1.25rem; padding: 2rem; box-shadow: var(--shadow-xl); }
+    .quote-card-heading { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.375rem; }
+    .quote-card-sub { font-size: 0.8125rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+    .form-row { display: grid; gap: 1rem; }
+    @media(min-width:480px){ .form-row-2 { grid-template-columns: 1fr 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.375rem; }
+    .form-label { font-size: 0.8125rem; font-weight: 600; color: var(--gray-700); }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--gray-200); border-radius: 0.625rem; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: var(--gray-900); background: #fff; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--gray-400); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,169,126,0.15); }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; padding: 0.9375rem; background: var(--gold); color: #fff; border: none; border-radius: 9999px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 16px rgba(200,169,126,0.35); margin-top: 0.5rem; }
+    .form-submit:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .form-note { font-size: 0.75rem; color: var(--gray-400); text-align: center; margin-top: 0.625rem; }
+    .form-note strong { color: var(--gray-500); }
+
+    /* ── STATS BAR ── */
+    .stats-bar { background: var(--gray-950); padding: 2.5rem 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; }
+    @media(min-width:768px){ .stats-grid { grid-template-columns: repeat(4,1fr); } }
+    .stat-item { text-align: center; }
+    .stat-number { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.25rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 0.8125rem; color: #9CA3AF; margin-top: 0.375rem; }
+
+    /* ── SECTION HEADER ── */
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header h2 { color: var(--gray-900); margin-top: 0.5rem; }
+    .section-header p { max-width: 560px; margin: 1rem auto 0; }
+
+    /* ── PROBLEM SECTION ── */
+    .problem-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .problem-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .problem-grid { grid-template-columns: repeat(3,1fr); } }
+    .problem-card { background: var(--gray-50); border-radius: 1rem; padding: 1.75rem; border: 1px solid var(--gray-100); transition: box-shadow 0.2s, transform 0.2s; }
+    .problem-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .problem-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--gold-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.375rem; }
+    .problem-card h3 { color: var(--gray-900); font-size: 1.0625rem; margin-bottom: 0.5rem; }
+
+    /* ── INCLUDES ── */
+    .includes-grid { display: grid; gap: 0.75rem; }
+    @media(min-width:640px){ .includes-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .includes-grid { grid-template-columns: repeat(3,1fr); } }
+    .include-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 1.125rem 1.25rem; border-radius: 0.875rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); transition: border-color 0.2s; }
+    .include-item:hover { border-color: var(--gold); }
+    .include-check { width: 22px; height: 22px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.6875rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .include-item p { font-size: 0.9375rem; color: var(--gray-700); font-weight: 500; margin: 0; }
+
+    /* ── WHY BMB ── */
+    .why-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .why-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .why-grid { grid-template-columns: repeat(4,1fr); } }
+    .why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.75rem; transition: background 0.2s; }
+    .why-card:hover { background: rgba(255,255,255,0.1); }
+    .why-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(200,169,126,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.375rem; margin-bottom: 1.125rem; }
+    .why-card h3 { color: #fff; font-size: 1.0625rem; margin-bottom: 0.5rem; }
+    .why-card p { color: #9CA3AF; font-size: 0.875rem; }
+
+    /* ── TRUST ── */
+    .trust-grid { display: grid; gap: 1.25rem; }
+    @media(min-width:640px){ .trust-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .trust-grid { grid-template-columns: repeat(4,1fr); } }
+    .trust-card { border-radius: 1rem; padding: 1.75rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); text-align: center; transition: box-shadow 0.2s, transform 0.2s; }
+    .trust-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .trust-emoji { font-size: 2rem; margin-bottom: 0.75rem; }
+    .trust-card h3 { color: var(--gray-900); font-size: 1rem; margin-bottom: 0.375rem; }
+    .trust-card p { font-size: 0.875rem; color: var(--gray-500); margin: 0; }
+
+    /* ── PORTFOLIO ── */
+    .portfolio-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .portfolio-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .portfolio-grid { grid-template-columns: repeat(3,1fr); } }
+    .portfolio-card { border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-md); background: #fff; transition: transform 0.25s, box-shadow 0.25s; }
+    .portfolio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+    .portfolio-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+    .portfolio-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .portfolio-card:hover .portfolio-img img { transform: scale(1.05); }
+    .portfolio-badge { position: absolute; top: 0.875rem; left: 0.875rem; background: var(--gold); color: #fff; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .portfolio-body { padding: 1.375rem; }
+    .portfolio-location { font-size: 0.75rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.375rem; }
+    .portfolio-body h3 { color: var(--gray-900); margin-bottom: 0.5rem; }
+    .portfolio-body p { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1rem; }
+    .portfolio-cta { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; font-weight: 700; color: var(--gold); transition: gap 0.2s; }
+    .portfolio-card:hover .portfolio-cta { gap: 0.625rem; }
+
+    /* ── BEFORE / AFTER ── */
+    .before-after-grid { display: grid; gap: 2rem; align-items: center; }
+    @media(min-width:1024px){ .before-after-grid { grid-template-columns: 1fr 1fr; } }
+    .ba-image-wrap { position: relative; border-radius: 1.25rem; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-xl); }
+    .ba-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .ba-label { position: absolute; bottom: 1rem; padding: 0.4rem 1rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 700; }
+    .ba-label-before { left: 1rem; background: rgba(0,0,0,0.65); color: #fff; }
+    .ba-label-after { right: 1rem; background: var(--gold); color: #fff; }
+
+    /* ── PROCESS ── */
+    .process-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .process-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .process-grid { grid-template-columns: repeat(5,1fr); } }
+    .process-step { position: relative; text-align: center; padding: 1.75rem 1.25rem; background: #fff; border-radius: 1rem; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); }
+    .process-number { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.125rem; font-weight: 800; margin: 0 auto 1rem; }
+    .process-step h3 { font-size: 0.9375rem; color: var(--gray-900); margin-bottom: 0.5rem; }
+    .process-step p { font-size: 0.8125rem; color: var(--gray-500); margin: 0; }
+
+    /* ── AREAS ── */
+    .areas-flex { display: flex; flex-wrap: wrap; gap: 0.625rem; margin-top: 1.5rem; }
+    .area-chip { padding: 0.5rem 1.125rem; border-radius: 9999px; background: var(--gold-light); color: var(--gray-700); font-size: 0.875rem; font-weight: 600; border: 1.5px solid rgba(200,169,126,0.25); transition: background 0.2s, color 0.2s; }
+    .area-chip:hover { background: var(--gold); color: #fff; }
+    .area-chip.primary { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+    /* ── PRICE ── */
+    .price-factors { display: grid; gap: 0.875rem; }
+    @media(min-width:640px){ .price-factors { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .price-factors { grid-template-columns: repeat(3,1fr); } }
+    .price-factor { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; border-radius: 0.875rem; background: var(--gray-50); border: 1px solid var(--gray-100); }
+    .pf-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .price-factor p { font-size: 0.9rem; color: var(--gray-700); margin: 0; font-weight: 500; }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { border: 1.5px solid var(--gray-100); border-radius: 0.875rem; overflow: hidden; background: #fff; }
+    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: transparent; border: none; cursor: pointer; text-align: left; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: var(--gray-900); transition: color 0.2s; }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; font-weight: 300; color: var(--gray-600); transition: background 0.2s, transform 0.2s; }
+    .faq-item.open .faq-icon { background: var(--gold); color: #fff; transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; padding: 0 1.5rem; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.25rem; }
+    .faq-answer p { font-size: 0.9rem; color: var(--gray-600); margin: 0; }
+
+    /* ── CONTACT SECTION ── */
+    .contact-grid { display: grid; gap: 2.5rem; align-items: start; }
+    @media(min-width:1024px){ .contact-grid { grid-template-columns: 2fr 3fr; gap: 4rem; } }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .ci-icon { width: 48px; height: 48px; border-radius: 0.75rem; background: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem; }
+    .ci-label { font-size: 0.8125rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.2rem; }
+    .ci-value { font-size: 0.9rem; color: var(--gray-600); }
+    .ci-value a { color: var(--gray-600); }
+    .ci-value a:hover { color: var(--gold); }
+
+    /* ── FINAL CTA ── */
+    .final-cta-section { position: relative; padding: 6rem 0; overflow: hidden; }
+    .final-cta-bg { position: absolute; inset: 0; }
+    .final-cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .final-cta-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.87); }
+    .final-cta-content { position: relative; z-index: 2; text-align: center; }
+    .final-cta-content h2 { color: #fff; margin-bottom: 1.25rem; }
+    .final-cta-content h2 span { color: var(--gold); }
+    .final-cta-content p { color: rgba(255,255,255,0.72); max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.0625rem; }
+    .final-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+    .final-trust-line { font-size: 0.875rem; color: rgba(255,255,255,0.45); font-weight: 500; }
+    .final-trust-line span { color: var(--gold); font-weight: 700; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--gray-950); color: #fff; }
+    .footer-grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; padding: 4rem 0 2rem; }
+    @media(min-width:640px){ .footer-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.5fr; } }
+    .footer-brand p { color: #9CA3AF; font-size: 0.875rem; line-height: 1.7; margin: 1rem 0 1.5rem; }
+    .footer-social { display: flex; gap: 0.75rem; }
+    .footer-social a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: background 0.2s; }
+    .footer-social a:hover { background: var(--gold); }
+    .footer-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: #fff; margin-bottom: 1.25rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-col ul li a { font-size: 0.875rem; color: #9CA3AF; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
+    .footer-contact-icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
+    .footer-contact-text { font-size: 0.875rem; color: #9CA3AF; line-height: 1.5; }
+    .footer-contact-text a { color: #9CA3AF; transition: color 0.2s; }
+    .footer-contact-text a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 1.75rem 0; display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+    @media(min-width:640px){ .footer-bottom { flex-direction: row; justify-content: space-between; } }
+    .footer-bottom p { font-size: 0.8125rem; color: #6B7280; }
+    .back-to-top { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; border: none; cursor: pointer; transition: background 0.2s; }
+    .back-to-top:hover { background: var(--gold-dark); }
+
+    /* ── STICKY MOBILE CTA ── */
+    #sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 -4px 16px rgba(0,0,0,0.15); }
+    @media(min-width:1024px){ #sticky-cta { display: none; } }
+    .sticky-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .sticky-btn:hover { opacity: 0.9; }
+    .sticky-quote { background: var(--gold); color: #fff; }
+    .sticky-call { background: var(--gray-900); color: #fff; }
+
+    /* ── MID-PAGE CTA STRIP ── */
+    .cta-strip { background: var(--gold-light); border-radius: 1.25rem; padding: 2.5rem; text-align: center; border: 1.5px solid rgba(200,169,126,0.2); }
+    .cta-strip h3 { color: var(--gray-900); margin-bottom: 0.75rem; font-size: 1.375rem; }
+    .cta-strip p { color: var(--gray-600); font-size: 0.9375rem; margin-bottom: 1.5rem; }
+    .cta-strip-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.875rem; }
+
+    /* ── UTILITIES ── */
+    .text-center { text-align: center; } .text-gold { color: var(--gold); }
+    .mt-1 { margin-top: 0.5rem; } .mt-2 { margin-top: 1rem; } .mt-3 { margin-top: 1.5rem; }
+    .mt-4 { margin-top: 2rem; } .mt-5 { margin-top: 2.5rem; } .mt-6 { margin-top: 3rem; }
+    .mb-2 { margin-bottom: 1rem; } .mb-3 { margin-bottom: 1.5rem; }
+    .bg-dark { background: var(--gray-950); } .bg-light { background: var(--gray-50); }
+    .divider { height: 1px; background: var(--gray-100); margin: 0; }
+
+    /* ── SCROLL ANIMATION ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; } .reveal-delay-4 { transition-delay: 0.4s; }
+  3:Td541,<!-- ═══════════════════════════════════════════════
+     LOCAL PROXIMITY BANNER
+════════════════════════════════════════════════ -->
+<div class="local-banner">
+  Serving Luton (LU1–LU4) — Bedfordshire bathroom renovation specialists — <a href="#quote-form">get a free quote today</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════ -->
+
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="BMB Renovation Home">
+        <span class="logo-bmb">BMB</span>
+        <span class="logo-reno"> Renovation</span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/portfolio" class="nav-link">Portfolio</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:+447775758717" class="header-call">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" role="navigation" aria-label="Mobile menu">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="/services" class="mobile-nav-link">Services</a>
+    <a href="/portfolio" class="mobile-nav-link">Portfolio</a>
+    <a href="/contact" class="mobile-nav-link">Contact</a>
+    <a href="tel:+447775758717" class="mobile-cta">📞 Call +44 7775 758 717</a>
+  </div>
+
+<!-- ═══════════════════════════════════════════════
+     1. HERO
+════════════════════════════════════════════════ -->
+<!-- Google Ads: Hero section — primary keyword "bathroom renovation Luton" above the fold -->
+<section id="hero" aria-label="Hero section">
+  <div class="hero-bg">
+    <img src="/images/03_luxury_bathroom.jpg"
+         alt="Luxury bathroom renovation in Luton by BMB Renovation"
+         loading="eager" fetchpriority="high" />
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content section-lg">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left: Headline -->
+        <div>
+          <div class="hero-eyebrow">
+            <div class="hero-eyebrow-dot"></div>
+            Bathroom Renovation Specialists · Luton
+          </div>
+
+          <h1 class="hero-h1">
+            Quality Bathroom<br />
+            Renovation in<br />
+            <span>Luton</span>
+          </h1>
+
+          <p class="hero-sub">
+            From a Victorian terrace in Bury Park to a semi in Stopsley or a flat near the town centre — BMB Renovation delivers proper bathroom renovations across Luton with a free, no-obligation quote and a finish that lasts.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#quote-form" class="btn btn-gold btn-lg">
+              Get a Free Quote
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +44 7775 758 717
+            </a>
+          </div>
+
+          <div class="trust-badges">
+            <span class="badge"><span class="badge-check">✓</span> Free No-Obligation Quote</span>
+            <span class="badge"><span class="badge-check">✓</span> LU Postcode Coverage</span>
+            <span class="badge"><span class="badge-check">✓</span> Homeowners &amp; Landlords</span>
+            <span class="badge"><span class="badge-check">✓</span> Premium Finish</span>
+            <span class="badge"><span class="badge-check">✓</span> Clean &amp; Respectful Work</span>
+          </div>
+        </div>
+
+        <!-- Right: Quote Form -->
+        <div id="quote-form">
+          <div class="quote-card">
+            <p class="quote-card-heading">Get Your Free Bathroom Renovation Quote in Luton</p>
+            <p class="quote-card-sub">Free quote · No obligation · Friendly advice</p>
+
+            <form id="hero-form" novalidate>
+              <div class="form-row form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="f-name">Your Name *</label>
+                  <input class="form-input" id="f-name" name="name" type="text" placeholder="John Smith" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="f-phone">Phone Number *</label>
+                  <input class="form-input" id="f-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-email">Email Address</label>
+                  <input class="form-input" id="f-email" name="email" type="email" placeholder="john@example.com" />
+                </div>
+              </div>
+              <div class="form-row form-row-2 mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-project">Project Type</label>
+                  <select class="form-select" id="f-project" name="project">
+                    <option value="">Select project type</option>
+                    <option>Full Bathroom Renovation</option>
+                    <option>Bathroom Fitting</option>
+                    <option>Shower / Bath Fitting</option>
+                    <option>Tiling</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="f-postcode">Location / Postcode</label>
+                  <input class="form-input" id="f-postcode" name="postcode" type="text" placeholder="e.g. LU1 3AA" />
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-message">Tell Us About Your Project</label>
+                  <textarea class="form-textarea" id="f-message" name="message" placeholder="Describe your bathroom — house or flat, size, what needs changing, any specific requirements..."></textarea>
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-contact-time">Preferred Contact Time</label>
+                  <select class="form-select" id="f-contact-time" name="contact_time">
+                    <option value="">Any time</option>
+                    <option>Morning (8am–12pm)</option>
+                    <option>Afternoon (12pm–5pm)</option>
+                    <option>Evening (after 5pm)</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="form-submit">Request Free Quote →</button>
+              <p class="form-note">
+                <strong>Free quote. No obligation. Friendly advice.</strong><br />
+                Your details are safe with us. We will only contact you about your renovation enquiry.
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     2. STATS BAR
+════════════════════════════════════════════════ -->
+<div class="stats-bar" aria-label="Company statistics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-number">15+</div><p class="stat-label">Years Experience</p></div>
+      <div class="stat-item reveal reveal-delay-1"><div class="stat-number">2K+</div><p class="stat-label">Projects Completed</p></div>
+      <div class="stat-item reveal reveal-delay-2"><div class="stat-number">3K+</div><p class="stat-label">Happy Customers</p></div>
+      <div class="stat-item reveal reveal-delay-3"><div class="stat-number">5★</div><p class="stat-label">Customer Rating</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     3. PROBLEM / INTENT SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="problem-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Sound Familiar?</span>
+      <h2 id="problem-heading">Looking for a Bathroom Renovation in Luton?</h2>
+      <p>Luton has a wide variety of homes — Victorian terraces near the town centre, post-war semis across the estates, modern flats, family houses. What many of them have in common is a bathroom that hasn't seen a proper renovation in years. We fix that.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">🏠</div>
+        <h3>Older Property, Tired Bathroom</h3>
+        <p>Many of Luton's Victorian and Edwardian terraces — particularly around Bury Park, Round Green, and the town centre — have bathrooms that have been patched, re-sealed, and painted over rather than properly renovated. We start from scratch and do the job right.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-1">
+        <div class="problem-icon">🔑</div>
+        <h3>Rental Property That Needs Updating</h3>
+        <p>Luton has one of the most active private rental markets in the East of England. A fresh bathroom renovation makes a real difference to what tenants will pay and how quickly a property lets. We work with landlords across the LU postcodes — practical finishes, efficient timelines.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-2">
+        <div class="problem-icon">🛁</div>
+        <h3>Bathroom That Simply Doesn't Work</h3>
+        <p>Leaking shower, cracked tiles, broken extractor, a bath nobody uses — sometimes the best solution is a complete overhaul. One renovation fixes everything at once, leaves the room properly waterproofed, and adds genuine value to the property.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     4. WHAT'S INCLUDED
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="includes-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Full Service</span>
+      <h2 id="includes-heading">Everything Your Luton Bathroom Needs — In One Job</h2>
+      <p>We handle every element of the renovation ourselves. No gaps, no subcontractors vanishing midway through. One team, one clear quote, one finished bathroom.</p>
+    </div>
+
+    <div class="includes-grid">
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Full strip-out and preparation</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Plumbing — new layouts, pipe runs, waste connections</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>Tiling — walls, floors, wet areas, full and part tile</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Bath, shower, basin and toilet fitting</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Flooring — tile, LVT, vinyl, wet room boards</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>Lighting — downlights, extractor fans, shaver sockets</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Vanity units, storage, mirrors and accessories</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Plastering, painting and finishing</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>Full clean and waste clearance on completion</p></div>
+    </div>
+
+    <div class="mt-6 reveal">
+      <div class="cta-strip">
+        <h3>Want to Know Exactly What's Involved for Your Luton Bathroom?</h3>
+        <p>Tell us about your property and we'll visit, assess the bathroom in person, and give you a clear written quote — completely free and with no obligation.</p>
+        <div class="cta-strip-btns">
+          <a href="#quote-form" class="btn btn-gold">Get a Free Quote</a>
+          <a href="tel:+447775758717" class="btn btn-dark">Call +44 7775 758 717</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     5. WHY CHOOSE BMB RENOVATION
+════════════════════════════════════════════════ -->
+<section class="section bg-dark" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Why BMB Renovation</span>
+      <h2 id="why-heading" style="color:#fff;">Why Luton Homeowners &amp; Landlords Choose Us</h2>
+      <p style="color:#9CA3AF;">We travel to Luton because we've built a strong reputation in Bedfordshire and Hertfordshire for honest, high-quality renovation work. Here's what that means for you.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">📍</div>
+        <h3>We Come to Luton</h3>
+        <p>Based in Watford, we serve Luton as part of our wider Bedfordshire and Hertfordshire coverage. We visit freely across the LU postcodes for your initial quote — no call-out fees, no excuses.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">🏘️</div>
+        <h3>All Property Types</h3>
+        <p>Victorian terrace, 1960s semi, modern flat, HMO — we've worked on all of them in and around Luton. The same standards apply whatever the property: thorough preparation, correct waterproofing, quality finish.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🔑</div>
+        <h3>Landlord Specialist</h3>
+        <p>Luton's rental market moves fast. We offer durable, practical bathroom finishes designed to hold up well over multiple tenancies, and we work to timelines that keep your void period as short as possible.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">💬</div>
+        <h3>Honest &amp; Straightforward</h3>
+        <p>We tell you what we find, what we recommend, and what it costs — clearly and upfront. If something unexpected comes up during the work, we discuss it with you before proceeding. No surprises.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     6. TRUST SECTION
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Our Promise</span>
+      <h2 id="trust-heading">What You Can Count On</h2>
+      <p>These are the commitments we make to every Luton customer. Not aspirations — actual standards we hold ourselves to every day on every job.</p>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-emoji">🗓️</div>
+        <h3>Start &amp; Finish on Time</h3>
+        <p>We agree a timeline before we start and we stick to it. You'll know who's arriving and when — every day of the project.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-1">
+        <div class="trust-emoji">💬</div>
+        <h3>Clear, Written Quotes</h3>
+        <p>Every cost is itemised in writing before work begins. Nothing added afterwards without your agreement.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-2">
+        <div class="trust-emoji">🧹</div>
+        <h3>Tidy Site Every Day</h3>
+        <p>We work cleanly and leave the site tidy at the end of every working day. Your home is respected throughout.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-3">
+        <div class="trust-emoji">🛡️</div>
+        <h3>Fully Insured &amp; Guaranteed</h3>
+        <p>All our work is fully insured and backed by our workmanship guarantee. Your investment is protected from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     7. PORTFOLIO / PROJECT EXAMPLES
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="portfolio-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Recent Work</span>
+      <h2 id="portfolio-heading">Bathroom Renovations Across Luton &amp; the LU Postcodes</h2>
+      <p>A selection of recent projects in Luton — from Victorian terraces in LU1 to family semis in Stopsley and rental flats in Leagrave.</p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card reveal">
+        <div class="portfolio-img">
+          <img src="/images/03_luxury_bathroom.jpg"
+               alt="Full bathroom renovation in Bury Park Luton LU1" loading="lazy" />
+          <span class="portfolio-badge">Full Renovation</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Bury Park · LU1</p>
+          <h3>Victorian Terrace — Full Bathroom Overhaul</h3>
+          <p>A Victorian mid-terrace in Bury Park with a bathroom that had been retiled over and over without ever being properly stripped. We took it back to the bare walls, re-tanked the wet areas, re-plumbed, and installed a new suite with large-format tiling and an LED mirror vanity unit.</p>
+          <span class="portfolio-cta">View details →</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal reveal-delay-1">
+        <div class="portfolio-img">
+          <img src="/images/09_tile_work.jpg"
+               alt="Rental property bathroom renovation in Leagrave Luton LU4" loading="lazy" />
+          <span class="portfolio-badge">Landlord Renovation</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Leagrave · LU4</p>
+          <h3>Buy-to-Let Bathroom Refresh — Tenant-Ready Finish</h3>
+          <p>A landlord in LU4 needed the bathroom fully refreshed between tenancies — old suite out, new one in, walls and floor retiled in a neutral, hard-wearing specification. New shower, new extractor fan, new lighting. Completed in 7 working days and re-let within the fortnight.</p>
+          <span class="portfolio-cta">View details →</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal reveal-delay-2">
+        <div class="portfolio-img">
+          <img src="/images/12_bathroom_before_after.jpg"
+               alt="Family bathroom renovation in Stopsley Luton LU2" loading="lazy" />
+          <span class="portfolio-badge">Family Bathroom</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Stopsley · LU2</p>
+          <h3>1950s Semi — Family Bathroom Transformation</h3>
+          <p>A family home in Stopsley with the original 1950s bathroom layout — undersized bath, ancient tiling, and a shower that never worked properly. Full layout reconfiguration, bath replaced with a walk-in shower, double vanity unit with his-and-hers basins, and underfloor heating beneath herringbone floor tiles.</p>
+          <span class="portfolio-cta">View details →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     8. BEFORE & AFTER
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="ba-heading">
+  <div class="container">
+    <div class="before-after-grid">
+      <div>
+        <span class="section-label">The Difference</span>
+        <h2 id="ba-heading" style="margin-top:0.5rem;">Before &amp; After — Luton Bathroom Renovation</h2>
+        <p style="margin-top:1rem;">A 1930s terrace in Round Green, LU2 — the bathroom had been painted over, re-grouted twice, and had a leaking bath panel that had caused damp in the adjacent wall. We stripped the room completely, dried out and treated the damp, installed new cement board backing, and rebuilt everything from scratch over 10 working days.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-top:1.75rem;">
+          <li style="display:flex;align-items:center;gap:0.75rem;">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:0.9375rem;color:var(--gray-700);font-weight:500;">Damp treated at source — not just painted over</span>
+          </li>
+          <li style="display:flex;align-items:center;gap:0.75rem;">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:0.9375rem;color:var(--gray-700);font-weight:500;">Full cement board backing and waterproof tanking throughout</span>
+          </li>
+          <li style="display:flex;align-items:center;gap:0.75rem;">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:0.9375rem;color:var(--gray-700);font-weight:500;">New bath, walk-in shower, vanity, and wall-hung WC</span>
+          </li>
+          <li style="display:flex;align-items:center;gap:0.75rem;">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;flex-shrink:0;">✓</span>
+            <span style="font-size:0.9375rem;color:var(--gray-700);font-weight:500;">Completed in 10 working days, site clean throughout</span>
+          </li>
+        </ul>
+        <div style="margin-top:2rem;">
+          <a href="#quote-form" class="btn btn-gold">Get a Quote for Your Bathroom</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="ba-image-wrap">
+          <img src="/images/12_bathroom_before_after.jpg"
+               alt="Before and after bathroom renovation in Luton" loading="lazy" />
+          <span class="ba-label ba-label-before">Before</span>
+          <span class="ba-label ba-label-after">After</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     9. PROCESS
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">How It Works</span>
+      <h2 id="process-heading">Your Luton Bathroom Renovation — Step by Step</h2>
+      <p>A clear, simple process from first contact to finished bathroom. No chasing, no uncertainty — you'll know what's happening at every stage.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-number">1</div>
+        <h3>Free Quote Request</h3>
+        <p>Fill in the form on this page or give us a call. Tell us about your property and what you'd like to do with your bathroom.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-number">2</div>
+        <h3>Free Home Visit</h3>
+        <p>We travel to your home in Luton — free of charge. We view the bathroom properly, take measurements, and have a straightforward conversation about what you want and what's achievable.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-number">3</div>
+        <h3>Clear Written Quote</h3>
+        <p>Within 48 hours you receive a detailed, itemised written quote. Every cost is accounted for. Nothing vague, nothing hidden.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-number">4</div>
+        <h3>Work Begins</h3>
+        <p>We start on the agreed date. Strip-out, plumbing, waterproofing, tiling, fixtures, finishing — each stage done correctly before moving to the next.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="process-number">5</div>
+        <h3>Sign-Off</h3>
+        <p>We walk through the finished bathroom with you. We tidy the site completely and hand over only when you're satisfied with every detail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     10. LOCAL AREA COVERAGE
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="areas-heading">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Coverage</span>
+      <h2 id="areas-heading" style="margin-top:0.5rem;">Serving Luton and the Surrounding Area</h2>
+      <p style="margin-top:1rem;max-width:640px;">We cover Luton town centre and all the surrounding residential areas — Bury Park, Stopsley, Leagrave, Limbury, Farley Hill, Challney, Sundon Park, and beyond. We also cover Dunstable and the nearby Bedfordshire towns.</p>
+
+      <div class="areas-flex">
+        <span class="area-chip primary">Luton Town Centre (LU1)</span>
+        <span class="area-chip primary">Stopsley (LU2)</span>
+        <span class="area-chip primary">Leagrave (LU4)</span>
+        <span class="area-chip">Bury Park (LU1)</span>
+        <span class="area-chip">Round Green (LU2)</span>
+        <span class="area-chip">Limbury (LU3)</span>
+        <span class="area-chip">Farley Hill</span>
+        <span class="area-chip">Challney</span>
+        <span class="area-chip">Sundon Park</span>
+        <span class="area-chip">Lewsey Farm</span>
+        <span class="area-chip">Dunstable</span>
+        <span class="area-chip">Harpenden</span>
+        <span class="area-chip">Watford</span>
+      </div>
+
+      <p style="margin-top:1.5rem;font-size:0.875rem;color:var(--gray-500);">Not sure if we cover your street or postcode? Call or message us — we'll confirm straight away.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     11. PRICE / FREE QUOTE SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="price-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Pricing</span>
+      <h2 id="price-heading">What Does a Bathroom Renovation Cost in Luton?</h2>
+      <p>There's no single answer — costs vary depending on your bathroom and what you need done. These are the factors that have the most impact on the final price.</p>
+    </div>
+
+    <div class="price-factors">
+      <div class="price-factor reveal"><div class="pf-dot"></div><p>Bathroom size and current condition</p></div>
+      <div class="price-factor reveal reveal-delay-1"><div class="pf-dot"></div><p>Full renovation vs. targeted update</p></div>
+      <div class="price-factor reveal reveal-delay-2"><div class="pf-dot"></div><p>Plumbing changes and layout alterations</p></div>
+      <div class="price-factor reveal"><div class="pf-dot"></div><p>Tile specification and total floor/wall area</p></div>
+      <div class="price-factor reveal reveal-delay-1"><div class="pf-dot"></div><p>Sanitaryware quality and finish choices</p></div>
+      <div class="price-factor reveal reveal-delay-2"><div class="pf-dot"></div><p>Condition of walls — damp, old tiling, replastering</p></div>
+    </div>
+
+    <div class="mt-5 reveal">
+      <div class="cta-strip">
+        <h3>The Only Way to Get an Accurate Number Is a Free Quote</h3>
+        <p>We come to your property in Luton, look at the bathroom properly, and give you a detailed written quote. Free of charge, no commitment, no pressure.</p>
+        <div class="cta-strip-btns">
+          <a href="#quote-form" class="btn btn-gold">Request Free Quote</a>
+          <a href="tel:+447775758717" class="btn btn-dark">Call +44 7775 758 717</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     12. FAQs
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">FAQs</span>
+      <h2 id="faq-heading">Bathroom Renovation in Luton — Your Questions Answered</h2>
+    </div>
+
+    <div class="faq-list" style="max-width:800px;margin:0 auto;" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Do you cover Luton and the LU postcodes?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — we cover Luton as part of our wider service area across Hertfordshire and Bedfordshire. We serve LU1 (town centre, Bury Park, Farley Hill), LU2 (Stopsley, Round Green, Limbury), LU3 (Limbury Mead, Leagrave border areas), and LU4 (Leagrave, Lewsey Farm, Sundon Park). We visit for your initial quote free of charge.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          How long does a bathroom renovation take in Luton?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>For a standard full bathroom renovation, typically 7 to 12 working days. We agree a start and finish date upfront and we keep to it. If your bathroom has damp issues or particularly complex plumbing changes, the timeline may be slightly longer — we'll tell you this before we start, not halfway through the job.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Do you work with landlords on rental properties in Luton?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — landlord work is a significant part of what we do in Luton. The town has a very active rental sector and we understand the priorities: a finish that holds up well over several tenancies, a turnaround that minimises void time, and a price that makes the investment worthwhile. We're happy to advise on what's worth spending money on and what isn't for a rental property.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          My bathroom has damp — can you deal with that as part of the renovation?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — damp in bathrooms is very common, particularly in older Luton properties where waterproofing was never properly done or has failed over time. We identify the source of the damp, treat it correctly, and install proper cement board backing and tanking before tiling. Painting over damp or sealing it in is not something we do — it comes back every time.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Can you convert a bath to a walk-in shower in a Luton property?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — bath-to-shower conversions are one of the most requested jobs we do. Many Luton properties have bathrooms where the bath takes up most of the available floor space and rarely gets used. Converting to a walk-in shower frees up the room considerably and almost always results in a more functional, better-looking bathroom.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Can you renovate a flat or apartment bathroom in Luton?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — flats are common across Luton and we work in them regularly. We're considerate of shared access, working hours, and noise in apartment blocks. For leasehold properties, we'll advise if any of the planned works might require permission from the freeholder or management company before we start.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          What tile choices do you recommend for Luton rental properties?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>For rental properties, we generally recommend porcelain tiles in neutral tones — they're hard-wearing, easy to clean, and have broad appeal to tenants. Large-format tiles (600×600mm or larger) also mean fewer grout lines, which means less maintenance over time. We can suggest specific options at your free quote visit, factoring in your budget and what will work best for the property.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Do I need to supply tiles and sanitaryware myself?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>It's entirely up to you. Some customers prefer to source their own materials; others ask us to manage everything. If you'd like us to supply, we work with reliable suppliers and can help you choose finishes that suit your budget. If you're sourcing your own, we'll give you a full specification — quantities, formats, grout and adhesive requirements — so you can order exactly what's needed.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          How do I get a free quote for my Luton bathroom?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Use the quote form on this page, call us on +44 7775 758 717, or email info@bmbrenovation.co.uk. We'll arrange a visit to your Luton property, take a proper look at the bathroom, and send you a clear written quote within 48 hours of the visit. No charge, no obligation, no hard sell.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     13. CONTACT / QUOTE FORM SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: Contact info -->
+      <div class="reveal">
+        <span class="section-label">Get in Touch</span>
+        <h2 id="contact-heading" style="margin-top:0.5rem;">Talk to Us About Your Luton Bathroom</h2>
+        <p style="margin-top:1rem;">Whether you have a clear brief or you're just starting to think about a renovation — we're happy to talk it through. Most people find a 10-minute call or a site visit is all it takes to get a clear picture of what's possible and what it'll cost.</p>
+
+        <div style="margin-top:2rem;">
+          <div class="contact-info-item">
+            <div class="ci-icon">📞</div>
+            <div>
+              <p class="ci-label">Phone</p>
+              <p class="ci-value"><a href="tel:+447775758717">+44 7775 758 717</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">✉️</div>
+            <div>
+              <p class="ci-label">Email</p>
+              <p class="ci-value"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">📍</div>
+            <div>
+              <p class="ci-label">Based in</p>
+              <p class="ci-value">157 Judge Street, Watford, WD24 5AN</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">🕐</div>
+            <div>
+              <p class="ci-label">Hours</p>
+              <p class="ci-value">Monday – Saturday: 8:00am – 5:00pm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Contact form -->
+      <div class="reveal reveal-delay-1">
+        <div class="quote-card">
+          <p class="quote-card-heading">Request a Free Quote for Your Luton Bathroom</p>
+          <p class="quote-card-sub">We respond within 24 hours · Free home visit · No obligation</p>
+
+          <form id="contact-form" novalidate>
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="c-name">Your Name *</label>
+                <input class="form-input" id="c-name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-phone">Phone Number *</label>
+                <input class="form-input" id="c-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+              </div>
+            </div>
+            <div class="form-row mt-1">
+              <div class="form-group">
+                <label class="form-label" for="c-email">Email Address</label>
+                <input class="form-input" id="c-email" name="email" type="email" placeholder="Your email" />
+              </div>
+            </div>
+            <div class="form-row mt-1">
+              <div class="form-group">
+                <label class="form-label" for="c-postcode">Postcode</label>
+                <input class="form-input" id="c-postcode" name="postcode" type="text" placeholder="e.g. LU2 8AA" />
+              </div>
+            </div>
+            <div class="form-row mt-1">
+              <div class="form-group">
+                <label class="form-label" for="c-message">Your Project</label>
+                <textarea class="form-textarea" id="c-message" name="message" placeholder="Tell us about your bathroom — house or flat, size, what you'd like to change, any particular requirements..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="form-submit">Send My Enquiry →</button>
+            <p class="form-note"><strong>Free quote. No obligation.</strong> We'll be in touch within 24 hours.</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     14. FINAL CTA
+════════════════════════════════════════════════ -->
+<section class="final-cta-section" aria-label="Final call to action">
+  <div class="final-cta-bg">
+    <img src="/images/03_luxury_bathroom.jpg"
+         alt="BMB Renovation bathroom specialists Luton Bedfordshire"
+         loading="lazy" />
+  </div>
+  <div class="final-cta-overlay"></div>
+
+  <div class="container">
+    <div class="final-cta-content reveal">
+      <span class="section-label">Ready to Get Started?</span>
+      <h2>Your New <span>Luton</span> Bathroom<br />Starts with a Free Quote</h2>
+      <p>BMB Renovation serves Luton and the surrounding Bedfordshire area with the same standards we bring to every project — quality workmanship, honest pricing, and a result you'll be satisfied with for years.</p>
+
+      <div class="final-cta-btns">
+        <a href="#quote-form" class="btn btn-gold btn-lg">
+          Get a Free Quote
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call +44 7775 758 717
+        </a>
+      </div>
+
+      <p class="final-trust-line">Serving Luton &amp; the LU postcodes <span>•</span> Free quote <span>•</span> No obligation <span>•</span> Homeowners &amp; landlords welcome</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-bmb" style="color:#fff;">BMB</span>
+          <span class="logo-reno"> Renovation</span>
+        </div>
+        <p>Premium bathroom and home renovation services across Luton, Watford, and the wider Hertfordshire and Bedfordshire area. Quality workmanship, honest pricing, lasting results.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="WhatsApp">w</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/bathroom-renovation-luton">Bathroom Renovation</a></li>
+          <li><a href="/bathroom-fitting-luton">Bathroom Fitting</a></li>
+          <li><a href="/kitchen-renovation-luton">Kitchen Renovation</a></li>
+          <li><a href="/tiling-luton">Tiling</a></li>
+          <li><a href="/flooring-luton">Flooring</a></li>
+          <li><a href="/painting-decorating-luton">Painting &amp; Decorating</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Areas We Serve</h4>
+        <ul>
+          <li><a href="/bathroom-renovation-luton">Luton</a></li>
+          <li><a href="/bathroom-renovation-bedford">Bedford</a></li>
+          <li><a href="/bathroom-renovation-st-albans">St Albans</a></li>
+          <li><a href="/bathroom-renovation-hemel-hempstead">Hemel Hempstead</a></li>
+          <li><a href="/bathroom-renovation-watford">Watford</a></li>
+          <li><a href="/bathroom-renovation-harrow">Harrow</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📞</span>
+          <div class="footer-contact-text"><a href="tel:+447775758717">+44 7775 758 717</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉️</span>
+          <div class="footer-contact-text"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <div class="footer-contact-text">157 Judge Street<br />Watford, WD24 5AN</div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">🕐</span>
+          <div class="footer-contact-text">Mon–Sat: 8:00am – 5:00pm</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 BMB Renovation. All rights reserved. | <a href="/privacy" style="color:#6B7280;">Privacy Policy</a></p>
+      <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     STICKY MOBILE CTA
+════════════════════════════════════════════════ -->
+<div id="sticky-cta" aria-label="Mobile quick actions">
+  <a href="#quote-form" class="sticky-btn sticky-quote">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12h6M9 16h6M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/></svg>
+    Free Quote
+  </a>
+  <a href="tel:+447775758717" class="sticky-btn sticky-call">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════ -->
+<script>
+  /* ── Header scroll ── */
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* ── Hamburger ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ── Form submit handler (demo — wire to Formspree/Netlify) ── */
+  ['hero-form', 'contact-form'].forEach(id => {
+    const form = document.getElementById(id);
+    if (!form) return;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.querySelector('[name="name"]').value.trim();
+      const phone = form.querySelector('[name="phone"]').value.trim();
+      if (!name || !phone) {
+        alert('Please fill in your name and phone number.');
+        return;
+      }
+      form.innerHTML = `
+        <div style="text-align:center;padding:2rem 1rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:var(--gray-900);margin-bottom:0.75rem;">Quote Request Received!</h3>
+          <p style="color:var(--gray-600);font-size:0.9375rem;">Thanks ${name} — we'll call you on <strong>${phone}</strong> to arrange a free visit to your Luton property. We typically respond within a few hours during business hours (Mon–Sat 8am–5pm).</p>
+        </div>`;
+    });
+  });
+
+  /* ── Scroll reveal ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<!-- ═══════════════════════════════════════════════
+     GOOGLE ADS ANNOTATIONS
+════════════════════════════════════════════════ -->
+<!--
+  CAMPAIGN: Bathroom Renovation — Luton
+  URL: /bathroom-renovation-luton
+  TARGET KEYWORD: bathroom renovation Luton
+
+  HEADLINES (max 30 chars each):
+  1. Bathroom Renovation Luton
+  2. Free Quote in Luton Today
+  3. LU Postcode Specialists
+  4. Landlords & Homeowners LU
+  5. Luton Bathroom Experts
+  6. Quality Finish · All LU Areas
+  7. Free Home Visit Included
+  8. Trusted Bedfordshire Team
+  9. 15+ Years Experience
+  10. Full Bathroom Transformation
+
+  DESCRIPTIONS (max 90 chars each):
+  1. Expert bathroom renovation across Luton & the LU postcodes. Free quote, no obligation.
+  2. Houses, flats & rental properties in Bury Park, Stopsley, Leagrave & beyond. Call now.
+  3. BMB Renovation: quality finish, honest pricing, reliable team. Free home visit included.
+  4. Landlords & homeowners across Luton — durable bathrooms, efficient turnaround.
+
+  KEYWORDS:
+  bathroom renovation Luton
+  bathroom fitters Luton
+  bathroom fitting Luton
+  bathroom renovation LU1
+  bathroom renovation LU2
+  bathroom renovation LU3
+  bathroom renovation LU4
+  bathroom renovation Bury Park
+  bathroom renovation Stopsley
+  bathroom renovation Leagrave
+  bathroom renovation Limbury
+  bathroom renovation Farley Hill
+  bathroom fitters near me Luton
+  landlord bathroom renovation Luton
+  flat bathroom renovation Luton
+  bathroom refurbishment Luton
+  new bathroom Luton
+  bathroom renovation near me LU
+  cheap bathroom renovation Luton
+  best bathroom fitters Luton
+
+  NEGATIVE KEYWORDS:
+  -DIY
+  -how to
+  -free
+  -courses
+  -training
+  -jobs
+  -supply only
+-->4:Ta0a,/* ── Header scroll ── */
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* ── Hamburger ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ── Form submit handler (demo — wire to Formspree/Netlify) ── */
+  ['hero-form', 'contact-form'].forEach(id => {
+    const form = document.getElementById(id);
+    if (!form) return;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.querySelector('[name="name"]').value.trim();
+      const phone = form.querySelector('[name="phone"]').value.trim();
+      if (!name || !phone) {
+        alert('Please fill in your name and phone number.');
+        return;
+      }
+      form.innerHTML = `
+        <div style="text-align:center;padding:2rem 1rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:var(--gray-900);margin-bottom:0.75rem;">Quote Request Received!</h3>
+          <p style="color:var(--gray-600);font-size:0.9375rem;">Thanks ${name} — we'll call you on <strong>${phone}</strong> to arrange a free visit to your Luton property. We typically respond within a few hours during business hours (Mon–Sat 8am–5pm).</p>
+        </div>`;
+    });
+  });
+
+  /* ── Scroll reveal ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));0:["J4NM-S4kEXF-15xO6ltJb",[[["",{"children":["bathroom-renovation-luton",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["bathroom-renovation-luton",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","bathroom-renovation-luton","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c93b10a3daa1778c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
+a:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Bathroom Renovation Luton | Free Quote | BMB Renovation"}],["$","meta","3",{"name":"description","content":"Expert bathroom renovation in Luton. BMB Renovation transforms bathrooms across LU1–LU4 — free, no-obligation quote and home visit. Call +44 7775 758 717 today."}],["$","link","4",{"rel":"canonical","href":"https://bmbrenovation.co.uk/bathroom-renovation-luton"}],["$","meta","5",{"property":"og:title","content":"Bathroom Renovation Luton | Free Quote | BMB Renovation"}],["$","meta","6",{"property":"og:description","content":"Expert bathroom renovation in Luton. BMB Renovation transforms bathrooms across LU1–LU4 — free, no-obligation quote and home visit. Call +44 7775 758 717 today."}],["$","meta","7",{"property":"og:image","content":"https://bmbrenovation.co.uk/images/03_luxury_bathroom.jpg"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Bathroom Renovation Luton | Free Quote | BMB Renovation"}],["$","meta","10",{"name":"twitter:description","content":"Expert bathroom renovation in Luton. BMB Renovation transforms bathrooms across LU1–LU4 — free, no-obligation quote and home visit. Call +44 7775 758 717 today."}],["$","meta","11",{"name":"twitter:image","content":"https://bmbrenovation.co.uk/images/03_luxury_bathroom.jpg"}],["$","link","12",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","13",{"rel":"icon","href":"/favicon.svg"}],["$","meta","14",{"name":"next-size-adjust"}]]
+1:null

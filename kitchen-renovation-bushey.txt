@@ -1,0 +1,1274 @@
+5:I[4707,[],""]
+6:I[6423,[],""]
+7:I[2798,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ThemeProvider"]
+8:I[3606,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"Toaster"]
+9:I[4215,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ChunkLoadErrorHandler"]
+2:T6189,
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: #141414; background: #fff;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    :root {
+      --gold: #C8A97E; --gold-dark: #B8996E;
+      --gold-light: rgba(200,169,126,0.12);
+      --dark: #0a0a0a; --gray-950: #0a0a0a; --gray-900: #111827;
+      --gray-700: #374151; --gray-600: #4B5563; --gray-500: #6B7280;
+      --gray-400: #9CA3AF; --gray-200: #E5E7EB; --gray-100: #F3F4F6; --gray-50: #F9FAFB;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0/0.04),0 1px 3px 0 rgb(0 0 0/0.08);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0/0.06),0 2px 4px -2px rgb(0 0 0/0.06);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0/0.08),0 4px 6px -4px rgb(0 0 0/0.06);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px -6px rgb(0 0 0/0.06);
+    }
+
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.025em; line-height: 1.15; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.75rem); font-weight: 800; }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; }
+    h3 { font-size: 1.25rem; font-weight: 700; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    p  { line-height: 1.7; color: var(--gray-600); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+    @media(min-width:640px){ .container { padding: 0 1.5rem; } }
+    .section { padding: 5rem 0; }
+    .section-sm { padding: 3.5rem 0; }
+    .section-lg { padding: 6rem 0; }
+    @media(min-width:768px){ .section { padding: 7rem 0; } }
+
+    .section-label {
+      display: inline-block; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.875rem 2rem; border-radius: 9999px;
+      font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.9375rem;
+      cursor: pointer; border: none; transition: all 0.2s ease; white-space: nowrap;
+    }
+    .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 4px 16px rgba(200,169,126,0.35); }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .btn-dark { background: var(--gray-900); color: #fff; }
+    .btn-dark:hover { background: #1f2937; transform: translateY(-1px); }
+    .btn-ghost { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+    .btn-sm { padding: 0.625rem 1.375rem; font-size: 0.875rem; }
+    .btn-lg { padding: 1rem 2.25rem; font-size: 1rem; }
+
+    #site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 999; transition: background 0.3s ease, box-shadow 0.3s ease; }
+    #site-header.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo { display: flex; align-items: center; }
+    .logo-bmb { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; transition: color 0.3s; }
+    #site-header.scrolled .logo-bmb { color: var(--gray-900); }
+    .logo-reno { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 300; letter-spacing: -0.03em; color: var(--gold); margin-left: 4px; }
+    .header-nav { display: none; gap: 0.25rem; }
+    @media(min-width:1024px){ .header-nav { display: flex; } }
+    .nav-link { padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.88); transition: all 0.2s; }
+    .nav-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    #site-header.scrolled .nav-link { color: var(--gray-700); }
+    #site-header.scrolled .nav-link:hover { color: var(--gold); background: var(--gray-100); }
+    .header-cta { display: flex; align-items: center; gap: 0.75rem; }
+    .header-call { display: none; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; background: #fff; color: var(--gray-900); transition: all 0.2s; }
+    @media(min-width:640px){ .header-call { display: flex; } }
+    #site-header.scrolled .header-call { background: var(--gray-900); color: #fff; }
+    .header-call:hover { opacity: 0.9; transform: translateY(-1px); }
+    .hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; border: none; background: transparent; cursor: pointer; border-radius: 8px; padding: 8px; }
+    .hamburger span { display: block; height: 2px; width: 24px; border-radius: 2px; background: #fff; transition: all 0.3s; }
+    #site-header.scrolled .hamburger span { background: var(--gray-900); }
+    @media(min-width:1024px){ .hamburger { display: none; } }
+    #mobile-menu { display: none; background: #fff; border-top: 1px solid var(--gray-100); box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 1.5rem; }
+    #mobile-menu.open { display: block; }
+    .mobile-nav-link { display: block; padding: 0.75rem 1rem; font-size: 1rem; font-weight: 500; color: var(--gray-700); border-radius: 0.5rem; transition: all 0.2s; }
+    .mobile-nav-link:hover { color: var(--gold); background: var(--gold-light); }
+    .mobile-cta { display: block; margin-top: 1rem; padding: 0.875rem; text-align: center; background: var(--gray-900); color: #fff; border-radius: 0.75rem; font-weight: 700; font-size: 0.9375rem; }
+
+    #proximity-banner { background: var(--gold-light); border-bottom: 1px solid rgba(200,169,126,0.2); padding: 0.625rem 0; position: relative; z-index: 998; }
+    .proximity-inner { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; font-size: 0.8125rem; font-weight: 500; color: var(--gray-700); text-align: center; }
+    .proximity-inner a { color: var(--gold); font-weight: 700; }
+    .proximity-inner a:hover { text-decoration: underline; }
+
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.25) 100%); }
+    .hero-content { position: relative; z-index: 2; width: 100%; padding-top: 80px; }
+    .hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+    @media(min-width:1024px){ .hero-grid { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); font-size: 0.8125rem; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+    .hero-eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .hero-h1 { color: #fff; margin-bottom: 1.25rem; }
+    .hero-h1 span { color: var(--gold); }
+    .hero-sub { font-size: 1.0625rem; color: rgba(255,255,255,0.78); margin-bottom: 2rem; max-width: 460px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 0.875rem; margin-bottom: 2.5rem; }
+    .trust-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .badge { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.375rem 0.875rem; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(6px); font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.85); }
+    .badge-check { color: var(--gold); font-size: 0.875rem; }
+
+    .quote-card { background: #fff; border-radius: 1.25rem; padding: 2rem; box-shadow: var(--shadow-xl); }
+    .quote-card-heading { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.375rem; }
+    .quote-card-sub { font-size: 0.8125rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+    .form-row { display: grid; gap: 1rem; }
+    @media(min-width:480px){ .form-row-2 { grid-template-columns: 1fr 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.375rem; }
+    .form-label { font-size: 0.8125rem; font-weight: 600; color: var(--gray-700); }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--gray-200); border-radius: 0.625rem; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: var(--gray-900); background: #fff; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--gray-400); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,169,126,0.15); }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; padding: 0.9375rem; background: var(--gold); color: #fff; border: none; border-radius: 9999px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 16px rgba(200,169,126,0.35); margin-top: 0.5rem; }
+    .form-submit:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .form-note { font-size: 0.75rem; color: var(--gray-400); text-align: center; margin-top: 0.625rem; }
+    .form-note strong { color: var(--gray-500); }
+
+    .stats-bar { background: var(--gray-950); padding: 2.5rem 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; }
+    @media(min-width:768px){ .stats-grid { grid-template-columns: repeat(4,1fr); } }
+    .stat-item { text-align: center; }
+    .stat-number { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.25rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 0.8125rem; color: #9CA3AF; margin-top: 0.375rem; }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header h2 { color: var(--gray-900); margin-top: 0.5rem; }
+    .section-header p { max-width: 560px; margin: 1rem auto 0; }
+
+    .problem-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .problem-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .problem-grid { grid-template-columns: repeat(3,1fr); } }
+    .problem-card { background: var(--gray-50); border-radius: 1rem; padding: 1.75rem; border: 1px solid var(--gray-100); transition: box-shadow 0.2s, transform 0.2s; }
+    .problem-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .problem-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--gold-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.375rem; }
+    .problem-card h3 { color: var(--gray-900); font-size: 1.0625rem; margin-bottom: 0.5rem; }
+
+    .includes-grid { display: grid; gap: 0.75rem; }
+    @media(min-width:640px){ .includes-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .includes-grid { grid-template-columns: repeat(3,1fr); } }
+    .include-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 1.125rem 1.25rem; border-radius: 0.875rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); transition: border-color 0.2s; }
+    .include-item:hover { border-color: var(--gold); }
+    .include-check { width: 22px; height: 22px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.6875rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .include-item p { font-size: 0.9375rem; color: var(--gray-700); font-weight: 500; margin: 0; }
+
+    .why-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .why-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .why-grid { grid-template-columns: repeat(4,1fr); } }
+    .why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.75rem; transition: background 0.2s; }
+    .why-card:hover { background: rgba(255,255,255,0.1); }
+    .why-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(200,169,126,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.375rem; margin-bottom: 1.125rem; }
+    .why-card h3 { color: #fff; font-size: 1.0625rem; margin-bottom: 0.5rem; }
+    .why-card p { color: #9CA3AF; font-size: 0.875rem; }
+
+    .trust-grid { display: grid; gap: 1.25rem; }
+    @media(min-width:640px){ .trust-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .trust-grid { grid-template-columns: repeat(4,1fr); } }
+    .trust-card { border-radius: 1rem; padding: 1.75rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); text-align: center; transition: box-shadow 0.2s, transform 0.2s; }
+    .trust-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .trust-emoji { font-size: 2rem; margin-bottom: 0.75rem; }
+    .trust-card h3 { color: var(--gray-900); font-size: 1rem; margin-bottom: 0.375rem; }
+    .trust-card p { font-size: 0.875rem; color: var(--gray-500); margin: 0; }
+
+    .portfolio-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .portfolio-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .portfolio-grid { grid-template-columns: repeat(3,1fr); } }
+    .portfolio-card { border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-md); background: #fff; transition: transform 0.25s, box-shadow 0.25s; }
+    .portfolio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+    .portfolio-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+    .portfolio-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .portfolio-card:hover .portfolio-img img { transform: scale(1.05); }
+    .portfolio-badge { position: absolute; top: 0.875rem; left: 0.875rem; background: var(--gold); color: #fff; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .portfolio-body { padding: 1.375rem; }
+    .portfolio-location { font-size: 0.75rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.375rem; }
+    .portfolio-body h3 { color: var(--gray-900); margin-bottom: 0.5rem; }
+    .portfolio-body p { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1rem; }
+    .portfolio-cta { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; font-weight: 700; color: var(--gold); transition: gap 0.2s; }
+    .portfolio-card:hover .portfolio-cta { gap: 0.625rem; }
+
+    .before-after-grid { display: grid; gap: 2rem; align-items: center; }
+    @media(min-width:1024px){ .before-after-grid { grid-template-columns: 1fr 1fr; } }
+    .ba-image-wrap { position: relative; border-radius: 1.25rem; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-xl); }
+    .ba-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .ba-label { position: absolute; bottom: 1rem; padding: 0.4rem 1rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 700; }
+    .ba-label-before { left: 1rem; background: rgba(0,0,0,0.65); color: #fff; }
+    .ba-label-after { right: 1rem; background: var(--gold); color: #fff; }
+
+    .process-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .process-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .process-grid { grid-template-columns: repeat(5,1fr); } }
+    .process-step { position: relative; text-align: center; padding: 1.75rem 1.25rem; background: #fff; border-radius: 1rem; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); }
+    .process-number { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.125rem; font-weight: 800; margin: 0 auto 1rem; }
+    .process-step h3 { font-size: 0.9375rem; color: var(--gray-900); margin-bottom: 0.5rem; }
+    .process-step p { font-size: 0.8125rem; color: var(--gray-500); margin: 0; }
+
+    .areas-flex { display: flex; flex-wrap: wrap; gap: 0.625rem; margin-top: 1.5rem; }
+    .area-chip { padding: 0.5rem 1.125rem; border-radius: 9999px; background: var(--gold-light); color: var(--gray-700); font-size: 0.875rem; font-weight: 600; border: 1.5px solid rgba(200,169,126,0.25); transition: background 0.2s, color 0.2s; }
+    .area-chip:hover { background: var(--gold); color: #fff; }
+    .area-chip.primary { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+    .price-factors { display: grid; gap: 0.875rem; }
+    @media(min-width:640px){ .price-factors { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .price-factors { grid-template-columns: repeat(3,1fr); } }
+    .price-factor { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; border-radius: 0.875rem; background: var(--gray-50); border: 1px solid var(--gray-100); }
+    .pf-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .price-factor p { font-size: 0.9rem; color: var(--gray-700); margin: 0; font-weight: 500; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { border: 1.5px solid var(--gray-100); border-radius: 0.875rem; overflow: hidden; background: #fff; }
+    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: transparent; border: none; cursor: pointer; text-align: left; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: var(--gray-900); transition: color 0.2s; }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; font-weight: 300; color: var(--gray-600); transition: background 0.2s, transform 0.2s; }
+    .faq-item.open .faq-icon { background: var(--gold); color: #fff; transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; padding: 0 1.5rem; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.25rem; }
+    .faq-answer p { font-size: 0.9rem; color: var(--gray-600); margin: 0; }
+
+    .contact-grid { display: grid; gap: 2.5rem; align-items: start; }
+    @media(min-width:1024px){ .contact-grid { grid-template-columns: 2fr 3fr; gap: 4rem; } }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .ci-icon { width: 48px; height: 48px; border-radius: 0.75rem; background: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem; }
+    .ci-label { font-size: 0.8125rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.2rem; }
+    .ci-value { font-size: 0.9rem; color: var(--gray-600); }
+    .ci-value a { color: var(--gray-600); }
+    .ci-value a:hover { color: var(--gold); }
+
+    .final-cta-section { position: relative; padding: 6rem 0; overflow: hidden; }
+    .final-cta-bg { position: absolute; inset: 0; }
+    .final-cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .final-cta-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.87); }
+    .final-cta-content { position: relative; z-index: 2; text-align: center; }
+    .final-cta-content h2 { color: #fff; margin-bottom: 1.25rem; }
+    .final-cta-content h2 span { color: var(--gold); }
+    .final-cta-content p { color: rgba(255,255,255,0.72); max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.0625rem; }
+    .final-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+    .final-trust-line { font-size: 0.875rem; color: rgba(255,255,255,0.45); font-weight: 500; }
+    .final-trust-line span { color: var(--gold); font-weight: 700; }
+
+    footer { background: var(--gray-950); color: #fff; }
+    .footer-grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; padding: 4rem 0 2rem; }
+    @media(min-width:640px){ .footer-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.5fr; } }
+    .footer-brand p { color: #9CA3AF; font-size: 0.875rem; line-height: 1.7; margin: 1rem 0 1.5rem; }
+    .footer-social { display: flex; gap: 0.75rem; }
+    .footer-social a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: background 0.2s; }
+    .footer-social a:hover { background: var(--gold); }
+    .footer-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: #fff; margin-bottom: 1.25rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-col ul li a { font-size: 0.875rem; color: #9CA3AF; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
+    .footer-contact-icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
+    .footer-contact-text { font-size: 0.875rem; color: #9CA3AF; line-height: 1.5; }
+    .footer-contact-text a { color: #9CA3AF; transition: color 0.2s; }
+    .footer-contact-text a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 1.75rem 0; display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+    @media(min-width:640px){ .footer-bottom { flex-direction: row; justify-content: space-between; } }
+    .footer-bottom p { font-size: 0.8125rem; color: #6B7280; }
+    .back-to-top { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; border: none; cursor: pointer; transition: background 0.2s; }
+    .back-to-top:hover { background: var(--gold-dark); }
+
+    #sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 -4px 16px rgba(0,0,0,0.15); }
+    @media(min-width:1024px){ #sticky-cta { display: none; } }
+    .sticky-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .sticky-btn:hover { opacity: 0.9; }
+    .sticky-quote { background: var(--gold); color: #fff; }
+    .sticky-call { background: var(--gray-900); color: #fff; }
+
+    .cta-strip { background: var(--gold-light); border-radius: 1.25rem; padding: 2.5rem; text-align: center; border: 1.5px solid rgba(200,169,126,0.2); }
+    .cta-strip h3 { color: var(--gray-900); margin-bottom: 0.75rem; font-size: 1.375rem; }
+    .cta-strip p { color: var(--gray-600); font-size: 0.9375rem; margin-bottom: 1.5rem; }
+    .cta-strip-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.875rem; }
+
+    .text-center { text-align: center; }
+    .text-gold { color: var(--gold); }
+    .mt-1{margin-top:0.5rem}.mt-2{margin-top:1rem}.mt-3{margin-top:1.5rem}.mt-4{margin-top:2rem}.mt-5{margin-top:2.5rem}.mt-6{margin-top:3rem}
+    .mb-2{margin-bottom:1rem}.mb-3{margin-bottom:1.5rem}
+    .bg-dark{background:var(--gray-950)}.bg-light{background:var(--gray-50)}
+    .divider { height: 1px; background: var(--gray-100); margin: 0; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1{transition-delay:0.1s}.reveal-delay-2{transition-delay:0.2s}.reveal-delay-3{transition-delay:0.3s}.reveal-delay-4{transition-delay:0.4s}
+  3:Tdbe6,<!-- ═══════════════════════════════════════════════
+     LOCAL PROXIMITY BANNER
+════════════════════════════════════════════════ -->
+<div id="proximity-banner">
+  <div class="container">
+    <div class="proximity-inner">
+      <span>🏠 Serving Bushey (WD23) from our Watford base — just minutes away via the A41.</span>
+      <a href="#quote-form">Get a Free Quote →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════ -->
+
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="BMB Renovation Home">
+        <span class="logo-bmb">BMB</span>
+        <span class="logo-reno"> Renovation</span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/portfolio" class="nav-link">Portfolio</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:+447775758717" class="header-call">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" role="navigation" aria-label="Mobile menu">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="/services" class="mobile-nav-link">Services</a>
+    <a href="/portfolio" class="mobile-nav-link">Portfolio</a>
+    <a href="/contact" class="mobile-nav-link">Contact</a>
+    <a href="tel:+447775758717" class="mobile-cta">📞 Call +44 7775 758 717</a>
+  </div>
+
+<!-- ═══════════════════════════════════════════════
+     1. HERO
+════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero section">
+  <div class="hero-bg">
+    <img src="/images/02_kitchen_marble.jpg"
+         alt="Modern kitchen renovation in Bushey by BMB Renovation"
+         loading="eager" fetchpriority="high" />
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content section-lg">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow">
+            <div class="hero-eyebrow-dot"></div>
+            Kitchen Renovation Specialists · Serving Bushey WD23
+          </div>
+          <h1 class="hero-h1">
+            Expert Kitchen<br />
+            Renovation in<br />
+            <span>Bushey</span>
+          </h1>
+          <p class="hero-sub">
+            BMB Renovation is based minutes away in Watford — your local kitchen renovation team for Bushey and the WD23 area. Complete kitchen transformations, from the first design discussion to the final finish.
+          </p>
+          <div class="hero-btns">
+            <a href="#quote-form" class="btn btn-gold btn-lg">
+              Get a Free Quote
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +44 7775 758 717
+            </a>
+          </div>
+          <div class="trust-badges">
+            <span class="badge"><span class="badge-check">✓</span> WD23 Coverage</span>
+            <span class="badge"><span class="badge-check">✓</span> Watford-Based Team</span>
+            <span class="badge"><span class="badge-check">✓</span> Kitchen Specialists</span>
+            <span class="badge"><span class="badge-check">✓</span> Premium Finish</span>
+            <span class="badge"><span class="badge-check">✓</span> Free No-Obligation Quote</span>
+          </div>
+        </div>
+
+        <div id="quote-form">
+          <div class="quote-card">
+            <p class="quote-card-heading">Get Your Free Kitchen Renovation Quote in Bushey</p>
+            <p class="quote-card-sub">Free quote · No obligation · Local team, minutes away</p>
+            <form id="hero-form" novalidate>
+              <div class="form-row form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="f-name">Your Name *</label>
+                  <input class="form-input" id="f-name" name="name" type="text" placeholder="John Smith" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="f-phone">Phone Number *</label>
+                  <input class="form-input" id="f-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-email">Email Address</label>
+                  <input class="form-input" id="f-email" name="email" type="email" placeholder="john@example.com" />
+                </div>
+              </div>
+              <div class="form-row form-row-2 mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-project">Project Type</label>
+                  <select class="form-select" id="f-project" name="project">
+                    <option value="">Select project type</option>
+                    <option>Full Kitchen Renovation</option>
+                    <option>Kitchen Fitting</option>
+                    <option>Worktop Replacement</option>
+                    <option>Kitchen Tiling / Splashback</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="f-postcode">Location / Postcode</label>
+                  <input class="form-input" id="f-postcode" name="postcode" type="text" placeholder="e.g. WD23 1AB" />
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-message">Tell Us About Your Kitchen</label>
+                  <textarea class="form-textarea" id="f-message" name="message" placeholder="Describe your kitchen project — size, style, what you want to achieve..."></textarea>
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-contact-time">Preferred Contact Time</label>
+                  <select class="form-select" id="f-contact-time" name="contact_time">
+                    <option value="">Any time</option>
+                    <option>Morning (8am–12pm)</option>
+                    <option>Afternoon (12pm–5pm)</option>
+                    <option>Evening (after 5pm)</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="form-submit">Request Free Quote →</button>
+              <p class="form-note">
+                <strong>Free quote. No obligation. Friendly advice.</strong><br />
+                Your details are safe with us. We will only contact you about your renovation enquiry.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════════ -->
+<div class="stats-bar" aria-label="Company statistics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-number">15+</div><p class="stat-label">Years Experience</p></div>
+      <div class="stat-item reveal reveal-delay-1"><div class="stat-number">2K+</div><p class="stat-label">Projects Completed</p></div>
+      <div class="stat-item reveal reveal-delay-2"><div class="stat-number">3K+</div><p class="stat-label">Happy Customers</p></div>
+      <div class="stat-item reveal reveal-delay-3"><div class="stat-number">5★</div><p class="stat-label">Customer Rating</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     3. PROBLEM / INTENT SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="problem-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Sound Familiar?</span>
+      <h2 id="problem-heading">Looking for a Quality Kitchen Renovation in Bushey?</h2>
+      <p>Bushey is a well-kept residential area where homeowners take real pride in their properties. If the kitchen has been left behind while the rest of the house has been upgraded, that is exactly where we come in.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">🍳</div>
+        <h3>A Kitchen That Hasn't Kept Up With the Rest of Your Home</h3>
+        <p>The living room is lovely, the bathrooms are done — but the kitchen still has its original 1990s units. It is a common story in Bushey, and it is a satisfying one to fix.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-1">
+        <div class="problem-icon">✨</div>
+        <h3>You Want a Finish That Matches Your Property</h3>
+        <p>Bushey homes command high standards. You are not looking for a budget job — you want quality materials, clean lines, and a team who takes real care over the details.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-2">
+        <div class="problem-icon">🏡</div>
+        <h3>Thinking About Opening Up the Space</h3>
+        <p>Kitchen-diners and open-plan layouts are popular in WD23 family homes. We can help you rethink the layout, relocate the plumbing, and create something that genuinely works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     4. WHAT IS INCLUDED
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="includes-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">What's Included</span>
+      <h2 id="includes-heading">A Complete Kitchen Renovation Service for Bushey Homes</h2>
+      <p>We handle the whole project — from initial design ideas to the final clean. No need to manage multiple contractors. One team, every stage, one result.</p>
+    </div>
+    <div class="includes-grid">
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Kitchen planning and layout design</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Old kitchen removal and responsible disposal</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>New cabinet and unit fitting</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Worktop measuring, cutting and installation</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Splashback tiling and wall preparation</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>All plumbing — sink, taps and dishwasher connections</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Electrical finishing — sockets and under-cabinet lighting</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Kitchen flooring installation</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>Appliance fitting and integration</p></div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <a href="#contact-form" class="btn btn-gold">Get a Free Kitchen Renovation Quote for Your Bushey Home</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     5. WHY CHOOSE BMB RENOVATION
+════════════════════════════════════════════════ -->
+<section class="section bg-dark" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label" style="color:var(--gold)">Why Choose Us</span>
+      <h2 id="why-heading" style="color:#fff">Why Bushey Homeowners Choose BMB Renovation</h2>
+      <p style="color:#9CA3AF">We are based in Watford, just a few minutes from Bushey. That means quick response times, genuine local knowledge, and a team that values its reputation in the WD postcode area.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">📍</div>
+        <h3>Minutes from Bushey</h3>
+        <p>Our Watford base is right on Bushey's doorstep. We know the WD23 area well and can visit your home quickly for a free consultation.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">✨</div>
+        <h3>Quality That Matches Your Home</h3>
+        <p>Bushey properties deserve a premium finish. We take the time to get the details right — from cabinet alignment to worktop joins and splashback grout lines.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🍽️</div>
+        <h3>Full Kitchen Service</h3>
+        <p>Planning, units, worktops, plumbing, tiling, flooring and appliance fitting — all handled by our own team. No subcontractors, no coordination headaches.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">💬</div>
+        <h3>Transparent Throughout</h3>
+        <p>Clear written quote before work starts. Regular updates during the project. No surprises at the end. That is just how we work.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🏆</div>
+        <h3>15+ Years Experience</h3>
+        <p>Over a decade and a half of kitchen and home renovation. We have seen every layout challenge a WD23 property can throw at us.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">💰</div>
+        <h3>Budget-Flexible</h3>
+        <p>We work with homeowners at different price points — from well-considered refreshes to full premium transformations. Your budget shapes the brief.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">📋</div>
+        <h3>Free Home Visit</h3>
+        <p>We come to you in Bushey, look at the kitchen, take measurements and discuss your vision — all at no charge and with no obligation.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">🔄</div>
+        <h3>End-to-End Project</h3>
+        <p>From the first design discussion to the final handover walk-through — one team manages every element, so nothing falls through the cracks.</p>
+      </div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <a href="#quote-form" class="btn btn-gold btn-lg">Start with a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     6. TRUST SECTION
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">You Can Count On Us</span>
+      <h2 id="trust-heading">Trusted by Homeowners Across Bushey &amp; the WD23 Area</h2>
+      <p>Inviting a renovation team into your home is a big decision. Here is how we make sure it is the right one.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-emoji">📝</div>
+        <h3>Written Quote Before We Start</h3>
+        <p>Every project starts with a clear, itemised written quote. You know exactly what everything costs before a single unit is touched.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-1">
+        <div class="trust-emoji">🤝</div>
+        <h3>Respectful of Your Home</h3>
+        <p>We treat every Bushey property with care — protecting floors, keeping the site tidy, and being mindful of daily life throughout the project.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-2">
+        <div class="trust-emoji">🧹</div>
+        <h3>Clean Site, Every Day</h3>
+        <p>Renovation work is unavoidably disruptive, but we minimise it. At the end of each day, the site is tidied. At the end of the job, everything is cleaned.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-3">
+        <div class="trust-emoji">🎯</div>
+        <h3>Finishing That Stands Up</h3>
+        <p>Grout alignment, silicone lines, plinth fitting, worktop edge details — the things that separate a properly finished kitchen from one that just looks finished.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     7. PORTFOLIO / PROJECT EXAMPLES
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="portfolio-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Our Work</span>
+      <h2 id="portfolio-heading">Kitchen Renovation Projects — Examples of Our Work Near Bushey</h2>
+      <p>Bushey kitchens come in all shapes and eras. Here are representative examples of the kitchen renovation projects we carry out across WD23 and nearby. <em>Images represent our typical project standard.</em></p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal">
+        <div class="portfolio-img">
+          <img src="/images/02_kitchen_marble.jpg" alt="Modern kitchen renovation in Bushey WD23" loading="lazy" />
+          <span class="portfolio-badge">Kitchen Renovation</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Bushey WD23</p>
+          <h3>Detached Family Home — Full Kitchen Transformation</h3>
+          <p>Complete strip-out of a 1990s fitted kitchen in a WD23 detached. New handleless units, quartz worktop, integrated oven and dishwasher, LED under-cabinet lighting and large-format floor tiles throughout.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-1">
+        <div class="portfolio-img">
+          <img src="/images/01_hero_luxury_interior.jpg" alt="Premium kitchen renovation with luxury finishes" loading="lazy" />
+          <span class="portfolio-badge">Premium Finish</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Bushey Heath WD23</p>
+          <h3>Period Semi — Kitchen-Diner Renovation</h3>
+          <p>Tired galley kitchen in a Bushey Heath semi opened up to create a kitchen-diner. Plumbing relocated, new shaker-style units, granite worktop, and a splashback tiled in a classic metro pattern. Warm and practical.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-2">
+        <div class="portfolio-img">
+          <img src="/images/09_tile_work.jpg" alt="Kitchen tiling and splashback in Bushey" loading="lazy" />
+          <span class="portfolio-badge">Landlord Renovation</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Bushey Mead WD23</p>
+          <h3>Buy-to-Let Kitchen Refresh</h3>
+          <p>Practical kitchen renovation for a Bushey landlord. Replacement units and durable worktop, new tiled splashback, vinyl flooring and updated plumbing — built to last and easy to maintain between tenancies.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <a href="/portfolio" class="btn btn-dark">View Full Portfolio</a>
+      &nbsp;&nbsp;
+      <a href="#quote-form" class="btn btn-gold">Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     8. BEFORE AND AFTER
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="ba-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Transformation</span>
+      <h2 id="ba-heading">What a Proper Kitchen Renovation Looks Like in a Bushey Home</h2>
+      <p>Many Bushey properties have excellent bones but kitchens that have simply been left to age. The right renovation team can make a dramatic difference — not just cosmetically, but in how the space actually works for you.</p>
+    </div>
+    <div class="before-after-grid">
+      <div class="reveal">
+        <div class="ba-image-wrap">
+          <img src="/images/02_kitchen_marble.jpg"
+               alt="Kitchen renovation transformation in Bushey WD23 — before and after"
+               loading="lazy" />
+          <span class="ba-label ba-label-before">Before</span>
+          <span class="ba-label ba-label-after">After</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <span class="section-label">The BMB Renovation Difference</span>
+        <h2 style="font-size:1.875rem; margin-top:0.5rem; margin-bottom:1.25rem; color:var(--gray-900)">From Dated Units to a Kitchen You Love</h2>
+        <p style="margin-bottom:1.25rem;">A typical Bushey kitchen renovation involves a full strip-out, new units and worktops chosen to match the character of the property, updated plumbing, a fresh splashback, and new flooring. The result is a kitchen that finally matches the quality of the rest of the home.</p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.75rem; margin-bottom:2rem;">
+          <li style="display:flex;gap:0.625rem;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span style="color:var(--gray-600);font-size:0.9375rem;">Free design and layout consultation included</span></li>
+          <li style="display:flex;gap:0.625rem;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span style="color:var(--gray-600);font-size:0.9375rem;">All trades handled by our own team — no delays</span></li>
+          <li style="display:flex;gap:0.625rem;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span style="color:var(--gray-600);font-size:0.9375rem;">Materials and finishes chosen to suit your home</span></li>
+          <li style="display:flex;gap:0.625rem;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span style="color:var(--gray-600);font-size:0.9375rem;">Checked and handed over to a premium standard</span></li>
+        </ul>
+        <a href="#quote-form" class="btn btn-gold btn-lg">Request a Free Quote for Your Kitchen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     9. PROCESS
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">How It Works</span>
+      <h2 id="process-heading">Your Kitchen Renovation in Bushey — Step by Step</h2>
+      <p>A kitchen renovation should be exciting, not stressful. Here is how our process works — from your first call to the day you use your new kitchen for the first time.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-number">1</div>
+        <h3>Get in Touch</h3>
+        <p>Call us or complete the free quote form. Tell us a bit about your kitchen and where you are in Bushey.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-number">2</div>
+        <h3>Free Home Visit</h3>
+        <p>We drive over from Watford — it is only minutes. We look at your kitchen, take measurements, and discuss what you want to achieve.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-number">3</div>
+        <h3>Clear Written Quote</h3>
+        <p>You receive a full itemised quote with everything costed clearly. No hidden fees. You take your time and decide when you are ready.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-number">4</div>
+        <h3>Renovation Begins</h3>
+        <p>Our team works carefully and cleanly in your Bushey home. Regular updates throughout — you always know where we are up to.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="process-number">5</div>
+        <h3>Final Check &amp; Handover</h3>
+        <p>We walk through the finished kitchen with you, check every detail, and hand over clean, complete and ready to enjoy.</p>
+      </div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <a href="#quote-form" class="btn btn-gold">Start Step 1 — Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     10. LOCAL AREA COVERAGE
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="areas-heading">
+  <div class="container">
+    <div style="display:grid; gap:3rem; align-items:center;" class="before-after-grid">
+      <div class="reveal">
+        <span class="section-label">Service Area</span>
+        <h2 id="areas-heading" style="color:var(--gray-900); margin-top:0.5rem; margin-bottom:1.25rem;">Kitchen Renovation in Bushey &amp; the WD23 Area</h2>
+        <p style="margin-bottom:1.25rem;">We cover all of Bushey — Bushey village, Bushey Heath, Bushey Mead and the surrounding WD23 postcodes. Our Watford base means we are only minutes away, which makes visiting for a free consultation, checking on progress, and responding to any queries fast and straightforward.</p>
+        <p style="margin-bottom:1.5rem;">We also work with homeowners in nearby Watford, Rickmansworth, Croxley Green, Borehamwood, St Albans and Harrow — so if you have friends or family elsewhere in Hertfordshire or Middlesex who need a kitchen renovation team, we can help them too.</p>
+        <a href="#quote-form" class="btn btn-gold">Check if We Cover Your Area</a>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p style="font-size:0.875rem; font-weight:700; color:var(--gray-500); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1rem;">Areas We Serve</p>
+        <div class="areas-flex">
+          <span class="area-chip primary">Bushey WD23</span>
+          <span class="area-chip primary">Bushey Heath WD23</span>
+          <span class="area-chip primary">Bushey Mead WD23</span>
+          <span class="area-chip">Watford WD17</span>
+          <span class="area-chip">Watford WD24</span>
+          <span class="area-chip">Rickmansworth WD3</span>
+          <span class="area-chip">Croxley Green</span>
+          <span class="area-chip">Borehamwood WD6</span>
+          <span class="area-chip">St Albans</span>
+          <span class="area-chip">Harrow</span>
+          <span class="area-chip">Hertfordshire</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     11. PRICE / FREE QUOTE SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="price-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Pricing Guide</span>
+      <h2 id="price-heading">How Much Does a Kitchen Renovation Cost in Bushey?</h2>
+      <p>Kitchen renovation costs vary depending on the size of the kitchen, the units and worktops you choose, and how much plumbing or electrical work is involved. The best way to get an accurate figure for your Bushey home is a free, no-obligation quote from our team.</p>
+    </div>
+    <div class="price-factors reveal">
+      <div class="price-factor"><div class="pf-dot"></div><p>Size of the kitchen and number of units required</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Worktop material — laminate, quartz, granite or solid wood</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Plumbing changes — sink relocation or additional connections</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Splashback tiling — material, tile format and complexity</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Flooring type and the area to be covered</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Appliance supply, fitting, or integration requirements</p></div>
+    </div>
+    <div class="cta-strip mt-5 reveal">
+      <h3>The Simplest Way to Know What Your Kitchen Will Cost</h3>
+      <p>Request a free quote from BMB Renovation. We will visit your home in Bushey, have a proper look at the space, and give you a clear, honest figure — no pressure, no commitment needed.</p>
+      <div class="cta-strip-btns">
+        <a href="#quote-form" class="btn btn-gold">Get My Free Quote</a>
+        <a href="tel:+447775758717" class="btn btn-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Speak to Our Team
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     12. FAQs
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="faq-heading">
+  <div class="container" style="max-width:800px;">
+    <div class="section-header reveal">
+      <span class="section-label">FAQs</span>
+      <h2 id="faq-heading">Frequently Asked Questions — Kitchen Renovation Bushey</h2>
+    </div>
+    <div class="faq-list" id="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How much does a kitchen renovation cost in Bushey?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Costs vary widely depending on kitchen size, unit quality, worktop material, and how much plumbing or tiling is involved. A straightforward update can start from a few thousand pounds; a full premium transformation will be more. The most accurate way to find out is a free, no-obligation home visit and quote from BMB Renovation — we will give you a clear, honest figure based on your actual kitchen in Bushey.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is the quote genuinely free, and do I have to commit?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — completely free, no obligation whatsoever. We will come to your home in Bushey, look at the kitchen, discuss your ideas and budget, and provide a full written quote. You are under no pressure to proceed. We are happy to answer questions and give advice even if you are not yet sure what direction you want to go.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How long does a kitchen renovation take in Bushey?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>A standard full kitchen renovation typically takes between 5 and 14 working days, depending on the scope of the project. More complex work — such as layout changes or plumbing relocation — may take slightly longer. We will give you a clear timeline before work starts so you can plan accordingly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can you help with a kitchen-diner or open-plan layout in my Bushey home?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — this is something we do regularly in WD23 properties. Opening up a galley kitchen to create a kitchen-diner involves relocating plumbing, planning new unit positions, and sometimes adjusting lighting and flooring to flow through the space. We will assess what is possible during your free home visit and talk through the options for your property.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you supply kitchen units, or can I source my own?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We are flexible on this. Some Bushey homeowners prefer to choose their own units from suppliers like Howdens, IKEA or Wren — we are happy to fit them. Others prefer us to manage the full supply and fit. Both approaches work well; we just need to know which you prefer so we can quote accordingly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you handle the plumbing, tiling and electrical work as part of the renovation?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — our team covers all the trades needed for a complete kitchen renovation: plumbing, tiling, electrical finishing and flooring. You do not need to find or coordinate any additional contractors. One team manages the whole project from start to finish.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you work with landlords and rental properties in Bushey?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. We work with both homeowners and landlords across Bushey and the WD23 area. For rental properties, we focus on durable, practical finishes that stand up to use and are easy to maintain. If you have a buy-to-let property in Bushey that needs a kitchen refresh, get in touch for a free quote.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Which parts of Bushey do you cover?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We cover all of Bushey and the WD23 postcode area, including Bushey village, Bushey Heath and Bushey Mead. We are also based in Watford, so the whole WD area is easily accessible for us. If you are not sure whether we cover your exact location, just call or drop us a message.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I still live at home while you are doing the kitchen renovation?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — most of our clients remain in their homes during the renovation. The kitchen will be out of use for the duration of the project, but we work efficiently to keep that period as short as possible. We will give you a clear timeline before we start so you can plan for the temporary disruption, and most homeowners find the end result very much worth a week or two without the kitchen.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     13. CONTACT / QUOTE FORM SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" id="contact-form" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="section-label">Get in Touch</span>
+        <h2 id="contact-heading" style="color:var(--gray-900); margin-top:0.5rem; margin-bottom:1rem;">Get a Free Kitchen Renovation Quote in Bushey</h2>
+        <p style="margin-bottom:2rem;">We are just minutes away in Watford. Tell us about your kitchen renovation in Bushey and we will arrange a free home visit, take a proper look, and give you a clear, honest no-obligation quote.</p>
+        <div class="contact-info-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <p class="ci-label">Phone</p>
+            <p class="ci-value"><a href="tel:+447775758717">+44 7775 758 717</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">✉️</div>
+          <div>
+            <p class="ci-label">Email</p>
+            <p class="ci-value"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">🕐</div>
+          <div>
+            <p class="ci-label">Working Hours</p>
+            <p class="ci-value">Monday – Saturday: 8:00 AM – 5:00 PM</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <p class="ci-label">Based In</p>
+            <p class="ci-value">157 Judge Street, Watford, WD24 5AN<br/>Serving Bushey &amp; the WD23 area</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="quote-card">
+          <p class="quote-card-heading">Request Your Free Kitchen Renovation Quote</p>
+          <p class="quote-card-sub">Fill in the form and we will get back to you promptly.</p>
+          <form id="contact-quote-form" novalidate>
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="c-name">Your Name *</label>
+                <input class="form-input" id="c-name" name="name" type="text" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-phone">Phone *</label>
+                <input class="form-input" id="c-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+              </div>
+            </div>
+            <div class="form-row mt-1">
+              <div class="form-group">
+                <label class="form-label" for="c-email">Email Address</label>
+                <input class="form-input" id="c-email" name="email" type="email" placeholder="john@example.com" />
+              </div>
+            </div>
+            <div class="form-row form-row-2 mt-1">
+              <div class="form-group">
+                <label class="form-label" for="c-project">Project Type</label>
+                <select class="form-select" id="c-project" name="project">
+                  <option value="">Select type</option>
+                  <option>Full Kitchen Renovation</option>
+                  <option>Kitchen Fitting</option>
+                  <option>Worktop Replacement</option>
+                  <option>Kitchen Tiling / Splashback</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-postcode">Postcode</label>
+                <input class="form-input" id="c-postcode" name="postcode" type="text" placeholder="e.g. WD23 1AB" />
+              </div>
+            </div>
+            <div class="form-row mt-1">
+              <div class="form-group">
+                <label class="form-label" for="c-message">Your Message</label>
+                <textarea class="form-textarea" id="c-message" name="message" placeholder="Tell us about your kitchen in Bushey — what you want to change, the style you have in mind, any specific requirements..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="form-submit">Request Free Quote →</button>
+            <p class="form-note">Free quote · No obligation · Your details stay private.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     14. FINAL CTA
+════════════════════════════════════════════════ -->
+<section class="final-cta-section" aria-labelledby="final-cta-heading">
+  <div class="final-cta-bg">
+    <img src="/images/15_elegant_hallway.jpg"
+         alt="Premium kitchen renovation by BMB Renovation Bushey" loading="lazy" />
+  </div>
+  <div class="final-cta-overlay"></div>
+  <div class="container final-cta-content reveal">
+    <span class="section-label">Ready to Get Started?</span>
+    <h2 id="final-cta-heading">
+      Ready to Transform Your <span>Kitchen in Bushey?</span>
+    </h2>
+    <p>Contact BMB Renovation today for a free, no-obligation quote. Whether you are renovating the family kitchen, upgrading a rental property, or planning an open-plan transformation — we are just minutes away in Watford and ready to help.</p>
+    <div class="final-cta-btns">
+      <a href="#quote-form" class="btn btn-gold btn-lg">Get a Free Quote</a>
+      <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call +44 7775 758 717
+      </a>
+    </div>
+    <p class="final-trust-line">
+      <span>Serving Bushey &amp; WD23</span> &nbsp;•&nbsp; <span>Free quote</span> &nbsp;•&nbsp; <span>No obligation</span> &nbsp;•&nbsp; <span>Just minutes from our Watford base</span>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div>
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;">BMB</span>
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:300;color:var(--gold);"> Renovation</span>
+        </div>
+        <p>We specialise in bespoke home interior renovations, combining elegance and functionality to create timeless living spaces across Watford, Bushey and the surrounding area.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/people/BMB-Renovation/61560985672329/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/bmb_renovation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">in</a>
+          <a href="https://x.com/bmb_renovation" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="/services#kitchen">Kitchen Renovation</a></li>
+          <li><a href="/services#bathroom">Bathroom Renovation</a></li>
+          <li><a href="/services#house-renovation">House Renovation</a></li>
+          <li><a href="/services#painting">Painting &amp; Decorating</a></li>
+          <li><a href="/services#loft">Loft Conversion</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <p class="footer-contact-text">157 Judge Street, Watford, Hertfordshire, WD24 5AN</p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📞</span>
+          <p class="footer-contact-text"><a href="tel:+447775758717">+44 7775 758 717</a></p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉️</span>
+          <p class="footer-contact-text"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">🕐</span>
+          <p class="footer-contact-text">Mon–Sat: 8:00 AM – 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BMB Renovation. All Rights Reserved. | <a href="/" style="color:#9CA3AF;">bmbrenovation.co.uk</a></p>
+      <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     STICKY MOBILE CTA
+════════════════════════════════════════════════ -->
+<div id="sticky-cta" role="complementary" aria-label="Quick action buttons">
+  <a href="#quote-form" class="sticky-btn sticky-quote">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+    Free Quote
+  </a>
+  <a href="tel:+447775758717" class="sticky-btn sticky-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════ -->
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  ['hero-form', 'contact-quote-form'].forEach(id => {
+    const form = document.getElementById(id);
+    if (!form) return;
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = form.querySelector('[name="name"]').value.trim();
+      const phone = form.querySelector('[name="phone"]').value.trim();
+      if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+      form.innerHTML = `
+        <div style="text-align:center;padding:2.5rem 1rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name}!</h3>
+          <p style="color:#6B7280;font-size:0.9375rem;">We have received your enquiry and will be in touch shortly to discuss your kitchen renovation in Bushey.</p>
+          <a href="tel:+447775758717" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.875rem 1.75rem;background:#C8A97E;color:#fff;border-radius:9999px;font-weight:700;font-size:0.9375rem;">📞 Call us now: +44 7775 758 717</a>
+        </div>`;
+    });
+  });
+</script>
+
+<!-- ═══════════════════════════════════════════════
+     GOOGLE ADS ANNOTATIONS (hidden — for reference)
+─────────────────────────────────────────────────
+Target Keyword: kitchen renovation Bushey
+URL Slug: /kitchen-renovation-bushey
+
+HEADLINE IDEAS:
+1. Kitchen Renovation Bushey | Free Quote
+2. Bushey Kitchen Renovation Specialists
+3. Transform Your Kitchen in Bushey
+4. Free Quote – Kitchen Renovation Bushey
+5. Local Kitchen Team Serving Bushey WD23
+6. Premium Kitchen Renovation Bushey
+7. New Kitchen Bushey – No-Obligation Quote
+8. Kitchen Renovation Bushey – Local Team
+9. Bushey Kitchen Makeover | BMB Renovation
+10. Get a Free Kitchen Quote in Bushey
+
+DESCRIPTION IDEAS:
+1. Expert kitchen renovation in Bushey WD23. BMB Renovation is based in nearby Watford — full transformations, tiling, fitting, worktops. Free quote. Call +44 7775 758 717.
+2. Premium kitchen renovation serving Bushey WD23. Watford-based team, just minutes away. Free no-obligation quote. Homeowners and landlords welcome.
+3. Looking for kitchen renovation in Bushey? BMB Renovation delivers a premium finish — units, worktops, plumbing, tiling, flooring. Request your free quote today.
+4. Bushey WD23 kitchen renovation specialists. Design, units, worktops, plumbing, tiling and appliance fitting. Free quote — no pressure, no obligation.
+
+SUGGESTED KEYWORDS:
+Exact: [kitchen renovation Bushey], [kitchen renovation in Bushey], [Bushey kitchen renovation]
+Phrase: "kitchen renovation Bushey", "kitchen fitting Bushey", "kitchen refurbishment Bushey WD23"
+Local intent: kitchen renovation near me Bushey, local kitchen team WD23, kitchen fitter Bushey
+WD postcode: kitchen renovation WD23, kitchen fitting WD23 Bushey
+
+NEGATIVE KEYWORDS:
+jobs, salary, vacancy, DIY, how to, tutorial, course, training, YouTube, images only,
+second hand, used kitchen, cheap tools, free materials, template, meaning,
+council kitchen, kitchen ideas only, kitchen inspiration only
+════════════════════════════════════════════════ -->4:T9cb,const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  ['hero-form', 'contact-quote-form'].forEach(id => {
+    const form = document.getElementById(id);
+    if (!form) return;
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = form.querySelector('[name="name"]').value.trim();
+      const phone = form.querySelector('[name="phone"]').value.trim();
+      if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+      form.innerHTML = `
+        <div style="text-align:center;padding:2.5rem 1rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name}!</h3>
+          <p style="color:#6B7280;font-size:0.9375rem;">We have received your enquiry and will be in touch shortly to discuss your kitchen renovation in Bushey.</p>
+          <a href="tel:+447775758717" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.875rem 1.75rem;background:#C8A97E;color:#fff;border-radius:9999px;font-weight:700;font-size:0.9375rem;">📞 Call us now: +44 7775 758 717</a>
+        </div>`;
+    });
+  });0:["J4NM-S4kEXF-15xO6ltJb",[[["",{"children":["kitchen-renovation-bushey",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["kitchen-renovation-bushey",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","kitchen-renovation-bushey","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c93b10a3daa1778c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
+a:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Kitchen Renovation Bushey | Free Quote | BMB Renovation"}],["$","meta","3",{"name":"description","content":"Expert kitchen renovation in Bushey. BMB Renovation is based minutes away in Watford — full kitchen transformations for WD23 homes. Free no-obligation quote. Call +44 7775 758 717."}],["$","link","4",{"rel":"canonical","href":"https://bmbrenovation.co.uk/kitchen-renovation-bushey"}],["$","meta","5",{"property":"og:title","content":"Kitchen Renovation Bushey | Free Quote | BMB Renovation"}],["$","meta","6",{"property":"og:description","content":"Expert kitchen renovation in Bushey. BMB Renovation is based minutes away in Watford — full kitchen transformations for WD23 homes. Free no-obligation quote. Call +44 7775 758 717."}],["$","meta","7",{"property":"og:image","content":"https://bmbrenovation.co.uk/images/02_kitchen_marble.jpg"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Kitchen Renovation Bushey | Free Quote | BMB Renovation"}],["$","meta","10",{"name":"twitter:description","content":"Expert kitchen renovation in Bushey. BMB Renovation is based minutes away in Watford — full kitchen transformations for WD23 homes. Free no-obligation quote. Call +44 7775 758 717."}],["$","meta","11",{"name":"twitter:image","content":"https://bmbrenovation.co.uk/images/02_kitchen_marble.jpg"}],["$","link","12",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","13",{"rel":"icon","href":"/favicon.svg"}],["$","meta","14",{"name":"next-size-adjust"}]]
+1:null

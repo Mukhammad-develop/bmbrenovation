@@ -1,0 +1,1250 @@
+5:I[4707,[],""]
+6:I[6423,[],""]
+7:I[2798,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ThemeProvider"]
+8:I[3606,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"Toaster"]
+9:I[4215,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ChunkLoadErrorHandler"]
+2:T610e,
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: #141414; background: #fff; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    :root {
+      --gold: #C8A97E; --gold-dark: #B8996E; --gold-light: rgba(200,169,126,0.12);
+      --dark: #0a0a0a; --gray-950: #0a0a0a; --gray-900: #111827;
+      --gray-700: #374151; --gray-600: #4B5563; --gray-500: #6B7280;
+      --gray-400: #9CA3AF; --gray-200: #E5E7EB; --gray-100: #F3F4F6; --gray-50: #F9FAFB;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0/0.04),0 1px 3px 0 rgb(0 0 0/0.08);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0/0.06),0 2px 4px -2px rgb(0 0 0/0.06);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0/0.08),0 4px 6px -4px rgb(0 0 0/0.06);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px -6px rgb(0 0 0/0.06);
+    }
+
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.025em; line-height: 1.15; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.75rem); font-weight: 800; }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; }
+    h3 { font-size: 1.25rem; font-weight: 700; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    p  { line-height: 1.7; color: var(--gray-600); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+    @media(min-width:640px){ .container { padding: 0 1.5rem; } }
+    .section { padding: 5rem 0; }
+    .section-sm { padding: 3.5rem 0; }
+    .section-lg { padding: 6rem 0; }
+    @media(min-width:768px){ .section { padding: 7rem 0; } }
+
+    .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 2rem; border-radius: 9999px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.9375rem; cursor: pointer; border: none; transition: all 0.2s ease; white-space: nowrap; }
+    .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 4px 16px rgba(200,169,126,0.35); }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .btn-dark { background: var(--gray-900); color: #fff; }
+    .btn-dark:hover { background: #1f2937; transform: translateY(-1px); }
+    .btn-ghost { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+    .btn-sm { padding: 0.625rem 1.375rem; font-size: 0.875rem; }
+    .btn-lg { padding: 1rem 2.25rem; font-size: 1rem; }
+
+    #site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 999; transition: background 0.3s ease, box-shadow 0.3s ease; }
+    #site-header.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo { display: flex; align-items: center; }
+    .logo-bmb { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; transition: color 0.3s; }
+    #site-header.scrolled .logo-bmb { color: var(--gray-900); }
+    .logo-reno { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 300; letter-spacing: -0.03em; color: var(--gold); margin-left: 4px; }
+    .header-nav { display: none; gap: 0.25rem; }
+    @media(min-width:1024px){ .header-nav { display: flex; } }
+    .nav-link { padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.88); transition: all 0.2s; }
+    .nav-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    #site-header.scrolled .nav-link { color: var(--gray-700); }
+    #site-header.scrolled .nav-link:hover { color: var(--gold); background: var(--gray-100); }
+    .header-cta { display: flex; align-items: center; gap: 0.75rem; }
+    .header-call { display: none; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; background: #fff; color: var(--gray-900); transition: all 0.2s; }
+    @media(min-width:640px){ .header-call { display: flex; } }
+    #site-header.scrolled .header-call { background: var(--gray-900); color: #fff; }
+    .header-call:hover { opacity: 0.9; transform: translateY(-1px); }
+    .hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; border: none; background: transparent; cursor: pointer; border-radius: 8px; padding: 8px; }
+    .hamburger span { display: block; height: 2px; width: 24px; border-radius: 2px; background: #fff; transition: all 0.3s; }
+    #site-header.scrolled .hamburger span { background: var(--gray-900); }
+    @media(min-width:1024px){ .hamburger { display: none; } }
+    #mobile-menu { display: none; background: #fff; border-top: 1px solid var(--gray-100); box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 1.5rem; }
+    #mobile-menu.open { display: block; }
+    .mobile-nav-link { display: block; padding: 0.75rem 1rem; font-size: 1rem; font-weight: 500; color: var(--gray-700); border-radius: 0.5rem; transition: all 0.2s; }
+    .mobile-nav-link:hover { color: var(--gold); background: var(--gold-light); }
+    .mobile-cta { display: block; margin-top: 1rem; padding: 0.875rem; text-align: center; background: var(--gray-900); color: #fff; border-radius: 0.75rem; font-weight: 700; font-size: 0.9375rem; }
+
+    #proximity-banner { background: var(--gold-light); border-bottom: 1px solid rgba(200,169,126,0.2); padding: 0.625rem 0; position: relative; z-index: 998; }
+    .proximity-inner { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; font-size: 0.8125rem; font-weight: 500; color: var(--gray-700); text-align: center; }
+    .proximity-inner a { color: var(--gold); font-weight: 700; }
+    .proximity-inner a:hover { text-decoration: underline; }
+
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.25) 100%); }
+    .hero-content { position: relative; z-index: 2; width: 100%; padding-top: 80px; }
+    .hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+    @media(min-width:1024px){ .hero-grid { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); font-size: 0.8125rem; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+    .hero-eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .hero-h1 { color: #fff; margin-bottom: 1.25rem; }
+    .hero-h1 span { color: var(--gold); }
+    .hero-sub { font-size: 1.0625rem; color: rgba(255,255,255,0.78); margin-bottom: 2rem; max-width: 460px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 0.875rem; margin-bottom: 2.5rem; }
+    .trust-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .badge { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.375rem 0.875rem; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(6px); font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.85); }
+    .badge-check { color: var(--gold); font-size: 0.875rem; }
+
+    .quote-card { background: #fff; border-radius: 1.25rem; padding: 2rem; box-shadow: var(--shadow-xl); }
+    .quote-card-heading { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.375rem; }
+    .quote-card-sub { font-size: 0.8125rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+    .form-row { display: grid; gap: 1rem; }
+    @media(min-width:480px){ .form-row-2 { grid-template-columns: 1fr 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.375rem; }
+    .form-label { font-size: 0.8125rem; font-weight: 600; color: var(--gray-700); }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--gray-200); border-radius: 0.625rem; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: var(--gray-900); background: #fff; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--gray-400); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,169,126,0.15); }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; padding: 0.9375rem; background: var(--gold); color: #fff; border: none; border-radius: 9999px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 16px rgba(200,169,126,0.35); margin-top: 0.5rem; }
+    .form-submit:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .form-note { font-size: 0.75rem; color: var(--gray-400); text-align: center; margin-top: 0.625rem; }
+    .form-note strong { color: var(--gray-500); }
+
+    .stats-bar { background: var(--gray-950); padding: 2.5rem 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; }
+    @media(min-width:768px){ .stats-grid { grid-template-columns: repeat(4,1fr); } }
+    .stat-item { text-align: center; }
+    .stat-number { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.25rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 0.8125rem; color: #9CA3AF; margin-top: 0.375rem; }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header h2 { color: var(--gray-900); margin-top: 0.5rem; }
+    .section-header p { max-width: 560px; margin: 1rem auto 0; }
+
+    .problem-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .problem-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .problem-grid { grid-template-columns: repeat(3,1fr); } }
+    .problem-card { background: var(--gray-50); border-radius: 1rem; padding: 1.75rem; border: 1px solid var(--gray-100); transition: box-shadow 0.2s, transform 0.2s; }
+    .problem-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .problem-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--gold-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.375rem; }
+    .problem-card h3 { color: var(--gray-900); font-size: 1.0625rem; margin-bottom: 0.5rem; }
+
+    .includes-grid { display: grid; gap: 0.75rem; }
+    @media(min-width:640px){ .includes-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .includes-grid { grid-template-columns: repeat(3,1fr); } }
+    .include-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 1.125rem 1.25rem; border-radius: 0.875rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); transition: border-color 0.2s; }
+    .include-item:hover { border-color: var(--gold); }
+    .include-check { width: 22px; height: 22px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.6875rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .include-item p { font-size: 0.9375rem; color: var(--gray-700); font-weight: 500; margin: 0; }
+
+    .why-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .why-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .why-grid { grid-template-columns: repeat(4,1fr); } }
+    .why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.75rem; transition: background 0.2s; }
+    .why-card:hover { background: rgba(255,255,255,0.1); }
+    .why-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(200,169,126,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.375rem; margin-bottom: 1.125rem; }
+    .why-card h3 { color: #fff; font-size: 1.0625rem; margin-bottom: 0.5rem; }
+    .why-card p { color: #9CA3AF; font-size: 0.875rem; }
+
+    .trust-grid { display: grid; gap: 1.25rem; }
+    @media(min-width:640px){ .trust-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .trust-grid { grid-template-columns: repeat(4,1fr); } }
+    .trust-card { border-radius: 1rem; padding: 1.75rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); text-align: center; transition: box-shadow 0.2s, transform 0.2s; }
+    .trust-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .trust-emoji { font-size: 2rem; margin-bottom: 0.75rem; }
+    .trust-card h3 { color: var(--gray-900); font-size: 1rem; margin-bottom: 0.375rem; }
+    .trust-card p { font-size: 0.875rem; color: var(--gray-500); margin: 0; }
+
+    .portfolio-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .portfolio-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .portfolio-grid { grid-template-columns: repeat(3,1fr); } }
+    .portfolio-card { border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-md); background: #fff; transition: transform 0.25s, box-shadow 0.25s; }
+    .portfolio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+    .portfolio-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+    .portfolio-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .portfolio-card:hover .portfolio-img img { transform: scale(1.05); }
+    .portfolio-badge { position: absolute; top: 0.875rem; left: 0.875rem; background: var(--gold); color: #fff; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .portfolio-body { padding: 1.375rem; }
+    .portfolio-location { font-size: 0.75rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.375rem; }
+    .portfolio-body h3 { color: var(--gray-900); margin-bottom: 0.5rem; }
+    .portfolio-body p { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1rem; }
+    .portfolio-cta { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; font-weight: 700; color: var(--gold); transition: gap 0.2s; }
+    .portfolio-card:hover .portfolio-cta { gap: 0.625rem; }
+
+    .before-after-grid { display: grid; gap: 2rem; align-items: center; }
+    @media(min-width:1024px){ .before-after-grid { grid-template-columns: 1fr 1fr; } }
+    .ba-image-wrap { position: relative; border-radius: 1.25rem; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-xl); }
+    .ba-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .ba-label { position: absolute; bottom: 1rem; padding: 0.4rem 1rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 700; }
+    .ba-label-before { left: 1rem; background: rgba(0,0,0,0.65); color: #fff; }
+    .ba-label-after { right: 1rem; background: var(--gold); color: #fff; }
+
+    .process-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .process-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .process-grid { grid-template-columns: repeat(5,1fr); } }
+    .process-step { position: relative; text-align: center; padding: 1.75rem 1.25rem; background: #fff; border-radius: 1rem; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); }
+    .process-number { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.125rem; font-weight: 800; margin: 0 auto 1rem; }
+    .process-step h3 { font-size: 0.9375rem; color: var(--gray-900); margin-bottom: 0.5rem; }
+    .process-step p { font-size: 0.8125rem; color: var(--gray-500); margin: 0; }
+
+    .areas-flex { display: flex; flex-wrap: wrap; gap: 0.625rem; margin-top: 1.5rem; }
+    .area-chip { padding: 0.5rem 1.125rem; border-radius: 9999px; background: var(--gold-light); color: var(--gray-700); font-size: 0.875rem; font-weight: 600; border: 1.5px solid rgba(200,169,126,0.25); transition: background 0.2s, color 0.2s; }
+    .area-chip:hover { background: var(--gold); color: #fff; }
+    .area-chip.primary { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+    .price-factors { display: grid; gap: 0.875rem; }
+    @media(min-width:640px){ .price-factors { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .price-factors { grid-template-columns: repeat(3,1fr); } }
+    .price-factor { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; border-radius: 0.875rem; background: var(--gray-50); border: 1px solid var(--gray-100); }
+    .pf-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .price-factor p { font-size: 0.9rem; color: var(--gray-700); margin: 0; font-weight: 500; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { border: 1.5px solid var(--gray-100); border-radius: 0.875rem; overflow: hidden; background: #fff; }
+    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: transparent; border: none; cursor: pointer; text-align: left; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: var(--gray-900); transition: color 0.2s; }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; font-weight: 300; color: var(--gray-600); transition: background 0.2s, transform 0.2s; }
+    .faq-item.open .faq-icon { background: var(--gold); color: #fff; transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; padding: 0 1.5rem; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.25rem; }
+    .faq-answer p { font-size: 0.9rem; color: var(--gray-600); margin: 0; }
+
+    .contact-grid { display: grid; gap: 2.5rem; align-items: start; }
+    @media(min-width:1024px){ .contact-grid { grid-template-columns: 2fr 3fr; gap: 4rem; } }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .ci-icon { width: 48px; height: 48px; border-radius: 0.75rem; background: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem; }
+    .ci-label { font-size: 0.8125rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.2rem; }
+    .ci-value { font-size: 0.9rem; color: var(--gray-600); }
+    .ci-value a { color: var(--gray-600); }
+    .ci-value a:hover { color: var(--gold); }
+
+    .final-cta-section { position: relative; padding: 6rem 0; overflow: hidden; }
+    .final-cta-bg { position: absolute; inset: 0; }
+    .final-cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .final-cta-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.87); }
+    .final-cta-content { position: relative; z-index: 2; text-align: center; }
+    .final-cta-content h2 { color: #fff; margin-bottom: 1.25rem; }
+    .final-cta-content h2 span { color: var(--gold); }
+    .final-cta-content p { color: rgba(255,255,255,0.72); max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.0625rem; }
+    .final-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+    .final-trust-line { font-size: 0.875rem; color: rgba(255,255,255,0.45); font-weight: 500; }
+    .final-trust-line span { color: var(--gold); font-weight: 700; }
+
+    footer { background: var(--gray-950); color: #fff; }
+    .footer-grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; padding: 4rem 0 2rem; }
+    @media(min-width:640px){ .footer-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.5fr; } }
+    .footer-brand p { color: #9CA3AF; font-size: 0.875rem; line-height: 1.7; margin: 1rem 0 1.5rem; }
+    .footer-social { display: flex; gap: 0.75rem; }
+    .footer-social a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: background 0.2s; }
+    .footer-social a:hover { background: var(--gold); }
+    .footer-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: #fff; margin-bottom: 1.25rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-col ul li a { font-size: 0.875rem; color: #9CA3AF; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
+    .footer-contact-icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
+    .footer-contact-text { font-size: 0.875rem; color: #9CA3AF; line-height: 1.5; }
+    .footer-contact-text a { color: #9CA3AF; transition: color 0.2s; }
+    .footer-contact-text a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 1.75rem 0; display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+    @media(min-width:640px){ .footer-bottom { flex-direction: row; justify-content: space-between; } }
+    .footer-bottom p { font-size: 0.8125rem; color: #6B7280; }
+    .back-to-top { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; border: none; cursor: pointer; transition: background 0.2s; }
+    .back-to-top:hover { background: var(--gold-dark); }
+
+    #sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 -4px 16px rgba(0,0,0,0.15); }
+    @media(min-width:1024px){ #sticky-cta { display: none; } }
+    .sticky-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .sticky-btn:hover { opacity: 0.9; }
+    .sticky-quote { background: var(--gold); color: #fff; }
+    .sticky-call { background: var(--gray-900); color: #fff; }
+
+    .cta-strip { background: var(--gold-light); border-radius: 1.25rem; padding: 2.5rem; text-align: center; border: 1.5px solid rgba(200,169,126,0.2); }
+    .cta-strip h3 { color: var(--gray-900); margin-bottom: 0.75rem; font-size: 1.375rem; }
+    .cta-strip p { color: var(--gray-600); font-size: 0.9375rem; margin-bottom: 1.5rem; }
+    .cta-strip-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.875rem; }
+
+    .text-center { text-align: center; }
+    .mt-1{margin-top:0.5rem}.mt-2{margin-top:1rem}.mt-3{margin-top:1.5rem}.mt-4{margin-top:2rem}.mt-5{margin-top:2.5rem}.mt-6{margin-top:3rem}
+    .mb-2{margin-bottom:1rem}.mb-3{margin-bottom:1.5rem}
+    .bg-dark{background:var(--gray-950)}.bg-light{background:var(--gray-50)}
+    .divider { height: 1px; background: var(--gray-100); margin: 0; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1{transition-delay:0.1s}.reveal-delay-2{transition-delay:0.2s}.reveal-delay-3{transition-delay:0.3s}.reveal-delay-4{transition-delay:0.4s}
+  3:Tde6a,<!-- ═══════════════════════════════════════════════
+     LOCAL PROXIMITY BANNER
+════════════════════════════════════════════════ -->
+<div id="proximity-banner">
+  <div class="container">
+    <div class="proximity-inner">
+      <span>🏠 Serving Croxley Green (WD3) from our Watford base — right on your doorstep.</span>
+      <a href="#quote-form">Get a Free Quote →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════ -->
+
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="BMB Renovation Home">
+        <span class="logo-bmb">BMB</span>
+        <span class="logo-reno"> Renovation</span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/portfolio" class="nav-link">Portfolio</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:+447775758717" class="header-call">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" role="navigation" aria-label="Mobile menu">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="/services" class="mobile-nav-link">Services</a>
+    <a href="/portfolio" class="mobile-nav-link">Portfolio</a>
+    <a href="/contact" class="mobile-nav-link">Contact</a>
+    <a href="tel:+447775758717" class="mobile-cta">📞 Call +44 7775 758 717</a>
+  </div>
+
+<!-- ═══════════════════════════════════════════════
+     1. HERO
+════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero section">
+  <div class="hero-bg">
+    <img src="/images/02_kitchen_marble.jpg"
+         alt="Modern kitchen renovation in Croxley Green by BMB Renovation"
+         loading="eager" fetchpriority="high" />
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content section-lg">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow">
+            <div class="hero-eyebrow-dot"></div>
+            Kitchen Renovation Specialists · Serving Croxley Green WD3
+          </div>
+          <h1 class="hero-h1">
+            Expert Kitchen<br />
+            Renovation in<br />
+            <span>Croxley Green</span>
+          </h1>
+          <p class="hero-sub">
+            BMB Renovation is based just over the border in Watford — your closest local kitchen renovation team for Croxley Green and the WD3 area. Full kitchen transformations, from design through to the final finish.
+          </p>
+          <div class="hero-btns">
+            <a href="#quote-form" class="btn btn-gold btn-lg">
+              Get a Free Quote
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +44 7775 758 717
+            </a>
+          </div>
+          <div class="trust-badges">
+            <span class="badge"><span class="badge-check">✓</span> WD3 Coverage</span>
+            <span class="badge"><span class="badge-check">✓</span> Watford-Based Team</span>
+            <span class="badge"><span class="badge-check">✓</span> Kitchen Specialists</span>
+            <span class="badge"><span class="badge-check">✓</span> Premium Finish</span>
+            <span class="badge"><span class="badge-check">✓</span> Free No-Obligation Quote</span>
+          </div>
+        </div>
+
+        <div id="quote-form">
+          <div class="quote-card">
+            <p class="quote-card-heading">Get Your Free Kitchen Renovation Quote in Croxley Green</p>
+            <p class="quote-card-sub">Free quote · No obligation · Local team, right next door</p>
+            <form id="hero-form" novalidate>
+              <div class="form-row form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="f-name">Your Name *</label>
+                  <input class="form-input" id="f-name" name="name" type="text" placeholder="John Smith" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="f-phone">Phone Number *</label>
+                  <input class="form-input" id="f-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-email">Email Address</label>
+                  <input class="form-input" id="f-email" name="email" type="email" placeholder="john@example.com" />
+                </div>
+              </div>
+              <div class="form-row form-row-2 mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-project">Project Type</label>
+                  <select class="form-select" id="f-project" name="project">
+                    <option value="">Select project type</option>
+                    <option>Full Kitchen Renovation</option>
+                    <option>Kitchen Fitting</option>
+                    <option>Worktop Replacement</option>
+                    <option>Kitchen Tiling / Splashback</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="f-postcode">Location / Postcode</label>
+                  <input class="form-input" id="f-postcode" name="postcode" type="text" placeholder="e.g. WD3 3AB" />
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-message">Tell Us About Your Kitchen</label>
+                  <textarea class="form-textarea" id="f-message" name="message" placeholder="Describe your kitchen — size, style, current layout, what you would like to change..."></textarea>
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-contact-time">Preferred Contact Time</label>
+                  <select class="form-select" id="f-contact-time" name="contact_time">
+                    <option value="">Any time</option>
+                    <option>Morning (8am–12pm)</option>
+                    <option>Afternoon (12pm–5pm)</option>
+                    <option>Evening (after 5pm)</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="form-submit">Request Free Quote →</button>
+              <p class="form-note">
+                <strong>Free quote. No obligation. Friendly advice.</strong><br />
+                Your details are safe with us. We will only contact you about your renovation enquiry.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════════ -->
+<div class="stats-bar" aria-label="Company statistics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-number">15+</div><p class="stat-label">Years Experience</p></div>
+      <div class="stat-item reveal reveal-delay-1"><div class="stat-number">2K+</div><p class="stat-label">Projects Completed</p></div>
+      <div class="stat-item reveal reveal-delay-2"><div class="stat-number">3K+</div><p class="stat-label">Happy Customers</p></div>
+      <div class="stat-item reveal reveal-delay-3"><div class="stat-number">5★</div><p class="stat-label">Customer Rating</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     3. PROBLEM / INTENT SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="problem-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Sound Familiar?</span>
+      <h2 id="problem-heading">Looking for a Kitchen Renovation Team in Croxley Green?</h2>
+      <p>Croxley Green is a well-established, community-minded area with a strong mix of family homes — many of them 1930s to 1960s semis with original or period kitchens that are well overdue an upgrade. That is a project we know very well.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">🍳</div>
+        <h3>A 1950s or 60s Kitchen That Has Seen Better Days</h3>
+        <p>Original mid-century kitchens in WD3 semis have charm, but they are typically short on storage, awkward to cook in, and no longer fit for purpose. A proper renovation changes all of that.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-1">
+        <div class="problem-icon">🔨</div>
+        <h3>More Than a Cosmetic Fix</h3>
+        <p>Swapping doors on tired old carcasses is not a renovation — it is a temporary cover. You want new units, a new worktop, updated plumbing and a kitchen that is genuinely built to last.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-2">
+        <div class="problem-icon">🤝</div>
+        <h3>A Local Team You Can Actually Rely On</h3>
+        <p>Croxley Green is a tight-knit community where word travels fast. BMB Renovation is based next door in Watford, and we take our local reputation seriously — we do what we say we will.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     4. WHAT IS INCLUDED
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="includes-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">What's Included</span>
+      <h2 id="includes-heading">A Complete Kitchen Renovation for Your Croxley Green Home</h2>
+      <p>From planning conversations and old kitchen removal through to appliance fitting and the final clean — one team handles everything. You get a seamless project and a kitchen you will actually enjoy using.</p>
+    </div>
+    <div class="includes-grid">
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Kitchen planning and layout design</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Old kitchen removal and responsible disposal</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>New cabinet and unit fitting</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Worktop measuring, cutting and installation</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Splashback tiling and wall preparation</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>All plumbing — sink, taps and dishwasher connections</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Electrical finishing — sockets and under-cabinet lighting</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Kitchen flooring installation</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>Appliance fitting and integration</p></div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <a href="#contact-form" class="btn btn-gold">Get a Free Kitchen Renovation Quote for Your Croxley Green Home</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     5. WHY CHOOSE BMB RENOVATION
+════════════════════════════════════════════════ -->
+<section class="section bg-dark" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label" style="color:var(--gold)">Why Choose Us</span>
+      <h2 id="why-heading" style="color:#fff">Why Croxley Green Homeowners Choose BMB Renovation</h2>
+      <p style="color:#9CA3AF">We are based in Watford — Croxley Green's immediate neighbour. That means we know the area, the housing stock, and the kind of renovation work WD3 homes typically need.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">📍</div>
+        <h3>Right Next Door</h3>
+        <p>Our Watford base is on the doorstep of Croxley Green. Quick to visit, quick to respond, and genuinely invested in our reputation in the WD area.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">🏠</div>
+        <h3>Familiar with WD3 Homes</h3>
+        <p>We work regularly in Croxley Green and the surrounding area. We know the typical semi-detached layouts, the original plumbing quirks, and how to get the best out of them.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🍽️</div>
+        <h3>Full Kitchen Service</h3>
+        <p>Units, worktops, plumbing, tiling, flooring and appliances — all handled in-house. No subcontractors to chase, no gaps between trades.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">💬</div>
+        <h3>Honest Communication</h3>
+        <p>You always know what is happening, what it costs, and what to expect next. No disappearing between visits, no vague timelines.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🏆</div>
+        <h3>15+ Years of Experience</h3>
+        <p>Over a decade and a half of kitchen and home renovation. We have the experience to handle straightforward and complex projects alike.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">💰</div>
+        <h3>Fair, Transparent Pricing</h3>
+        <p>A clear written quote before anything starts. The price you agree is the price you pay — no hidden extras added after the job is underway.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">📋</div>
+        <h3>Free Home Visit</h3>
+        <p>We come to your home in Croxley Green, look at the kitchen properly, and give you a realistic, detailed quote — at no cost and with no obligation.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">🔄</div>
+        <h3>One Team, Every Stage</h3>
+        <p>From planning your layout to the final sealant bead — one team manages the whole project, so nothing is left half-done or handed off.</p>
+      </div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <a href="#quote-form" class="btn btn-gold btn-lg">Start with a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     6. TRUST SECTION
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">You Can Count On Us</span>
+      <h2 id="trust-heading">Trusted for Kitchen Renovation Across Croxley Green &amp; WD3</h2>
+      <p>Renovation is a significant investment. Here is how we make sure it goes smoothly and that you are happy with the result.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-emoji">📝</div>
+        <h3>Written Quote Before We Start</h3>
+        <p>Every job starts with a clear, itemised quote. You know exactly what is included and what it costs before a single unit is removed.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-1">
+        <div class="trust-emoji">🤝</div>
+        <h3>Respectful of Your Home</h3>
+        <p>We protect your floors and adjacent rooms throughout the project, work cleanly, and communicate regularly so you always know where we are up to.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-2">
+        <div class="trust-emoji">🧹</div>
+        <h3>Clean Site Throughout</h3>
+        <p>Kitchen renovation generates dust and mess — we take steps to contain it. The site is tidied each day, and a full clean is done on handover.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-3">
+        <div class="trust-emoji">🎯</div>
+        <h3>Checked Before Handover</h3>
+        <p>Cabinet doors level, worktop joints tight, splashback grouted cleanly, appliances tested — we walk through everything with you before we consider the job done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     7. PORTFOLIO / PROJECT EXAMPLES
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="portfolio-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Our Work</span>
+      <h2 id="portfolio-heading">Kitchen Renovation Projects — Examples of Our Work in &amp; Around Croxley Green</h2>
+      <p>The homes and kitchens of Croxley Green are varied — here are representative examples of the kitchen renovation projects we carry out across WD3 and the immediate area. <em>Images represent our typical project standard.</em></p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal">
+        <div class="portfolio-img">
+          <img src="/images/02_kitchen_marble.jpg" alt="Kitchen renovation in Croxley Green WD3 semi-detached" loading="lazy" />
+          <span class="portfolio-badge">Kitchen Renovation</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Croxley Green WD3</p>
+          <h3>1950s Semi — Full Kitchen Renovation</h3>
+          <p>Original post-war kitchen in a WD3 semi completely stripped and redesigned. New shaker units maximising storage, solid oak worktop, metro tile splashback, integrated appliances and new vinyl flooring throughout — lighter, more practical, and built to last.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-1">
+        <div class="portfolio-img">
+          <img src="/images/15_elegant_hallway.jpg" alt="Contemporary kitchen renovation with premium interior finish" loading="lazy" />
+          <span class="portfolio-badge">Kitchen-Diner</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Croxley Green WD3 — near The Green</p>
+          <h3>Family Home — Kitchen-Diner Conversion</h3>
+          <p>Separate kitchen and dining room opened into one cohesive kitchen-diner. Plumbing relocated, new island unit added, handleless gloss units and quartz worktop. LED lighting throughout and large-format floor tiles flowing from kitchen into the dining area.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-2">
+        <div class="portfolio-img">
+          <img src="/images/09_tile_work.jpg" alt="Kitchen tiling and splashback work in Croxley Green" loading="lazy" />
+          <span class="portfolio-badge">Landlord Renovation</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Croxley Green WD3</p>
+          <h3>Rental Property Kitchen Update</h3>
+          <p>Practical kitchen refresh for a WD3 landlord. Replacement units and durable laminate worktop, new tiled splashback, vinyl flooring, and updated plumbing connections. Clean, neutral finish that appeals to tenants and holds up to rental use.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <a href="/portfolio" class="btn btn-dark">View Full Portfolio</a>
+      &nbsp;&nbsp;
+      <a href="#quote-form" class="btn btn-gold">Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     8. BEFORE AND AFTER
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="ba-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Transformation</span>
+      <h2 id="ba-heading">What a Kitchen Renovation Can Do for a Croxley Green Home</h2>
+      <p>Many WD3 homes have kitchens that have not kept up with the rest of the house. A properly planned renovation — not just new doors, but new layout, new units, updated plumbing and fresh flooring — makes a significant practical and visual difference.</p>
+    </div>
+    <div class="before-after-grid">
+      <div class="reveal">
+        <div class="ba-image-wrap">
+          <img src="/images/02_kitchen_marble.jpg"
+               alt="Kitchen renovation transformation in Croxley Green WD3 — before and after"
+               loading="lazy" />
+          <span class="ba-label ba-label-before">Before</span>
+          <span class="ba-label ba-label-after">After</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <span class="section-label">The BMB Renovation Difference</span>
+        <h2 style="font-size:1.875rem; margin-top:0.5rem; margin-bottom:1.25rem; color:var(--gray-900)">From the Original Fitted Kitchen to Something You Love</h2>
+        <p style="margin-bottom:1.25rem;">A typical Croxley Green kitchen renovation project involves stripping the original units, addressing any plumbing or wall issues, fitting new cabinets and worktops, retiling the splashback, and laying new flooring. The whole project managed by one team, to a consistent standard throughout.</p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.75rem; margin-bottom:2rem;">
+          <li style="display:flex;gap:0.625rem;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span style="color:var(--gray-600);font-size:0.9375rem;">Free layout and design consultation included</span></li>
+          <li style="display:flex;gap:0.625rem;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span style="color:var(--gray-600);font-size:0.9375rem;">All trades in one team — no coordination required from you</span></li>
+          <li style="display:flex;gap:0.625rem;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span style="color:var(--gray-600);font-size:0.9375rem;">Materials selected to suit your home and your budget</span></li>
+          <li style="display:flex;gap:0.625rem;align-items:flex-start;"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span><span style="color:var(--gray-600);font-size:0.9375rem;">Checked, cleaned and handed over to a premium standard</span></li>
+        </ul>
+        <a href="#quote-form" class="btn btn-gold btn-lg">Request a Free Quote for Your Kitchen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     9. PROCESS
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">How It Works</span>
+      <h2 id="process-heading">Your Kitchen Renovation in Croxley Green — Step by Step</h2>
+      <p>We have designed our process to be as straightforward and stress-free as possible. Here is what happens from the moment you get in touch to the day you walk into your finished kitchen.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-number">1</div>
+        <h3>Get in Touch</h3>
+        <p>Call us or complete the free quote form. Tell us a bit about your kitchen and your location in Croxley Green.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-number">2</div>
+        <h3>Free Home Visit</h3>
+        <p>We pop over from Watford — it is a very short journey. We look at the kitchen, measure up, and talk through your ideas and budget. No charge.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-number">3</div>
+        <h3>Clear Written Quote</h3>
+        <p>You receive a fully itemised quote covering every element of the project. No hidden costs. Take your time — proceed when you are ready.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-number">4</div>
+        <h3>Renovation Begins</h3>
+        <p>Our team works carefully in your home. We keep the site tidy, update you regularly, and treat your property with respect throughout.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="process-number">5</div>
+        <h3>Final Check &amp; Handover</h3>
+        <p>We walk through everything with you, check every detail, and hand over your finished kitchen — clean, complete and ready to use.</p>
+      </div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <a href="#quote-form" class="btn btn-gold">Start Step 1 — Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     10. LOCAL AREA COVERAGE
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="areas-heading">
+  <div class="container">
+    <div style="display:grid; gap:3rem; align-items:center;" class="before-after-grid">
+      <div class="reveal">
+        <span class="section-label">Service Area</span>
+        <h2 id="areas-heading" style="color:var(--gray-900); margin-top:0.5rem; margin-bottom:1.25rem;">Kitchen Renovation in Croxley Green &amp; the WD3 Area</h2>
+        <p style="margin-bottom:1.25rem;">We cover all of Croxley Green and the WD3 postcode — from the streets around The Green and Kenilworth Drive to the Scots Hill and New Road areas. Our Watford base means we are genuinely around the corner, making site visits, quick calls and progress checks easy and responsive.</p>
+        <p style="margin-bottom:1.5rem;">We also work with homeowners in Watford, Rickmansworth, Chorleywood, Bushey, Borehamwood and across Hertfordshire — so if you have a recommendation to pass on, we are always happy to help.</p>
+        <a href="#quote-form" class="btn btn-gold">Check if We Cover Your Area</a>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p style="font-size:0.875rem; font-weight:700; color:var(--gray-500); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1rem;">Areas We Serve</p>
+        <div class="areas-flex">
+          <span class="area-chip primary">Croxley Green WD3</span>
+          <span class="area-chip primary">Watford WD17/WD24</span>
+          <span class="area-chip primary">Rickmansworth WD3</span>
+          <span class="area-chip">Bushey WD23</span>
+          <span class="area-chip">Chorleywood WD3</span>
+          <span class="area-chip">Abbots Langley</span>
+          <span class="area-chip">Borehamwood WD6</span>
+          <span class="area-chip">St Albans</span>
+          <span class="area-chip">Hemel Hempstead</span>
+          <span class="area-chip">Hertfordshire</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     11. PRICE / FREE QUOTE SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="price-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Pricing Guide</span>
+      <h2 id="price-heading">How Much Does a Kitchen Renovation Cost in Croxley Green?</h2>
+      <p>Costs vary depending on the size of the kitchen, the units and materials chosen, and whether any plumbing or layout changes are involved. The most reliable way to get an accurate figure for your home in Croxley Green is a free, no-obligation quote from our team.</p>
+    </div>
+    <div class="price-factors reveal">
+      <div class="price-factor"><div class="pf-dot"></div><p>Size of the kitchen and number of units required</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Worktop material — laminate, quartz, granite or solid wood</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Plumbing changes — sink relocation or new connections</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Splashback tiling — format, material and complexity</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Flooring type and the area to be covered</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Appliance fitting or supply requirements</p></div>
+    </div>
+    <div class="cta-strip mt-5 reveal">
+      <h3>The Simplest Way to Find Out What Your Kitchen Will Cost</h3>
+      <p>Get in touch with BMB Renovation. We will come to your home in Croxley Green, look at the kitchen, and give you a clear, honest, no-obligation quote — no pressure, no guesswork.</p>
+      <div class="cta-strip-btns">
+        <a href="#quote-form" class="btn btn-gold">Get My Free Quote</a>
+        <a href="tel:+447775758717" class="btn btn-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Speak to Our Team
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     12. FAQs
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="faq-heading">
+  <div class="container" style="max-width:800px;">
+    <div class="section-header reveal">
+      <span class="section-label">FAQs</span>
+      <h2 id="faq-heading">Frequently Asked Questions — Kitchen Renovation Croxley Green</h2>
+    </div>
+    <div class="faq-list" id="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How much does a kitchen renovation cost in Croxley Green?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Costs vary depending on the size of the kitchen, the units and worktops chosen, and the extent of any plumbing or tiling involved. A well-planned renovation for a typical WD3 semi starts from a few thousand pounds; a more comprehensive project with layout changes and premium materials will be higher. The clearest way to find out is to request a free, no-obligation quote from BMB Renovation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is the quote completely free, and am I obligated to go ahead?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — the quote is entirely free and comes with no obligation. We will visit your home in Croxley Green, look at the kitchen, and give you a full written breakdown of costs. You are under no pressure to proceed, and we are happy to answer questions and discuss options even if you are still weighing up your decision.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How long does a kitchen renovation take in Croxley Green?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>A standard full kitchen renovation typically takes between 5 and 14 working days. Projects involving layout changes or significant plumbing work may take a little longer. We give you a clear timeline before any work starts so you can plan around the disruption.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Our home is a 1950s or 60s semi — can you work with the original layout?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — these are some of the most common kitchen renovation projects we carry out in the WD3 area. Post-war semis typically have compact galley or L-shaped kitchens with dated plumbing positions and limited storage. We can either work within the existing layout or redesign it, depending on your budget and goals. We will discuss both options during your free home visit.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you supply kitchen units, or should I source my own?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Either works. Some homeowners in Croxley Green prefer to choose units from suppliers like Howdens, IKEA or B&amp;Q themselves — we fit them. Others prefer us to manage the full supply and installation. Just let us know your preference and we will quote accordingly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you handle plumbing, tiling and electrical work as part of the renovation?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Our team covers all trades needed for a complete kitchen renovation: plumbing (sink, taps, dishwasher connections), tiling (splashback and floor), electrical finishing (sockets, lighting), and flooring. You do not need to find or manage separate contractors — we handle everything.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you work with landlords and rental properties in Croxley Green?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. We work with homeowners and landlords across Croxley Green and WD3. For rental properties, we focus on practical, hard-wearing finishes that hold up well in a tenanted home — units and worktops that are durable, flooring that is easy to clean, and splashbacks that are simple to maintain. Get in touch to discuss your property and we will tailor the quote accordingly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Which parts of Croxley Green do you cover?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We cover all of Croxley Green — including The Green, New Road, Scots Hill, Kenilworth Drive and the surrounding WD3 streets. We are based in Watford, which is immediately adjacent, so the whole area is easy and quick for us to reach. If you are unsure about your specific location, just call and ask.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I stay at home while the kitchen renovation is underway?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — the vast majority of our clients remain at home throughout the project. The kitchen will not be usable during the renovation, but most homeowners manage with a temporary kettle and microwave setup for the duration. We work efficiently to keep the disruption period as short as possible, and we give you a clear timeline before we start so you can plan ahead.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     13. CONTACT / QUOTE FORM SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" id="contact-form" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="section-label">Get in Touch</span>
+        <h2 id="contact-heading" style="color:var(--gray-900); margin-top:0.5rem; margin-bottom:1rem;">Get a Free Kitchen Renovation Quote in Croxley Green</h2>
+        <p style="margin-bottom:2rem;">We are right next door in Watford. Tell us about your kitchen renovation in Croxley Green and we will arrange a free home visit, take a proper look, and provide a clear, honest, no-obligation quote.</p>
+        <div class="contact-info-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <p class="ci-label">Phone</p>
+            <p class="ci-value"><a href="tel:+447775758717">+44 7775 758 717</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">✉️</div>
+          <div>
+            <p class="ci-label">Email</p>
+            <p class="ci-value"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">🕐</div>
+          <div>
+            <p class="ci-label">Working Hours</p>
+            <p class="ci-value">Monday – Saturday: 8:00 AM – 5:00 PM</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <p class="ci-label">Based In</p>
+            <p class="ci-value">157 Judge Street, Watford, WD24 5AN<br/>Serving Croxley Green &amp; the WD3 area</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="quote-card">
+          <p class="quote-card-heading">Request Your Free Kitchen Renovation Quote</p>
+          <p class="quote-card-sub">Fill in the form and we will get back to you promptly.</p>
+          <form id="contact-quote-form" novalidate>
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="c-name">Your Name *</label>
+                <input class="form-input" id="c-name" name="name" type="text" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-phone">Phone *</label>
+                <input class="form-input" id="c-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+              </div>
+            </div>
+            <div class="form-row mt-1">
+              <div class="form-group">
+                <label class="form-label" for="c-email">Email Address</label>
+                <input class="form-input" id="c-email" name="email" type="email" placeholder="john@example.com" />
+              </div>
+            </div>
+            <div class="form-row form-row-2 mt-1">
+              <div class="form-group">
+                <label class="form-label" for="c-project">Project Type</label>
+                <select class="form-select" id="c-project" name="project">
+                  <option value="">Select type</option>
+                  <option>Full Kitchen Renovation</option>
+                  <option>Kitchen Fitting</option>
+                  <option>Worktop Replacement</option>
+                  <option>Kitchen Tiling / Splashback</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-postcode">Postcode</label>
+                <input class="form-input" id="c-postcode" name="postcode" type="text" placeholder="e.g. WD3 3AB" />
+              </div>
+            </div>
+            <div class="form-row mt-1">
+              <div class="form-group">
+                <label class="form-label" for="c-message">Your Message</label>
+                <textarea class="form-textarea" id="c-message" name="message" placeholder="Tell us about your kitchen in Croxley Green — current layout, what you would like to change, your style preferences..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="form-submit">Request Free Quote →</button>
+            <p class="form-note">Free quote · No obligation · Your details stay private.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     14. FINAL CTA
+════════════════════════════════════════════════ -->
+<section class="final-cta-section" aria-labelledby="final-cta-heading">
+  <div class="final-cta-bg">
+    <img src="/images/07_loft_conversion.jpg"
+         alt="Premium home renovation by BMB Renovation serving Croxley Green" loading="lazy" />
+  </div>
+  <div class="final-cta-overlay"></div>
+  <div class="container final-cta-content reveal">
+    <span class="section-label">Ready to Get Started?</span>
+    <h2 id="final-cta-heading">
+      Ready to Transform Your <span>Kitchen in Croxley Green?</span>
+    </h2>
+    <p>Contact BMB Renovation today for a free, no-obligation quote. Whether you are renovating a family kitchen, refreshing a rental property, or opening up a mid-century layout — we are right next door in Watford and ready to help.</p>
+    <div class="final-cta-btns">
+      <a href="#quote-form" class="btn btn-gold btn-lg">Get a Free Quote</a>
+      <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call +44 7775 758 717
+      </a>
+    </div>
+    <p class="final-trust-line">
+      <span>Serving Croxley Green &amp; WD3</span> &nbsp;•&nbsp; <span>Free quote</span> &nbsp;•&nbsp; <span>No obligation</span> &nbsp;•&nbsp; <span>Right next door in Watford</span>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div>
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;">BMB</span>
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:300;color:var(--gold);"> Renovation</span>
+        </div>
+        <p>We specialise in bespoke home interior renovations, combining elegance and functionality to create timeless living spaces across Watford, Croxley Green and the surrounding area.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/people/BMB-Renovation/61560985672329/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/bmb_renovation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">in</a>
+          <a href="https://x.com/bmb_renovation" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="/services#kitchen">Kitchen Renovation</a></li>
+          <li><a href="/services#bathroom">Bathroom Renovation</a></li>
+          <li><a href="/services#house-renovation">House Renovation</a></li>
+          <li><a href="/services#painting">Painting &amp; Decorating</a></li>
+          <li><a href="/services#loft">Loft Conversion</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <p class="footer-contact-text">157 Judge Street, Watford, Hertfordshire, WD24 5AN</p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📞</span>
+          <p class="footer-contact-text"><a href="tel:+447775758717">+44 7775 758 717</a></p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉️</span>
+          <p class="footer-contact-text"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">🕐</span>
+          <p class="footer-contact-text">Mon–Sat: 8:00 AM – 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BMB Renovation. All Rights Reserved. | <a href="/" style="color:#9CA3AF;">bmbrenovation.co.uk</a></p>
+      <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     STICKY MOBILE CTA
+════════════════════════════════════════════════ -->
+<div id="sticky-cta" role="complementary" aria-label="Quick action buttons">
+  <a href="#quote-form" class="sticky-btn sticky-quote">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+    Free Quote
+  </a>
+  <a href="tel:+447775758717" class="sticky-btn sticky-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════ -->
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  ['hero-form', 'contact-quote-form'].forEach(id => {
+    const form = document.getElementById(id);
+    if (!form) return;
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = form.querySelector('[name="name"]').value.trim();
+      const phone = form.querySelector('[name="phone"]').value.trim();
+      if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+      form.innerHTML = `
+        <div style="text-align:center;padding:2.5rem 1rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name}!</h3>
+          <p style="color:#6B7280;font-size:0.9375rem;">We have received your enquiry and will be in touch shortly to discuss your kitchen renovation in Croxley Green.</p>
+          <a href="tel:+447775758717" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.875rem 1.75rem;background:#C8A97E;color:#fff;border-radius:9999px;font-weight:700;font-size:0.9375rem;">📞 Call us now: +44 7775 758 717</a>
+        </div>`;
+    });
+  });
+</script>
+
+<!-- ═══════════════════════════════════════════════
+     GOOGLE ADS ANNOTATIONS (hidden — for reference)
+─────────────────────────────────────────────────
+Target Keyword: kitchen renovation Croxley Green
+URL Slug: /kitchen-renovation-croxley-green
+
+HEADLINE IDEAS:
+1. Kitchen Renovation Croxley Green | Free Quote
+2. Croxley Green Kitchen Renovation Specialists
+3. Transform Your Kitchen in Croxley Green
+4. Free Quote – Kitchen Renovation Croxley Green
+5. Local Kitchen Team Serving Croxley Green WD3
+6. Premium Kitchen Renovation WD3
+7. New Kitchen Croxley Green – No Obligation
+8. Kitchen Renovation Croxley Green – Local Team
+9. Croxley Green Kitchen Makeover | BMB
+10. Free Kitchen Quote in Croxley Green WD3
+
+DESCRIPTION IDEAS:
+1. Expert kitchen renovation in Croxley Green WD3. BMB Renovation based in neighbouring Watford — full transformations, tiling, fitting, worktops. Free quote. Call +44 7775 758 717.
+2. Premium kitchen renovation serving Croxley Green WD3. Watford-based local team, right next door. Free no-obligation quote. Homeowners and landlords welcome.
+3. Looking for kitchen renovation in Croxley Green? BMB Renovation delivers a premium finish — units, worktops, plumbing, tiling, flooring. Request your free quote today.
+4. Croxley Green WD3 kitchen renovation specialists. Design, units, worktops, plumbing, tiling and appliance fitting. Free quote — no pressure.
+
+SUGGESTED KEYWORDS:
+Exact: [kitchen renovation Croxley Green], [kitchen renovation in Croxley Green]
+Phrase: "kitchen renovation Croxley Green", "kitchen fitting Croxley Green", "kitchen refurbishment WD3"
+Local intent: kitchen renovation near me Croxley Green, local kitchen team WD3, kitchen fitter Croxley Green
+WD postcode: kitchen renovation WD3, kitchen fitting Croxley Green WD3
+
+NEGATIVE KEYWORDS:
+jobs, salary, vacancy, DIY, how to, tutorial, course, training, YouTube, images only,
+second hand, used kitchen, cheap tools, free materials, template, meaning,
+council kitchen, kitchen ideas only, kitchen inspiration only
+════════════════════════════════════════════════ -->4:T9bc,const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  ['hero-form', 'contact-quote-form'].forEach(id => {
+    const form = document.getElementById(id);
+    if (!form) return;
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = form.querySelector('[name="name"]').value.trim();
+      const phone = form.querySelector('[name="phone"]').value.trim();
+      if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+      form.innerHTML = `
+        <div style="text-align:center;padding:2.5rem 1rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name}!</h3>
+          <p style="color:#6B7280;font-size:0.9375rem;">We have received your enquiry and will be in touch shortly to discuss your kitchen renovation in Croxley Green.</p>
+          <a href="tel:+447775758717" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.875rem 1.75rem;background:#C8A97E;color:#fff;border-radius:9999px;font-weight:700;font-size:0.9375rem;">📞 Call us now: +44 7775 758 717</a>
+        </div>`;
+    });
+  });0:["J4NM-S4kEXF-15xO6ltJb",[[["",{"children":["kitchen-renovation-croxley-green",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["kitchen-renovation-croxley-green",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","kitchen-renovation-croxley-green","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c93b10a3daa1778c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
+a:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Kitchen Renovation Croxley Green | Free Quote | BMB Renovation"}],["$","meta","3",{"name":"description","content":"Expert kitchen renovation in Croxley Green. BMB Renovation is based in neighbouring Watford — full kitchen transformations for WD3 homes. Free no-obligation quote. Call +44 7775 758 717."}],["$","link","4",{"rel":"canonical","href":"https://bmbrenovation.co.uk/kitchen-renovation-croxley-green"}],["$","meta","5",{"property":"og:title","content":"Kitchen Renovation Croxley Green | Free Quote | BMB Renovation"}],["$","meta","6",{"property":"og:description","content":"Expert kitchen renovation in Croxley Green. BMB Renovation is based in neighbouring Watford — full kitchen transformations for WD3 homes. Free no-obligation quote. Call +44 7775 758 717."}],["$","meta","7",{"property":"og:image","content":"https://bmbrenovation.co.uk/images/02_kitchen_marble.jpg"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Kitchen Renovation Croxley Green | Free Quote | BMB Renovation"}],["$","meta","10",{"name":"twitter:description","content":"Expert kitchen renovation in Croxley Green. BMB Renovation is based in neighbouring Watford — full kitchen transformations for WD3 homes. Free no-obligation quote. Call +44 7775 758 717."}],["$","meta","11",{"name":"twitter:image","content":"https://bmbrenovation.co.uk/images/02_kitchen_marble.jpg"}],["$","link","12",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","13",{"rel":"icon","href":"/favicon.svg"}],["$","meta","14",{"name":"next-size-adjust"}]]
+1:null

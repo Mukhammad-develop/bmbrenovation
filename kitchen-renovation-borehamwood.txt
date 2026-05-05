@@ -1,0 +1,1399 @@
+5:I[4707,[],""]
+6:I[6423,[],""]
+7:I[2798,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ThemeProvider"]
+8:I[3606,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"Toaster"]
+9:I[4215,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ChunkLoadErrorHandler"]
+2:T66e6,
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: #141414;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── TOKENS ── */
+    :root {
+      --gold: #C8A97E;
+      --gold-dark: #B8996E;
+      --gold-light: rgba(200,169,126,0.12);
+      --dark: #0a0a0a;
+      --gray-950: #0a0a0a;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-600: #4B5563;
+      --gray-500: #6B7280;
+      --gray-400: #9CA3AF;
+      --gray-200: #E5E7EB;
+      --gray-100: #F3F4F6;
+      --gray-50:  #F9FAFB;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0/0.04),0 1px 3px 0 rgb(0 0 0/0.08);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0/0.06),0 2px 4px -2px rgb(0 0 0/0.06);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0/0.08),0 4px 6px -4px rgb(0 0 0/0.06);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px -6px rgb(0 0 0/0.06);
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.025em; line-height: 1.15; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.75rem); font-weight: 800; }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; }
+    h3 { font-size: 1.25rem; font-weight: 700; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    p  { line-height: 1.7; color: var(--gray-600); }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+    @media(min-width:640px){ .container { padding: 0 1.5rem; } }
+    .section { padding: 5rem 0; }
+    .section-sm { padding: 3.5rem 0; }
+    .section-lg { padding: 6rem 0; }
+    @media(min-width:768px){ .section { padding: 7rem 0; } }
+
+    /* ── LABEL CHIP ── */
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      border-radius: 9999px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700; font-size: 0.9375rem;
+      cursor: pointer; border: none; transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 4px 16px rgba(200,169,126,0.35); }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .btn-dark { background: var(--gray-900); color: #fff; }
+    .btn-dark:hover { background: #1f2937; transform: translateY(-1px); }
+    .btn-ghost { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+    .btn-outline-gold { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+    .btn-outline-gold:hover { background: var(--gold); color: #fff; }
+    .btn-sm { padding: 0.625rem 1.375rem; font-size: 0.875rem; }
+    .btn-lg { padding: 1rem 2.25rem; font-size: 1rem; }
+
+    /* ── HEADER ── */
+    #site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 999; transition: background 0.3s ease, box-shadow 0.3s ease; }
+    #site-header.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo { display: flex; align-items: center; }
+    .logo-bmb { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; transition: color 0.3s; }
+    #site-header.scrolled .logo-bmb { color: var(--gray-900); }
+    .logo-reno { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 300; letter-spacing: -0.03em; color: var(--gold); margin-left: 4px; }
+    .header-nav { display: none; gap: 0.25rem; }
+    @media(min-width:1024px){ .header-nav { display: flex; } }
+    .nav-link { padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.88); transition: all 0.2s; }
+    .nav-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    #site-header.scrolled .nav-link { color: var(--gray-700); }
+    #site-header.scrolled .nav-link:hover { color: var(--gold); background: var(--gray-100); }
+    .header-cta { display: flex; align-items: center; gap: 0.75rem; }
+    .header-call { display: none; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; background: #fff; color: var(--gray-900); transition: all 0.2s; }
+    @media(min-width:640px){ .header-call { display: flex; } }
+    #site-header.scrolled .header-call { background: var(--gray-900); color: #fff; }
+    .header-call:hover { opacity: 0.9; transform: translateY(-1px); }
+    .hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; border: none; background: transparent; cursor: pointer; border-radius: 8px; padding: 8px; }
+    .hamburger span { display: block; height: 2px; width: 24px; border-radius: 2px; background: #fff; transition: all 0.3s; }
+    #site-header.scrolled .hamburger span { background: var(--gray-900); }
+    @media(min-width:1024px){ .hamburger { display: none; } }
+    #mobile-menu { display: none; background: #fff; border-top: 1px solid var(--gray-100); box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 1.5rem; }
+    #mobile-menu.open { display: block; }
+    .mobile-nav-link { display: block; padding: 0.75rem 1rem; font-size: 1rem; font-weight: 500; color: var(--gray-700); border-radius: 0.5rem; transition: all 0.2s; }
+    .mobile-nav-link:hover { color: var(--gold); background: var(--gold-light); }
+    .mobile-cta { display: block; margin-top: 1rem; padding: 0.875rem; text-align: center; background: var(--gray-900); color: #fff; border-radius: 0.75rem; font-weight: 700; font-size: 0.9375rem; }
+
+    /* ── PROXIMITY BANNER ── */
+    #proximity-banner { background: var(--gold-light); border-bottom: 1px solid rgba(200,169,126,0.2); padding: 0.625rem 0; position: relative; z-index: 998; }
+    .proximity-inner { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; font-size: 0.8125rem; font-weight: 500; color: var(--gray-700); text-align: center; }
+    .proximity-inner a { color: var(--gold); font-weight: 700; }
+    .proximity-inner a:hover { text-decoration: underline; }
+
+    /* ── HERO ── */
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.25) 100%); }
+    .hero-content { position: relative; z-index: 2; width: 100%; padding-top: 80px; }
+    .hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+    @media(min-width:1024px){ .hero-grid { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); font-size: 0.8125rem; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+    .hero-eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .hero-h1 { color: #fff; margin-bottom: 1.25rem; }
+    .hero-h1 span { color: var(--gold); }
+    .hero-sub { font-size: 1.0625rem; color: rgba(255,255,255,0.78); margin-bottom: 2rem; max-width: 460px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 0.875rem; margin-bottom: 2.5rem; }
+    .trust-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .badge { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.375rem 0.875rem; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(6px); font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.85); }
+    .badge-check { color: var(--gold); font-size: 0.875rem; }
+
+    /* ── QUOTE FORM CARD ── */
+    .quote-card { background: #fff; border-radius: 1.25rem; padding: 2rem; box-shadow: var(--shadow-xl); }
+    .quote-card-heading { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.375rem; }
+    .quote-card-sub { font-size: 0.8125rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+    .form-row { display: grid; gap: 1rem; }
+    @media(min-width:480px){ .form-row-2 { grid-template-columns: 1fr 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.375rem; }
+    .form-label { font-size: 0.8125rem; font-weight: 600; color: var(--gray-700); }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--gray-200); border-radius: 0.625rem; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: var(--gray-900); background: #fff; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--gray-400); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,169,126,0.15); }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; padding: 0.9375rem; background: var(--gold); color: #fff; border: none; border-radius: 9999px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 16px rgba(200,169,126,0.35); margin-top: 0.5rem; }
+    .form-submit:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .form-note { font-size: 0.75rem; color: var(--gray-400); text-align: center; margin-top: 0.625rem; }
+    .form-note strong { color: var(--gray-500); }
+
+    /* ── STATS BAR ── */
+    .stats-bar { background: var(--gray-950); padding: 2.5rem 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; }
+    @media(min-width:768px){ .stats-grid { grid-template-columns: repeat(4,1fr); } }
+    .stat-item { text-align: center; }
+    .stat-number { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.25rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 0.8125rem; color: #9CA3AF; margin-top: 0.375rem; }
+
+    /* ── SECTION HEADER ── */
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header h2 { color: var(--gray-900); margin-top: 0.5rem; }
+    .section-header p { max-width: 560px; margin: 1rem auto 0; }
+
+    /* ── PROBLEM SECTION ── */
+    .problem-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .problem-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .problem-grid { grid-template-columns: repeat(3,1fr); } }
+    .problem-card { background: var(--gray-50); border-radius: 1rem; padding: 1.75rem; border: 1px solid var(--gray-100); transition: box-shadow 0.2s, transform 0.2s; }
+    .problem-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .problem-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--gold-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.375rem; }
+    .problem-card h3 { color: var(--gray-900); font-size: 1.0625rem; margin-bottom: 0.5rem; }
+
+    /* ── INCLUDES ── */
+    .includes-grid { display: grid; gap: 0.75rem; }
+    @media(min-width:640px){ .includes-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .includes-grid { grid-template-columns: repeat(3,1fr); } }
+    .include-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 1.125rem 1.25rem; border-radius: 0.875rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); transition: border-color 0.2s; }
+    .include-item:hover { border-color: var(--gold); }
+    .include-check { width: 22px; height: 22px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.6875rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .include-item p { font-size: 0.9375rem; color: var(--gray-700); font-weight: 500; margin: 0; }
+
+    /* ── WHY BMB ── */
+    .why-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .why-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .why-grid { grid-template-columns: repeat(4,1fr); } }
+    .why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.75rem; transition: background 0.2s; }
+    .why-card:hover { background: rgba(255,255,255,0.1); }
+    .why-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(200,169,126,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.375rem; margin-bottom: 1.125rem; }
+    .why-card h3 { color: #fff; font-size: 1.0625rem; margin-bottom: 0.5rem; }
+    .why-card p { color: #9CA3AF; font-size: 0.875rem; }
+
+    /* ── TRUST ── */
+    .trust-grid { display: grid; gap: 1.25rem; }
+    @media(min-width:640px){ .trust-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .trust-grid { grid-template-columns: repeat(4,1fr); } }
+    .trust-card { border-radius: 1rem; padding: 1.75rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); text-align: center; transition: box-shadow 0.2s, transform 0.2s; }
+    .trust-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .trust-emoji { font-size: 2rem; margin-bottom: 0.75rem; }
+    .trust-card h3 { color: var(--gray-900); font-size: 1rem; margin-bottom: 0.375rem; }
+    .trust-card p { font-size: 0.875rem; color: var(--gray-500); margin: 0; }
+
+    /* ── PORTFOLIO ── */
+    .portfolio-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .portfolio-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .portfolio-grid { grid-template-columns: repeat(3,1fr); } }
+    .portfolio-card { border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-md); background: #fff; transition: transform 0.25s, box-shadow 0.25s; }
+    .portfolio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+    .portfolio-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+    .portfolio-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .portfolio-card:hover .portfolio-img img { transform: scale(1.05); }
+    .portfolio-badge { position: absolute; top: 0.875rem; left: 0.875rem; background: var(--gold); color: #fff; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .portfolio-body { padding: 1.375rem; }
+    .portfolio-location { font-size: 0.75rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.375rem; }
+    .portfolio-body h3 { color: var(--gray-900); margin-bottom: 0.5rem; }
+    .portfolio-body p { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1rem; }
+    .portfolio-cta { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; font-weight: 700; color: var(--gold); transition: gap 0.2s; }
+    .portfolio-card:hover .portfolio-cta { gap: 0.625rem; }
+
+    /* ── BEFORE / AFTER ── */
+    .before-after-grid { display: grid; gap: 2rem; align-items: center; }
+    @media(min-width:1024px){ .before-after-grid { grid-template-columns: 1fr 1fr; } }
+    .ba-image-wrap { position: relative; border-radius: 1.25rem; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-xl); }
+    .ba-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .ba-label { position: absolute; bottom: 1rem; padding: 0.4rem 1rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 700; }
+    .ba-label-before { left: 1rem; background: rgba(0,0,0,0.65); color: #fff; }
+    .ba-label-after { right: 1rem; background: var(--gold); color: #fff; }
+
+    /* ── PROCESS ── */
+    .process-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .process-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .process-grid { grid-template-columns: repeat(5,1fr); } }
+    .process-step { position: relative; text-align: center; padding: 1.75rem 1.25rem; background: #fff; border-radius: 1rem; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); }
+    .process-number { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.125rem; font-weight: 800; margin: 0 auto 1rem; }
+    .process-step h3 { font-size: 0.9375rem; color: var(--gray-900); margin-bottom: 0.5rem; }
+    .process-step p { font-size: 0.8125rem; color: var(--gray-500); margin: 0; }
+
+    /* ── AREAS ── */
+    .areas-flex { display: flex; flex-wrap: wrap; gap: 0.625rem; margin-top: 1.5rem; }
+    .area-chip { padding: 0.5rem 1.125rem; border-radius: 9999px; background: var(--gold-light); color: var(--gray-700); font-size: 0.875rem; font-weight: 600; border: 1.5px solid rgba(200,169,126,0.25); transition: background 0.2s, color 0.2s; }
+    .area-chip:hover { background: var(--gold); color: #fff; }
+    .area-chip.primary { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+    /* ── PRICE ── */
+    .price-factors { display: grid; gap: 0.875rem; }
+    @media(min-width:640px){ .price-factors { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .price-factors { grid-template-columns: repeat(3,1fr); } }
+    .price-factor { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; border-radius: 0.875rem; background: var(--gray-50); border: 1px solid var(--gray-100); }
+    .pf-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .price-factor p { font-size: 0.9rem; color: var(--gray-700); margin: 0; font-weight: 500; }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { border: 1.5px solid var(--gray-100); border-radius: 0.875rem; overflow: hidden; background: #fff; }
+    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: transparent; border: none; cursor: pointer; text-align: left; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: var(--gray-900); transition: color 0.2s; }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; font-weight: 300; color: var(--gray-600); transition: background 0.2s, transform 0.2s; }
+    .faq-item.open .faq-icon { background: var(--gold); color: #fff; transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; padding: 0 1.5rem; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.25rem; }
+    .faq-answer p { font-size: 0.9rem; color: var(--gray-600); margin: 0; }
+
+    /* ── CONTACT SECTION ── */
+    .contact-grid { display: grid; gap: 2.5rem; align-items: start; }
+    @media(min-width:1024px){ .contact-grid { grid-template-columns: 2fr 3fr; gap: 4rem; } }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .ci-icon { width: 48px; height: 48px; border-radius: 0.75rem; background: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem; }
+    .ci-label { font-size: 0.8125rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.2rem; }
+    .ci-value { font-size: 0.9rem; color: var(--gray-600); }
+    .ci-value a { color: var(--gray-600); }
+    .ci-value a:hover { color: var(--gold); }
+
+    /* ── FINAL CTA ── */
+    .final-cta-section { position: relative; padding: 6rem 0; overflow: hidden; }
+    .final-cta-bg { position: absolute; inset: 0; }
+    .final-cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .final-cta-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.87); }
+    .final-cta-content { position: relative; z-index: 2; text-align: center; }
+    .final-cta-content h2 { color: #fff; margin-bottom: 1.25rem; }
+    .final-cta-content h2 span { color: var(--gold); }
+    .final-cta-content p { color: rgba(255,255,255,0.72); max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.0625rem; }
+    .final-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+    .final-trust-line { font-size: 0.875rem; color: rgba(255,255,255,0.45); font-weight: 500; }
+    .final-trust-line span { color: var(--gold); font-weight: 700; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--gray-950); color: #fff; }
+    .footer-grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; padding: 4rem 0 2rem; }
+    @media(min-width:640px){ .footer-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.5fr; } }
+    .footer-brand p { color: #9CA3AF; font-size: 0.875rem; line-height: 1.7; margin: 1rem 0 1.5rem; }
+    .footer-social { display: flex; gap: 0.75rem; }
+    .footer-social a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: background 0.2s; }
+    .footer-social a:hover { background: var(--gold); }
+    .footer-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: #fff; margin-bottom: 1.25rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-col ul li a { font-size: 0.875rem; color: #9CA3AF; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
+    .footer-contact-icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
+    .footer-contact-text { font-size: 0.875rem; color: #9CA3AF; line-height: 1.5; }
+    .footer-contact-text a { color: #9CA3AF; transition: color 0.2s; }
+    .footer-contact-text a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 1.75rem 0; display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+    @media(min-width:640px){ .footer-bottom { flex-direction: row; justify-content: space-between; } }
+    .footer-bottom p { font-size: 0.8125rem; color: #6B7280; }
+    .back-to-top { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; border: none; cursor: pointer; transition: background 0.2s; }
+    .back-to-top:hover { background: var(--gold-dark); }
+
+    /* ── STICKY MOBILE CTA ── */
+    #sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 -4px 16px rgba(0,0,0,0.15); }
+    @media(min-width:1024px){ #sticky-cta { display: none; } }
+    .sticky-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .sticky-btn:hover { opacity: 0.9; }
+    .sticky-quote { background: var(--gold); color: #fff; }
+    .sticky-call { background: var(--gray-900); color: #fff; }
+
+    /* ── MID-PAGE CTA STRIP ── */
+    .cta-strip { background: var(--gold-light); border-radius: 1.25rem; padding: 2.5rem; text-align: center; border: 1.5px solid rgba(200,169,126,0.2); }
+    .cta-strip h3 { color: var(--gray-900); margin-bottom: 0.75rem; font-size: 1.375rem; }
+    .cta-strip p { color: var(--gray-600); font-size: 0.9375rem; margin-bottom: 1.5rem; }
+    .cta-strip-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.875rem; }
+
+    /* ── UTILITIES ── */
+    .text-center { text-align: center; }
+    .text-gold { color: var(--gold); }
+    .mt-1 { margin-top: 0.5rem; } .mt-2 { margin-top: 1rem; } .mt-3 { margin-top: 1.5rem; }
+    .mt-4 { margin-top: 2rem; } .mt-5 { margin-top: 2.5rem; } .mt-6 { margin-top: 3rem; }
+    .mb-2 { margin-bottom: 1rem; } .mb-3 { margin-bottom: 1.5rem; }
+    .bg-dark { background: var(--gray-950); } .bg-light { background: var(--gray-50); }
+    .divider { height: 1px; background: var(--gray-100); margin: 0; }
+
+    /* ── SCROLL ANIMATION ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+  3:Tdc36,<!-- ═══════════════════════════════════════════════
+     LOCAL PROXIMITY BANNER
+════════════════════════════════════════════════ -->
+<div id="proximity-banner">
+  <div class="container">
+    <div class="proximity-inner">
+      <span>🏠 Serving Borehamwood (WD6) from our Watford base — just along the A41.</span>
+      <a href="#quote-form">Get a Free Quote →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════ -->
+
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="BMB Renovation Home">
+        <span class="logo-bmb">BMB</span>
+        <span class="logo-reno"> Renovation</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/portfolio" class="nav-link">Portfolio</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:+447775758717" class="header-call">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" role="navigation" aria-label="Mobile menu">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="/services" class="mobile-nav-link">Services</a>
+    <a href="/portfolio" class="mobile-nav-link">Portfolio</a>
+    <a href="/contact" class="mobile-nav-link">Contact</a>
+    <a href="tel:+447775758717" class="mobile-cta">📞 Call +44 7775 758 717</a>
+  </div>
+
+<!-- ═══════════════════════════════════════════════
+     1. HERO
+════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero section">
+  <div class="hero-bg">
+    <img src="/images/02_kitchen_marble.jpg"
+         alt="Kitchen renovation in Borehamwood by BMB Renovation"
+         loading="eager" fetchpriority="high" />
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content section-lg">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left: Headline -->
+        <div>
+          <div class="hero-eyebrow">
+            <div class="hero-eyebrow-dot"></div>
+            Kitchen Renovation Specialists · Serving Borehamwood &amp; WD6
+          </div>
+
+          <h1 class="hero-h1">
+            Expert Kitchen<br />
+            Renovation in<br />
+            <span>Borehamwood</span>
+          </h1>
+
+          <p class="hero-sub">
+            Whether you are upgrading a family semi, refreshing a flat, or turning over a rental property between tenants, BMB Renovation delivers complete kitchen transformations across Borehamwood WD6 — with a free no-obligation quote from our Watford base just up the A41.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#quote-form" class="btn btn-gold btn-lg">
+              Get a Free Quote
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +44 7775 758 717
+            </a>
+          </div>
+
+          <div class="trust-badges">
+            <span class="badge"><span class="badge-check">✓</span> WD6 Coverage</span>
+            <span class="badge"><span class="badge-check">✓</span> Watford-Based Team</span>
+            <span class="badge"><span class="badge-check">✓</span> Kitchen Specialists</span>
+            <span class="badge"><span class="badge-check">✓</span> Premium Finish</span>
+            <span class="badge"><span class="badge-check">✓</span> Free No-Obligation Quote</span>
+          </div>
+        </div>
+
+        <!-- Right: Quote Form -->
+        <div id="quote-form">
+          <div class="quote-card">
+            <p class="quote-card-heading">Get Your Free Kitchen Renovation Quote in Borehamwood</p>
+            <p class="quote-card-sub">Free quote · No obligation · Local team serving WD6</p>
+
+            <form id="hero-form" novalidate>
+              <div class="form-row form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="f-name">Your Name *</label>
+                  <input class="form-input" id="f-name" name="name" type="text" placeholder="John Smith" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="f-phone">Phone Number *</label>
+                  <input class="form-input" id="f-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-email">Email Address</label>
+                  <input class="form-input" id="f-email" name="email" type="email" placeholder="john@example.com" />
+                </div>
+              </div>
+              <div class="form-row form-row-2 mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-project">Project Type</label>
+                  <select class="form-select" id="f-project" name="project">
+                    <option value="">Select project type</option>
+                    <option>Full Kitchen Renovation</option>
+                    <option>Kitchen Fitting</option>
+                    <option>Worktop Replacement</option>
+                    <option>Kitchen Tiling / Splashback</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="f-postcode">Location / Postcode</label>
+                  <input class="form-input" id="f-postcode" name="postcode" type="text" placeholder="e.g. WD6 1AB" />
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-message">Tell Us About Your Kitchen</label>
+                  <textarea class="form-textarea" id="f-message" name="message" placeholder="Describe your kitchen project — size, style, units, worktops, any specific requirements..."></textarea>
+                </div>
+              </div>
+              <div class="form-row mt-1">
+                <div class="form-group">
+                  <label class="form-label" for="f-contact-time">Preferred Contact Time</label>
+                  <select class="form-select" id="f-contact-time" name="contact_time">
+                    <option value="">Any time</option>
+                    <option>Morning (8am–12pm)</option>
+                    <option>Afternoon (12pm–5pm)</option>
+                    <option>Evening (after 5pm)</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="form-submit">Request Free Quote →</button>
+              <p class="form-note">
+                <strong>Free quote. No obligation. Friendly advice.</strong><br />
+                Your details are safe with us. We will only contact you about your renovation enquiry.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════════ -->
+<div class="stats-bar" aria-label="Company statistics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-number">15+</div><p class="stat-label">Years Experience</p></div>
+      <div class="stat-item reveal reveal-delay-1"><div class="stat-number">2K+</div><p class="stat-label">Projects Completed</p></div>
+      <div class="stat-item reveal reveal-delay-2"><div class="stat-number">3K+</div><p class="stat-label">Happy Customers</p></div>
+      <div class="stat-item reveal reveal-delay-3"><div class="stat-number">5★</div><p class="stat-label">Customer Rating</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     3. PROBLEM / INTENT SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="problem-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Sound Familiar?</span>
+      <h2 id="problem-heading">Looking for a Kitchen Renovation Team in Borehamwood?</h2>
+      <p>Borehamwood has a wide mix of housing — post-war semis, 1960s and 70s estates now in private hands, newer-build flats, and family homes that need a proper upgrade. Whatever your property and whatever your reason, BMB Renovation is the local team that gets the job done properly.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">🍳</div>
+        <h3>A Kitchen That Has Not Been Updated Since It Was Built</h3>
+        <p>A lot of Borehamwood homes were built in the post-war decades and many kitchens have not been touched since. Dated units, tired worktops, limited storage — a full renovation transforms how the space looks and how it works day to day.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-1">
+        <div class="problem-icon">🔑</div>
+        <h3>Renting Out a Property That Needs a Refresh</h3>
+        <p>With good transport links into London, Borehamwood has a strong rental market. Many landlords upgrade between tenancies to let faster and attract better tenants. A clean, practical kitchen renovation is one of the most effective improvements you can make.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-2">
+        <div class="problem-icon">🏡</div>
+        <h3>Ready to Make Your Home Work for You</h3>
+        <p>Whether you have just bought a Borehamwood property or have lived there for years and been putting this off — a properly planned kitchen renovation changes how you use your home every single day. Now is a good time to make it happen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     4. WHAT IS INCLUDED
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="includes-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">What's Included</span>
+      <h2 id="includes-heading">Everything You Need for a Complete Kitchen Renovation in Borehamwood</h2>
+      <p>Our kitchen renovation service covers every stage from the first design conversation to the final clean. One team, one point of contact, no need to coordinate multiple contractors yourself.</p>
+    </div>
+
+    <div class="includes-grid">
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Kitchen planning and layout design</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Old kitchen removal and responsible disposal</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>New cabinet and unit fitting</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Worktop measuring, cutting and installation</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Splashback tiling and wall preparation</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>All plumbing — sink, taps and dishwasher connections</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Electrical finishing — sockets and under-cabinet lighting</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Kitchen flooring installation</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>Appliance fitting and integration</p></div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="#contact-form" class="btn btn-gold">Get a Free Kitchen Renovation Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     5. WHY CHOOSE BMB RENOVATION
+════════════════════════════════════════════════ -->
+<section class="section bg-dark" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label" style="color:var(--gold)">Why Choose Us</span>
+      <h2 id="why-heading" style="color:#fff">Why Borehamwood Homeowners &amp; Landlords Choose BMB Renovation</h2>
+      <p style="color:#9CA3AF">We are based in Watford — just along the A41 from Borehamwood. We work on all types of properties across WD6 and understand what different homeowners and landlords need from a kitchen renovation team.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">📍</div>
+        <h3>Just Along the A41</h3>
+        <p>Our base is in Watford, a short drive up the A41 from Borehamwood. Quick to visit, easy to contact, and invested in our reputation across the area.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">🏘️</div>
+        <h3>All Types of Borehamwood Property</h3>
+        <p>Post-war semis, 1960s and 70s family homes, modern flats, terraced houses — we have worked in all of them and understand the kitchen challenges each tends to present.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🍽️</div>
+        <h3>Full Kitchen Service</h3>
+        <p>Design through to final finish — units, worktops, plumbing, tiling, electrics, flooring. All handled by our own team with no subcontracting.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">💬</div>
+        <h3>Honest, Clear Pricing</h3>
+        <p>Written quotes before work starts. You know the full cost before we begin — no hidden charges, no last-minute additions, no surprises.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🏆</div>
+        <h3>15+ Years of Experience</h3>
+        <p>Over fifteen years renovating kitchens and homes across Hertfordshire. We know what works, what lasts, and how to consistently deliver a quality finish.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">💰</div>
+        <h3>Budget-Flexible</h3>
+        <p>From a practical landlord renovation that holds up to rental use, to a full premium kitchen transformation — we work with your budget to deliver the best result.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">📋</div>
+        <h3>Free Home Visit</h3>
+        <p>We come to your Borehamwood property, look at the kitchen properly, discuss what you want, and provide a clear written quote. No charge, no pressure.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">🔄</div>
+        <h3>One Team, Every Stage</h3>
+        <p>Plumbing, electrics, tiling, fitting, flooring — our team handles it all. You deal with us directly from start to finish, no juggling of separate contractors.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="#quote-form" class="btn btn-gold btn-lg">Start with a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     6. TRUST SECTION
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">You Can Count On Us</span>
+      <h2 id="trust-heading">Trusted for Kitchen Renovation Across Borehamwood &amp; WD6</h2>
+      <p>Letting a renovation team into your home or rental property takes real trust. Here is how we earn it — and keep it — on every project we take on.</p>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-emoji">📝</div>
+        <h3>Written Quote Before Work Starts</h3>
+        <p>Every project starts with a clear, itemised written quote. You know exactly what you are paying before anything is removed or ordered.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-1">
+        <div class="trust-emoji">🤝</div>
+        <h3>Honest &amp; Communicative</h3>
+        <p>We keep you updated throughout. If anything changes or comes up mid-project, we tell you straight away — no nasty surprises waiting at the end.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-2">
+        <div class="trust-emoji">🧹</div>
+        <h3>Tidy Working Process</h3>
+        <p>We protect your home while we work and leave everything clean at the end of each working day. Your kitchen and surrounding rooms treated with care.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-3">
+        <div class="trust-emoji">🎯</div>
+        <h3>Detail-Focused Finish</h3>
+        <p>The alignment, the joins, the sealant lines, the tiling — the finishing details are what separate a properly completed kitchen from a rushed one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     7. PORTFOLIO / PROJECT EXAMPLES
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="portfolio-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Our Work</span>
+      <h2 id="portfolio-heading">Kitchen Renovation Projects — Examples of Our Work in Borehamwood</h2>
+      <p>Borehamwood has a varied housing mix — and so do the kitchens we renovate. Here are representative examples of the kind of work we carry out across WD6 for homeowners, families, and landlords. <em>Images represent our typical project standard.</em></p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal">
+        <div class="portfolio-img">
+          <img src="/images/02_kitchen_marble.jpg" alt="Family home kitchen renovation in Borehamwood WD6" loading="lazy" />
+          <span class="portfolio-badge">Kitchen Renovation</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Borehamwood WD6</p>
+          <h3>Family Semi — Full Kitchen Transformation</h3>
+          <p>Complete strip-out and redesign of a tired kitchen in a WD6 1970s semi. The original layout was kept but improved, with new handleless units, a laminate worktop upgraded to solid quartz, full-height tiled splashback, and large-format floor tiles. A kitchen built to be used properly every day.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal reveal-delay-1">
+        <div class="portfolio-img">
+          <img src="/images/15_elegant_hallway.jpg" alt="Flat kitchen renovation and redesign in Borehamwood" loading="lazy" />
+          <span class="portfolio-badge">Flat Renovation</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Borehamwood — Flat</p>
+          <h3>Flat Kitchen — Smart Use of a Compact Space</h3>
+          <p>Kitchen renovation in a Borehamwood flat where making the most of the available footprint was the priority. New units designed around the existing plumbing positions, extended worktop run, wall-mounted storage, and fresh tiling throughout. Clean, modern, and well-finished.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal reveal-delay-2">
+        <div class="portfolio-img">
+          <img src="/images/09_tile_work.jpg" alt="Landlord kitchen renovation between tenancies in WD6 Borehamwood" loading="lazy" />
+          <span class="portfolio-badge">Landlord Renovation</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">WD6 — Rental Property</p>
+          <h3>Landlord Kitchen — Durable, Practical Fit-Out</h3>
+          <p>Full kitchen renovation carried out between tenancies for a WD6 landlord. Focus on durability, low maintenance, and a clean finish that photographs well for lettings listings. New units, worktop, splash tiling and flooring completed quickly to minimise the void period.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     8. BEFORE & AFTER
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="ba-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">The Difference</span>
+      <h2 id="ba-heading">Before &amp; After — What a Proper Kitchen Renovation Looks Like</h2>
+      <p>There is a significant difference between a cosmetic spruce-up and a kitchen renovation done properly. Here is the kind of result BMB Renovation delivers for homeowners and landlords across Borehamwood.</p>
+    </div>
+
+    <div class="before-after-grid">
+      <div class="ba-image-wrap reveal">
+        <img src="/images/02_kitchen_marble.jpg" alt="Kitchen before renovation — outdated units and worn finish" loading="lazy" />
+        <span class="ba-label ba-label-before">Before</span>
+      </div>
+      <div class="ba-image-wrap reveal reveal-delay-2">
+        <img src="/images/02_kitchen_marble.jpg" alt="Kitchen after renovation — premium finish by BMB Renovation" loading="lazy" />
+        <span class="ba-label ba-label-after">After</span>
+      </div>
+    </div>
+
+    <div class="text-center mt-6 reveal">
+      <p style="color:var(--gray-500);margin-bottom:1.5rem;">Ready to see what your Borehamwood kitchen could look like?</p>
+      <a href="#quote-form" class="btn btn-gold btn-lg">Book a Free Home Visit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     MID-PAGE CTA STRIP
+════════════════════════════════════════════════ -->
+<div class="section-sm">
+  <div class="container">
+    <div class="cta-strip reveal">
+      <h3>Thinking About a New Kitchen in Borehamwood?</h3>
+      <p>We are based in Watford — just up the A41. Book a free home visit and we will come to you, look at your kitchen, and provide a clear written quote with no obligation to proceed.</p>
+      <div class="cta-strip-btns">
+        <a href="#quote-form" class="btn btn-gold">Request a Free Quote</a>
+        <a href="tel:+447775758717" class="btn btn-dark">Call +44 7775 758 717</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     9. PROCESS — 5 STEPS
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">How It Works</span>
+      <h2 id="process-heading">Our Kitchen Renovation Process — Simple &amp; Straightforward</h2>
+      <p>From first enquiry to finished kitchen, here is exactly how we approach every job in Borehamwood. No surprises, no confusing jargon — a clear process from start to handover.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-number">1</div>
+        <h3>Free Home Visit</h3>
+        <p>We come to your Borehamwood property, look at the kitchen, take measurements, and listen to what you want. No charge, no pressure to proceed.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-number">2</div>
+        <h3>Written Quote</h3>
+        <p>You receive a clear, itemised written quote covering all labour, fitting, and any materials we are supplying. No vague ballpark figures.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-number">3</div>
+        <h3>Plan &amp; Schedule</h3>
+        <p>We agree the full scope, fix the start date, and confirm materials. You know exactly what is happening and when before we lift a tool.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-number">4</div>
+        <h3>Full Renovation</h3>
+        <p>Strip-out, fitting, plumbing, tiling, electrics, flooring — our team carries out the complete renovation, keeping the site tidy and keeping you informed.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="process-number">5</div>
+        <h3>Final Handover</h3>
+        <p>We walk through the finished kitchen with you, deal with any snags on the spot, and leave everything clean and ready to use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     10. LOCAL AREA COVERAGE
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="areas-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Local Coverage</span>
+      <h2 id="areas-heading">Kitchen Renovation Across Borehamwood &amp; the Surrounding Area</h2>
+      <p>BMB Renovation is based in Watford and regularly works across Borehamwood, Elstree, and the wider Hertfordshire and North London border area. If you are in or around WD6, we are your local team.</p>
+    </div>
+
+    <div class="areas-flex reveal">
+      <span class="area-chip primary">Borehamwood WD6</span>
+      <span class="area-chip primary">Elstree WD6</span>
+      <span class="area-chip primary">Shenley WD7</span>
+      <span class="area-chip">Radlett WD7</span>
+      <span class="area-chip">Watford WD17 / WD24</span>
+      <span class="area-chip">Bushey WD23</span>
+      <span class="area-chip">Barnet EN5</span>
+      <span class="area-chip">Arkley EN5</span>
+      <span class="area-chip">Potters Bar EN6</span>
+      <span class="area-chip">St Albans AL</span>
+      <span class="area-chip">Edgware HA8</span>
+      <span class="area-chip">Mill Hill NW7</span>
+    </div>
+
+    <p class="mt-4" style="color:var(--gray-500);font-size:0.9rem;">Not sure if we cover your postcode? <a href="tel:+447775758717" style="color:var(--gold);font-weight:700;">Give us a call</a> — we are happy to confirm.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     11. PRICE / FREE QUOTE SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="price-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Pricing</span>
+      <h2 id="price-heading">How Much Does a Kitchen Renovation Cost in Borehamwood?</h2>
+      <p>Kitchen renovation costs depend on the size of the kitchen, the specification you choose, and the full scope of work. The best way to get an accurate figure is a free home visit — but here is what drives the final cost.</p>
+    </div>
+
+    <div class="price-factors reveal">
+      <div class="price-factor"><div class="pf-dot"></div><p>Size of the kitchen and complexity of the layout</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Unit specification — standard, handleless or semi-bespoke</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Worktop material — laminate, solid wood, quartz or granite</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Extent of plumbing and electrical work required</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Tiling, flooring and splashback specification</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Appliance supply and integration requirements</p></div>
+    </div>
+
+    <div class="text-center mt-6 reveal">
+      <p style="max-width:540px;margin:0 auto 1.75rem;color:var(--gray-600);">We offer a free no-obligation quote for all kitchen renovation work in Borehamwood and WD6. We come to your home or property, assess the kitchen properly, and give you a clear written price — no guesswork, no surprise additions.</p>
+      <a href="#contact-form" class="btn btn-gold btn-lg">Request Your Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     12. FAQs
+════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">FAQs</span>
+      <h2 id="faq-heading">Kitchen Renovation in Borehamwood — Questions &amp; Answers</h2>
+      <p>Common questions from Borehamwood homeowners, flat residents, and landlords who are thinking about a kitchen renovation.</p>
+    </div>
+
+    <div class="faq-list reveal" style="max-width:860px;margin:0 auto;">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How much does a kitchen renovation cost in Borehamwood?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Costs in Borehamwood vary based on the size and condition of the kitchen, the specification of materials, and how much plumbing or electrical work is involved. A standard kitchen renovation for a typical WD6 semi typically starts from around £5,000–£8,000. Larger kitchens with premium materials, stone worktops, or more complex layouts can reach £15,000–£20,000+. Landlord renovations with a practical brief can often be completed more cost-effectively. The most accurate figure comes from a free home visit and written quote — call us or fill in the form to arrange one.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you offer a free quote for kitchen renovation in WD6?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — completely free and with no obligation. We will come to your Borehamwood home or property, look at the kitchen in person, discuss your brief, and provide a clear written quote. We are based in Watford so we are close by and can usually arrange a visit promptly. You are under no pressure to proceed and there is no charge if you decide not to go ahead.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How long does a kitchen renovation take in Borehamwood?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>A standard renovation — strip-out, new units, worktop, plumbing, tiling, and electrics — typically takes one to two weeks for a smaller kitchen, and up to three weeks for a larger or more complex job. We give you a realistic timeline as part of your written quote so you can plan around it properly. For landlord renovations where minimising the void period matters, we aim to work efficiently without compromising the quality of the finish.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can you renovate a kitchen in a flat or apartment in Borehamwood?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — we renovate kitchens in flats regularly across WD6. Flat kitchens come with their own practical considerations: access restrictions, shared walls and ceilings, working around existing plumbing positions, building regulations and leasehold requirements. We are experienced in flat renovations and will discuss any building-specific requirements with you before we start. If you need to check with a managing agent or freeholder before work begins, we can supply details of what the work involves to support that process.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I supply my own kitchen units — from Howdens, Wickes, Magnet, or others?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, absolutely. We are happy to fit units and worktops sourced from any supplier — Howdens, Wickes, Magnet, IKEA, Wren, or anyone else. Many Borehamwood homeowners prefer to choose their own kitchen and have us handle the full fitting. We can also advise on what to look for and what to check before ordering if you would find that useful.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you handle plumbing, tiling, and electrical work as part of the renovation?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — all of it is included. We handle all plumbing (sink, taps, dishwasher and washing machine connections), all tiling including splashbacks, floor tiles and wall preparation, and electrical finishing such as socket relocations and under-cabinet lighting installation. You do not need to source or coordinate separate tradespeople. Our team covers every stage in-house.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you work for landlords and letting properties in Borehamwood?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, and this is a significant part of our work in Borehamwood. Given the town's strong rental market and proximity to London, many landlords use us for kitchen renovations between tenancies. We understand the landlord brief: durable, low maintenance, clean modern finish, realistic cost, and minimal void time. We are straightforward to work with and happy to discuss ongoing arrangements if you manage multiple properties in the WD6 area.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Which parts of Borehamwood and WD6 do you cover?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We cover all of Borehamwood WD6, including the town centre area, Elstree, and surrounding streets. We also cover Shenley WD7, Radlett WD7, and work regularly across Bushey WD23 and Watford. To the south, we take on jobs in Barnet EN5, Arkley, and Edgware HA8. If you are in or around the WD6 postcode, the answer is almost certainly yes — give us a call or send an enquiry to confirm.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can we stay at home while the kitchen is being renovated?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Most of our Borehamwood clients do stay at home during the renovation. There will be a few days — typically around the strip-out and main unit fitting — when the kitchen is completely out of use. We tell you in advance exactly when that will be so you can plan for it. We work cleanly, protect the rest of the home, and keep disruption to a minimum. For landlord or vacant-property renovations, we can also work without anyone on site during the day.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     13. CONTACT / QUOTE FORM SECTION
+════════════════════════════════════════════════ -->
+<section class="section bg-light" id="contact-form" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: Contact info -->
+      <div class="reveal">
+        <span class="section-label">Get in Touch</span>
+        <h2 id="contact-heading" style="margin-top:0.5rem;">Request a Free Kitchen Renovation Quote in Borehamwood</h2>
+        <p style="margin:1rem 0 2rem;">Fill in the form and we will be in touch to arrange a free home visit. Or call us directly — we are happy to discuss your kitchen project before you commit to anything.</p>
+
+        <div class="contact-info-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <p class="ci-label">Phone</p>
+            <p class="ci-value"><a href="tel:+447775758717">+44 7775 758 717</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">✉️</div>
+          <div>
+            <p class="ci-label">Email</p>
+            <p class="ci-value"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <p class="ci-label">Our Base</p>
+            <p class="ci-value">157 Judge Street, Watford, WD24 5AN<br />Serving Borehamwood &amp; WD6</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">🕐</div>
+          <div>
+            <p class="ci-label">Working Hours</p>
+            <p class="ci-value">Monday–Saturday: 8am–5pm</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Second quote form -->
+      <div class="reveal reveal-delay-2">
+        <div class="quote-card">
+          <p class="quote-card-heading">Kitchen Renovation Enquiry — Borehamwood</p>
+          <p class="quote-card-sub">Free no-obligation quote for WD6 &amp; surrounding areas</p>
+
+          <form id="contact-form-el" novalidate>
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="cf-name">Your Name *</label>
+                <input class="form-input" id="cf-name" name="name" type="text" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-phone">Phone Number *</label>
+                <input class="form-input" id="cf-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+              </div>
+            </div>
+            <div class="form-row mt-1">
+              <div class="form-group">
+                <label class="form-label" for="cf-email">Email Address</label>
+                <input class="form-input" id="cf-email" name="email" type="email" placeholder="john@example.com" />
+              </div>
+            </div>
+            <div class="form-row form-row-2 mt-1">
+              <div class="form-group">
+                <label class="form-label" for="cf-project">Project Type</label>
+                <select class="form-select" id="cf-project" name="project">
+                  <option value="">Select project type</option>
+                  <option>Full Kitchen Renovation</option>
+                  <option>Kitchen Fitting</option>
+                  <option>Worktop Replacement</option>
+                  <option>Kitchen Tiling / Splashback</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-postcode">Location / Postcode</label>
+                <input class="form-input" id="cf-postcode" name="postcode" type="text" placeholder="e.g. WD6 1AB" />
+              </div>
+            </div>
+            <div class="form-row mt-1">
+              <div class="form-group">
+                <label class="form-label" for="cf-message">Tell Us About Your Kitchen</label>
+                <textarea class="form-textarea" id="cf-message" name="message" placeholder="Describe your project — layout, units, worktops, any specific requirements..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="form-submit">Request Free Quote →</button>
+            <p class="form-note">
+              <strong>Free quote. No obligation.</strong> We will only contact you about your renovation enquiry.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     14. FINAL CTA
+════════════════════════════════════════════════ -->
+<section class="final-cta-section" aria-label="Final call to action">
+  <div class="final-cta-bg">
+    <img src="/images/01_hero_luxury_interior.jpg" alt="Premium kitchen renovation by BMB Renovation" loading="lazy" />
+  </div>
+  <div class="final-cta-overlay"></div>
+
+  <div class="container">
+    <div class="final-cta-content reveal">
+      <span class="section-label" style="color:var(--gold);display:block;margin-bottom:1rem;">Kitchen Renovation · Borehamwood · WD6</span>
+      <h2>Your Borehamwood Kitchen,<br /><span>Done Properly</span></h2>
+      <p>A quality kitchen renovation that suits your home, your brief, and your budget — delivered by a team based just up the A41 in Watford. Free quote, no obligation, ready to get started.</p>
+      <div class="final-cta-btns">
+        <a href="#quote-form" class="btn btn-gold btn-lg">Get a Free Quote</a>
+        <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call +44 7775 758 717
+        </a>
+      </div>
+      <p class="final-trust-line">
+        <span>Serving Borehamwood &amp; WD6</span> &bull; Free quote &bull; No obligation &bull; Just along the A41 from Watford
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-bmb" style="color:#fff;">BMB</span>
+          <span class="logo-reno"> Renovation</span>
+        </div>
+        <p>Premium home renovation services across Borehamwood, Watford, and Hertfordshire. Kitchen renovation, bathroom renovation, flooring, tiling, and full house transformations.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="Google">g</a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/kitchen-renovation-borehamwood">Kitchen Renovation</a></li>
+          <li><a href="/bathroom-renovation-borehamwood">Bathroom Renovation</a></li>
+          <li><a href="/house-renovation-borehamwood">House Renovation</a></li>
+          <li><a href="/tiling-borehamwood">Tiling</a></li>
+          <li><a href="/flooring-borehamwood">Flooring</a></li>
+          <li><a href="/loft-conversion-borehamwood">Loft Conversion</a></li>
+        </ul>
+      </div>
+
+      <!-- Areas -->
+      <div class="footer-col">
+        <h4>Areas We Serve</h4>
+        <ul>
+          <li><a href="/kitchen-renovation-watford">Watford</a></li>
+          <li><a href="/kitchen-renovation-borehamwood">Borehamwood</a></li>
+          <li><a href="/kitchen-renovation-bushey">Bushey</a></li>
+          <li><a href="/kitchen-renovation-rickmansworth">Rickmansworth</a></li>
+          <li><a href="/kitchen-renovation-st-albans">St Albans</a></li>
+          <li><a href="/kitchen-renovation-hemel-hempstead">Hemel Hempstead</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📞</span>
+          <span class="footer-contact-text"><a href="tel:+447775758717">+44 7775 758 717</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉️</span>
+          <span class="footer-contact-text"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <span class="footer-contact-text">157 Judge Street<br />Watford, WD24 5AN</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">🕐</span>
+          <span class="footer-contact-text">Mon–Sat: 8am–5pm</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 BMB Renovation. All rights reserved. | <a href="/privacy" style="color:#6B7280;">Privacy Policy</a></p>
+      <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     STICKY MOBILE CTA
+════════════════════════════════════════════════ -->
+<div id="sticky-cta" aria-label="Mobile call to action">
+  <a href="#quote-form" class="sticky-btn sticky-quote">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12h6M9 16h6M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/></svg>
+    Free Quote
+  </a>
+  <a href="tel:+447775758717" class="sticky-btn sticky-call">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════ -->
+<script>
+  // ── Header scroll state ──
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── Hamburger menu ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  // ── FAQ accordion ──
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // ── Scroll reveal ──
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ── Form handlers ──
+  function handleFormSubmit(formId) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.querySelector('[name="name"]').value.trim();
+      const phone = form.querySelector('[name="phone"]').value.trim();
+      if (!name || !phone) {
+        alert('Please enter your name and phone number so we can get back to you.');
+        return;
+      }
+      form.innerHTML = `
+        <div style="text-align:center;padding:2rem 1rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name}!</h3>
+          <p style="color:#6B7280;font-size:0.9375rem;line-height:1.6;">
+            We have received your kitchen renovation enquiry for the Borehamwood area.<br />
+            We will be in touch shortly to arrange your free home visit and written quote.
+          </p>
+          <p style="margin-top:1.25rem;font-size:0.875rem;color:#9CA3AF;">
+            Or call us now: <a href="tel:+447775758717" style="color:#C8A97E;font-weight:700;">+44 7775 758 717</a>
+          </p>
+        </div>`;
+    });
+  }
+  handleFormSubmit('hero-form');
+  handleFormSubmit('contact-form-el');
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     GOOGLE ADS ANNOTATIONS
+     Campaign: Kitchen Renovation — Borehamwood
+     URL: /kitchen-renovation-borehamwood
+     Target Postcodes: WD6
+═══════════════════════════════════════════════════════════════
+
+HEADLINES (max 30 chars each):
+1. Kitchen Renovation Borehamwood
+2. Free Quote — WD6 Kitchen Reno
+3. Premium Kitchen Renovation WD6
+4. Local Kitchen Renovation Team
+5. Kitchen Fitting Borehamwood
+6. Full Kitchen Transformation
+7. Expert Kitchen Renovation
+8. Free Home Visit · WD6
+9. Kitchen Specialists Nearby
+10. BMB Renovation — WD6
+
+DESCRIPTIONS (max 90 chars each):
+1. Kitchen renovation in Borehamwood. Free no-obligation quote from your local Watford-based team.
+2. Just along the A41 from WD6. Full kitchen service — units, worktops, tiling, plumbing & more.
+3. Expert kitchen renovations for Borehamwood homes, flats & landlords. Call for a free quote today.
+4. Homeowners & landlords in WD6 trust BMB Renovation. Premium finish, honest pricing, free visit.
+
+KEYWORDS:
+kitchen renovation borehamwood
+kitchen renovation wd6
+kitchen fitters borehamwood
+kitchen fitting borehamwood
+new kitchen borehamwood
+kitchen renovation near me borehamwood
+kitchen refurbishment borehamwood
+kitchen renovation elstree
+landlord kitchen renovation borehamwood
+kitchen renovation hertfordshire wd6
+local kitchen renovation wd6
+flat kitchen renovation borehamwood
+
+NEGATIVE KEYWORDS:
+-diy
+-cheap
+-free
+-courses
+-training
+-videos
+-plans
+-ideas only
+-design software
+
+════════════════════════════════════════════════ -->4:Taa7,// ── Header scroll state ──
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── Hamburger menu ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  // ── FAQ accordion ──
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // ── Scroll reveal ──
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ── Form handlers ──
+  function handleFormSubmit(formId) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.querySelector('[name="name"]').value.trim();
+      const phone = form.querySelector('[name="phone"]').value.trim();
+      if (!name || !phone) {
+        alert('Please enter your name and phone number so we can get back to you.');
+        return;
+      }
+      form.innerHTML = `
+        <div style="text-align:center;padding:2rem 1rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name}!</h3>
+          <p style="color:#6B7280;font-size:0.9375rem;line-height:1.6;">
+            We have received your kitchen renovation enquiry for the Borehamwood area.<br />
+            We will be in touch shortly to arrange your free home visit and written quote.
+          </p>
+          <p style="margin-top:1.25rem;font-size:0.875rem;color:#9CA3AF;">
+            Or call us now: <a href="tel:+447775758717" style="color:#C8A97E;font-weight:700;">+44 7775 758 717</a>
+          </p>
+        </div>`;
+    });
+  }
+  handleFormSubmit('hero-form');
+  handleFormSubmit('contact-form-el');0:["J4NM-S4kEXF-15xO6ltJb",[[["",{"children":["kitchen-renovation-borehamwood",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["kitchen-renovation-borehamwood",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","kitchen-renovation-borehamwood","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c93b10a3daa1778c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
+a:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Kitchen Renovation Borehamwood | Free Quote | BMB Renovation"}],["$","meta","3",{"name":"description","content":"Expert kitchen renovation in Borehamwood. BMB Renovation serves Borehamwood WD6 from our Watford base — full kitchen transformations, free no-obligation quote. Call +44 7775 758 717."}],["$","link","4",{"rel":"canonical","href":"https://bmbrenovation.co.uk/kitchen-renovation-borehamwood"}],["$","meta","5",{"property":"og:title","content":"Kitchen Renovation Borehamwood | Free Quote | BMB Renovation"}],["$","meta","6",{"property":"og:description","content":"Expert kitchen renovation in Borehamwood. BMB Renovation serves Borehamwood WD6 from our Watford base — full kitchen transformations, free no-obligation quote. Call +44 7775 758 717."}],["$","meta","7",{"property":"og:image","content":"https://bmbrenovation.co.uk/images/02_kitchen_marble.jpg"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Kitchen Renovation Borehamwood | Free Quote | BMB Renovation"}],["$","meta","10",{"name":"twitter:description","content":"Expert kitchen renovation in Borehamwood. BMB Renovation serves Borehamwood WD6 from our Watford base — full kitchen transformations, free no-obligation quote. Call +44 7775 758 717."}],["$","meta","11",{"name":"twitter:image","content":"https://bmbrenovation.co.uk/images/02_kitchen_marble.jpg"}],["$","link","12",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","13",{"rel":"icon","href":"/favicon.svg"}],["$","meta","14",{"name":"next-size-adjust"}]]
+1:null

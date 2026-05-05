@@ -57,10 +57,40 @@ HEADER_STYLE_OVERRIDES = """
   .header-call:hover { opacity: 0.9; }
   .hamburger span { background: #111827 !important; }
 
-  /* ── HERO: single column (form removed from hero) ── */
+  /* ── HERO: centred single column layout ── */
   .hero-grid {
     grid-template-columns: 1fr !important;
-    max-width: 680px;
+    max-width: 760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  /* Keep H1 centred */
+  .hero-h1 { text-align: center !important; }
+  /* Sub-paragraph centred, max-width so lines don't run too long */
+  .hero-sub {
+    text-align: center !important;
+    max-width: 580px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  /* CTA buttons centred under text */
+  .hero-btns {
+    justify-content: center !important;
+  }
+  /* Eyebrow chip centred */
+  .hero-eyebrow {
+    display: inline-flex !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  /* Trust badges centred */
+  .trust-badges {
+    justify-content: center !important;
+  }
+  /* Reassurance text centred */
+  .reassurance-text {
+    text-align: center !important;
   }
   /* hide old hero-form wrapper if it somehow remains */
   .hero-quote-panel { display: none !important; }

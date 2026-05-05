@@ -35,6 +35,23 @@ export default function ContactClient() {
       })
       const data = await res.json()
       if (data?.success === 'true' || data?.success === true || res.ok) {
+        // Save to localStorage for admin dashboard
+        try {
+          const stored = JSON.parse(localStorage.getItem('bmb_quotes') || '[]')
+          stored.push({
+            id: Date.now().toString(36) + Math.random().toString(36).slice(2,7),
+            timestamp: new Date().toISOString(),
+            name: form.name, phone: form.phone,
+            email: form.email || '(not provided)',
+            project: '(contact page)',
+            postcode: '(not provided)',
+            message: form.message || '(no message)',
+            contact_time: 'Any time',
+            page: '/contact',
+            status: 'new',
+          })
+          localStorage.setItem('bmb_quotes', JSON.stringify(stored))
+        } catch {}
         setSubmitted(true)
         toast?.success?.('Message sent! We will be in touch shortly.')
       } else {

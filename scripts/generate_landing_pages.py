@@ -35,12 +35,16 @@ HEADER_STYLE_OVERRIDES = """
     background: #fff !important;
     box-shadow: 0 1px 0 rgba(0,0,0,0.08) !important;
   }
+  /* Logo: BMBRENOVATION — all black, bold, uppercase */
   .logo-bmb {
     color: #111827 !important;
-    font-weight: 800 !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    text-transform: uppercase !important;
   }
+  /* Hide the old gold "Renovation" span (now replaced in HTML, but safe fallback) */
   .logo-reno {
-    color: var(--gold) !important;
+    display: none !important;
   }
   .nav-link {
     color: #374151 !important;
@@ -414,6 +418,22 @@ def extract_body_content(html: str) -> str:
     content = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
     return content
 
+def fix_logo_html(body: str) -> str:
+    """
+    Replace the two-span logo:
+      <span class="logo-bmb">BMB</span><span class="logo-reno"> Renovation</span>
+    with a single unified span:
+      <span class="logo-bmb">BMBRENOVATION</span>
+    Handles minor whitespace variations.
+    """
+    body = re.sub(
+        r'<span class="logo-bmb">[^<]*</span>\s*<span class="logo-reno">[^<]*</span>',
+        '<span class="logo-bmb">BMBRENOVATION</span>',
+        body,
+        flags=re.IGNORECASE
+    )
+    return body
+
 def fix_image_paths(content: str) -> str:
     content = re.sub(r'(?:src|href)="nextjs_space/public/images/', 'src="/images/', content)
     return content
@@ -619,6 +639,8 @@ def insert_combined_section_before_footer(body: str, slug: str) -> str:
     return body
 
 def clean_body(body: str, slug: str) -> str:
+    # Step 0: Fix logo HTML (BMBRENOVATION — all black, no gold split)
+    body = fix_logo_html(body)
     body = fix_image_paths(body)
     body = fix_image_names(body, slug)
     # Remove stray html/head/body tags

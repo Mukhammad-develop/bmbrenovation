@@ -57,15 +57,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="flex items-center">
-              <span className={`font-display text-2xl font-bold tracking-tight transition-colors ${
+              <span className={`font-display text-2xl font-black tracking-tight transition-colors ${
                 scrolled ? 'text-gray-900' : 'text-white'
               }`}>
-                BMB
-              </span>
-              <span className={`font-display text-2xl font-light tracking-tight transition-colors ${
-                scrolled ? 'text-[#C8A97E]' : 'text-[#C8A97E]'
-              }`}>
-                {' '}Renovation
+                BMBRENOVATION
               </span>
             </div>
           </Link>

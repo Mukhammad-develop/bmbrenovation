@@ -3,7 +3,7 @@
 7:I[2798,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ThemeProvider"]
 8:I[3606,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"Toaster"]
 9:I[4215,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ChunkLoadErrorHandler"]
-2:T6bcf,
+2:T732f,
     /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -674,11 +674,84 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
-  3:Tcfce,<!-- ═══════════════════════════════════════════════
-     HEADER
-════════════════════════════════════════════════ -->
+  
 
-  <div class="container">
+  /* ── HEADER OVERRIDE: always white bg, black text ── */
+  #site-header {
+    background: #fff !important;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.08) !important;
+  }
+  .logo-bmb {
+    color: #111827 !important;
+    font-weight: 800 !important;
+  }
+  .logo-reno {
+    color: var(--gold) !important;
+  }
+  .nav-link {
+    color: #374151 !important;
+  }
+  .nav-link:hover {
+    color: var(--gold) !important;
+    background: var(--gray-100) !important;
+  }
+  .header-call {
+    display: flex !important;
+    background: #111827 !important;
+    color: #fff !important;
+  }
+  .header-call:hover { opacity: 0.9; }
+  .hamburger span { background: #111827 !important; }
+
+  /* ── HERO: single column (form removed from hero) ── */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 680px;
+  }
+  /* hide old hero-form wrapper if it somehow remains */
+  .hero-quote-panel { display: none !important; }
+
+  /* ── REASSURANCE TEXT ── */
+  .reassurance-text {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.65);
+    margin-top: 0.625rem;
+    font-style: italic;
+  }
+  .reassurance-text-dark {
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+    margin-top: 0.625rem;
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* ── QUOTE FORM SECTION (bottom of page) ── */
+  #quote-form {
+    scroll-margin-top: 90px;
+  }
+  .quote-section-wrap {
+    background: var(--gray-50);
+    border-radius: 1.5rem;
+    padding: 3rem 2rem;
+    border: 1.5px solid var(--gray-100);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .quote-section-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.625rem;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+  }
+  .quote-section-sub {
+    font-size: 0.9375rem;
+    color: var(--gray-500);
+    margin-bottom: 2rem;
+  }
+3:T9cd5,<div class="container">
     <div class="header-inner">
       <a href="/" class="logo" aria-label="BMB Renovation Home">
         <span class="logo-bmb">BMB</span>
@@ -716,9 +789,6 @@
     </a>
   </div>
 
-<!-- ═══════════════════════════════════════════════
-     1. HERO
-════════════════════════════════════════════════ -->
 <section id="hero" aria-label="Hero section">
   <div class="hero-bg">
     <img src="/images/03_luxury_bathroom.jpg"
@@ -731,7 +801,7 @@
     <div class="container">
       <div class="hero-grid">
 
-        <!-- Left: Headline -->
+        
         <div>
           <div class="hero-eyebrow">
             <div class="hero-eyebrow-dot"></div>
@@ -759,6 +829,7 @@
               +44 7775 758 717
             </a>
           </div>
+          <p class="reassurance-text">No obligation, only friendly advice.</p>
 
           <div class="trust-badges">
             <span class="badge"><span class="badge-check">✓</span> Free No-Obligation Quote</span>
@@ -769,79 +840,13 @@
           </div>
         </div>
 
-        <!-- Right: Quote Form -->
-        <div id="quote-form">
-          <div class="quote-card">
-            <p class="quote-card-heading">Get Your Free Bathroom Renovation Quote in Bedford</p>
-            <p class="quote-card-sub">Free quote · No obligation · Friendly advice</p>
-
-            <form id="hero-form" novalidate>
-              <div class="form-row form-row-2">
-                <div class="form-group">
-                  <label class="form-label" for="f-name">Your Name *</label>
-                  <input class="form-input" id="f-name" name="name" type="text" placeholder="John Smith" required />
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="f-phone">Phone Number *</label>
-                  <input class="form-input" id="f-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
-                </div>
-              </div>
-              <div class="form-row mt-1">
-                <div class="form-group">
-                  <label class="form-label" for="f-email">Email Address</label>
-                  <input class="form-input" id="f-email" name="email" type="email" placeholder="john@example.com" />
-                </div>
-              </div>
-              <div class="form-row form-row-2 mt-1">
-                <div class="form-group">
-                  <label class="form-label" for="f-project">Project Type</label>
-                  <select class="form-select" id="f-project" name="project">
-                    <option value="">Select project type</option>
-                    <option>Full Bathroom Renovation</option>
-                    <option>Bathroom Fitting</option>
-                    <option>Shower / Bath Fitting</option>
-                    <option>Tiling</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="f-postcode">Location / Postcode</label>
-                  <input class="form-input" id="f-postcode" name="postcode" type="text" placeholder="e.g. MK40 1AA" />
-                </div>
-              </div>
-              <div class="form-row mt-1">
-                <div class="form-group">
-                  <label class="form-label" for="f-message">Tell Us About Your Project</label>
-                  <textarea class="form-textarea" id="f-message" name="message" placeholder="Describe your bathroom renovation, size, style, any specific requirements..."></textarea>
-                </div>
-              </div>
-              <div class="form-row mt-1">
-                <div class="form-group">
-                  <label class="form-label" for="f-contact-time">Preferred Contact Time</label>
-                  <select class="form-select" id="f-contact-time" name="contact_time">
-                    <option value="">Any time</option>
-                    <option>Morning (8am–12pm)</option>
-                    <option>Afternoon (12pm–5pm)</option>
-                    <option>Evening (after 5pm)</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" class="form-submit">Request Free Quote →</button>
-              <p class="form-note">
-                <strong>Free quote. No obligation. Friendly advice.</strong><br />
-                Your details are safe with us. We will only contact you about your renovation enquiry.
-              </p>
-            </form>
-          </div>
-        </div>
+        
+        
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     STATS BAR
-════════════════════════════════════════════════ -->
 <div class="stats-bar" aria-label="Company statistics">
   <div class="container">
     <div class="stats-grid">
@@ -853,9 +858,6 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════
-     3. PROBLEM / INTENT SECTION
-════════════════════════════════════════════════ -->
 <section class="section bg-light" aria-labelledby="problem-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -884,9 +886,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     4. WHAT IS INCLUDED
-════════════════════════════════════════════════ -->
 <section class="section" aria-labelledby="includes-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -908,14 +907,11 @@
     </div>
 
     <div class="text-center mt-5 reveal">
-      <a href="#contact-form" class="btn btn-gold">Get a Free Bathroom Renovation Quote</a>
+      <a href="#quote-form" class="btn btn-gold">Get a Free Bathroom Renovation Quote</a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     5. WHY CHOOSE BMB RENOVATION
-════════════════════════════════════════════════ -->
 <section class="section bg-dark" aria-labelledby="why-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -973,9 +969,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     6. TRUST SECTION
-════════════════════════════════════════════════ -->
 <section class="section" aria-labelledby="trust-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -1009,9 +1002,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     7. PORTFOLIO / PROJECT EXAMPLES
-════════════════════════════════════════════════ -->
 <section class="section bg-light" aria-labelledby="portfolio-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -1069,9 +1059,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     8. BEFORE AND AFTER
-════════════════════════════════════════════════ -->
 <section class="section" aria-labelledby="ba-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -1106,9 +1093,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     9. PROCESS
-════════════════════════════════════════════════ -->
 <section class="section bg-light" aria-labelledby="process-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -1151,9 +1135,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     10. LOCAL AREA COVERAGE
-════════════════════════════════════════════════ -->
 <section class="section" aria-labelledby="areas-heading">
   <div class="container">
     <div style="display:grid; gap:3rem; align-items:center;" class="before-after-grid">
@@ -1188,9 +1169,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     11. PRICE / FREE QUOTE SECTION
-════════════════════════════════════════════════ -->
 <section class="section bg-light" aria-labelledby="price-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -1218,13 +1196,11 @@
           Speak to Our Team
         </a>
       </div>
+        <p class="reassurance-text-dark">No obligation, only friendly advice.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     12. FAQs
-════════════════════════════════════════════════ -->
 <section class="section" aria-labelledby="faq-heading">
   <div class="container" style="max-width:800px;">
     <div class="section-header reveal">
@@ -1328,14 +1304,11 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     13. CONTACT / QUOTE FORM SECTION
-════════════════════════════════════════════════ -->
-<section class="section bg-light" id="contact-form" aria-labelledby="contact-heading">
+<section class="section bg-light" id="quote-form-bottom" aria-labelledby="contact-heading">
   <div class="container">
     <div class="contact-grid">
 
-      <!-- Left: Info -->
+      
       <div class="reveal">
         <span class="section-label">Get in Touch</span>
         <h2 id="contact-heading" style="color:var(--gray-900); margin-top:0.5rem; margin-bottom:1rem;">Get a Free Bathroom Renovation Quote in Bedford</h2>
@@ -1371,64 +1344,14 @@
         </div>
       </div>
 
-      <!-- Right: Form -->
+      
       <div class="reveal reveal-delay-1">
-        <div class="quote-card">
-          <p class="quote-card-heading">Request Your Free Bathroom Renovation Quote</p>
-          <p class="quote-card-sub">Fill in the form and we will get back to you promptly.</p>
-
-          <form id="contact-quote-form" novalidate>
-            <div class="form-row form-row-2">
-              <div class="form-group">
-                <label class="form-label" for="c-name">Your Name *</label>
-                <input class="form-input" id="c-name" name="name" type="text" placeholder="John Smith" required />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="c-phone">Phone *</label>
-                <input class="form-input" id="c-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
-              </div>
-            </div>
-            <div class="form-row mt-1">
-              <div class="form-group">
-                <label class="form-label" for="c-email">Email Address</label>
-                <input class="form-input" id="c-email" name="email" type="email" placeholder="john@example.com" />
-              </div>
-            </div>
-            <div class="form-row form-row-2 mt-1">
-              <div class="form-group">
-                <label class="form-label" for="c-project">Project Type</label>
-                <select class="form-select" id="c-project" name="project">
-                  <option value="">Select type</option>
-                  <option>Full Bathroom Renovation</option>
-                  <option>Bathroom Fitting</option>
-                  <option>Shower / Bath Fitting</option>
-                  <option>Tiling</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="c-postcode">Postcode</label>
-                <input class="form-input" id="c-postcode" name="postcode" type="text" placeholder="e.g. MK40 1AA" />
-              </div>
-            </div>
-            <div class="form-row mt-1">
-              <div class="form-group">
-                <label class="form-label" for="c-message">Your Message</label>
-                <textarea class="form-textarea" id="c-message" name="message" placeholder="Tell us about your bathroom renovation project..."></textarea>
-              </div>
-            </div>
-            <button type="submit" class="form-submit">Request Free Quote →</button>
-            <p class="form-note">Free quote · No obligation · Your details stay private.</p>
-          </form>
-        </div>
+        
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     14. FINAL CTA
-════════════════════════════════════════════════ -->
 <section class="final-cta-section" aria-labelledby="final-cta-heading">
   <div class="final-cta-bg">
     <img src="/images/01_hero_luxury_interior.jpg"
@@ -1448,6 +1371,7 @@
         Call +44 7775 758 717
       </a>
     </div>
+        <p class="final-trust-line">No obligation — <span>only friendly advice</span>.</p>
     <p class="final-trust-line">
       <span>Free quote</span> &nbsp;•&nbsp; <span>No obligation</span> &nbsp;•&nbsp; <span>Local renovation specialists</span>
     </p>
@@ -1455,8 +1379,74 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════
-     FOOTER
+     QUOTE FORM SECTION  (moved from hero to bottom)
 ════════════════════════════════════════════════ -->
+<section class="section" id="quote-form" aria-labelledby="quote-form-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Free Quote</span>
+      <h2 id="quote-form-heading">Get a Free Quote for Bathroom Renovation in Bedford</h2>
+      <p>No obligation, only friendly advice. Tell us about your project and we will come back to you promptly with a clear, written quote.</p>
+    </div>
+    <div class="quote-section-wrap reveal">
+      <form id="main-quote-form" novalidate>
+        <div class="form-row form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="qf-name">Your Name *</label>
+            <input class="form-input" id="qf-name" name="name" type="text" placeholder="John Smith" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="qf-phone">Phone Number *</label>
+            <input class="form-input" id="qf-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+          </div>
+        </div>
+        <div class="form-row mt-1">
+          <div class="form-group">
+            <label class="form-label" for="qf-email">Email Address</label>
+            <input class="form-input" id="qf-email" name="email" type="email" placeholder="john@example.com" />
+          </div>
+        </div>
+        <div class="form-row form-row-2 mt-1">
+          <div class="form-group">
+            <label class="form-label" for="qf-project">Project Type</label>
+            <select class="form-select" id="qf-project" name="project">
+              <option value="">Select project type</option>
+              <option>Full Bathroom Renovation</option>
+              <option>Bathroom Fitting / Suite Installation</option>
+              <option>Shower Installation</option>
+              <option>Bathroom Tiling</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="qf-postcode">Location / Postcode</label>
+            <input class="form-input" id="qf-postcode" name="postcode" type="text" placeholder="e.g. WD17 2AB" />
+          </div>
+        </div>
+        <div class="form-row mt-1">
+          <div class="form-group">
+            <label class="form-label" for="qf-message">Tell Us About Your Project</label>
+            <textarea class="form-textarea" id="qf-message" name="message" placeholder="Describe your project — size, style, any specific requirements..."></textarea>
+          </div>
+        </div>
+        <div class="form-row mt-1">
+          <div class="form-group">
+            <label class="form-label" for="qf-time">Preferred Contact Time</label>
+            <select class="form-select" id="qf-time" name="contact_time">
+              <option value="">Any time</option>
+              <option>Morning (8am–12pm)</option>
+              <option>Afternoon (12pm–5pm)</option>
+              <option>Evening (after 5pm)</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">Request Free Quote →</button>
+        <p class="form-note"><strong>No obligation, only friendly advice.</strong><br />Your details are safe with us. We will only contact you about your renovation enquiry.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -1524,9 +1514,6 @@
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════════════
-     STICKY MOBILE CTA
-════════════════════════════════════════════════ -->
 <div id="sticky-cta" role="complementary" aria-label="Quick action buttons">
   <a href="#quote-form" class="sticky-btn sticky-quote">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
@@ -1536,25 +1523,25 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
     Call Now
   </a>
-</div>
-
-<!-- ═══════════════════════════════════════════════
-     JAVASCRIPT
-════════════════════════════════════════════════ -->
-<script>
-  // ── Header scroll ──
+</div>4:Tc76,
+  // ── Header: always scrolled/white style ──
   const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 20);
-  }, { passive: true });
+  if (header) {
+    header.classList.add('scrolled');
+    window.addEventListener('scroll', () => {
+      header.classList.add('scrolled');
+    }, { passive: true });
+  }
 
   // ── Hamburger ──
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
-  hamburger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', open);
-  });
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(open));
+    });
+  }
 
   // ── FAQ accordion ──
   document.querySelectorAll('.faq-question').forEach(btn => {
@@ -1574,137 +1561,45 @@
 
   // ── Scroll reveal ──
   const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
+  const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('visible');
-        observer.unobserve(e.target);
+        revealObserver.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => observer.observe(el));
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => revealObserver.observe(el));
 
-  // ── Form submission (demo — wire up to backend as needed) ──
-  ['hero-form', 'contact-quote-form'].forEach(id => {
+  // ── Form submission ──
+  // Handle all quote forms: main-quote-form, hero-form, contact-quote-form
+  ['main-quote-form', 'hero-form', 'contact-quote-form'].forEach(id => {
     const form = document.getElementById(id);
     if (!form) return;
     form.addEventListener('submit', e => {
       e.preventDefault();
-      const name = form.querySelector('[name="name"]').value.trim();
-      const phone = form.querySelector('[name="phone"]').value.trim();
-      if (!name || !phone) {
+      const name = (form.querySelector('[name="name"]') || {}).value || '';
+      const phone = (form.querySelector('[name="phone"]') || {}).value || '';
+      if (!name.trim() || !phone.trim()) {
         alert('Please enter your name and phone number.');
         return;
       }
-      // Replace with real form handler / Formspree / Netlify Forms etc.
+      const serviceText = form.closest('section') && form.closest('section').querySelector('h2')
+        ? form.closest('section').querySelector('h2').textContent.replace('Get a Free Quote for ', '')
+        : 'your renovation project';
       form.innerHTML = `
-        <div style="text-align:center;padding:2.5rem 1rem;">
+        <div style="text-align:center;padding:3rem 1rem;">
           <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
-          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name}!</h3>
-          <p style="color:#6B7280;font-size:0.9375rem;">We have received your enquiry and will be in touch shortly to discuss your bathroom renovation in Bedford.</p>
-          <a href="tel:+447775758717" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.875rem 1.75rem;background:#C8A97E;color:#fff;border-radius:9999px;font-weight:700;font-size:0.9375rem;">📞 Call us now: +44 7775 758 717</a>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name.trim()}!</h3>
+          <p style="color:#6B7280;font-size:0.9375rem;line-height:1.7;max-width:480px;margin:0 auto;">
+            We have received your enquiry and will be in touch shortly to discuss ${serviceText}.
+          </p>
+          <p style="color:#9CA3AF;font-size:0.875rem;margin-top:1.25rem;font-style:italic;">
+            You can get in touch yourself anytime before our team calls you back.
+          </p>
         </div>`;
     });
   });
-</script>
-
-<!-- ═══════════════════════════════════════════════
-     GOOGLE ADS ANNOTATIONS (hidden — for reference)
-─────────────────────────────────────────────────
-Target Keyword: bathroom renovation Bedford
-URL Slug: /bathroom-renovation-bedford
-
-HEADLINE IDEAS:
-1. Bathroom Renovation Bedford | Free Quote
-2. Bedford Bathroom Renovation Experts
-3. Transform Your Bathroom in Bedford
-4. Free Quote – Bathroom Renovation Bedford
-5. Bedford's Trusted Bathroom Renovators
-6. Premium Bathroom Fitting Bedford
-7. New Bathroom Bedford – No-Obligation Quote
-8. Bathroom Renovation Bedford – Local Team
-9. Bathroom Makeover in Bedford | BMB
-10. Get a Free Bathroom Quote in Bedford
-
-DESCRIPTION IDEAS:
-1. Expert bathroom renovation in Bedford. BMB Renovation offers full transformations — tiling, plumbing, fitting. Free quote. Call +44 7775 758 717.
-2. Premium bathroom renovation in Bedford. Free no-obligation quote. Local experienced team. Homeowners, landlords & investors welcome.
-3. Looking for bathroom renovation in Bedford? BMB Renovation delivers a premium finish from just one local team. Request your free quote today.
-4. Bedford bathroom renovation specialists. We handle design, plumbing, tiling, fitting & finishing. Get your free quote — no pressure, no obligation.
-
-SUGGESTED KEYWORDS:
-Exact: [bathroom renovation Bedford], [bathroom renovation in Bedford], [Bedford bathroom renovation]
-Phrase: "bathroom renovation Bedford", "bathroom fitting Bedford", "bathroom refurbishment Bedford"
-Local intent: bathroom renovation near me, local bathroom renovation Bedford, bathroom fitter Bedford
-Near me: bathroom renovation near Bedford, bathroom renovation close to Bedford
-
-NEGATIVE KEYWORDS:
-jobs, salary, vacancy, DIY, how to, tutorial, course, training, YouTube, images only,
-second hand, used bathroom, cheap tools, free materials, template, meaning,
-council bathroom, bathroom ideas only, bathroom inspiration only
-════════════════════════════════════════════════ -->4:Tb0d,// ── Header scroll ──
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 20);
-  }, { passive: true });
-
-  // ── Hamburger ──
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  hamburger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', open);
-  });
-
-  // ── FAQ accordion ──
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-
-  // ── Scroll reveal ──
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => observer.observe(el));
-
-  // ── Form submission (demo — wire up to backend as needed) ──
-  ['hero-form', 'contact-quote-form'].forEach(id => {
-    const form = document.getElementById(id);
-    if (!form) return;
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const name = form.querySelector('[name="name"]').value.trim();
-      const phone = form.querySelector('[name="phone"]').value.trim();
-      if (!name || !phone) {
-        alert('Please enter your name and phone number.');
-        return;
-      }
-      // Replace with real form handler / Formspree / Netlify Forms etc.
-      form.innerHTML = `
-        <div style="text-align:center;padding:2.5rem 1rem;">
-          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
-          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name}!</h3>
-          <p style="color:#6B7280;font-size:0.9375rem;">We have received your enquiry and will be in touch shortly to discuss your bathroom renovation in Bedford.</p>
-          <a href="tel:+447775758717" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.875rem 1.75rem;background:#C8A97E;color:#fff;border-radius:9999px;font-weight:700;font-size:0.9375rem;">📞 Call us now: +44 7775 758 717</a>
-        </div>`;
-    });
-  });0:["J4NM-S4kEXF-15xO6ltJb",[[["",{"children":["bathroom-renovation-bedford",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["bathroom-renovation-bedford",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","bathroom-renovation-bedford","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c93b10a3daa1778c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
+0:["AwNx-77kHnGErVNrX78A9",[[["",{"children":["bathroom-renovation-bedford",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["bathroom-renovation-bedford",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","bathroom-renovation-bedford","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c93b10a3daa1778c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
 a:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Bathroom Renovation Bedford | Free Quote | BMB Renovation"}],["$","meta","3",{"name":"description","content":"Expert bathroom renovation in Bedford. BMB Renovation offers full bathroom transformations with a free, no-obligation quote. Call +44 7775 758 717 today."}],["$","link","4",{"rel":"canonical","href":"https://bmbrenovation.co.uk/bathroom-renovation-bedford"}],["$","meta","5",{"property":"og:title","content":"Bathroom Renovation Bedford | Free Quote | BMB Renovation"}],["$","meta","6",{"property":"og:description","content":"Expert bathroom renovation in Bedford. BMB Renovation offers full bathroom transformations with a free, no-obligation quote. Call +44 7775 758 717 today."}],["$","meta","7",{"property":"og:image","content":"https://bmbrenovation.co.uk/images/03_luxury_bathroom.jpg"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Bathroom Renovation Bedford | Free Quote | BMB Renovation"}],["$","meta","10",{"name":"twitter:description","content":"Expert bathroom renovation in Bedford. BMB Renovation offers full bathroom transformations with a free, no-obligation quote. Call +44 7775 758 717 today."}],["$","meta","11",{"name":"twitter:image","content":"https://bmbrenovation.co.uk/images/03_luxury_bathroom.jpg"}],["$","link","12",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","13",{"rel":"icon","href":"/favicon.svg"}],["$","meta","14",{"name":"next-size-adjust"}]]
 1:null

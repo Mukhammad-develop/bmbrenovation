@@ -3,7 +3,7 @@
 7:I[2798,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ThemeProvider"]
 8:I[3606,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"Toaster"]
 9:I[4215,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ChunkLoadErrorHandler"]
-2:T6658,
+2:T6db8,
     /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -336,10 +336,84 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
     .reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
-  3:Tdd97,<!-- ═══════════════════════════════════════════════
-     LOCAL PROXIMITY BANNER
-════════════════════════════════════════════════ -->
-<div id="proximity-banner">
+  
+
+  /* ── HEADER OVERRIDE: always white bg, black text ── */
+  #site-header {
+    background: #fff !important;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.08) !important;
+  }
+  .logo-bmb {
+    color: #111827 !important;
+    font-weight: 800 !important;
+  }
+  .logo-reno {
+    color: var(--gold) !important;
+  }
+  .nav-link {
+    color: #374151 !important;
+  }
+  .nav-link:hover {
+    color: var(--gold) !important;
+    background: var(--gray-100) !important;
+  }
+  .header-call {
+    display: flex !important;
+    background: #111827 !important;
+    color: #fff !important;
+  }
+  .header-call:hover { opacity: 0.9; }
+  .hamburger span { background: #111827 !important; }
+
+  /* ── HERO: single column (form removed from hero) ── */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 680px;
+  }
+  /* hide old hero-form wrapper if it somehow remains */
+  .hero-quote-panel { display: none !important; }
+
+  /* ── REASSURANCE TEXT ── */
+  .reassurance-text {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.65);
+    margin-top: 0.625rem;
+    font-style: italic;
+  }
+  .reassurance-text-dark {
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+    margin-top: 0.625rem;
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* ── QUOTE FORM SECTION (bottom of page) ── */
+  #quote-form {
+    scroll-margin-top: 90px;
+  }
+  .quote-section-wrap {
+    background: var(--gray-50);
+    border-radius: 1.5rem;
+    padding: 3rem 2rem;
+    border: 1.5px solid var(--gray-100);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .quote-section-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.625rem;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+  }
+  .quote-section-sub {
+    font-size: 0.9375rem;
+    color: var(--gray-500);
+    margin-bottom: 2rem;
+  }
+3:Tb357,<div id="proximity-banner">
   <div class="container">
     <div class="proximity-inner">
       <span>🏠 Serving Harrow from our Watford base — just up the A409.</span>
@@ -347,10 +421,6 @@
     </div>
   </div>
 </div>
-
-<!-- ═══════════════════════════════════════════════
-     HEADER
-════════════════════════════════════════════════ -->
 
   <div class="container">
     <div class="header-inner">
@@ -385,9 +455,6 @@
     <a href="tel:+447775758717" class="mobile-cta">📞 Call +44 7775 758 717</a>
   </div>
 
-<!-- ═══════════════════════════════════════════════
-     1. HERO
-════════════════════════════════════════════════ -->
 <section id="hero" aria-label="Hero section">
   <div class="hero-bg">
     <img src="/images/02_kitchen_marble.jpg"
@@ -400,7 +467,7 @@
     <div class="container">
       <div class="hero-grid">
 
-        <!-- Left: Headline -->
+        
         <div>
           <div class="hero-eyebrow">
             <div class="hero-eyebrow-dot"></div>
@@ -427,6 +494,7 @@
               +44 7775 758 717
             </a>
           </div>
+          <p class="reassurance-text">No obligation, only friendly advice.</p>
 
           <div class="trust-badges">
             <span class="badge"><span class="badge-check">✓</span> HA Postcodes</span>
@@ -437,79 +505,13 @@
           </div>
         </div>
 
-        <!-- Right: Quote Form -->
-        <div id="quote-form">
-          <div class="quote-card">
-            <p class="quote-card-heading">Get Your Free Kitchen Renovation Quote in Harrow</p>
-            <p class="quote-card-sub">Free quote · No obligation · Serving all HA postcodes</p>
-
-            <form id="hero-form" novalidate>
-              <div class="form-row form-row-2">
-                <div class="form-group">
-                  <label class="form-label" for="f-name">Your Name *</label>
-                  <input class="form-input" id="f-name" name="name" type="text" placeholder="John Smith" required />
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="f-phone">Phone Number *</label>
-                  <input class="form-input" id="f-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
-                </div>
-              </div>
-              <div class="form-row mt-1">
-                <div class="form-group">
-                  <label class="form-label" for="f-email">Email Address</label>
-                  <input class="form-input" id="f-email" name="email" type="email" placeholder="john@example.com" />
-                </div>
-              </div>
-              <div class="form-row form-row-2 mt-1">
-                <div class="form-group">
-                  <label class="form-label" for="f-project">Project Type</label>
-                  <select class="form-select" id="f-project" name="project">
-                    <option value="">Select project type</option>
-                    <option>Full Kitchen Renovation</option>
-                    <option>Kitchen Fitting</option>
-                    <option>Worktop Replacement</option>
-                    <option>Kitchen Tiling / Splashback</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="f-postcode">Location / Postcode</label>
-                  <input class="form-input" id="f-postcode" name="postcode" type="text" placeholder="e.g. HA1 2AB" />
-                </div>
-              </div>
-              <div class="form-row mt-1">
-                <div class="form-group">
-                  <label class="form-label" for="f-message">Tell Us About Your Kitchen</label>
-                  <textarea class="form-textarea" id="f-message" name="message" placeholder="Describe your kitchen project — size, style, units, worktops, any specific requirements..."></textarea>
-                </div>
-              </div>
-              <div class="form-row mt-1">
-                <div class="form-group">
-                  <label class="form-label" for="f-contact-time">Preferred Contact Time</label>
-                  <select class="form-select" id="f-contact-time" name="contact_time">
-                    <option value="">Any time</option>
-                    <option>Morning (8am–12pm)</option>
-                    <option>Afternoon (12pm–5pm)</option>
-                    <option>Evening (after 5pm)</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" class="form-submit">Request Free Quote →</button>
-              <p class="form-note">
-                <strong>Free quote. No obligation. Friendly advice.</strong><br />
-                Your details are safe with us. We will only contact you about your renovation enquiry.
-              </p>
-            </form>
-          </div>
-        </div>
+        
+        
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     STATS BAR
-════════════════════════════════════════════════ -->
 <div class="stats-bar" aria-label="Company statistics">
   <div class="container">
     <div class="stats-grid">
@@ -521,9 +523,6 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════
-     3. PROBLEM / INTENT SECTION
-════════════════════════════════════════════════ -->
 <section class="section bg-light" aria-labelledby="problem-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -552,9 +551,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     4. WHAT IS INCLUDED
-════════════════════════════════════════════════ -->
 <section class="section" aria-labelledby="includes-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -576,14 +572,11 @@
     </div>
 
     <div class="text-center mt-5 reveal">
-      <a href="#contact-form" class="btn btn-gold">Get a Free Kitchen Renovation Quote</a>
+      <a href="#quote-form" class="btn btn-gold">Get a Free Kitchen Renovation Quote</a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     5. WHY CHOOSE BMB RENOVATION
-════════════════════════════════════════════════ -->
 <section class="section bg-dark" aria-labelledby="why-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -641,9 +634,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     6. TRUST SECTION
-════════════════════════════════════════════════ -->
 <section class="section" aria-labelledby="trust-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -677,9 +667,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     7. PORTFOLIO / PROJECT EXAMPLES
-════════════════════════════════════════════════ -->
 <section class="section bg-light" aria-labelledby="portfolio-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -731,9 +718,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     8. BEFORE & AFTER
-════════════════════════════════════════════════ -->
 <section class="section" aria-labelledby="ba-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -760,9 +744,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     MID-PAGE CTA STRIP
-════════════════════════════════════════════════ -->
 <div class="section-sm">
   <div class="container">
     <div class="cta-strip reveal">
@@ -772,13 +753,11 @@
         <a href="#quote-form" class="btn btn-gold">Request a Free Quote</a>
         <a href="tel:+447775758717" class="btn btn-dark">Call +44 7775 758 717</a>
       </div>
+        <p class="reassurance-text-dark">No obligation, only friendly advice.</p>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════
-     9. PROCESS — 5 STEPS
-════════════════════════════════════════════════ -->
 <section class="section bg-light" aria-labelledby="process-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -817,9 +796,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     10. LOCAL AREA COVERAGE
-════════════════════════════════════════════════ -->
 <section class="section" aria-labelledby="areas-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -847,9 +823,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     11. PRICE / FREE QUOTE SECTION
-════════════════════════════════════════════════ -->
 <section class="section bg-light" aria-labelledby="price-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -869,14 +842,11 @@
 
     <div class="text-center mt-6 reveal">
       <p style="max-width:540px;margin:0 auto 1.75rem;color:var(--gray-600);">We offer a free no-obligation quote for all kitchen renovation work across Harrow and the HA postcodes. We come to your home or property, look at the kitchen in person, and give you a clear written price — no ballpark estimates, no additions later.</p>
-      <a href="#contact-form" class="btn btn-gold btn-lg">Request Your Free Quote</a>
+      <a href="#quote-form" class="btn btn-gold btn-lg">Request Your Free Quote</a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     12. FAQs
-════════════════════════════════════════════════ -->
 <section class="section" aria-labelledby="faq-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -981,14 +951,11 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     13. CONTACT / QUOTE FORM SECTION
-════════════════════════════════════════════════ -->
-<section class="section bg-light" id="contact-form" aria-labelledby="contact-heading">
+<section class="section bg-light" id="quote-form-bottom" aria-labelledby="contact-heading">
   <div class="container">
     <div class="contact-grid">
 
-      <!-- Left: Contact info -->
+      
       <div class="reveal">
         <span class="section-label">Get in Touch</span>
         <h2 id="contact-heading" style="margin-top:0.5rem;">Request a Free Kitchen Renovation Quote in Harrow</h2>
@@ -1024,7 +991,7 @@
         </div>
       </div>
 
-      <!-- Right: Second quote form -->
+      
       <div class="reveal reveal-delay-2">
         <div class="quote-card">
           <p class="quote-card-heading">Kitchen Renovation Enquiry — Harrow</p>
@@ -1081,9 +1048,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     14. FINAL CTA
-════════════════════════════════════════════════ -->
 <section class="final-cta-section" aria-label="Final call to action">
   <div class="final-cta-bg">
     <img src="/images/15_elegant_hallway.jpg" alt="Premium kitchen renovation by BMB Renovation" loading="lazy" />
@@ -1102,6 +1066,7 @@
           Call +44 7775 758 717
         </a>
       </div>
+        <p class="final-trust-line">No obligation — <span>only friendly advice</span>.</p>
       <p class="final-trust-line">
         <span>Serving Harrow &amp; HA Postcodes</span> &bull; Free quote &bull; No obligation &bull; Watford-based team just up the A409
       </p>
@@ -1110,13 +1075,79 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════
-     FOOTER
+     QUOTE FORM SECTION  (moved from hero to bottom)
 ════════════════════════════════════════════════ -->
+<section class="section" id="quote-form" aria-labelledby="quote-form-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Free Quote</span>
+      <h2 id="quote-form-heading">Get a Free Quote for Kitchen Renovation in Harrow</h2>
+      <p>No obligation, only friendly advice. Tell us about your project and we will come back to you promptly with a clear, written quote.</p>
+    </div>
+    <div class="quote-section-wrap reveal">
+      <form id="main-quote-form" novalidate>
+        <div class="form-row form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="qf-name">Your Name *</label>
+            <input class="form-input" id="qf-name" name="name" type="text" placeholder="John Smith" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="qf-phone">Phone Number *</label>
+            <input class="form-input" id="qf-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+          </div>
+        </div>
+        <div class="form-row mt-1">
+          <div class="form-group">
+            <label class="form-label" for="qf-email">Email Address</label>
+            <input class="form-input" id="qf-email" name="email" type="email" placeholder="john@example.com" />
+          </div>
+        </div>
+        <div class="form-row form-row-2 mt-1">
+          <div class="form-group">
+            <label class="form-label" for="qf-project">Project Type</label>
+            <select class="form-select" id="qf-project" name="project">
+              <option value="">Select project type</option>
+              <option>Full Kitchen Renovation</option>
+              <option>Kitchen Fitting</option>
+              <option>Worktop Replacement</option>
+              <option>Kitchen Tiling / Splashback</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="qf-postcode">Location / Postcode</label>
+            <input class="form-input" id="qf-postcode" name="postcode" type="text" placeholder="e.g. WD17 2AB" />
+          </div>
+        </div>
+        <div class="form-row mt-1">
+          <div class="form-group">
+            <label class="form-label" for="qf-message">Tell Us About Your Project</label>
+            <textarea class="form-textarea" id="qf-message" name="message" placeholder="Describe your project — size, style, any specific requirements..."></textarea>
+          </div>
+        </div>
+        <div class="form-row mt-1">
+          <div class="form-group">
+            <label class="form-label" for="qf-time">Preferred Contact Time</label>
+            <select class="form-select" id="qf-time" name="contact_time">
+              <option value="">Any time</option>
+              <option>Morning (8am–12pm)</option>
+              <option>Afternoon (12pm–5pm)</option>
+              <option>Evening (after 5pm)</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">Request Free Quote →</button>
+        <p class="form-note"><strong>No obligation, only friendly advice.</strong><br />Your details are safe with us. We will only contact you about your renovation enquiry.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer aria-label="Site footer">
   <div class="container">
     <div class="footer-grid">
 
-      <!-- Brand -->
+      
       <div class="footer-brand">
         <div class="logo">
           <span class="logo-bmb" style="color:#fff;">BMB</span>
@@ -1130,7 +1161,7 @@
         </div>
       </div>
 
-      <!-- Services -->
+      
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
@@ -1143,7 +1174,7 @@
         </ul>
       </div>
 
-      <!-- Areas -->
+      
       <div class="footer-col">
         <h4>Areas We Serve</h4>
         <ul>
@@ -1156,7 +1187,7 @@
         </ul>
       </div>
 
-      <!-- Contact -->
+      
       <div class="footer-col">
         <h4>Contact Us</h4>
         <div class="footer-contact-item">
@@ -1185,9 +1216,6 @@
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════════════
-     STICKY MOBILE CTA
-════════════════════════════════════════════════ -->
 <div id="sticky-cta" aria-label="Mobile call to action">
   <a href="#quote-form" class="sticky-btn sticky-quote">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12h6M9 16h6M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/></svg>
@@ -1197,39 +1225,45 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
     Call Now
   </a>
-</div>
-
-<!-- ═══════════════════════════════════════════════
-     JAVASCRIPT
-════════════════════════════════════════════════ -->
-<script>
-  // ── Header scroll state ──
+</div>4:Tc76,
+  // ── Header: always scrolled/white style ──
   const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
+  if (header) {
+    header.classList.add('scrolled');
+    window.addEventListener('scroll', () => {
+      header.classList.add('scrolled');
+    }, { passive: true });
+  }
 
-  // ── Hamburger menu ──
+  // ── Hamburger ──
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
-  hamburger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', open);
-  });
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(open));
+    });
+  }
 
   // ── FAQ accordion ──
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
       const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-      btn.setAttribute('aria-expanded', !isOpen);
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
   // ── Scroll reveal ──
-  const revealObserver = new IntersectionObserver((entries) => {
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('visible');
@@ -1237,153 +1271,37 @@
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  reveals.forEach(el => revealObserver.observe(el));
 
-  // ── Form handlers ──
-  function handleFormSubmit(formId) {
-    const form = document.getElementById(formId);
+  // ── Form submission ──
+  // Handle all quote forms: main-quote-form, hero-form, contact-quote-form
+  ['main-quote-form', 'hero-form', 'contact-quote-form'].forEach(id => {
+    const form = document.getElementById(id);
     if (!form) return;
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      const name = form.querySelector('[name="name"]').value.trim();
-      const phone = form.querySelector('[name="phone"]').value.trim();
-      if (!name || !phone) {
-        alert('Please enter your name and phone number so we can get back to you.');
+      const name = (form.querySelector('[name="name"]') || {}).value || '';
+      const phone = (form.querySelector('[name="phone"]') || {}).value || '';
+      if (!name.trim() || !phone.trim()) {
+        alert('Please enter your name and phone number.');
         return;
       }
+      const serviceText = form.closest('section') && form.closest('section').querySelector('h2')
+        ? form.closest('section').querySelector('h2').textContent.replace('Get a Free Quote for ', '')
+        : 'your renovation project';
       form.innerHTML = `
-        <div style="text-align:center;padding:2rem 1rem;">
+        <div style="text-align:center;padding:3rem 1rem;">
           <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
-          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name}!</h3>
-          <p style="color:#6B7280;font-size:0.9375rem;line-height:1.6;">
-            We have received your kitchen renovation enquiry for Harrow.<br />
-            We will be in touch shortly to arrange your free home visit and written quote.
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name.trim()}!</h3>
+          <p style="color:#6B7280;font-size:0.9375rem;line-height:1.7;max-width:480px;margin:0 auto;">
+            We have received your enquiry and will be in touch shortly to discuss ${serviceText}.
           </p>
-          <p style="margin-top:1.25rem;font-size:0.875rem;color:#9CA3AF;">
-            Or call us now: <a href="tel:+447775758717" style="color:#C8A97E;font-weight:700;">+44 7775 758 717</a>
+          <p style="color:#9CA3AF;font-size:0.875rem;margin-top:1.25rem;font-style:italic;">
+            You can get in touch yourself anytime before our team calls you back.
           </p>
         </div>`;
     });
-  }
-  handleFormSubmit('hero-form');
-  handleFormSubmit('contact-form-el');
-</script>
-
-<!-- ═══════════════════════════════════════════════════════════
-     GOOGLE ADS ANNOTATIONS
-     Campaign: Kitchen Renovation — Harrow
-     URL: /kitchen-renovation-harrow
-     Target Postcodes: HA1, HA2, HA3
-═══════════════════════════════════════════════════════════════
-
-HEADLINES (max 30 chars each):
-1. Kitchen Renovation Harrow
-2. Free Quote — Harrow Kitchens
-3. Kitchen Renovation HA1 HA2 HA3
-4. Local Kitchen Renovation Team
-5. Kitchen Fitting Harrow NW London
-6. Full Kitchen Transformation
-7. Expert Kitchen Renovation
-8. Free Home Visit · Harrow
-9. Kitchen Specialists Near You
-10. BMB Renovation — Harrow
-
-DESCRIPTIONS (max 90 chars each):
-1. Kitchen renovation in Harrow. Free no-obligation quote — Watford-based team, just up the A409.
-2. Victorian terraces, 1930s semis & landlord renovations across HA1, HA2, HA3. Free home visit.
-3. Full kitchen service for Harrow homeowners & landlords. Written quote, no hidden charges.
-4. Expert kitchen renovations across all HA postcodes. Family homes, flats & rentals. Call today.
-
-KEYWORDS:
-kitchen renovation harrow
-kitchen renovation ha1
-kitchen renovation ha2
-kitchen fitters harrow
-kitchen fitting harrow
-new kitchen harrow
-kitchen renovation north west london
-landlord kitchen renovation harrow
-kitchen refurbishment harrow
-kitchen renovation near me harrow
-victorian kitchen renovation harrow
-kitchen renovation pinner
-kitchen renovation stanmore
-kitchen renovation wealdstone
-
-NEGATIVE KEYWORDS:
--diy
--cheap
--free
--courses
--training
--videos
--plans
--ideas only
--design software
-
-════════════════════════════════════════════════ -->4:Ta99,// ── Header scroll state ──
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  // ── Hamburger menu ──
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  hamburger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', open);
   });
-
-  // ── FAQ accordion ──
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-      btn.setAttribute('aria-expanded', !isOpen);
-    });
-  });
-
-  // ── Scroll reveal ──
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revealObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-  // ── Form handlers ──
-  function handleFormSubmit(formId) {
-    const form = document.getElementById(formId);
-    if (!form) return;
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = form.querySelector('[name="name"]').value.trim();
-      const phone = form.querySelector('[name="phone"]').value.trim();
-      if (!name || !phone) {
-        alert('Please enter your name and phone number so we can get back to you.');
-        return;
-      }
-      form.innerHTML = `
-        <div style="text-align:center;padding:2rem 1rem;">
-          <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
-          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ${name}!</h3>
-          <p style="color:#6B7280;font-size:0.9375rem;line-height:1.6;">
-            We have received your kitchen renovation enquiry for Harrow.<br />
-            We will be in touch shortly to arrange your free home visit and written quote.
-          </p>
-          <p style="margin-top:1.25rem;font-size:0.875rem;color:#9CA3AF;">
-            Or call us now: <a href="tel:+447775758717" style="color:#C8A97E;font-weight:700;">+44 7775 758 717</a>
-          </p>
-        </div>`;
-    });
-  }
-  handleFormSubmit('hero-form');
-  handleFormSubmit('contact-form-el');0:["J4NM-S4kEXF-15xO6ltJb",[[["",{"children":["kitchen-renovation-harrow",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["kitchen-renovation-harrow",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","kitchen-renovation-harrow","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c93b10a3daa1778c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
+0:["AwNx-77kHnGErVNrX78A9",[[["",{"children":["kitchen-renovation-harrow",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["kitchen-renovation-harrow",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","kitchen-renovation-harrow","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c93b10a3daa1778c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
 a:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Kitchen Renovation Harrow | Free Quote | BMB Renovation"}],["$","meta","3",{"name":"description","content":"Expert kitchen renovation in Harrow. BMB Renovation serves Harrow HA1, HA2, HA3 from our Watford base — full kitchen transformations, free no-obligation quote. Call +44 7775 758 717."}],["$","link","4",{"rel":"canonical","href":"https://bmbrenovation.co.uk/kitchen-renovation-harrow"}],["$","meta","5",{"property":"og:title","content":"Kitchen Renovation Harrow | Free Quote | BMB Renovation"}],["$","meta","6",{"property":"og:description","content":"Expert kitchen renovation in Harrow. BMB Renovation serves Harrow HA1, HA2, HA3 from our Watford base — full kitchen transformations, free no-obligation quote. Call +44 7775 758 717."}],["$","meta","7",{"property":"og:image","content":"https://bmbrenovation.co.uk/images/02_kitchen_marble.jpg"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Kitchen Renovation Harrow | Free Quote | BMB Renovation"}],["$","meta","10",{"name":"twitter:description","content":"Expert kitchen renovation in Harrow. BMB Renovation serves Harrow HA1, HA2, HA3 from our Watford base — full kitchen transformations, free no-obligation quote. Call +44 7775 758 717."}],["$","meta","11",{"name":"twitter:image","content":"https://bmbrenovation.co.uk/images/02_kitchen_marble.jpg"}],["$","link","12",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","13",{"rel":"icon","href":"/favicon.svg"}],["$","meta","14",{"name":"next-size-adjust"}]]
 1:null

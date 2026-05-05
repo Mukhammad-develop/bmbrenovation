@@ -3,7 +3,7 @@
 7:I[2798,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ThemeProvider"]
 8:I[3606,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"Toaster"]
 9:I[4215,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ChunkLoadErrorHandler"]
-2:T6bd1,
+2:T70d7,
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', system-ui, sans-serif; color: #141414; background: #fff; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -363,32 +363,93 @@
     text-align: center;
   }
 
-  /* ── QUOTE FORM SECTION (bottom of page) ── */
+  /* ── COMBINED QUOTE + CONTACT SECTION ── */
   #quote-form {
     scroll-margin-top: 90px;
   }
-  .quote-section-wrap {
-    background: var(--gray-50);
-    border-radius: 1.5rem;
-    padding: 3rem 2rem;
-    border: 1.5px solid var(--gray-100);
-    max-width: 720px;
-    margin: 0 auto;
+  .qc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
   }
-  .quote-section-heading {
+  @media(min-width: 1024px) {
+    .qc-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+  /* Form card (left col) */
+  .qc-form-card {
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 2.25rem;
+    box-shadow: var(--shadow-xl);
+    border: 1.5px solid var(--gray-100);
+  }
+  /* Contact info (right col) */
+  .qc-info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .qc-info-heading {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.625rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 800;
     color: var(--gray-900);
-    margin-bottom: 0.5rem;
     letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
   }
-  .quote-section-sub {
+  .qc-info-para {
     font-size: 0.9375rem;
-    color: var(--gray-500);
+    color: var(--gray-600);
+    line-height: 1.7;
     margin-bottom: 2rem;
   }
-3:Tb162,<div id="proximity-banner">
+  .qc-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.375rem;
+  }
+  .qc-contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 0.75rem;
+    background: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.125rem;
+  }
+  .qc-contact-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+  }
+  .qc-contact-value {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
+  .qc-contact-value a {
+    color: var(--gray-600);
+    transition: color 0.2s;
+  }
+  .qc-contact-value a:hover {
+    color: var(--gold);
+  }
+3:Taf58,<div id="proximity-banner">
   <div class="container">
     <div class="proximity-inner">
       <span>🚿 BMB Renovation — Serving Borehamwood (WD6) from our Watford base, a straightforward drive via the A41.</span>
@@ -943,52 +1004,6 @@
   </div>
 </section>
 
-<section class="section bg-light" id="quote-form-bottom" aria-labelledby="contact-heading">
-  <div class="container">
-    <div class="contact-grid">
-
-      <div class="reveal">
-        <span class="section-label">Get in Touch</span>
-        <h2 id="contact-heading" style="color:var(--gray-900); margin-top:0.5rem; margin-bottom:1rem;">Get a Free Bathroom Fitting Quote in Borehamwood</h2>
-        <p style="margin-bottom:2rem;">We are based in Watford, a straightforward drive from Borehamwood via the A41. Tell us about your project and we will arrange a free visit, look at the bathroom properly, and give you a clear, honest written quote with no obligation.</p>
-
-        <div class="contact-info-item">
-          <div class="ci-icon">📞</div>
-          <div>
-            <p class="ci-label">Phone</p>
-            <p class="ci-value"><a href="tel:+447775758717">+44 7775 758 717</a></p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="ci-icon">✉️</div>
-          <div>
-            <p class="ci-label">Email</p>
-            <p class="ci-value"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="ci-icon">🕐</div>
-          <div>
-            <p class="ci-label">Working Hours</p>
-            <p class="ci-value">Monday – Saturday: 8:00 AM – 5:00 PM</p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="ci-icon">📍</div>
-          <div>
-            <p class="ci-label">Based In</p>
-            <p class="ci-value">157 Judge Street, Watford, WD24 5AN<br/>Serving Borehamwood &amp; surrounding WD6 areas</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-1">
-        
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="final-cta-section" aria-labelledby="final-cta-heading">
   <div class="final-cta-bg">
     <img src="/images/09_tile_work.jpg"
@@ -1015,71 +1030,109 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     QUOTE FORM SECTION  (moved from hero to bottom)
-════════════════════════════════════════════════ -->
-<section class="section" id="quote-form" aria-labelledby="quote-form-heading">
+<section class="section" id="quote-form" aria-labelledby="qf-heading">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">Free Quote</span>
-      <h2 id="quote-form-heading">Get a Free Quote for Bathroom Fitting in Borehamwood</h2>
-      <p>No obligation, only friendly advice. Tell us about your project and we will come back to you promptly with a clear, written quote.</p>
-    </div>
-    <div class="quote-section-wrap reveal">
-      <form id="main-quote-form" novalidate>
-        <div class="form-row form-row-2">
-          <div class="form-group">
-            <label class="form-label" for="qf-name">Your Name *</label>
-            <input class="form-input" id="qf-name" name="name" type="text" placeholder="John Smith" required />
+    <div class="qc-grid">
+
+      <!-- LEFT: Quote Form -->
+      <div class="qc-form-card reveal">
+        <p class="quote-card-heading">Get Your Free Quote</p>
+        <p class="quote-card-sub">No obligation &middot; Free site visit &middot; Clear written quote</p>
+        <form id="main-quote-form" novalidate>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="qf-name">Your Name *</label>
+              <input class="form-input" id="qf-name" name="name" type="text" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="qf-phone">Phone Number *</label>
+              <input class="form-input" id="qf-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+            </div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="qf-phone">Phone Number *</label>
-            <input class="form-input" id="qf-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-email">Email Address</label>
+              <input class="form-input" id="qf-email" name="email" type="email" placeholder="john@example.com" />
+            </div>
           </div>
-        </div>
-        <div class="form-row mt-1">
-          <div class="form-group">
-            <label class="form-label" for="qf-email">Email Address</label>
-            <input class="form-input" id="qf-email" name="email" type="email" placeholder="john@example.com" />
-          </div>
-        </div>
-        <div class="form-row form-row-2 mt-1">
-          <div class="form-group">
-            <label class="form-label" for="qf-project">Project Type</label>
-            <select class="form-select" id="qf-project" name="project">
-              <option value="">Select project type</option>
-              <option>Full Bathroom Renovation</option>
+          <div class="form-row form-row-2 mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-project">Project Type</label>
+              <select class="form-select" id="qf-project" name="project">
+                <option value="">Select project type</option>
+                <option>Full Bathroom Renovation</option>
               <option>Bathroom Fitting / Suite Installation</option>
               <option>Shower Installation</option>
               <option>Bathroom Tiling</option>
               <option>Other</option>
-            </select>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="qf-postcode">Location / Postcode</label>
+              <input class="form-input" id="qf-postcode" name="postcode" type="text" placeholder="e.g. WD17 2AB" />
+            </div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="qf-postcode">Location / Postcode</label>
-            <input class="form-input" id="qf-postcode" name="postcode" type="text" placeholder="e.g. WD17 2AB" />
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-message">Tell Us About Your Project</label>
+              <textarea class="form-textarea" id="qf-message" name="message" placeholder="Describe your bathroom fitting project — size, style, any specific requirements..."></textarea>
+            </div>
+          </div>
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-time">Preferred Contact Time</label>
+              <select class="form-select" id="qf-time" name="contact_time">
+                <option value="">Any time</option>
+                <option>Morning (8am&ndash;12pm)</option>
+                <option>Afternoon (12pm&ndash;5pm)</option>
+                <option>Evening (after 5pm)</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">Request Free Quote &rarr;</button>
+          <p class="form-note"><strong>No obligation, only friendly advice.</strong><br />Your details are safe with us. We will only contact you about your enquiry.</p>
+        </form>
+      </div>
+
+      <!-- RIGHT: Get in Touch info -->
+      <div class="reveal">
+        <span class="qc-info-label">Get in Touch</span>
+        <h2 class="qc-info-heading" id="qf-heading">Get a Free Bathroom Fitting Quote in Borehamwood</h2>
+        <p class="qc-info-para">We are based right here in Borehamwood. Tell us about your bathroom fitting and we will arrange a free visit, take a look, and give you a clear, honest, no-obligation quote.</p>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128222;</div>
+          <div>
+            <div class="qc-contact-label">Phone</div>
+            <div class="qc-contact-value"><a href="tel:+447775758717">+44 7775 758 717</a></div>
           </div>
         </div>
-        <div class="form-row mt-1">
-          <div class="form-group">
-            <label class="form-label" for="qf-message">Tell Us About Your Project</label>
-            <textarea class="form-textarea" id="qf-message" name="message" placeholder="Describe your project — size, style, any specific requirements..."></textarea>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#9993;</div>
+          <div>
+            <div class="qc-contact-label">Email</div>
+            <div class="qc-contact-value"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></div>
           </div>
         </div>
-        <div class="form-row mt-1">
-          <div class="form-group">
-            <label class="form-label" for="qf-time">Preferred Contact Time</label>
-            <select class="form-select" id="qf-time" name="contact_time">
-              <option value="">Any time</option>
-              <option>Morning (8am–12pm)</option>
-              <option>Afternoon (12pm–5pm)</option>
-              <option>Evening (after 5pm)</option>
-            </select>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128336;</div>
+          <div>
+            <div class="qc-contact-label">Working Hours</div>
+            <div class="qc-contact-value">Monday &ndash; Saturday: 8:00 AM &ndash; 5:00 PM</div>
           </div>
         </div>
-        <button type="submit" class="form-submit">Request Free Quote →</button>
-        <p class="form-note"><strong>No obligation, only friendly advice.</strong><br />Your details are safe with us. We will only contact you about your renovation enquiry.</p>
-      </form>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128205;</div>
+          <div>
+            <div class="qc-contact-label">Based In</div>
+            <div class="qc-contact-value">157 Judge Street, Watford, WD24 5AN<br />Serving Borehamwood &amp; surrounding areas</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1232,6 +1285,6 @@
         </div>`;
     });
   });
-0:["lSE9vHYUCpcwcZfH-2I6P",[[["",{"children":["bathroom-fitting-borehamwood",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["bathroom-fitting-borehamwood",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","bathroom-fitting-borehamwood","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c93b10a3daa1778c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
+0:["asMRXPlTERZx03DkFd127",[[["",{"children":["bathroom-fitting-borehamwood",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["bathroom-fitting-borehamwood",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","bathroom-fitting-borehamwood","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c93b10a3daa1778c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
 a:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Bathroom Fitting Borehamwood | Free Quote | BMB Renovation"}],["$","meta","3",{"name":"description","content":"Expert bathroom fitting in Borehamwood. BMB Renovation is based nearby in Watford — shower fitting, bath fitting, full suite installation, tiling and flooring. Free no-obligation quote. Call +44 7775 758 717."}],["$","link","4",{"rel":"canonical","href":"https://bmbrenovation.co.uk/bathroom-fitting-borehamwood"}],["$","meta","5",{"property":"og:title","content":"Bathroom Fitting Borehamwood | Free Quote | BMB Renovation"}],["$","meta","6",{"property":"og:description","content":"Expert bathroom fitting in Borehamwood. BMB Renovation is based nearby in Watford — shower fitting, bath fitting, full suite installation, tiling and flooring. Free no-obligation quote. Call +44 7775 758 717."}],["$","meta","7",{"property":"og:image","content":"https://bmbrenovation.co.uk/images/03_luxury_bathroom.jpg"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Bathroom Fitting Borehamwood | Free Quote | BMB Renovation"}],["$","meta","10",{"name":"twitter:description","content":"Expert bathroom fitting in Borehamwood. BMB Renovation is based nearby in Watford — shower fitting, bath fitting, full suite installation, tiling and flooring. Free no-obligation quote. Call +44 7775 758 717."}],["$","meta","11",{"name":"twitter:image","content":"https://bmbrenovation.co.uk/images/03_luxury_bathroom.jpg"}],["$","link","12",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","13",{"rel":"icon","href":"/favicon.svg"}],["$","meta","14",{"name":"next-size-adjust"}]]
 1:null

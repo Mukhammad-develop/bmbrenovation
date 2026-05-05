@@ -3,7 +3,7 @@
 7:I[2798,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ThemeProvider"]
 8:I[3606,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"Toaster"]
 9:I[4215,["438","static/chunks/438-584d3ac938992266.js","185","static/chunks/app/layout-49d160d367e99be1.js"],"ChunkLoadErrorHandler"]
-2:T7e20,
+2:T7efe,
     /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -698,12 +698,16 @@
     background: #fff !important;
     box-shadow: 0 1px 0 rgba(0,0,0,0.08) !important;
   }
+  /* Logo: BMBRENOVATION — all black, bold, uppercase */
   .logo-bmb {
     color: #111827 !important;
-    font-weight: 800 !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    text-transform: uppercase !important;
   }
+  /* Hide the old gold "Renovation" span (now replaced in HTML, but safe fallback) */
   .logo-reno {
-    color: var(--gold) !important;
+    display: none !important;
   }
   .nav-link {
     color: #374151 !important;
@@ -859,7 +863,7 @@
   .qc-contact-value a:hover {
     color: var(--gold);
   }
-3:Ta4ff,<div id="proximity-banner">
+3:Ta4d6,<div id="proximity-banner">
   <div class="container">
     <div class="proximity-inner">
       <span>🏠 Serving Rickmansworth (WD3) from our Watford base — just minutes along the A412.</span>
@@ -871,8 +875,7 @@
   <div class="container">
     <div class="header-inner">
       <a href="/" class="logo" aria-label="BMB Renovation Home">
-        <span class="logo-bmb">BMB</span>
-        <span class="logo-reno"> Renovation</span>
+        <span class="logo-bmb">BMBRENOVATION</span>
       </a>
 
       <nav class="header-nav" aria-label="Main navigation">
@@ -1694,6 +1697,6 @@
         </div>`;
     });
   });
-0:["asMRXPlTERZx03DkFd127",[[["",{"children":["kitchen-renovation-rickmansworth",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["kitchen-renovation-rickmansworth",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","kitchen-renovation-rickmansworth","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c93b10a3daa1778c.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
+0:["diHNr5e9jTIpzwBjTLpU5",[[["",{"children":["kitchen-renovation-rickmansworth",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["kitchen-renovation-rickmansworth",{"children":["__PAGE__",{},[["$L1",[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]],null],null],null]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","kitchen-renovation-rickmansworth","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fdbaad431ad11ff1.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$L7",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$L8",null,{}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
 a:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Kitchen Renovation Rickmansworth | Free Quote | BMB Renovation"}],["$","meta","3",{"name":"description","content":"Premium kitchen renovation in Rickmansworth. BMB Renovation serves Rickmansworth WD3 from our Watford base — full kitchen transformations, free no-obligation quote. Call +44 7775 758 717."}],["$","link","4",{"rel":"canonical","href":"https://bmbrenovation.co.uk/kitchen-renovation-rickmansworth"}],["$","meta","5",{"property":"og:title","content":"Kitchen Renovation Rickmansworth | Free Quote | BMB Renovation"}],["$","meta","6",{"property":"og:description","content":"Premium kitchen renovation in Rickmansworth. BMB Renovation serves Rickmansworth WD3 from our Watford base — full kitchen transformations, free no-obligation quote. Call +44 7775 758 717."}],["$","meta","7",{"property":"og:image","content":"https://bmbrenovation.co.uk/images/02_kitchen_marble.jpg"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Kitchen Renovation Rickmansworth | Free Quote | BMB Renovation"}],["$","meta","10",{"name":"twitter:description","content":"Premium kitchen renovation in Rickmansworth. BMB Renovation serves Rickmansworth WD3 from our Watford base — full kitchen transformations, free no-obligation quote. Call +44 7775 758 717."}],["$","meta","11",{"name":"twitter:image","content":"https://bmbrenovation.co.uk/images/02_kitchen_marble.jpg"}],["$","link","12",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","13",{"rel":"icon","href":"/favicon.svg"}],["$","meta","14",{"name":"next-size-adjust"}]]
 1:null

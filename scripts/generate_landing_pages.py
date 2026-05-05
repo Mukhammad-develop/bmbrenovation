@@ -6,7 +6,7 @@ UX changes applied globally:
   1. Quote form removed from hero section, placed near bottom (#quote-form)
   2. Hero hero-grid becomes single-col (no right-panel form)
   3. All "Get a Free Quote" CTAs link to #quote-form
-  4. "#contact-form" section renamed to id="quote-form"
+  4. Combined two-column section: form LEFT, contact info RIGHT
   5. Hero and CTA sections get "No obligation, only friendly advice." reassurance
   6. Success/thank-you message removes the "Call us now" phone button
   7. Header always white/light background; logo + nav links black and visible
@@ -110,98 +110,198 @@ HEADER_STYLE_OVERRIDES = """
     text-align: center;
   }
 
-  /* ── QUOTE FORM SECTION (bottom of page) ── */
+  /* ── COMBINED QUOTE + CONTACT SECTION ── */
   #quote-form {
     scroll-margin-top: 90px;
   }
-  .quote-section-wrap {
-    background: var(--gray-50);
-    border-radius: 1.5rem;
-    padding: 3rem 2rem;
-    border: 1.5px solid var(--gray-100);
-    max-width: 720px;
-    margin: 0 auto;
+  .qc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
   }
-  .quote-section-heading {
+  @media(min-width: 1024px) {
+    .qc-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+  /* Form card (left col) */
+  .qc-form-card {
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 2.25rem;
+    box-shadow: var(--shadow-xl);
+    border: 1.5px solid var(--gray-100);
+  }
+  /* Contact info (right col) */
+  .qc-info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .qc-info-heading {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.625rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 800;
     color: var(--gray-900);
-    margin-bottom: 0.5rem;
     letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
   }
-  .quote-section-sub {
+  .qc-info-para {
     font-size: 0.9375rem;
-    color: var(--gray-500);
+    color: var(--gray-600);
+    line-height: 1.7;
     margin-bottom: 2rem;
+  }
+  .qc-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.375rem;
+  }
+  .qc-contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 0.75rem;
+    background: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.125rem;
+  }
+  .qc-contact-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+  }
+  .qc-contact-value {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
+  .qc-contact-value a {
+    color: var(--gray-600);
+    transition: color 0.2s;
+  }
+  .qc-contact-value a:hover {
+    color: var(--gold);
   }
 """
 
-# ── QUOTE FORM SECTION (replaces old hero form + bolts on near bottom) ────────
-# {service_label} and {city_label} are replaced per-page
+# ── COMBINED QUOTE + CONTACT SECTION ─────────────────────────────────────────
+# LEFT: quote form  |  RIGHT: contact info + heading
+# Placeholders: {service_label}, {city_label}, {city_blurb}, {project_options}
 
-QUOTE_FORM_SECTION = """
-<!-- ═══════════════════════════════════════════════
-     QUOTE FORM SECTION  (moved from hero to bottom)
-════════════════════════════════════════════════ -->
-<section class="section" id="quote-form" aria-labelledby="quote-form-heading">
+COMBINED_SECTION = """
+<section class="section" id="quote-form" aria-labelledby="qf-heading">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">Free Quote</span>
-      <h2 id="quote-form-heading">Get a Free Quote for {service_label} in {city_label}</h2>
-      <p>No obligation, only friendly advice. Tell us about your project and we will come back to you promptly with a clear, written quote.</p>
-    </div>
-    <div class="quote-section-wrap reveal">
-      <form id="main-quote-form" novalidate>
-        <div class="form-row form-row-2">
-          <div class="form-group">
-            <label class="form-label" for="qf-name">Your Name *</label>
-            <input class="form-input" id="qf-name" name="name" type="text" placeholder="John Smith" required />
+    <div class="qc-grid">
+
+      <!-- LEFT: Quote Form -->
+      <div class="qc-form-card reveal">
+        <p class="quote-card-heading">Get Your Free Quote</p>
+        <p class="quote-card-sub">No obligation &middot; Free site visit &middot; Clear written quote</p>
+        <form id="main-quote-form" novalidate>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="qf-name">Your Name *</label>
+              <input class="form-input" id="qf-name" name="name" type="text" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="qf-phone">Phone Number *</label>
+              <input class="form-input" id="qf-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+            </div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="qf-phone">Phone Number *</label>
-            <input class="form-input" id="qf-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-email">Email Address</label>
+              <input class="form-input" id="qf-email" name="email" type="email" placeholder="john@example.com" />
+            </div>
+          </div>
+          <div class="form-row form-row-2 mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-project">Project Type</label>
+              <select class="form-select" id="qf-project" name="project">
+                <option value="">Select project type</option>
+                {project_options}
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="qf-postcode">Location / Postcode</label>
+              <input class="form-input" id="qf-postcode" name="postcode" type="text" placeholder="e.g. WD17 2AB" />
+            </div>
+          </div>
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-message">Tell Us About Your Project</label>
+              <textarea class="form-textarea" id="qf-message" name="message" placeholder="Describe your {service_label_lower} project — size, style, any specific requirements..."></textarea>
+            </div>
+          </div>
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-time">Preferred Contact Time</label>
+              <select class="form-select" id="qf-time" name="contact_time">
+                <option value="">Any time</option>
+                <option>Morning (8am&ndash;12pm)</option>
+                <option>Afternoon (12pm&ndash;5pm)</option>
+                <option>Evening (after 5pm)</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">Request Free Quote &rarr;</button>
+          <p class="form-note"><strong>No obligation, only friendly advice.</strong><br />Your details are safe with us. We will only contact you about your enquiry.</p>
+        </form>
+      </div>
+
+      <!-- RIGHT: Get in Touch info -->
+      <div class="reveal">
+        <span class="qc-info-label">Get in Touch</span>
+        <h2 class="qc-info-heading" id="qf-heading">Get a Free {service_label} Quote in {city_label}</h2>
+        <p class="qc-info-para">{city_blurb}</p>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128222;</div>
+          <div>
+            <div class="qc-contact-label">Phone</div>
+            <div class="qc-contact-value"><a href="tel:+447775758717">+44 7775 758 717</a></div>
           </div>
         </div>
-        <div class="form-row mt-1">
-          <div class="form-group">
-            <label class="form-label" for="qf-email">Email Address</label>
-            <input class="form-input" id="qf-email" name="email" type="email" placeholder="john@example.com" />
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#9993;</div>
+          <div>
+            <div class="qc-contact-label">Email</div>
+            <div class="qc-contact-value"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></div>
           </div>
         </div>
-        <div class="form-row form-row-2 mt-1">
-          <div class="form-group">
-            <label class="form-label" for="qf-project">Project Type</label>
-            <select class="form-select" id="qf-project" name="project">
-              <option value="">Select project type</option>
-              {project_options}
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="qf-postcode">Location / Postcode</label>
-            <input class="form-input" id="qf-postcode" name="postcode" type="text" placeholder="e.g. WD17 2AB" />
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128336;</div>
+          <div>
+            <div class="qc-contact-label">Working Hours</div>
+            <div class="qc-contact-value">Monday &ndash; Saturday: 8:00 AM &ndash; 5:00 PM</div>
           </div>
         </div>
-        <div class="form-row mt-1">
-          <div class="form-group">
-            <label class="form-label" for="qf-message">Tell Us About Your Project</label>
-            <textarea class="form-textarea" id="qf-message" name="message" placeholder="Describe your project — size, style, any specific requirements..."></textarea>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128205;</div>
+          <div>
+            <div class="qc-contact-label">Based In</div>
+            <div class="qc-contact-value">157 Judge Street, Watford, WD24 5AN<br />{service_area}</div>
           </div>
         </div>
-        <div class="form-row mt-1">
-          <div class="form-group">
-            <label class="form-label" for="qf-time">Preferred Contact Time</label>
-            <select class="form-select" id="qf-time" name="contact_time">
-              <option value="">Any time</option>
-              <option>Morning (8am–12pm)</option>
-              <option>Afternoon (12pm–5pm)</option>
-              <option>Evening (after 5pm)</option>
-            </select>
-          </div>
-        </div>
-        <button type="submit" class="form-submit">Request Free Quote →</button>
-        <p class="form-note"><strong>No obligation, only friendly advice.</strong><br />Your details are safe with us. We will only contact you about your renovation enquiry.</p>
-      </form>
+      </div>
+
     </div>
   </div>
 </section>
@@ -468,65 +568,54 @@ def add_reassurance_to_final_cta(body: str) -> str:
 
 def fix_contact_section(body: str) -> str:
     """
-    The old #contact-form section has its own inner form (id="contact-quote-form").
-    We keep the contact info part but REMOVE the inner quote form (since we now
-    have our standalone #quote-form section above the footer).
-    We also remove the old contact-form section's redundant form card.
+    Remove the entire old contact section (#quote-form-bottom, renamed from
+    #contact-form). Its contact info is now in the combined COMBINED_SECTION
+    on the right column, so we don't need this section at all.
     """
-    # Find the #quote-form-bottom section (renamed from #contact-form)
     section_start = body.find('id="quote-form-bottom"')
     if section_start == -1:
         return body
 
-    # Find the section tag start
     sec_tag_start = body.rfind('<section', 0, section_start)
     sec_tag_end = body.find('</section>', sec_tag_start) + len('</section>')
-    section_html = body[sec_tag_start:sec_tag_end]
 
-    # Remove the inner form card (class="quote-card") from this section
-    # Keep the contact-info column only
-    # Find and remove the form column: <div> ... <form id="contact-quote-form"> ... </form> ... </div>
-    form_start = section_html.find('<form id="contact-quote-form"')
-    if form_start != -1:
-        # Find the enclosing div that wraps the form
-        form_wrap_start = section_html.rfind('<div', 0, form_start)
-        # Find matching closing div
-        search_pos = form_wrap_start + 4
-        depth = 1
-        while depth > 0 and search_pos < len(section_html):
-            next_open = section_html.find('<div', search_pos)
-            next_close = section_html.find('</div>', search_pos)
-            if next_close == -1:
-                break
-            if next_open != -1 and next_open < next_close:
-                depth += 1
-                search_pos = next_open + 4
-            else:
-                depth -= 1
-                if depth == 0:
-                    form_wrap_end = next_close + len('</div>')
-                else:
-                    search_pos = next_close + len('</div>')
-        if depth == 0:
-            section_html = section_html[:form_wrap_start] + section_html[form_wrap_end:]
-
-    body = body[:sec_tag_start] + section_html + body[sec_tag_end:]
+    # Remove the entire section
+    body = body[:sec_tag_start] + body[sec_tag_end:]
     return body
 
-def insert_quote_form_before_footer(body: str, slug: str) -> str:
-    """Insert the standalone quote form section just before the footer."""
+def city_blurb(service: str, city: str) -> str:
+    """Generate the right-column descriptive paragraph."""
+    service_lower = service.lower()
+    return (
+        f"We are based right here in {city}. Tell us about your {service_lower} "
+        f"and we will arrange a free visit, take a look, and give you a clear, "
+        f"honest, no-obligation quote."
+    )
+
+def service_area_text(city: str) -> str:
+    """Generate the 'Serving X & surrounding areas' line."""
+    return f"Serving {city} &amp; surrounding areas"
+
+def insert_combined_section_before_footer(body: str, slug: str) -> str:
+    """Insert the two-column combined quote+contact section just before the footer."""
     service, city = parse_service_and_city(slug)
     options = project_options_for_service(slug)
-    form_section = QUOTE_FORM_SECTION\
+    blurb = city_blurb(service, city)
+    area = service_area_text(city)
+
+    section = COMBINED_SECTION\
         .replace("{service_label}", service)\
+        .replace("{service_label_lower}", service.lower())\
         .replace("{city_label}", city)\
+        .replace("{city_blurb}", blurb)\
+        .replace("{service_area}", area)\
         .replace("{project_options}", options)
 
     footer_start = body.find('<footer')
     if footer_start == -1:
-        body += form_section
+        body += section
     else:
-        body = body[:footer_start] + form_section + "\n" + body[footer_start:]
+        body = body[:footer_start] + section + "\n" + body[footer_start:]
     return body
 
 def clean_body(body: str, slug: str) -> str:
@@ -546,8 +635,8 @@ def clean_body(body: str, slug: str) -> str:
     body = add_reassurance_to_final_cta(body)
     # Step 6: Clean the old contact section (remove duplicated form)
     body = fix_contact_section(body)
-    # Step 7: Insert standalone quote form before footer
-    body = insert_quote_form_before_footer(body, slug)
+    # Step 7: Insert combined quote+contact section before footer
+    body = insert_combined_section_before_footer(body, slug)
     # Collapse blank lines
     body = re.sub(r'\n{3,}', '\n\n', body)
     return body.strip()
@@ -653,7 +742,8 @@ def main():
     print(f"\nWrote landing-pages-list.json")
     print("\nChanges applied to ALL pages:")
     print("  ✓ Header always white bg, black logo + nav text")
-    print("  ✓ Quote form removed from hero, placed near bottom in #quote-form section")
+    print("  ✓ Quote form + contact info combined in one two-column #quote-form section")
+    print("  ✓ Form LEFT, contact info RIGHT on desktop; stacks on mobile")
     print("  ✓ All CTAs link to #quote-form")
     print("  ✓ 'No obligation, only friendly advice.' added near all CTAs")
     print("  ✓ Post-submit thank-you message: no 'Call us now' button")

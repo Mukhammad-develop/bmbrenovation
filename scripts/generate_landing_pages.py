@@ -400,7 +400,7 @@ CLEAN_SCRIPT = """
             });
             localStorage.setItem('bmb_quotes', JSON.stringify(quotes));
           } catch(e) {}
-          form.innerHTML = '<div style="text-align:center;padding:3rem 1rem;"><div style="font-size:3rem;margin-bottom:1rem;">&#x2705;</div><h3 style="font-family:\'Plus Jakarta Sans\',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ' + name + '!</h3><p style="color:#6B7280;font-size:0.9375rem;line-height:1.7;max-width:480px;margin:0 auto;">We have received your enquiry and will be in touch shortly.</p><p style="color:#9CA3AF;font-size:0.875rem;margin-top:1.25rem;font-style:italic;">You can get in touch yourself anytime before our team calls you back.</p></div>';
+          form.innerHTML = '<div style="text-align:center;padding:3rem 1rem;"><div style="font-size:3rem;margin-bottom:1rem;">&#x2705;</div><h3 style="font-family:\\\'Plus Jakarta Sans\\\',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ' + name + '!</h3><p style="color:#6B7280;font-size:0.9375rem;line-height:1.7;max-width:480px;margin:0 auto;">We have received your enquiry and will be in touch shortly.</p><p style="color:#9CA3AF;font-size:0.875rem;margin-top:1.25rem;font-style:italic;">You can get in touch yourself anytime before our team calls you back.</p></div>';
         } else { throw new Error('failed'); }
       }).catch(function() {
         if (btn) { btn.disabled = false; btn.textContent = orig; }
@@ -706,6 +706,7 @@ def generate_page_tsx(slug: str, html_content: str) -> str:
     scripts_json = json.dumps(scripts)
 
     tsx = f'''import type {{ Metadata }} from 'next'
+import LandingScript from '../_components/LandingScript'
 
 export const dynamic = 'force-static'
 
@@ -733,7 +734,7 @@ export default function LandingPage() {{
     <>
       <style dangerouslySetInnerHTML={{{{ __html: pageStyles }}}} />
       <div dangerouslySetInnerHTML={{{{ __html: pageBody }}}} />
-      <script dangerouslySetInnerHTML={{{{ __html: pageScripts }}}} />
+      <LandingScript code={{pageScripts}} />
     </>
   )
 }}

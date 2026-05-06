@@ -53,6 +53,16 @@ export default function ContactClient() {
           })
           localStorage.setItem('bmb_quotes', JSON.stringify(stored))
         } catch {}
+
+        // Google Ads Conversion Tracking
+        try {
+          if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', {
+              'send_to': 'AW-18105187591/0oU2CLXHoKgcEIf6nLlD'
+            })
+          }
+        } catch {}
+
         setSubmitted(true)
         toast?.success?.('Message sent! We will be in touch shortly.')
       } else {

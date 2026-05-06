@@ -1,33 +1,3 @@
 {
-  "landing_pages": [
-    "/bathroom-fitting-borehamwood",
-    "/bathroom-fitting-bushey",
-    "/bathroom-fitting-croxley-green",
-    "/bathroom-fitting-harrow",
-    "/bathroom-fitting-hemel-hempstead",
-    "/bathroom-fitting-luton",
-    "/bathroom-fitting-rickmansworth",
-    "/bathroom-fitting-st-albans",
-    "/bathroom-fitting-watford",
-    "/bathroom-renovation-bedford",
-    "/bathroom-renovation-borehamwood",
-    "/bathroom-renovation-bushey",
-    "/bathroom-renovation-croxley-green",
-    "/bathroom-renovation-harrow",
-    "/bathroom-renovation-hemel-hempstead",
-    "/bathroom-renovation-luton",
-    "/bathroom-renovation-rickmansworth",
-    "/bathroom-renovation-st-albans",
-    "/bathroom-renovation-watford",
-    "/kitchen-renovation-bedford",
-    "/kitchen-renovation-borehamwood",
-    "/kitchen-renovation-bushey",
-    "/kitchen-renovation-croxley-green",
-    "/kitchen-renovation-harrow",
-    "/kitchen-renovation-hemel-hempstead",
-    "/kitchen-renovation-luton",
-    "/kitchen-renovation-rickmansworth",
-    "/kitchen-renovation-st-albans",
-    "/kitchen-renovation-watford"
-  ]
+  "landing_pages": []
 }

@@ -19,6 +19,19 @@ const serviceLinks = [
   { name: 'Loft Conversion', href: '/services#loft' },
 ]
 
+const areas = [
+  { name: 'Watford', href: '/kitchen-renovation-watford' },
+  { name: 'Bushey', href: '/kitchen-renovation-bushey' },
+  { name: 'Rickmansworth', href: '/kitchen-renovation-rickmansworth' },
+  { name: 'St Albans', href: '/kitchen-renovation-st-albans' },
+  { name: 'Hemel Hempstead', href: '/kitchen-renovation-hemel-hempstead' },
+  { name: 'Borehamwood', href: '/kitchen-renovation-borehamwood' },
+  { name: 'Harrow', href: '/kitchen-renovation-harrow' },
+  { name: 'Croxley Green', href: '/kitchen-renovation-croxley-green' },
+  { name: 'Luton', href: '/kitchen-renovation-luton' },
+  { name: 'Bedford', href: '/kitchen-renovation-bedford' },
+]
+
 export default function Footer() {
   const scrollToTop = () => {
     window?.scrollTo?.({ top: 0, behavior: 'smooth' })
@@ -27,14 +40,14 @@ export default function Footer() {
   return (
     <footer className="bg-gray-950 text-white">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             <div className="mb-4">
               <span className="font-display text-2xl font-bold text-white">BMB</span>
               <span className="font-display text-2xl font-light text-[#C8A97E]"> Renovation</span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
               We specialize in bespoke home interior renovations, combining elegance and functionality to create timeless living spaces.
             </p>
             <div className="flex items-center gap-3">
@@ -78,10 +91,24 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Areas We Cover */}
           <div>
+            <h4 className="font-display text-base font-semibold text-white mb-5">Areas We Cover</h4>
+            <ul className="space-y-3">
+              {areas?.map((area: any) => (
+                <li key={area?.name}>
+                  <Link href={area?.href ?? '/'} className="text-gray-400 text-sm hover:text-[#C8A97E] transition-colors">
+                    {area?.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="md:col-span-2 lg:col-span-5 border-t border-white/10 pt-8 mt-4 lg:mt-8">
             <h4 className="font-display text-base font-semibold text-white mb-5">Get in Touch</h4>
-            <ul className="space-y-4">
+            <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#C8A97E] mt-0.5 shrink-0" />
                 <span className="text-gray-400 text-sm">157 Judge Street, Watford, England, WD24 5AN</span>

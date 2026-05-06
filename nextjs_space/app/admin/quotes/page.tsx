@@ -51,6 +51,26 @@ export default function AdminQuotesPage() {
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState<'all' | 'new' | 'contacted' | 'completed'>('all')
   const [mounted, setMounted] = useState(false)
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editForm, setEditForm] = useState<Partial<Quote>>({})
+
+  const startEdit = (q: Quote) => {
+    setEditingId(q.id)
+    setEditForm(q)
+  }
+
+  const cancelEdit = () => {
+    setEditingId(null)
+    setEditForm({})
+  }
+
+  const saveEdit = () => {
+    if (!editingId) return
+    const updated = quotes.map(q => q.id === editingId ? { ...q, ...editForm } as Quote : q)
+    setQuotes(updated)
+    saveQuotes(updated)
+    setEditingId(null)
+  }
 
   useEffect(() => {
     setMounted(true)
@@ -273,53 +293,77 @@ export default function AdminQuotesPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {filtered.map(q => (
               <div key={q.id} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '1rem', padding: '1.5rem', position: 'relative' }}>
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1rem' }}>
-                  <div>
-                    <h3 style={{ margin: '0 0 0.25rem', fontSize: '1.0625rem', fontWeight: 700 }}>{q.name}</h3>
-                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                      <a href={`tel:${q.phone}`} style={{ color: '#C8A97E', fontSize: '0.875rem', textDecoration: 'none' }}>📞 {q.phone}</a>
-                      {q.email && q.email !== '(not provided)' && <a href={`mailto:${q.email}`} style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', textDecoration: 'none' }}>✉ {q.email}</a>}
+                {editingId === q.id ? (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    <h3 style={{ margin: 0, fontSize: '1rem', color: '#C8A97E' }}>Edit Quote</h3>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                      <input style={{ padding: '0.5rem', borderRadius: '0.5rem', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} value={editForm.name || ''} onChange={e => setEditForm({ ...editForm, name: e.target.value })} placeholder="Name" />
+                      <input style={{ padding: '0.5rem', borderRadius: '0.5rem', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} value={editForm.phone || ''} onChange={e => setEditForm({ ...editForm, phone: e.target.value })} placeholder="Phone" />
+                      <input style={{ padding: '0.5rem', borderRadius: '0.5rem', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} value={editForm.email || ''} onChange={e => setEditForm({ ...editForm, email: e.target.value })} placeholder="Email" />
+                      <input style={{ padding: '0.5rem', borderRadius: '0.5rem', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} value={editForm.project || ''} onChange={e => setEditForm({ ...editForm, project: e.target.value })} placeholder="Project" />
+                      <input style={{ padding: '0.5rem', borderRadius: '0.5rem', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} value={editForm.postcode || ''} onChange={e => setEditForm({ ...editForm, postcode: e.target.value })} placeholder="Postcode" />
+                      <input style={{ padding: '0.5rem', borderRadius: '0.5rem', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} value={editForm.contact_time || ''} onChange={e => setEditForm({ ...editForm, contact_time: e.target.value })} placeholder="Contact Time" />
+                    </div>
+                    <textarea style={{ padding: '0.5rem', borderRadius: '0.5rem', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', minHeight: '80px' }} value={editForm.message || ''} onChange={e => setEditForm({ ...editForm, message: e.target.value })} placeholder="Message" />
+                    <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
+                      <button onClick={cancelEdit} style={{ padding: '0.5rem 1rem', borderRadius: '0.5rem', background: 'rgba(255,255,255,0.1)', color: '#fff', border: 'none', cursor: 'pointer' }}>Cancel</button>
+                      <button onClick={saveEdit} style={{ padding: '0.5rem 1rem', borderRadius: '0.5rem', background: '#22c55e', color: '#fff', border: 'none', cursor: 'pointer', fontWeight: 'bold' }}>Save Changes</button>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                    <span style={{ padding: '0.3rem 0.75rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700, background: statusBg[q.status], color: statusColor[q.status], textTransform: 'capitalize' }}>{q.status}</span>
-                    <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.75rem' }}>{new Date(q.timestamp).toLocaleDateString('en-GB', { day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit' })}</span>
-                  </div>
-                </div>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: '0.625rem', marginBottom: '1rem', fontSize: '0.8125rem' }}>
-                  {[
-                    { label: 'Project', value: q.project },
-                    { label: 'Postcode', value: q.postcode },
-                    { label: 'Contact Time', value: q.contact_time },
-                    { label: 'Page', value: q.page },
-                  ].map(item => (
-                    <div key={item.label} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '0.5rem', padding: '0.5rem 0.75rem' }}>
-                      <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.2rem' }}>{item.label}</div>
-                      <div style={{ color: 'rgba(255,255,255,0.8)' }}>{item.value || '—'}</div>
+                ) : (
+                  <>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1rem' }}>
+                      <div>
+                        <h3 style={{ margin: '0 0 0.25rem', fontSize: '1.0625rem', fontWeight: 700 }}>{q.name}</h3>
+                        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                          <a href={`tel:${q.phone}`} style={{ color: '#C8A97E', fontSize: '0.875rem', textDecoration: 'none' }}>📞 {q.phone}</a>
+                          {q.email && q.email !== '(not provided)' && <a href={`mailto:${q.email}`} style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', textDecoration: 'none' }}>✉ {q.email}</a>}
+                        </div>
+                      </div>
+                      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                        <span style={{ padding: '0.3rem 0.75rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700, background: statusBg[q.status], color: statusColor[q.status], textTransform: 'capitalize' }}>{q.status}</span>
+                        <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.75rem' }}>{new Date(q.timestamp).toLocaleDateString('en-GB', { day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit' })}</span>
+                      </div>
                     </div>
-                  ))}
-                </div>
 
-                {q.message && q.message !== '(no message)' && (
-                  <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '0.5rem', padding: '0.75rem', marginBottom: '1rem', fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
-                    "{q.message}"
-                  </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: '0.625rem', marginBottom: '1rem', fontSize: '0.8125rem' }}>
+                      {[
+                        { label: 'Project', value: q.project },
+                        { label: 'Postcode', value: q.postcode },
+                        { label: 'Contact Time', value: q.contact_time },
+                        { label: 'Page', value: q.page },
+                      ].map(item => (
+                        <div key={item.label} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '0.5rem', padding: '0.5rem 0.75rem' }}>
+                          <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.2rem' }}>{item.label}</div>
+                          <div style={{ color: 'rgba(255,255,255,0.8)' }}>{item.value || '—'}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {q.message && q.message !== '(no message)' && (
+                      <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '0.5rem', padding: '0.75rem', marginBottom: '1rem', fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
+                        "{q.message}"
+                      </div>
+                    )}
+
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                      {(['new','contacted','completed'] as const).map(s => (
+                        <button key={s} onClick={() => updateStatus(q.id, s)} style={{
+                          padding: '0.4rem 0.875rem', borderRadius: '0.5rem', fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize',
+                          background: q.status === s ? statusBg[s] : 'rgba(255,255,255,0.04)',
+                          border: `1px solid ${q.status === s ? statusColor[s] : 'rgba(255,255,255,0.08)'}`,
+                          color: q.status === s ? statusColor[s] : 'rgba(255,255,255,0.4)',
+                        }}>
+                          {s === 'new' ? '🔵' : s === 'contacted' ? '🟡' : '🟢'} {s}
+                        </button>
+                      ))}
+                      <div style={{ marginLeft: 'auto', display: 'flex', gap: '0.5rem' }}>
+                        <button onClick={() => startEdit(q)} style={{ padding: '0.4rem 0.875rem', borderRadius: '0.5rem', fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }}>Edit</button>
+                        <button onClick={() => deleteQuote(q.id)} style={{ padding: '0.4rem 0.875rem', borderRadius: '0.5rem', fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer', background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.15)', color: '#f87171' }}>Delete</button>
+                      </div>
+                    </div>
+                  </>
                 )}
-
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  {(['new','contacted','completed'] as const).map(s => (
-                    <button key={s} onClick={() => updateStatus(q.id, s)} style={{
-                      padding: '0.4rem 0.875rem', borderRadius: '0.5rem', fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize',
-                      background: q.status === s ? statusBg[s] : 'rgba(255,255,255,0.04)',
-                      border: `1px solid ${q.status === s ? statusColor[s] : 'rgba(255,255,255,0.08)'}`,
-                      color: q.status === s ? statusColor[s] : 'rgba(255,255,255,0.4)',
-                    }}>
-                      {s === 'new' ? '🔵' : s === 'contacted' ? '🟡' : '🟢'} {s}
-                    </button>
-                  ))}
-                  <button onClick={() => deleteQuote(q.id)} style={{ marginLeft: 'auto', padding: '0.4rem 0.875rem', borderRadius: '0.5rem', fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer', background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.15)', color: '#f87171' }}>Delete</button>
-                </div>
               </div>
             ))}
           </div>

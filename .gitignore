@@ -1,6 +1,0 @@
-# Exclude source code and build artifacts from deploy branch
-nextjs_space/
-landing-files/
-scripts/
-.DS_Store
-*.py

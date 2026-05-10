@@ -24,6 +24,7 @@ const navLinks = [
   { name: 'About', href: '/about' },
   { name: 'Services', href: '/services', hasDropdown: true },
   { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ]
 

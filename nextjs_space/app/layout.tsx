@@ -65,7 +65,7 @@ export default function RootLayout({
             "image": "https://bmbrenovation.co.uk/og-image.png",
             "description": "BMB Renovation offers premium home, kitchen & bathroom renovation services in Watford, London & Hertfordshire. 15+ years of experience. Free consultation.",
             "telephone": "+447775758717",
-            "email": "info@bmbrenovation.co.uk",
+            "email": "contact@bmbrenovation.co.uk",
             "priceRange": "££",
             "address": {
               "@type": "PostalAddress",

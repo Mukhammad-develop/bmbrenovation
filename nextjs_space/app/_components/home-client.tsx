@@ -54,7 +54,7 @@ const benefits = [
 const testimonials = [
   { text: 'From the very first consultation, the team listened carefully to our needs and delivered beyond our expectations. Our kitchen now feels modern, elegant, and incredibly functional.', author: 'Sarah & James R.', location: 'London' },
   { text: 'The designers helped us reimagine our living room, and the craftsmanship was outstanding. Every detail was handled with care, and the result was a space that feels both stylish and comfortable.', author: 'David L.', location: 'Kensington' },
-  { text: 'We wanted a complete interior renovation, and London House Renovations exceeded our vision. The team managed everything smoothly, kept us informed, and delivered a stunning finish on time.', author: 'Scarlett Burton', location: 'London' },
+  { text: 'We wanted a complete interior renovation, and BMB Renovation exceeded our vision. The team managed everything smoothly, kept us informed, and delivered a stunning finish on time.', author: 'Scarlett Burton', location: 'London' },
 ]
 
 const stats = [

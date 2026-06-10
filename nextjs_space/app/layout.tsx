@@ -15,14 +15,32 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mon
 export const metadata: Metadata = {
   metadataBase: new URL('https://bmbrenovation.co.uk'),
   title: 'BMB Renovation | Premium Home Renovation & Building Services in Watford & London',
-  description: 'Expert home, kitchen & bathroom remodeling services in London & Watford. BMB Renovation transforms homes with elegance and functionality.',
+  description: 'BMB Renovation offers premium home, kitchen & bathroom renovation services in Watford, London & Hertfordshire. Free consultation. Get your quote today. Call +44 7775 758 717.',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
   },
+  alternates: {
+    canonical: 'https://bmbrenovation.co.uk',
+  },
   openGraph: {
+    type: 'website',
+    locale: 'en_GB',
+    url: 'https://bmbrenovation.co.uk',
+    siteName: 'BMB Renovation',
     title: 'BMB Renovation | Premium Home Renovation & Building Services',
-    description: 'Expert home, kitchen & bathroom remodeling services in London & Watford.',
+    description: 'BMB Renovation offers premium home, kitchen & bathroom renovation services in Watford, London & Hertfordshire. Free consultation. Call +44 7775 758 717.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'BMB Renovation - Premium Home Renovation Services in Watford' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BMB Renovation | Premium Home Renovation & Building Services',
+    description: 'BMB Renovation offers premium home, kitchen & bathroom renovation services in Watford, London & Hertfordshire.',
     images: ['/og-image.png'],
   },
 }
@@ -33,9 +51,50 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en-GB" suppressHydrationWarning>
       <head>
         <script src="https://apps.abacus.ai/chatllm/appllm-lib.js"></script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HomeAndConstructionBusiness",
+            "name": "BMB Renovation",
+            "url": "https://bmbrenovation.co.uk",
+            "logo": "https://bmbrenovation.co.uk/favicon.svg",
+            "image": "https://bmbrenovation.co.uk/og-image.png",
+            "description": "BMB Renovation offers premium home, kitchen & bathroom renovation services in Watford, London & Hertfordshire. 15+ years of experience. Free consultation.",
+            "telephone": "+447775758717",
+            "email": "info@bmbrenovation.co.uk",
+            "priceRange": "££",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "157 Judge Street",
+              "addressLocality": "Watford",
+              "postalCode": "WD24 5AN",
+              "addressRegion": "Hertfordshire",
+              "addressCountry": "GB"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 51.6549,
+              "longitude": -0.3978
+            },
+            "areaServed": [
+              "Watford", "Bushey", "Rickmansworth", "St Albans",
+              "Hemel Hempstead", "Borehamwood", "Harrow", "Croxley Green",
+              "Luton", "Bedford", "London"
+            ],
+            "openingHoursSpecification": [
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "16:00" }
+            ],
+            "sameAs": [
+              "https://www.facebook.com/bmbrenovation",
+              "https://www.instagram.com/bmbrenovation"
+            ]
+          }) }}
+        />
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=AW-18105187591" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`

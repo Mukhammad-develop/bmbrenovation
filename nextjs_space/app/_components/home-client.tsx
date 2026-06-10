@@ -108,7 +108,7 @@ export default function HomeClient() {
               <span className="text-[#C8A97E]">Build</span>{' '}
               Your Dream
             </h1>
-            <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-lg">
+            <p className="text-white/90 text-lg sm:text-xl leading-relaxed mb-8 max-w-lg">
               Expert Home, Kitchen & Bathroom Remodeling services in London & Watford.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -148,7 +148,7 @@ export default function HomeClient() {
                 <div className="text-3xl sm:text-4xl text-[#C8A97E]">
                   <Counter end={s?.value ?? 0} suffix={s?.suffix ?? ''} />
                 </div>
-                <p className="text-gray-400 text-sm mt-1">{s?.label ?? ''}</p>
+                <p className="text-gray-300 text-sm mt-1">{s?.label ?? ''}</p>
               </AnimatedSection>
             ))}
           </div>
@@ -335,7 +335,7 @@ export default function HomeClient() {
                     {b?.icon && <b.icon className="w-6 h-6 text-[#C8A97E]" />}
                   </div>
                   <h3 className="font-display text-lg font-bold text-white mb-3">{b?.title ?? ''}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{b?.desc ?? ''}</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">{b?.desc ?? ''}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -361,7 +361,7 @@ export default function HomeClient() {
                       <Star key={j} className="w-4 h-4 fill-[#C8A97E] text-[#C8A97E]" />
                     ))}
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed italic mb-6">&ldquo;{t?.text ?? ''}&rdquo;</p>
+                  <p className="text-gray-700 text-sm leading-relaxed italic mb-6">&ldquo;{t?.text ?? ''}&rdquo;</p>
                   <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
                     <div className="w-10 h-10 rounded-full bg-[#C8A97E]/20 flex items-center justify-center">
                       <Users className="w-5 h-5 text-[#C8A97E]" />
@@ -402,7 +402,7 @@ export default function HomeClient() {
               Let&apos;s Get Together and Create{' '}
               <span className="text-[#C8A97E]">Your Dream Home</span>
             </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-white/90 text-lg max-w-2xl mx-auto mb-8">
               From meticulous planning to flawless execution, we specialize in bespoke, luxury renovations, ensuring every space we curate is a perfect blend of style and excellence.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

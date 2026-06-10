@@ -56,7 +56,7 @@ export default function Header() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" aria-label="BMB Renovation - Home" className="flex items-center gap-2">
             <div className="flex items-center">
               <span className={`font-display text-2xl font-black tracking-tight transition-colors ${
                 scrolled ? 'text-gray-900' : 'text-white'
@@ -112,6 +112,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <a
               href="tel:+447775758717"
+              aria-label="Call BMB Renovation now"
               className={`hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                 scrolled
                   ? 'bg-gray-900 text-white hover:bg-gray-800'
@@ -123,6 +124,9 @@ export default function Header() {
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
               className={`lg:hidden p-2 rounded-lg transition-colors ${
                 scrolled ? 'text-gray-900 hover:bg-gray-100' : 'text-white hover:bg-white/10'
               }`}
@@ -137,6 +141,7 @@ export default function Header() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}

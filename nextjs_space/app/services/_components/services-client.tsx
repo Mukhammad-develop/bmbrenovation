@@ -109,7 +109,7 @@ export default function ServicesClient() {
               <h1 className="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight">
                 Rediscover Your Home
               </h1>
-              <p className="text-white/70 mt-3 max-w-lg">A perfect blend of colours, textures, and design.</p>
+              <p className="text-white/90 mt-3 max-w-lg">A perfect blend of colours, textures, and design.</p>
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function ServicesClient() {
                         <h3 className="font-display text-2xl font-bold text-gray-900">{service?.title ?? ''}</h3>
                       </div>
                       <p className="text-gray-600 leading-relaxed mb-4">{service?.short ?? ''}</p>
-                      <p className="text-gray-500 text-sm leading-relaxed mb-6">{service?.long ?? ''}</p>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-6">{service?.long ?? ''}</p>
                       <Link
                         href="/contact"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-colors text-sm"
@@ -175,7 +175,7 @@ export default function ServicesClient() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight mb-5">
               Ready to Start Your <span className="text-[#C8A97E]">Renovation</span>?
             </h2>
-            <p className="text-white/80 max-w-xl mx-auto mb-8">Contact us today for a free, no-obligation quote.</p>
+            <p className="text-white/90 max-w-xl mx-auto mb-8">Contact us today for a free, no-obligation quote.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-[#C8A97E] text-white font-semibold rounded-full hover:bg-[#B8996E] transition-all">
                 Get Started <ArrowRight className="w-4 h-4" />

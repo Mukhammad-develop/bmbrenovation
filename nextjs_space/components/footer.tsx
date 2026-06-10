@@ -52,13 +52,13 @@ export default function Footer() {
               We specialize in bespoke home interior renovations, combining elegance and functionality to create timeless living spaces.
             </p>
             <div className="flex items-center gap-3">
-              <a href="https://www.facebook.com/people/BMB-Renovation/61560985672329/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#C8A97E] transition-colors">
+              <a href="https://www.facebook.com/people/BMB-Renovation/61560985672329/" target="_blank" rel="noopener noreferrer" aria-label="BMB Renovation on Facebook" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#C8A97E] transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://www.instagram.com/bmb_renovation/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#C8A97E] transition-colors">
+              <a href="https://www.instagram.com/bmb_renovation/" target="_blank" rel="noopener noreferrer" aria-label="BMB Renovation on Instagram" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#C8A97E] transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://x.com/bmb_renovation" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#C8A97E] transition-colors">
+              <a href="https://x.com/bmb_renovation" target="_blank" rel="noopener noreferrer" aria-label="BMB Renovation on X (Twitter)" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#C8A97E] transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
             </div>

@@ -109,7 +109,7 @@ export default function AboutClient() {
                 Crafting Homes with{' '}<span className="text-[#C8A97E]">Elegance</span><br />
                 <span className="text-3xl sm:text-4xl font-semibold">in Watford &amp; London</span>
               </h1>
-              <p className="text-white/70 mt-4 max-w-xl text-base leading-relaxed">
+              <p className="text-white/90 mt-4 max-w-xl text-base leading-relaxed">
                 15+ years. 2,000+ projects. One standard: exceptional.
               </p>
             </div>
@@ -171,7 +171,7 @@ export default function AboutClient() {
                 <div className="text-3xl sm:text-4xl text-[#C8A97E] font-display font-bold">
                   <Counter end={s.value} suffix={s.suffix} />
                 </div>
-                <p className="text-gray-400 text-sm mt-2">{s.label}</p>
+                <p className="text-gray-300 text-sm mt-2">{s.label}</p>
               </AnimatedSection>
             ))}
           </div>
@@ -255,7 +255,7 @@ export default function AboutClient() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mt-3 tracking-tight">
               What Sets Us Apart
             </h2>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-300 mt-4 max-w-2xl mx-auto leading-relaxed">
               We are not a national franchise or a call-centre operation. We are a local Watford team — and our entire business depends on doing every job to a standard we are proud of.
             </p>
           </AnimatedSection>
@@ -267,7 +267,7 @@ export default function AboutClient() {
                     <item.icon className="w-6 h-6 text-[#C8A97E]" />
                   </div>
                   <h3 className="font-display text-base font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -331,7 +331,7 @@ export default function AboutClient() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight mb-5">
               Ready to Transform Your Home?
             </h2>
-            <p className="text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">
+            <p className="text-white/90 max-w-xl mx-auto mb-8 leading-relaxed">
               Call us today or fill in our online form for a free, no-obligation consultation. We cover Watford, London and the whole of Hertfordshire.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

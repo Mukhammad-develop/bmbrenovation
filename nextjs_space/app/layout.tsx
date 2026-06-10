@@ -53,7 +53,6 @@ export default function RootLayout({
   return (
     <html lang="en-GB" suppressHydrationWarning>
       <head>
-        <Script strategy="afterInteractive" src="https://apps.abacus.ai/chatllm/appllm-lib.js" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

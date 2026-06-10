@@ -483,6 +483,7 @@ def build_page_html(slug: str, service: str, city: str, hero_img: str, proximity
 
 def build_schema_json(slug: str, title: str, description: str, city: str, is_kitchen: bool) -> list:
     faqs = get_faqs("Kitchen Fitting" if is_kitchen else "Bathroom Fitting", city, is_kitchen)
+    service_noun = "Kitchen Fitting" if is_kitchen else "Bathroom Fitting"
     return [
         {
             "@context": "https://schema.org",
@@ -490,6 +491,7 @@ def build_schema_json(slug: str, title: str, description: str, city: str, is_kit
             "name": "BMB Renovation",
             "url": f"https://bmbrenovation.co.uk/{slug}",
             "logo": "https://bmbrenovation.co.uk/favicon.svg",
+            "image": "https://bmbrenovation.co.uk/og-image.png",
             "description": description,
             "telephone": "+447775758717",
             "email": "info@bmbrenovation.co.uk",
@@ -503,6 +505,25 @@ def build_schema_json(slug: str, title: str, description: str, city: str, is_kit
                 "addressCountry": "GB"
             },
             "areaServed": {"@type": "City", "name": city},
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "09:00",
+                    "closes": "16:00"
+                }
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "58"
+            }
         },
         {
             "@context": "https://schema.org",
@@ -510,6 +531,30 @@ def build_schema_json(slug: str, title: str, description: str, city: str, is_kit
             "mainEntity": [
                 {"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}}
                 for f in faqs
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://bmbrenovation.co.uk/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Areas Served",
+                    "item": "https://bmbrenovation.co.uk/locations"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": f"{service_noun} {city}",
+                    "item": f"https://bmbrenovation.co.uk/{slug}"
+                }
             ]
         }
     ]

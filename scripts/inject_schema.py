@@ -1,57 +1,32 @@
 #!/usr/bin/env python3
 """
-inject_schema.py — Injects LocalBusiness + FAQPage JSON-LD schema
-into all 29 existing location page.tsx files.
+inject_schema.py — Injects LocalBusiness + FAQPage + BreadcrumbList JSON-LD schema
+into all 40 location page.tsx files.
 
 Strategy:
   - Reads each page.tsx
+  - Cleans out any existing JSON-LD script tags
   - Extracts the slug from the directory name
   - Extracts the existing title and description from the metadata block
-  - Generates a tailored JSON-LD script
+  - Generates a tailored JSON-LD script (including reviews and breadcrumbs)
   - Inserts it as a <script dangerouslySetInnerHTML> tag at the TOP of the
-    JSX return statement (before the <style> tag)
+    JSX return statement
 """
 
 import os
 import re
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
 NEXTJS_APP = ROOT / "nextjs_space" / "app"
 
-# All 29 existing location page slugs
-LOCATION_SLUGS = [
-    "bathroom-fitting-borehamwood",
-    "bathroom-fitting-bushey",
-    "bathroom-fitting-croxley-green",
-    "bathroom-fitting-harrow",
-    "bathroom-fitting-hemel-hempstead",
-    "bathroom-fitting-luton",
-    "bathroom-fitting-rickmansworth",
-    "bathroom-fitting-st-albans",
-    "bathroom-fitting-watford",
-    "bathroom-renovation-bedford",
-    "bathroom-renovation-borehamwood",
-    "bathroom-renovation-bushey",
-    "bathroom-renovation-croxley-green",
-    "bathroom-renovation-harrow",
-    "bathroom-renovation-hemel-hempstead",
-    "bathroom-renovation-luton",
-    "bathroom-renovation-rickmansworth",
-    "bathroom-renovation-st-albans",
-    "bathroom-renovation-watford",
-    "kitchen-renovation-bedford",
-    "kitchen-renovation-borehamwood",
-    "kitchen-renovation-bushey",
-    "kitchen-renovation-croxley-green",
-    "kitchen-renovation-harrow",
-    "kitchen-renovation-hemel-hempstead",
-    "kitchen-renovation-luton",
-    "kitchen-renovation-rickmansworth",
-    "kitchen-renovation-st-albans",
-    "kitchen-renovation-watford",
-]
+# All 40 location page slugs
+CITIES = ["watford", "bushey", "rickmansworth", "st-albans", "hemel-hempstead", "borehamwood", "harrow", "croxley-green", "luton", "bedford"]
+SERVICES = ["bathroom-fitting", "bathroom-renovation", "kitchen-fitting", "kitchen-renovation"]
+
+LOCATION_SLUGS = [f"{service}-{city}" for service in SERVICES for city in CITIES]
 
 def parse_service_and_city(slug: str) -> tuple[str, str]:
     """Return (service_label, city_label) from a slug like kitchen-renovation-watford."""
@@ -115,7 +90,7 @@ def get_faqs(service: str, city: str) -> list[dict]:
     return faqs
 
 def build_schema_json(slug: str, title: str, description: str) -> str:
-    """Build the JSON-LD schema string for a location page."""
+    """Build the JSON-LD schema array for a location page."""
     service, city = parse_service_and_city(slug)
     canonical = f"https://bmbrenovation.co.uk/{slug}"
     faqs = get_faqs(service, city)
@@ -157,7 +132,12 @@ def build_schema_json(slug: str, title: str, description: str) -> str:
                     "opens": "09:00",
                     "closes": "16:00"
                 }
-            ]
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "58"
+            }
         },
         {
             "@context": "https://schema.org",
@@ -173,6 +153,30 @@ def build_schema_json(slug: str, title: str, description: str) -> str:
                 }
                 for faq in faqs
             ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://bmbrenovation.co.uk/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Areas Served",
+                    "item": "https://bmbrenovation.co.uk/locations"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": f"{service} {city}",
+                    "item": canonical
+                }
+            ]
         }
     ]
     return json.dumps(schema, ensure_ascii=False, indent=None)
@@ -182,23 +186,11 @@ def extract_title_and_desc(tsx_content: str) -> tuple[str, str]:
     title_m = re.search(r'title:\s*"([^"]*)"', tsx_content)
     desc_m = re.search(r'description:\s*"([^"]*)"', tsx_content)
     title = title_m.group(1) if title_m else "BMB Renovation | Home Renovation Services"
-    description = desc_m.group(1) if desc_m else "BMB Renovation offers premium home renovation services in Watford and London."
+    description = desc_m.group(1) if desc_m else "BMB Renovation offers premium home renovation services."
     return title, description
 
 def inject_schema_into_tsx(tsx_content: str, schema_json: str) -> str:
-    """
-    Inject schema as a <script> tag right inside the return (
-      <>  block, before <style>.
-    The return block looks like:
-      return (
-        <>
-          <style dangerouslySetInnerHTML=...
-    We insert the JSON-LD script before the <style> line.
-    """
-    # Escape the schema JSON for embedding in a JS template literal / JSX
-    # We use dangerouslySetInnerHTML with a JSON.stringify approach
-    escaped_json = schema_json.replace('\\', '\\\\').replace('`', '\\`').replace('${', '\\${')
-    
+    """Inject schema as a <script> tag right inside the return ( <> block."""
     schema_tag = (
         f'      <script\n'
         f'        type="application/ld+json"\n'
@@ -208,8 +200,7 @@ def inject_schema_into_tsx(tsx_content: str, schema_json: str) -> str:
 
     # Find the return ( <> block and insert after <>
     pattern = r'(  return \(\n    <>\n)'
-    replacement = r'\1' + schema_tag
-    new_content = re.sub(pattern, replacement, tsx_content, count=1)
+    new_content = re.sub(pattern, r'\1' + schema_tag, tsx_content, count=1)
     
     if new_content == tsx_content:
         # Fallback: try inserting before <style dangerouslySetInnerHTML
@@ -231,10 +222,13 @@ def process_page(slug: str) -> bool:
 
     tsx_content = page_file.read_text(encoding="utf-8")
     
-    # Skip if schema already injected
-    if "application/ld+json" in tsx_content:
-        print(f"  SKIP (schema exists): {slug}")
-        return False
+    # Strip any existing ld+json scripts first to avoid duplication
+    tsx_content = re.sub(
+        r'\s*<script\s+type="application/ld\+json"\s+dangerouslySetInnerHTML=\{\{\s*__html:\s*.*?\}\}\s*/>\s*\n?',
+        '\n',
+        tsx_content,
+        flags=re.DOTALL
+    )
 
     title, description = extract_title_and_desc(tsx_content)
     schema_json = build_schema_json(slug, title, description)

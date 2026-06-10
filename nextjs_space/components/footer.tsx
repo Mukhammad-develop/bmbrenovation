@@ -103,6 +103,11 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li className="pt-2">
+                <Link href="/locations" className="text-[#C8A97E] text-sm font-semibold hover:underline">
+                  View All Served Areas &rarr;
+                </Link>
+              </li>
             </ul>
           </div>
 

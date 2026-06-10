@@ -92,7 +92,7 @@ export default function AboutClient() {
       <section className="relative pt-20 pb-0">
         <div className="relative h-[340px] sm:h-[420px] overflow-hidden">
           <Image
-            src="/images/14_construction_team.jpg"
+            src="/images/14_construction_team.webp"
             alt="BMB Renovation professional team at work in Watford"
             fill
             className="object-cover"
@@ -125,7 +125,7 @@ export default function AboutClient() {
               <div className="relative">
                 <div className="aspect-[4/3] relative rounded-xl overflow-hidden shadow-xl">
                   <Image
-                    src="/images/15_elegant_hallway.jpg"
+                    src="/images/15_elegant_hallway.webp"
                     alt="Elegant home renovation by BMB Renovation Watford"
                     fill
                     className="object-cover"
@@ -236,7 +236,7 @@ export default function AboutClient() {
             <AnimatedSection direction="right">
               <div className="aspect-[4/3] relative rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/02_kitchen_marble.jpg"
+                  src="/images/02_kitchen_marble.webp"
                   alt="Premium kitchen renovation by BMB Renovation Watford"
                   fill
                   className="object-cover"
@@ -282,7 +282,7 @@ export default function AboutClient() {
             <AnimatedSection direction="left">
               <div className="aspect-[4/3] relative rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/04_living_room_open_plan.jpg"
+                  src="/images/04_living_room_open_plan.webp"
                   alt="BMB Renovation completed living room project"
                   fill
                   className="object-cover"
@@ -323,7 +323,7 @@ export default function AboutClient() {
       {/* CTA */}
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/01_hero_luxury_interior.jpg" alt="BMB Renovation premium interior" fill className="object-cover" />
+          <Image src="/images/01_hero_luxury_interior.webp" alt="BMB Renovation premium interior" fill className="object-cover" />
           <div className="absolute inset-0 bg-gray-900/88" />
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 text-center">

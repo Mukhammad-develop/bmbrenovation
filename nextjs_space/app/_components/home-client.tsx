@@ -19,28 +19,28 @@ const services = [
     title: 'Painting & Decorations',
     desc: 'From cosy homes to expansive commercial spaces, we offer comprehensive painting and decorating services that cater to every need.',
     href: '/services#painting',
-    img: '/images/05_painting_decorating.jpg',
+    img: '/images/05_painting_decorating.webp',
   },
   {
     icon: Home,
     title: 'House Renovation',
     desc: 'A thrilling and transformative experience, maximizing living space and breathing new life into your property.',
     href: '/services#house-renovation',
-    img: '/images/04_living_room_open_plan.jpg',
+    img: '/images/04_living_room_open_plan.webp',
   },
   {
     icon: Bath,
     title: 'Bathroom Renovations',
     desc: 'Transform your bathroom into a peaceful retreat for relaxation and rejuvenation.',
     href: '/services#bathroom',
-    img: '/images/03_luxury_bathroom.jpg',
+    img: '/images/03_luxury_bathroom.webp',
   },
   {
     icon: ChefHat,
     title: 'Kitchen Fitting',
     desc: 'At the forefront of kitchen fitting in London, offering a perfect blend of functionality and personal style.',
     href: '/services#kitchen',
-    img: '/images/02_kitchen_marble.jpg',
+    img: '/images/02_kitchen_marble.webp',
   },
 ]
 
@@ -73,7 +73,7 @@ export default function HomeClient() {
       <section className="relative h-screen min-h-[600px] max-h-[900px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/01_hero_luxury_interior.jpg"
+            src="/images/01_hero_luxury_interior.webp"
             alt="Luxury home interior renovation by BMB Renovation"
             fill
             className="object-cover"
@@ -152,7 +152,7 @@ export default function HomeClient() {
               <div className="relative">
                 <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
                   <Image
-                    src="/images/15_elegant_hallway.jpg"
+                    src="/images/15_elegant_hallway.webp"
                     alt="BMB Renovation elegant interior design"
                     fill
                     className="object-cover"
@@ -202,7 +202,7 @@ export default function HomeClient() {
                 <Link href={service?.href ?? '/services'} className="group block">
                   <div className="relative aspect-[16/10] rounded-lg overflow-hidden">
                     <Image
-                      src={service?.img ?? '/images/01_hero_luxury_interior.jpg'}
+                      src={service?.img ?? '/images/01_hero_luxury_interior.webp'}
                       alt={service?.title ?? 'Service'}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -275,7 +275,7 @@ export default function HomeClient() {
             <AnimatedSection direction="right">
               <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
                 <Image
-                  src="/images/13_modern_kitchen_bright.jpg"
+                  src="/images/13_modern_kitchen_bright.webp"
                   alt="Modern kitchen interior by BMB Renovation"
                   fill
                   className="object-cover"
@@ -350,7 +350,7 @@ export default function HomeClient() {
       <section className="py-20 sm:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/06_hardwood_flooring.jpg"
+            src="/images/06_hardwood_flooring.webp"
             alt="BMB Renovation premium interiors"
             fill
             className="object-cover"

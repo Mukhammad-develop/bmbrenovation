@@ -90,7 +90,7 @@ export default function LocationsPage() {
         <section className="relative pt-20 pb-0">
           <div className="relative h-[300px] sm:h-[360px] overflow-hidden">
             <Image
-              src="/images/08_glass_extension.jpg"
+              src="/images/08_glass_extension.webp"
               alt="BMB Renovation Areas We Serve"
               fill
               className="object-cover"

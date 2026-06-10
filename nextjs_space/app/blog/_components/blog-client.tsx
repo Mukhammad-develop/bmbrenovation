@@ -16,7 +16,7 @@ export default function BlogClient() {
       <section className="relative pt-20 pb-0">
         <div className="relative h-[250px] sm:h-[300px] overflow-hidden">
           <Image
-            src="/images/14_construction_team.jpg"
+            src="/images/14_construction_team.webp"
             alt="BMB Renovation Blog"
             fill
             className="object-cover"

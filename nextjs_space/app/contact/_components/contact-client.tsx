@@ -82,7 +82,7 @@ export default function ContactClient() {
       {/* Hero */}
       <section className="relative pt-20">
         <div className="relative h-[320px] sm:h-[380px] overflow-hidden">
-          <Image src="/images/01_hero_luxury_interior.jpg" alt="Contact BMB Renovation" fill className="object-cover" priority />
+          <Image src="/images/01_hero_luxury_interior.webp" alt="Contact BMB Renovation" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full">

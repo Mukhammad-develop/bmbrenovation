@@ -14,7 +14,7 @@ const allServices = [
     title: 'Painting & Decorations',
     short: 'From cosy homes to expansive commercial spaces, we offer comprehensive painting and decorating services that cater to every need.',
     long: 'Our painting and decorating services cover everything from interior wall painting and wallpaper installation to exterior finishing. We use premium paints and eco-friendly products to deliver flawless, long-lasting results that transform any space.',
-    img: '/images/05_painting_decorating.jpg',
+    img: '/images/05_painting_decorating.webp',
   },
   {
     id: 'house-renovation',
@@ -22,7 +22,7 @@ const allServices = [
     title: 'House Renovation',
     short: 'Embarking on a house renovation project can be a thrilling and transformative experience, especially for owners of small homes looking to maximize their living space.',
     long: 'From modern apartments to expansive commercial spaces, we provide full-service home renovation solutions. Our skilled team manages everything from interior redesigns and extensions to structural improvements and finishing touches.',
-    img: '/images/04_living_room_open_plan.jpg',
+    img: '/images/04_living_room_open_plan.webp',
   },
   {
     id: 'bathroom',
@@ -30,7 +30,7 @@ const allServices = [
     title: 'Bathroom Renovations',
     short: 'Undertaking a bathroom renovation can offer the perfect opportunity to transform this space into a peaceful retreat for relaxation and rejuvenation.',
     long: 'We create elegant, spa-like bathrooms tailored to your lifestyle. From tiling and plumbing to lighting and fixtures, we handle every detail to deliver a bathroom that combines luxury with functionality.',
-    img: '/images/03_luxury_bathroom.jpg',
+    img: '/images/03_luxury_bathroom.webp',
   },
   {
     id: 'kitchen',
@@ -38,7 +38,7 @@ const allServices = [
     title: 'Kitchen Fitting',
     short: 'BMB Renovation stands at the forefront of kitchen fitting in London, offering a perfect blend of functionality and personal style.',
     long: 'From compact residential kitchens to large commercial spaces, we offer complete kitchen fitting services tailored to every need. Our experienced team handles everything from cabinetry installation and worktops to plumbing, tiling, and lighting.',
-    img: '/images/02_kitchen_marble.jpg',
+    img: '/images/02_kitchen_marble.webp',
   },
   {
     id: 'flooring',
@@ -46,7 +46,7 @@ const allServices = [
     title: 'Flooring',
     short: "Flooring is more than just a surface you walk on; it's an integral part of your home's aesthetic and functional foundation.",
     long: 'We offer a wide range of flooring solutions including hardwood, laminate, vinyl, tile, and natural stone. Our expert team ensures precise installation for a flawless finish that enhances your space.',
-    img: '/images/06_hardwood_flooring.jpg',
+    img: '/images/06_hardwood_flooring.webp',
   },
   {
     id: 'loft',
@@ -54,7 +54,7 @@ const allServices = [
     title: 'Loft Conversion',
     short: 'Are you in need of extra living space in your London home but don\'t want to deal with the hassle of moving? A loft conversion could be the perfect solution.',
     long: 'We transform unused loft spaces into beautiful, functional rooms — bedrooms, offices, playrooms, or en-suite bathrooms. Our team handles planning, structural work, insulation, and finishing.',
-    img: '/images/07_loft_conversion.jpg',
+    img: '/images/07_loft_conversion.webp',
   },
   {
     id: 'extension',
@@ -62,7 +62,7 @@ const allServices = [
     title: 'House Extension',
     short: 'BMB Renovation has the perfect solution for London homeowners looking to expand their living area: a house extension.',
     long: 'Expanding your living or working space is one of the best ways to add value and functionality to your property. We deliver high-quality house extensions that seamlessly blend with your existing structure.',
-    img: '/images/08_glass_extension.jpg',
+    img: '/images/08_glass_extension.webp',
   },
   {
     id: 'tiling',
@@ -70,7 +70,7 @@ const allServices = [
     title: 'Tiling',
     short: 'We specialize in providing comprehensive tiling solutions tailored to the unique challenges and opportunities presented by smaller living spaces in London.',
     long: 'From kitchen splashbacks to bathroom floors and feature walls, our tiling experts deliver precision craftsmanship with a wide range of materials including ceramic, porcelain, marble, and mosaic tiles.',
-    img: '/images/09_tile_work.jpg',
+    img: '/images/09_tile_work.webp',
   },
   {
     id: 'handyman',
@@ -78,7 +78,7 @@ const allServices = [
     title: 'General Handy Man Work',
     short: 'In the bustling city of London, small houses come with their charm and unique set of renovation needs.',
     long: 'From small home fixes to large commercial maintenance tasks, our handyman services cover every corner of your property. We handle furniture assembly, shelving installation, minor plumbing and electrical repairs, and general property maintenance.',
-    img: '/images/11_handyman_professional.jpg',
+    img: '/images/11_handyman_professional.webp',
   },
   {
     id: 'carpentry',
@@ -86,7 +86,7 @@ const allServices = [
     title: 'Carpentry',
     short: 'We understand the pivotal role that carpentry plays in the realm of small house renovations in London.',
     long: 'Our skilled carpenters create bespoke solutions including custom cabinetry, built-in wardrobes, shelving units, doors, window frames, and decorative woodwork that add character and functionality to your home.',
-    img: '/images/10_custom_carpentry.jpg',
+    img: '/images/10_custom_carpentry.webp',
   },
 ]
 
@@ -98,7 +98,7 @@ export default function ServicesClient() {
       {/* Hero Banner */}
       <section className="relative pt-20">
         <div className="relative h-[320px] sm:h-[380px] overflow-hidden">
-          <Image src="/images/13_modern_kitchen_bright.jpg" alt="BMB Renovation Services" fill className="object-cover" priority />
+          <Image src="/images/13_modern_kitchen_bright.webp" alt="BMB Renovation Services" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full">
@@ -133,7 +133,7 @@ export default function ServicesClient() {
                     <div className={i % 2 === 1 ? 'lg:col-start-2' : ''}>
                       <div className="aspect-[16/10] relative rounded-lg overflow-hidden group">
                         <Image
-                          src={service?.img ?? '/images/01_hero_luxury_interior.jpg'}
+                          src={service?.img ?? '/images/01_hero_luxury_interior.webp'}
                           alt={service?.title ?? 'Service'}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -167,7 +167,7 @@ export default function ServicesClient() {
       {/* CTA */}
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/01_hero_luxury_interior.jpg" alt="BMB Renovation" fill className="object-cover" />
+          <Image src="/images/01_hero_luxury_interior.webp" alt="BMB Renovation" fill className="object-cover" />
           <div className="absolute inset-0 bg-gray-900/85" />
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 text-center">

@@ -12,15 +12,15 @@ import AnimatedSection from '@/components/animated-section'
 const categories = ['All', 'Kitchen', 'Bathroom', 'Living Room', 'Extension', 'Loft']
 
 const projects = [
-  { title: 'Modern Kitchen Renovation', category: 'Kitchen', img: '/images/02_kitchen_marble.jpg', desc: 'Complete kitchen transformation with marble countertops and custom cabinetry.' },
-  { title: 'Luxury Bathroom Redesign', category: 'Bathroom', img: '/images/03_luxury_bathroom.jpg', desc: 'Spa-like bathroom with elegant fixtures and premium tile work.' },
-  { title: 'Open Plan Living Room', category: 'Living Room', img: '/images/04_living_room_open_plan.jpg', desc: 'Spacious open-plan renovation creating a bright, airy living space.' },
-  { title: 'Glass House Extension', category: 'Extension', img: '/images/08_glass_extension.jpg', desc: 'Modern glass extension adding light and space to the property.' },
-  { title: 'Loft Conversion Office', category: 'Loft', img: '/images/07_loft_conversion.jpg', desc: 'Unused loft transformed into a stylish home office space.' },
-  { title: 'Bright Kitchen Interior', category: 'Kitchen', img: '/images/13_modern_kitchen_bright.jpg', desc: 'Bright, minimalist kitchen with integrated appliances and clean lines.' },
-  { title: 'Premium Bathroom Tiling', category: 'Bathroom', img: '/images/09_tile_work.jpg', desc: 'Luxurious tile work creating a statement bathroom design.' },
-  { title: 'Elegant Hallway Design', category: 'Living Room', img: '/images/15_elegant_hallway.jpg', desc: 'Inviting hallway renovation with premium flooring and lighting.' },
-  { title: 'Hardwood Flooring Install', category: 'Living Room', img: '/images/06_hardwood_flooring.jpg', desc: 'Beautiful hardwood flooring installation throughout the home.' },
+  { title: 'Modern Kitchen Renovation', category: 'Kitchen', img: '/images/02_kitchen_marble.webp', desc: 'Complete kitchen transformation with marble countertops and custom cabinetry.' },
+  { title: 'Luxury Bathroom Redesign', category: 'Bathroom', img: '/images/03_luxury_bathroom.webp', desc: 'Spa-like bathroom with elegant fixtures and premium tile work.' },
+  { title: 'Open Plan Living Room', category: 'Living Room', img: '/images/04_living_room_open_plan.webp', desc: 'Spacious open-plan renovation creating a bright, airy living space.' },
+  { title: 'Glass House Extension', category: 'Extension', img: '/images/08_glass_extension.webp', desc: 'Modern glass extension adding light and space to the property.' },
+  { title: 'Loft Conversion Office', category: 'Loft', img: '/images/07_loft_conversion.webp', desc: 'Unused loft transformed into a stylish home office space.' },
+  { title: 'Bright Kitchen Interior', category: 'Kitchen', img: '/images/13_modern_kitchen_bright.webp', desc: 'Bright, minimalist kitchen with integrated appliances and clean lines.' },
+  { title: 'Premium Bathroom Tiling', category: 'Bathroom', img: '/images/09_tile_work.webp', desc: 'Luxurious tile work creating a statement bathroom design.' },
+  { title: 'Elegant Hallway Design', category: 'Living Room', img: '/images/15_elegant_hallway.webp', desc: 'Inviting hallway renovation with premium flooring and lighting.' },
+  { title: 'Hardwood Flooring Install', category: 'Living Room', img: '/images/06_hardwood_flooring.webp', desc: 'Beautiful hardwood flooring installation throughout the home.' },
 ]
 
 export default function PortfolioClient() {
@@ -36,7 +36,7 @@ export default function PortfolioClient() {
       {/* Hero */}
       <section className="relative pt-20">
         <div className="relative h-[320px] sm:h-[380px] overflow-hidden">
-          <Image src="/images/12_bathroom_before_after.jpg" alt="BMB Renovation Portfolio" fill className="object-cover" priority />
+          <Image src="/images/12_bathroom_before_after.webp" alt="BMB Renovation Portfolio" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full">
@@ -94,7 +94,7 @@ export default function PortfolioClient() {
                   >
                     <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
                       <Image
-                        src={project?.img ?? '/images/01_hero_luxury_interior.jpg'}
+                        src={project?.img ?? '/images/01_hero_luxury_interior.webp'}
                         alt={project?.title ?? 'Project'}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -138,7 +138,7 @@ export default function PortfolioClient() {
             >
               <div className="aspect-video relative rounded-lg overflow-hidden">
                 <Image
-                  src={filtered?.[lightbox]?.img ?? '/images/01_hero_luxury_interior.jpg'}
+                  src={filtered?.[lightbox]?.img ?? '/images/01_hero_luxury_interior.webp'}
                   alt={filtered?.[lightbox]?.title ?? 'Project'}
                   fill
                   className="object-cover"

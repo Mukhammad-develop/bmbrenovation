@@ -1,0 +1,1314 @@
+5:I[2656,["3677","static/chunks/app/bathroom-fitting-borehamwood/page-f460fea54cb12bca.js"],"default"]
+7:I[4707,[],""]
+8:I[6423,[],""]
+a:I[8003,["4438","static/chunks/4438-fad40e47ec4bdb81.js","8003","static/chunks/8003-6952ddab17ca698a.js","3185","static/chunks/app/layout-adad83731295e52f.js"],""]
+b:I[2798,["4438","static/chunks/4438-fad40e47ec4bdb81.js","8003","static/chunks/8003-6952ddab17ca698a.js","3185","static/chunks/app/layout-adad83731295e52f.js"],"ThemeProvider"]
+c:I[3606,["4438","static/chunks/4438-fad40e47ec4bdb81.js","8003","static/chunks/8003-6952ddab17ca698a.js","3185","static/chunks/app/layout-adad83731295e52f.js"],"Toaster"]
+d:I[4215,["4438","static/chunks/4438-fad40e47ec4bdb81.js","8003","static/chunks/8003-6952ddab17ca698a.js","3185","static/chunks/app/layout-adad83731295e52f.js"],"ChunkLoadErrorHandler"]
+2:Tc35,[{"@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", "name": "BMB Renovation", "url": "https://bmbrenovation.co.uk/bathroom-fitting-borehamwood", "logo": "https://bmbrenovation.co.uk/favicon.svg", "image": "https://bmbrenovation.co.uk/og-image.png", "description": "Expert bathroom fitting in Borehamwood. BMB Renovation is based nearby in Watford \u2014 shower fitting, bath fitting, full suite installation, tiling and flooring. Free no-obligation quote. Call +44 7775 758 717.", "telephone": "+447775758717", "email": "info@bmbrenovation.co.uk", "priceRange": "££", "address": {"@type": "PostalAddress", "streetAddress": "157 Judge Street", "addressLocality": "Watford", "postalCode": "WD24 5AN", "addressRegion": "Hertfordshire", "addressCountry": "GB"}, "areaServed": {"@type": "City", "name": "Borehamwood"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "16:00"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "58"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does a bathroom fitting in Borehamwood cost?", "acceptedAnswer": {"@type": "Answer", "text": "The cost of a bathroom fitting in Borehamwood depends on the size of the room, the suite and materials chosen, and the scope of work required. BMB Renovation offers a free, no-obligation written quote — call +44 7775 758 717 to arrange a home visit."}}, {"@type": "Question", "name": "How long does a bathroom fitting in Borehamwood take?", "acceptedAnswer": {"@type": "Answer", "text": "Most bathroom fitting projects in Borehamwood are completed within 1 to 2 weeks. Larger or more complex projects may take longer. We agree a clear timetable with you before work starts."}}, {"@type": "Question", "name": "Does BMB Renovation cover Borehamwood?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — BMB Renovation is based in Watford (WD24 5AN) and regularly carries out bathroom fitting projects across Borehamwood and the surrounding area. We offer a free home visit and written quote at no charge."}}, {"@type": "Question", "name": "Do you handle all the trades — plumbing, tiling and electrics?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our in-house team covers every trade involved in a bathroom project: plumbing, tiling, waterproofing, flooring, lighting and decorating. You deal with one team throughout and there are no subcontractors."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bmbrenovation.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Areas Served", "item": "https://bmbrenovation.co.uk/locations"}, {"@type": "ListItem", "position": 3, "name": "Bathroom Fitting Borehamwood", "item": "https://bmbrenovation.co.uk/bathroom-fitting-borehamwood"}]}]3:T71b5,
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: #141414; background: #fff; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    :root {
+      --gold: #C8A97E; --gold-dark: #B8996E; --gold-light: rgba(200,169,126,0.12);
+      --dark: #0a0a0a; --gray-950: #0a0a0a; --gray-900: #111827; --gray-700: #374151;
+      --gray-600: #4B5563; --gray-500: #6B7280; --gray-400: #9CA3AF;
+      --gray-200: #E5E7EB; --gray-100: #F3F4F6; --gray-50: #F9FAFB;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0/0.04),0 1px 3px 0 rgb(0 0 0/0.08);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0/0.06),0 2px 4px -2px rgb(0 0 0/0.06);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0/0.08),0 4px 6px -4px rgb(0 0 0/0.06);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px -6px rgb(0 0 0/0.06);
+    }
+
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.025em; line-height: 1.15; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.75rem); font-weight: 800; }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; }
+    h3 { font-size: 1.25rem; font-weight: 700; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    p  { line-height: 1.7; color: var(--gray-600); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+    @media(min-width:640px){ .container { padding: 0 1.5rem; } }
+    .section { padding: 5rem 0; }
+    .section-sm { padding: 3.5rem 0; }
+    .section-lg { padding: 6rem 0; }
+    @media(min-width:768px){ .section { padding: 7rem 0; } }
+
+    .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 2rem; border-radius: 9999px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.9375rem; cursor: pointer; border: none; transition: all 0.2s ease; white-space: nowrap; }
+    .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 4px 16px rgba(200,169,126,0.35); }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .btn-dark { background: var(--gray-900); color: #fff; }
+    .btn-dark:hover { background: #1f2937; transform: translateY(-1px); }
+    .btn-ghost { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+    .btn-sm { padding: 0.625rem 1.375rem; font-size: 0.875rem; }
+    .btn-lg { padding: 1rem 2.25rem; font-size: 1rem; }
+
+    #site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 999; transition: background 0.3s ease, box-shadow 0.3s ease; }
+    #site-header.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo { display: flex; align-items: center; }
+    .logo-bmb { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; transition: color 0.3s; }
+    #site-header.scrolled .logo-bmb { color: var(--gray-900); }
+    .logo-reno { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 300; letter-spacing: -0.03em; color: var(--gold); margin-left: 4px; }
+    .header-nav { display: none; gap: 0.25rem; }
+    @media(min-width:1024px){ .header-nav { display: flex; } }
+    .nav-link { padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.88); transition: all 0.2s; }
+    .nav-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    #site-header.scrolled .nav-link { color: var(--gray-700); }
+    #site-header.scrolled .nav-link:hover { color: var(--gold); background: var(--gray-100); }
+    .header-cta { display: flex; align-items: center; gap: 0.75rem; }
+    .header-call { display: none; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; background: #fff; color: var(--gray-900); transition: all 0.2s; }
+    @media(min-width:640px){ .header-call { display: flex; } }
+    #site-header.scrolled .header-call { background: var(--gray-900); color: #fff; }
+    .header-call:hover { opacity: 0.9; transform: translateY(-1px); }
+    .hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; border: none; background: transparent; cursor: pointer; border-radius: 8px; padding: 8px; }
+    .hamburger span { display: block; height: 2px; width: 24px; border-radius: 2px; background: #fff; transition: all 0.3s; }
+    #site-header.scrolled .hamburger span { background: var(--gray-900); }
+    @media(min-width:1024px){ .hamburger { display: none; } }
+    #mobile-menu { display: none; background: #fff; border-top: 1px solid var(--gray-100); box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 1.5rem; }
+    #mobile-menu.open { display: block; }
+    .mobile-nav-link { display: block; padding: 0.75rem 1rem; font-size: 1rem; font-weight: 500; color: var(--gray-700); border-radius: 0.5rem; transition: all 0.2s; }
+    .mobile-nav-link:hover { color: var(--gold); background: var(--gold-light); }
+    .mobile-cta { display: block; margin-top: 1rem; padding: 0.875rem; text-align: center; background: var(--gray-900); color: #fff; border-radius: 0.75rem; font-weight: 700; font-size: 0.9375rem; }
+
+    #proximity-banner { background: var(--gold-light); border-bottom: 1px solid rgba(200,169,126,0.2); padding: 0.625rem 0; position: relative; z-index: 998; }
+    .proximity-inner { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; font-size: 0.8125rem; font-weight: 500; color: var(--gray-700); text-align: center; }
+    .proximity-inner a { color: var(--gold); font-weight: 700; }
+    .proximity-inner a:hover { text-decoration: underline; }
+
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.25) 100%); }
+    .hero-content { position: relative; z-index: 2; width: 100%; padding-top: 80px; }
+    .hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+    @media(min-width:1024px){ .hero-grid { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); font-size: 0.8125rem; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+    .hero-eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .hero-h1 { color: #fff; margin-bottom: 1.25rem; }
+    .hero-h1 span { color: var(--gold); }
+    .hero-sub { font-size: 1.0625rem; color: rgba(255,255,255,0.78); margin-bottom: 2rem; max-width: 460px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 0.875rem; margin-bottom: 2.5rem; }
+    .trust-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .badge { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.375rem 0.875rem; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(6px); font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.85); }
+    .badge-check { color: var(--gold); font-size: 0.875rem; }
+
+    .quote-card { background: #fff; border-radius: 1.25rem; padding: 2rem; box-shadow: var(--shadow-xl); }
+    .quote-card-heading { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.375rem; }
+    .quote-card-sub { font-size: 0.8125rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+    .form-row { display: grid; gap: 1rem; }
+    @media(min-width:480px){ .form-row-2 { grid-template-columns: 1fr 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.375rem; }
+    .form-label { font-size: 0.8125rem; font-weight: 600; color: var(--gray-700); }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--gray-200); border-radius: 0.625rem; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: var(--gray-900); background: #fff; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--gray-400); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,169,126,0.15); }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; padding: 0.9375rem; background: var(--gold); color: #fff; border: none; border-radius: 9999px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 16px rgba(200,169,126,0.35); margin-top: 0.5rem; }
+    .form-submit:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .form-note { font-size: 0.75rem; color: var(--gray-400); text-align: center; margin-top: 0.625rem; }
+    .form-note strong { color: var(--gray-500); }
+
+    .stats-bar { background: var(--gray-950); padding: 2.5rem 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; }
+    @media(min-width:768px){ .stats-grid { grid-template-columns: repeat(4,1fr); } }
+    .stat-item { text-align: center; }
+    .stat-number { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.25rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 0.8125rem; color: #9CA3AF; margin-top: 0.375rem; }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header h2 { color: var(--gray-900); margin-top: 0.5rem; }
+    .section-header p { max-width: 560px; margin: 1rem auto 0; }
+
+    .problem-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .problem-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .problem-grid { grid-template-columns: repeat(3,1fr); } }
+    .problem-card { background: var(--gray-50); border-radius: 1rem; padding: 1.75rem; border: 1px solid var(--gray-100); transition: box-shadow 0.2s, transform 0.2s; }
+    .problem-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .problem-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--gold-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.375rem; }
+    .problem-card h3 { color: var(--gray-900); font-size: 1.0625rem; margin-bottom: 0.5rem; }
+
+    .includes-grid { display: grid; gap: 0.75rem; }
+    @media(min-width:640px){ .includes-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .includes-grid { grid-template-columns: repeat(3,1fr); } }
+    .include-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 1.125rem 1.25rem; border-radius: 0.875rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); transition: border-color 0.2s; }
+    .include-item:hover { border-color: var(--gold); }
+    .include-check { width: 22px; height: 22px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.6875rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .include-item p { font-size: 0.9375rem; color: var(--gray-700); font-weight: 500; margin: 0; }
+
+    .why-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .why-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .why-grid { grid-template-columns: repeat(4,1fr); } }
+    .why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.75rem; transition: background 0.2s; }
+    .why-card:hover { background: rgba(255,255,255,0.1); }
+    .why-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(200,169,126,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.375rem; margin-bottom: 1.125rem; }
+    .why-card h3 { color: #fff; font-size: 1.0625rem; margin-bottom: 0.5rem; }
+    .why-card p { color: #9CA3AF; font-size: 0.875rem; }
+
+    .trust-grid { display: grid; gap: 1.25rem; }
+    @media(min-width:640px){ .trust-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .trust-grid { grid-template-columns: repeat(4,1fr); } }
+    .trust-card { border-radius: 1rem; padding: 1.75rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); text-align: center; transition: box-shadow 0.2s, transform 0.2s; }
+    .trust-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .trust-emoji { font-size: 2rem; margin-bottom: 0.75rem; }
+    .trust-card h3 { color: var(--gray-900); font-size: 1rem; margin-bottom: 0.375rem; }
+    .trust-card p { font-size: 0.875rem; color: var(--gray-500); margin: 0; }
+
+    .portfolio-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .portfolio-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .portfolio-grid { grid-template-columns: repeat(3,1fr); } }
+    .portfolio-card { border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-md); background: #fff; transition: transform 0.25s, box-shadow 0.25s; }
+    .portfolio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+    .portfolio-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+    .portfolio-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .portfolio-card:hover .portfolio-img img { transform: scale(1.05); }
+    .portfolio-badge { position: absolute; top: 0.875rem; left: 0.875rem; background: var(--gold); color: #fff; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .portfolio-body { padding: 1.375rem; }
+    .portfolio-location { font-size: 0.75rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.375rem; }
+    .portfolio-body h3 { color: var(--gray-900); margin-bottom: 0.5rem; }
+    .portfolio-body p { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1rem; }
+    .portfolio-cta { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; font-weight: 700; color: var(--gold); transition: gap 0.2s; }
+    .portfolio-card:hover .portfolio-cta { gap: 0.625rem; }
+
+    .before-after-grid { display: grid; gap: 2rem; align-items: center; }
+    @media(min-width:1024px){ .before-after-grid { grid-template-columns: 1fr 1fr; } }
+    .ba-image-wrap { position: relative; border-radius: 1.25rem; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-xl); }
+    .ba-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .ba-label { position: absolute; bottom: 1rem; padding: 0.4rem 1rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 700; }
+    .ba-label-before { left: 1rem; background: rgba(0,0,0,0.65); color: #fff; }
+    .ba-label-after { right: 1rem; background: var(--gold); color: #fff; }
+
+    .process-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .process-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .process-grid { grid-template-columns: repeat(5,1fr); } }
+    .process-step { position: relative; text-align: center; padding: 1.75rem 1.25rem; background: #fff; border-radius: 1rem; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); }
+    .process-number { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.125rem; font-weight: 800; margin: 0 auto 1rem; }
+    .process-step h3 { font-size: 0.9375rem; color: var(--gray-900); margin-bottom: 0.5rem; }
+    .process-step p { font-size: 0.8125rem; color: var(--gray-500); margin: 0; }
+
+    .areas-flex { display: flex; flex-wrap: wrap; gap: 0.625rem; margin-top: 1.5rem; }
+    .area-chip { padding: 0.5rem 1.125rem; border-radius: 9999px; background: var(--gold-light); color: var(--gray-700); font-size: 0.875rem; font-weight: 600; border: 1.5px solid rgba(200,169,126,0.25); transition: background 0.2s, color 0.2s; }
+    .area-chip:hover { background: var(--gold); color: #fff; }
+    .area-chip.primary { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+    .price-factors { display: grid; gap: 0.875rem; }
+    @media(min-width:640px){ .price-factors { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .price-factors { grid-template-columns: repeat(3,1fr); } }
+    .price-factor { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; border-radius: 0.875rem; background: var(--gray-50); border: 1px solid var(--gray-100); }
+    .pf-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .price-factor p { font-size: 0.9rem; color: var(--gray-700); margin: 0; font-weight: 500; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { border: 1.5px solid var(--gray-100); border-radius: 0.875rem; overflow: hidden; background: #fff; }
+    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: transparent; border: none; cursor: pointer; text-align: left; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: var(--gray-900); transition: color 0.2s; }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; font-weight: 300; color: var(--gray-600); transition: background 0.2s, transform 0.2s; }
+    .faq-item.open .faq-icon { background: var(--gold); color: #fff; transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; padding: 0 1.5rem; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.25rem; }
+    .faq-answer p { font-size: 0.9rem; color: var(--gray-600); margin: 0; }
+
+    .contact-grid { display: grid; gap: 2.5rem; align-items: start; }
+    @media(min-width:1024px){ .contact-grid { grid-template-columns: 2fr 3fr; gap: 4rem; } }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .ci-icon { width: 48px; height: 48px; border-radius: 0.75rem; background: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem; }
+    .ci-label { font-size: 0.8125rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.2rem; }
+    .ci-value { font-size: 0.9rem; color: var(--gray-600); }
+    .ci-value a { color: var(--gray-600); }
+    .ci-value a:hover { color: var(--gold); }
+
+    .final-cta-section { position: relative; padding: 6rem 0; overflow: hidden; }
+    .final-cta-bg { position: absolute; inset: 0; }
+    .final-cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .final-cta-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.87); }
+    .final-cta-content { position: relative; z-index: 2; text-align: center; }
+    .final-cta-content h2 { color: #fff; margin-bottom: 1.25rem; }
+    .final-cta-content h2 span { color: var(--gold); }
+    .final-cta-content p { color: rgba(255,255,255,0.72); max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.0625rem; }
+    .final-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+    .final-trust-line { font-size: 0.875rem; color: rgba(255,255,255,0.45); font-weight: 500; }
+    .final-trust-line span { color: var(--gold); font-weight: 700; }
+
+    footer { background: var(--gray-950); color: #fff; }
+    .footer-grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; padding: 4rem 0 2rem; }
+    @media(min-width:640px){ .footer-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.5fr; } }
+    .footer-brand p { color: #9CA3AF; font-size: 0.875rem; line-height: 1.7; margin: 1rem 0 1.5rem; }
+    .footer-social { display: flex; gap: 0.75rem; }
+    .footer-social a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: background 0.2s; }
+    .footer-social a:hover { background: var(--gold); }
+    .footer-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: #fff; margin-bottom: 1.25rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-col ul li a { font-size: 0.875rem; color: #9CA3AF; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
+    .footer-contact-icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
+    .footer-contact-text { font-size: 0.875rem; color: #9CA3AF; line-height: 1.5; }
+    .footer-contact-text a { color: #9CA3AF; transition: color 0.2s; }
+    .footer-contact-text a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 1.75rem 0; display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+    @media(min-width:640px){ .footer-bottom { flex-direction: row; justify-content: space-between; } }
+    .footer-bottom p { font-size: 0.8125rem; color: #6B7280; }
+    .back-to-top { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; border: none; cursor: pointer; transition: background 0.2s; }
+    .back-to-top:hover { background: var(--gold-dark); }
+
+    #sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 -4px 16px rgba(0,0,0,0.15); }
+    @media(min-width:1024px){ #sticky-cta { display: none; } }
+    .sticky-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .sticky-btn:hover { opacity: 0.9; }
+    .sticky-quote { background: var(--gold); color: #fff; }
+    .sticky-call { background: var(--gray-900); color: #fff; }
+
+    .cta-strip { background: var(--gold-light); border-radius: 1.25rem; padding: 2.5rem; text-align: center; border: 1.5px solid rgba(200,169,126,0.2); }
+    .cta-strip h3 { color: var(--gray-900); margin-bottom: 0.75rem; font-size: 1.375rem; }
+    .cta-strip p { color: var(--gray-600); font-size: 0.9375rem; margin-bottom: 1.5rem; }
+    .cta-strip-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.875rem; }
+
+    .text-center { text-align: center; }
+    .mt-1 { margin-top: 0.5rem; } .mt-2 { margin-top: 1rem; } .mt-3 { margin-top: 1.5rem; }
+    .mt-4 { margin-top: 2rem; } .mt-5 { margin-top: 2.5rem; } .mt-6 { margin-top: 3rem; }
+    .bg-dark { background: var(--gray-950); } .bg-light { background: var(--gray-50); }
+    .divider { height: 1px; background: var(--gray-100); margin: 0; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+  
+
+  /* ── HEADER OVERRIDE: always white bg, black text ── */
+  #site-header {
+    background: #fff !important;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.08) !important;
+  }
+  /* Logo: BMBRENOVATION — all black, bold, uppercase */
+  .logo-bmb {
+    color: #111827 !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    text-transform: uppercase !important;
+  }
+  /* Hide the old gold "Renovation" span (now replaced in HTML, but safe fallback) */
+  .logo-reno {
+    display: none !important;
+  }
+  .nav-link {
+    color: #374151 !important;
+  }
+  .nav-link:hover {
+    color: var(--gold) !important;
+    background: var(--gray-100) !important;
+  }
+  .header-call {
+    display: flex !important;
+    background: #111827 !important;
+    color: #fff !important;
+  }
+  .header-call:hover { opacity: 0.9; }
+  .hamburger span { background: #111827 !important; }
+
+  /* ── HERO: centred single column layout ── */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  /* Keep H1 centred */
+  .hero-h1 { text-align: center !important; }
+  /* Sub-paragraph centred, max-width so lines don't run too long */
+  .hero-sub {
+    text-align: center !important;
+    max-width: 580px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  /* CTA buttons centred under text */
+  .hero-btns {
+    justify-content: center !important;
+  }
+  /* Eyebrow chip centred */
+  .hero-eyebrow {
+    display: inline-flex !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  /* Trust badges centred */
+  .trust-badges {
+    justify-content: center !important;
+  }
+  /* Reassurance text centred */
+  .reassurance-text {
+    text-align: center !important;
+  }
+  /* hide old hero-form wrapper if it somehow remains */
+  .hero-quote-panel { display: none !important; }
+
+  /* ── REASSURANCE TEXT ── */
+  .reassurance-text {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.65);
+    margin-top: 0.625rem;
+    font-style: italic;
+  }
+  .reassurance-text-dark {
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+    margin-top: 0.625rem;
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* ── COMBINED QUOTE + CONTACT SECTION ── */
+  #quote-form {
+    scroll-margin-top: 90px;
+  }
+  .qc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media(min-width: 1024px) {
+    .qc-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+  /* Form card (left col) */
+  .qc-form-card {
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 2.25rem;
+    box-shadow: var(--shadow-xl);
+    border: 1.5px solid var(--gray-100);
+  }
+  /* Contact info (right col) */
+  .qc-info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .qc-info-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--gray-900);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .qc-info-para {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .qc-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.375rem;
+  }
+  .qc-contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 0.75rem;
+    background: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.125rem;
+  }
+  .qc-contact-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+  }
+  .qc-contact-value {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
+  .qc-contact-value a {
+    color: var(--gray-600);
+    transition: color 0.2s;
+  }
+  .qc-contact-value a:hover {
+    color: var(--gold);
+  }
+4:Taf2f,<div id="proximity-banner">
+  <div class="container">
+    <div class="proximity-inner">
+      <span>🚿 BMB Renovation — Serving Borehamwood (WD6) from our Watford base, a straightforward drive via the A41.</span>
+      <a href="#quote-form">Get a Free Quote →</a>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="BMB Renovation Home">
+        <span class="logo-bmb">BMBRENOVATION</span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/portfolio" class="nav-link">Portfolio</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:+447775758717" class="header-call">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" role="navigation" aria-label="Mobile menu">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="/services" class="mobile-nav-link">Services</a>
+    <a href="/portfolio" class="mobile-nav-link">Portfolio</a>
+    <a href="/contact" class="mobile-nav-link">Contact</a>
+    <a href="tel:+447775758717" class="mobile-cta">📞 Call +44 7775 758 717</a>
+  </div>
+
+<section id="hero" aria-label="Hero section">
+  <div class="hero-bg">
+    <img src="/images/03_luxury_bathroom.jpg"
+         alt="Professional bathroom fitting in Borehamwood by BMB Renovation"
+         loading="eager" fetchpriority="high" />
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content section-lg">
+    <div class="container">
+      <div class="hero-grid">
+
+        <div>
+          <div class="hero-eyebrow">
+            <div class="hero-eyebrow-dot"></div>
+            Bathroom Fitting Specialists · Serving Borehamwood WD6
+          </div>
+
+          <h1 class="hero-h1">
+            Expert Bathroom<br />
+            Fitting in<br />
+            <span>Borehamwood</span>
+          </h1>
+
+          <p class="hero-sub">
+            Borehamwood is a busy Hertfordshire town on the edge of North London — a mix of family homes, flats, post-war semis and active rental properties across WD6. BMB Renovation is based in nearby Watford and covers Borehamwood regularly, bringing the same premium fitting standard to every property we work in here.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#quote-form" class="btn btn-gold btn-lg">
+              Get a Free Quote
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +44 7775 758 717
+            </a>
+          </div>
+          <p class="reassurance-text">No obligation, only friendly advice.</p>
+
+          <div class="trust-badges">
+            <span class="badge"><span class="badge-check">✓</span> WD6 Coverage</span>
+            <span class="badge"><span class="badge-check">✓</span> Watford-Based Team</span>
+            <span class="badge"><span class="badge-check">✓</span> Bathroom Fitting Specialists</span>
+            <span class="badge"><span class="badge-check">✓</span> Premium Finish</span>
+            <span class="badge"><span class="badge-check">✓</span> Free No-Obligation Quote</span>
+          </div>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar" aria-label="Company statistics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-number">15+</div><p class="stat-label">Years Experience</p></div>
+      <div class="stat-item reveal reveal-delay-1"><div class="stat-number">2K+</div><p class="stat-label">Projects Completed</p></div>
+      <div class="stat-item reveal reveal-delay-2"><div class="stat-number">3K+</div><p class="stat-label">Happy Customers</p></div>
+      <div class="stat-item reveal reveal-delay-3"><div class="stat-number">5★</div><p class="stat-label">Customer Rating</p></div>
+    </div>
+  </div>
+</div>
+
+<section class="section bg-light" aria-labelledby="problem-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Sound Familiar?</span>
+      <h2 id="problem-heading">Looking for a Bathroom Fitter in Borehamwood?</h2>
+      <p>Borehamwood has a varied mix of housing across WD6 — post-war semis and terraces, purpose-built flats, newer builds, and a substantial rental market alongside owner-occupiers. Whatever property type you have, the requirement is the same: a bathroom fitted properly by a team you can actually trust.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">🚿</div>
+        <h3>Your Bathroom Needs Fitting to a Proper Standard</h3>
+        <p>Whether it is a full suite replacement, a new shower over the bath, or a complete bathroom fit from scratch, the quality of the installation matters. Bathroom fitting is not just about connecting water — it is waterproofing, tiling, alignment and finishing. A well-fitted bathroom looks right and holds up for years.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-1">
+        <div class="problem-icon">🏘️</div>
+        <h3>Borehamwood Homes Come in All Shapes</h3>
+        <p>From post-war semis on residential streets to purpose-built flats and newer build properties, Borehamwood's housing stock is varied. Different property types come with different plumbing arrangements, floor structures and wall constructions — and the fitting approach needs to reflect that.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-2">
+        <div class="problem-icon">🔍</div>
+        <h3>You Want a Local Team You Can Hold Accountable</h3>
+        <p>BMB Renovation is based in Watford, a straightforward drive from Borehamwood via the A41. We work in WD6 regularly and our local reputation means something to us. When you contact us, you speak to the team doing the job — not an intermediary. We come to you, look at the bathroom, and give you a written quote that is honest and accurate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="includes-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">What's Included</span>
+      <h2 id="includes-heading">Everything You Need for a Complete Bathroom Fit in Borehamwood</h2>
+      <p>Our bathroom fitting service covers every element of the installation — from stripping out the old suite to handing over a fully functioning, clean bathroom. One team, one quote, every trade covered in-house.</p>
+    </div>
+
+    <div class="includes-grid">
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Shower fitting — enclosure, tray and screen installation</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Bath fitting — freestanding, panel or shower bath</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>Toilet fitting — close-coupled, wall-hung or back-to-wall</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Basin and sink fitting — pedestal, countertop or inset</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Vanity unit fitting and bathroom furniture installation</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>All plumbing connections — water supply, waste and drainage</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Wall and floor tiling — preparation, waterproofing and grouting</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Bathroom flooring installation — tiles, LVT or vinyl</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>Lighting and extractor fan fitting</p></div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="#quote-form" class="btn btn-gold">Get a Free Bathroom Fitting Quote</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-dark" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label" style="color:var(--gold)">Why Choose Us</span>
+      <h2 id="why-heading" style="color:#fff">Why Borehamwood Homeowners and Landlords Choose BMB Renovation</h2>
+      <p style="color:#9CA3AF">Based in Watford and working regularly across Borehamwood and WD6, we understand the local property mix and what it takes to deliver a bathroom fitting that holds up — regardless of whether it is a semi-detached house, a flat, or a rental property.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">📍</div>
+        <h3>Based in Watford, Working Across WD6</h3>
+        <p>A straightforward drive from our Watford base via the A41 puts Borehamwood firmly within our regular working area. Quick to visit for a free quote, easy to reach throughout the project, and genuinely local.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">🏘️</div>
+        <h3>Experience with Borehamwood's Property Mix</h3>
+        <p>Post-war semis, purpose-built flats, 1960s terraces, newer builds — we work across the full range of Borehamwood's housing stock. Each property type has its own fitting considerations and we know what to look for in each one.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🔧</div>
+        <h3>All Trades In-House</h3>
+        <p>Plumbing, tiling, electrical finishing, carpentry — our own team handles every trade in a bathroom fit. No subcontractors, no coordination gaps, and one team accountable for the whole job from start to handover.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">💬</div>
+        <h3>Straight-Talking Pricing</h3>
+        <p>Clear written quotes before work begins. The price you are quoted is the price you pay. No additions once we are in, no surprises at the end. What you agree to upfront is what you get billed.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🏆</div>
+        <h3>15+ Years of Experience</h3>
+        <p>Over fifteen years fitting and renovating bathrooms across Watford, Borehamwood and Hertfordshire. That depth of experience shows in how we approach problems, manage the process, and deliver the finish.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">🛁</div>
+        <h3>Supply or Fit — Your Choice</h3>
+        <p>Already bought your suite from B&amp;Q, Screwfix or an online supplier? We fit it. Want us to source and supply quality products as part of the package? We do that too. Both options are straightforward for us.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">📋</div>
+        <h3>Free Home Visit in Borehamwood</h3>
+        <p>We come to your Borehamwood home or property, look at the bathroom properly, take measurements, and give you a clear written quote at no cost and with no pressure to proceed.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">✨</div>
+        <h3>Clean, Precise Finish</h3>
+        <p>Grout lines straight, silicone applied cleanly, fittings level and secure. We do not consider the job done until every detail is right — and we leave the property tidy when we go.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="#quote-form" class="btn btn-gold btn-lg">Start with a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">You Can Count On Us</span>
+      <h2 id="trust-heading">Trusted by Borehamwood Homeowners and Landlords for Bathroom Fitting</h2>
+      <p>Whether it is your own home or a rental property, letting a trades team in to fit a bathroom takes trust. Here is how we earn and keep yours on every project in Borehamwood.</p>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-emoji">📝</div>
+        <h3>Written Quote Before Work Starts</h3>
+        <p>Every Borehamwood bathroom fit starts with a clear, itemised written quote. You know what is included and what it costs before any work begins — nothing added or changed once we start.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-1">
+        <div class="trust-emoji">🤝</div>
+        <h3>Honest &amp; Communicative</h3>
+        <p>We keep you in the loop throughout the project. If something comes up — a pipe that needs rerouting, a floor that needs additional preparation — we tell you immediately before taking any further action.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-2">
+        <div class="trust-emoji">🧹</div>
+        <h3>Tidy Working Process</h3>
+        <p>We protect your home while the work is in progress and leave the bathroom clean on completion. The hallways and surrounding rooms are treated with the same care as the room we are fitting.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-3">
+        <div class="trust-emoji">🎯</div>
+        <h3>Waterproof and Finished Properly</h3>
+        <p>Every wet area properly tanked and sealed. Consistent grout joints throughout. Silicone lines clean and even. The basics that make a bathroom look right on day one — and continue to look right for years.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light" aria-labelledby="portfolio-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Our Work</span>
+      <h2 id="portfolio-heading">Bathroom Fitting Projects — Examples of Our Work in Borehamwood</h2>
+      <p>Borehamwood has a varied housing stock and we work across all of it. These are representative examples of the standard we deliver across WD6 — houses, flats, and rental properties alike. <em>Images represent our typical project standard.</em></p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal">
+        <div class="portfolio-img">
+          <img src="/images/03_luxury_bathroom.jpg" alt="Full bathroom suite fitting in Borehamwood WD6 family home" loading="lazy" />
+          <span class="portfolio-badge">Full Suite Fit</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Borehamwood WD6</p>
+          <h3>Full Bathroom Suite Installation</h3>
+          <p>Complete bathroom fitting in a Borehamwood semi-detached family home. New bath with shower screen, close-coupled toilet, pedestal basin, vanity unit, full wall and floor tiling in large-format porcelain, and recessed ceiling lighting — every element fitted and finished by our team to a clean, premium standard.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal reveal-delay-1">
+        <div class="portfolio-img">
+          <img src="/images/12_bathroom_before_after.jpg" alt="Flat bathroom fitting in Borehamwood WD6" loading="lazy" />
+          <span class="portfolio-badge">Flat Fit</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Borehamwood WD6</p>
+          <h3>Purpose-Built Flat — Walk-In Shower Suite</h3>
+          <p>Bathroom fitting in a Borehamwood purpose-built flat. The shared soil stack and building layout were checked before work began. New walk-in shower enclosure, wall-hung toilet, floating vanity, full porcelain tiling to walls and floor, and flush ceiling extractor — completed on schedule and handed over clean.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal reveal-delay-2">
+        <div class="portfolio-img">
+          <img src="/images/09_tile_work.jpg" alt="Landlord bathroom fitting in Borehamwood WD6 rental property" loading="lazy" />
+          <span class="portfolio-badge">Landlord Fit</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Borehamwood WD6</p>
+          <h3>Rental Property Bathroom — Practical Refit</h3>
+          <p>Practical bathroom fitting for a Borehamwood landlord ahead of a new tenancy. New suite, low-maintenance ceramic wall tiles, durable LVT flooring, and a well-installed shower over bath — built to a standard that stands up to regular use and photographs well for listings.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="/portfolio" class="btn btn-dark">View Full Portfolio</a>
+      &nbsp;&nbsp;
+      <a href="#quote-form" class="btn btn-gold">Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="ba-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Transformation</span>
+      <h2 id="ba-heading">The Difference a Properly Fitted Bathroom Makes</h2>
+      <p>A bathroom fitted with care is obvious from the moment you walk in. The tiling is straight, the seal around the bath or shower is clean, the fittings sit flush and level. It also continues to look that way — because when the fundamentals are done correctly, the finish lasts.</p>
+    </div>
+
+    <div class="before-after-grid">
+      <div class="reveal">
+        <div class="ba-image-wrap">
+          <img src="/images/12_bathroom_before_after.jpg"
+               alt="Bathroom before fitting — dated bathroom in Borehamwood property"
+               loading="lazy" />
+          <span class="ba-label ba-label-before">Before</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="ba-image-wrap">
+          <img src="/images/03_luxury_bathroom.jpg"
+               alt="Bathroom after fitting — professionally installed bathroom in Borehamwood"
+               loading="lazy" />
+          <span class="ba-label ba-label-after">After</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal mt-5" style="max-width:640px; margin-left:auto; margin-right:auto; text-align:center;">
+      <h3 style="color:var(--gray-900); margin-bottom:1rem;">From Old Suite to a Bathroom Fitted Right</h3>
+      <p style="margin-bottom:1.5rem;">A typical Borehamwood bathroom fitting project with us starts with stripping out the existing suite, preparing walls and floors properly, fitting all new products and plumbing connections, tiling, flooring, and finishing every detail — handed over clean and ready to use from day one.</p>
+      <a href="#quote-form" class="btn btn-gold btn-lg">Request a Free Quote for Your Bathroom</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">How It Works</span>
+      <h2 id="process-heading">Your Bathroom Fitting in Borehamwood — Step by Step</h2>
+      <p>We have kept the process simple from first contact to completed bathroom. Here is exactly what to expect when you work with BMB Renovation in Borehamwood.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-number">1</div>
+        <h3>Get in Touch</h3>
+        <p>Call us or fill in the free quote form. Tell us about your bathroom and what you need fitted in Borehamwood — house or flat, type of suite, any specifics you already know.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-number">2</div>
+        <h3>Free Home Visit</h3>
+        <p>We come to your Borehamwood property — a straightforward drive from our Watford base via the A41 — look at the bathroom, take measurements, assess the plumbing layout, and discuss your requirements. No charge, no pressure.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-number">3</div>
+        <h3>Clear Written Quote</h3>
+        <p>You receive a full itemised written quote covering every element of the job. No vague allowances. Take your time to review and decide — we do not chase or pressure.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-number">4</div>
+        <h3>Fitting Begins</h3>
+        <p>Our team arrives on the agreed date. We keep the site tidy, minimise disruption to your home, and update you at each stage of the fitting process.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="process-number">5</div>
+        <h3>Final Check &amp; Handover</h3>
+        <p>We walk the finished bathroom with you, test all fittings and connections, check every detail, and hand over clean and ready to use on the same day.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="#quote-form" class="btn btn-gold">Start Step 1 — Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="areas-heading">
+  <div class="container">
+    <div style="display:grid; gap:3rem; align-items:center;" class="before-after-grid">
+
+      <div class="reveal">
+        <span class="section-label">Service Area</span>
+        <h2 id="areas-heading" style="color:var(--gray-900); margin-top:0.5rem; margin-bottom:1.25rem;">Bathroom Fitting Across Borehamwood &amp; WD6</h2>
+        <p style="margin-bottom:1.25rem;">We cover the full WD6 postcode area — Borehamwood town and surrounding residential roads, including Elstree and the areas bordering Radlett and Barnet. Our Watford base means we can reach Borehamwood quickly and visit for a free consultation without any fuss.</p>
+        <p style="margin-bottom:1.5rem;">We also regularly work in Watford, Bushey, Radlett, Shenley, Barnet and across South Hertfordshire. If you are in or near Borehamwood, we would be happy to come and take a look.</p>
+        <a href="#quote-form" class="btn btn-gold">Check if We Cover Your Area</a>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <p style="font-size:0.875rem; font-weight:700; color:var(--gray-500); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1rem;">Areas We Serve</p>
+        <div class="areas-flex">
+          <span class="area-chip primary">Borehamwood WD6</span>
+          <span class="area-chip primary">Elstree WD6</span>
+          <span class="area-chip">Radlett WD7</span>
+          <span class="area-chip">Shenley WD7</span>
+          <span class="area-chip">Watford WD24</span>
+          <span class="area-chip">Bushey WD23</span>
+          <span class="area-chip">Barnet EN5</span>
+          <span class="area-chip">Edgware HA8</span>
+          <span class="area-chip">Stanmore HA7</span>
+          <span class="area-chip">Harrow HA1</span>
+          <span class="area-chip">Rickmansworth WD3</span>
+          <span class="area-chip">St Albans AL1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light" aria-labelledby="price-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Pricing Guide</span>
+      <h2 id="price-heading">How Much Does Bathroom Fitting Cost in Borehamwood?</h2>
+      <p>Bathroom fitting costs in Borehamwood vary depending on the scope of the installation and the products involved. Rather than offer a range so wide it tells you nothing, we prefer to visit and give you a specific written figure based on your actual property and bathroom.</p>
+    </div>
+
+    <div class="price-factors reveal">
+      <div class="price-factor"><div class="pf-dot"></div><p>Number and type of fixtures being fitted — suite, shower, bath</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Plumbing adjustments or new pipework required</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Wall tiling — area, tile format and pattern complexity</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Floor tiling or other flooring type and area</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Electrical work — lighting, extractor fan, heated flooring</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Supply and fit vs fit only — your products or ours</p></div>
+    </div>
+
+    <div class="cta-strip mt-5 reveal">
+      <h3>The Simplest Way to Find Out Your Cost</h3>
+      <p>Request a free quote from BMB Renovation. We will visit your Borehamwood property, look at the bathroom properly, and give you a clear written figure — no guesswork, no obligation to proceed.</p>
+      <div class="cta-strip-btns">
+        <a href="#quote-form" class="btn btn-gold">Get My Free Quote</a>
+        <a href="tel:+447775758717" class="btn btn-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Speak to Our Team
+        </a>
+      </div>
+        <p class="reassurance-text-dark">No obligation, only friendly advice.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="faq-heading">
+  <div class="container" style="max-width:800px;">
+    <div class="section-header reveal">
+      <span class="section-label">FAQs</span>
+      <h2 id="faq-heading">Frequently Asked Questions — Bathroom Fitting Borehamwood</h2>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How much does bathroom fitting cost in Borehamwood?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Costs vary depending on the scope of the fitting, the products involved, and whether tiling and flooring are included. A straightforward suite swap can start from a few hundred pounds for the fitting labour; a full installation including tiling, flooring and new plumbing connections costs more. The most accurate figure comes from a free visit to your Borehamwood property — we look at the bathroom and give you a clear written quote with no obligation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can you fit a bathroom suite I have already purchased?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — fit-only is absolutely fine. Many Borehamwood clients source their own suite from B&amp;Q, Screwfix, Victorian Plumbing or a specialist supplier and have us do the installation. We check the products on arrival and let you know if anything needs attention before we begin. Our quote covers the full fitting labour, plumbing connections, tiling, flooring and all finishing to a proper standard.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is the quote really free with no obligation?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — completely free and no obligation at all. We visit your Borehamwood property, look at the bathroom, discuss what you want, and give you a clear written quote. You take your time, review it, and decide whether to proceed — no follow-up pressure and no charge for the visit.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you fit bathrooms in flats and apartments in Borehamwood?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. A significant proportion of Borehamwood's housing stock is purpose-built flats, and we work in them regularly. Bathroom fitting in a flat has some specific considerations compared to a house — the location of the main stop valve, the shared soil stack arrangement, potential building management requirements around notifying neighbours or limiting noisy work to certain hours, and sometimes limited access for certain waste runs. Our team checks all of this during the free home visit. We factor any constraints into the quote upfront so there are no surprises during the job.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How long does a bathroom fitting take in Borehamwood?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Most standard bathroom fittings take between 4 and 10 working days depending on the scope. A straightforward suite replacement with minimal tiling completes more quickly; a full installation including tiling, flooring and electrical work takes a little longer. We give you a clear timeline as part of the free consultation so you can plan accordingly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you handle the plumbing, tiling and electrical work too?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — our team covers all trades in a bathroom fit: plumbing (water supply, waste, drainage), tiling (wall and floor), flooring, electrical finishing (lighting, extractor fan), and all carpentry and completion work. You do not need separate contractors. One team, one job, one point of contact throughout.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What is the difference between bathroom fitting and bathroom renovation?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Bathroom fitting focuses on installing a new suite or components within the existing layout — shower, bath, toilet, basin, vanity — along with plumbing, tiling, flooring and finishing. Bathroom renovation covers structural changes, layout redesigns, or a full strip-back transformation. BMB Renovation handles both. If you are unsure which fits your project, get in touch and we will advise you based on what it actually involves.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you work with Borehamwood landlords on rental properties?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — we work with Borehamwood landlords regularly. Whether it is a practical suite replacement to refresh a rental property between tenants, or a more complete bathroom refit to justify a higher rent, we adapt the specification to what makes sense for the investment. We can work to tight turnarounds to keep void periods short. Get in touch and we will discuss your specific property and requirements.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Which Borehamwood postcodes and areas do you cover?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We cover the full WD6 postcode — Borehamwood and Elstree — along with nearby Radlett (WD7), Shenley (WD7), Barnet (EN5), Edgware (HA8) and Stanmore (HA7). We also serve Watford, Bushey, Rickmansworth, Harrow and across South Hertfordshire. Not sure if we cover your address? Call us or send a message and we will confirm straight away.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="final-cta-section" aria-labelledby="final-cta-heading">
+  <div class="final-cta-bg">
+    <img src="/images/09_tile_work.jpg"
+         alt="Premium bathroom fitting by BMB Renovation — serving Borehamwood" loading="lazy" />
+  </div>
+  <div class="final-cta-overlay"></div>
+  <div class="container final-cta-content reveal">
+    <span class="section-label">Ready to Get Started?</span>
+    <h2 id="final-cta-heading">
+      Ready to Have Your <span>Bathroom Fitted in Borehamwood?</span>
+    </h2>
+    <p>Contact BMB Renovation today for a free, no-obligation quote. Whether you need a full suite installed, a new shower fitted, or a complete bathroom refit in Borehamwood — we are nearby in Watford and ready to get it done properly, to a standard that lasts.</p>
+    <div class="final-cta-btns">
+      <a href="#quote-form" class="btn btn-gold btn-lg">Get a Free Quote</a>
+      <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call +44 7775 758 717
+      </a>
+    </div>
+        <p class="final-trust-line">No obligation — <span>only friendly advice</span>.</p>
+    <p class="final-trust-line">
+      <span>Based in Watford, serving Borehamwood</span> &nbsp;•&nbsp; <span>Free quote</span> &nbsp;•&nbsp; <span>No obligation</span> &nbsp;•&nbsp; <span>Bathroom fitting specialists</span>
+    </p>
+  </div>
+</section>
+
+<section class="section" id="quote-form" aria-labelledby="qf-heading">
+  <div class="container">
+    <div class="qc-grid">
+
+      <!-- LEFT: Quote Form -->
+      <div class="qc-form-card reveal">
+        <p class="quote-card-heading">Get Your Free Quote</p>
+        <p class="quote-card-sub">No obligation &middot; Free site visit &middot; Clear written quote</p>
+        <form id="main-quote-form" novalidate>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="qf-name">Your Name *</label>
+              <input class="form-input" id="qf-name" name="name" type="text" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="qf-phone">Phone Number *</label>
+              <input class="form-input" id="qf-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+            </div>
+          </div>
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-email">Email Address</label>
+              <input class="form-input" id="qf-email" name="email" type="email" placeholder="john@example.com" />
+            </div>
+          </div>
+          <div class="form-row form-row-2 mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-project">Project Type</label>
+              <select class="form-select" id="qf-project" name="project">
+                <option value="">Select project type</option>
+                <option>Full Bathroom Renovation</option>
+              <option>Bathroom Fitting / Suite Installation</option>
+              <option>Shower Installation</option>
+              <option>Bathroom Tiling</option>
+              <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="qf-postcode">Location / Postcode</label>
+              <input class="form-input" id="qf-postcode" name="postcode" type="text" placeholder="e.g. WD17 2AB" />
+            </div>
+          </div>
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-message">Tell Us About Your Project</label>
+              <textarea class="form-textarea" id="qf-message" name="message" placeholder="Describe your bathroom fitting project — size, style, any specific requirements..."></textarea>
+            </div>
+          </div>
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-time">Preferred Contact Time</label>
+              <select class="form-select" id="qf-time" name="contact_time">
+                <option value="">Any time</option>
+                <option>Morning (8am&ndash;12pm)</option>
+                <option>Afternoon (12pm&ndash;5pm)</option>
+                <option>Evening (after 5pm)</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">Request Free Quote &rarr;</button>
+          <p class="form-note"><strong>No obligation, only friendly advice.</strong><br />Your details are safe with us. We will only contact you about your enquiry.</p>
+        </form>
+      </div>
+
+      <!-- RIGHT: Get in Touch info -->
+      <div class="reveal">
+        <span class="qc-info-label">Get in Touch</span>
+        <h2 class="qc-info-heading" id="qf-heading">Get a Free Bathroom Fitting Quote in Borehamwood</h2>
+        <p class="qc-info-para">We are based right here in Borehamwood. Tell us about your bathroom fitting and we will arrange a free visit, take a look, and give you a clear, honest, no-obligation quote.</p>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128222;</div>
+          <div>
+            <div class="qc-contact-label">Phone</div>
+            <div class="qc-contact-value"><a href="tel:+447775758717">+44 7775 758 717</a></div>
+          </div>
+        </div>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#9993;</div>
+          <div>
+            <div class="qc-contact-label">Email</div>
+            <div class="qc-contact-value"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></div>
+          </div>
+        </div>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128336;</div>
+          <div>
+            <div class="qc-contact-label">Working Hours</div>
+            <div class="qc-contact-value">Monday &ndash; Saturday: 8:00 AM &ndash; 5:00 PM</div>
+          </div>
+        </div>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128205;</div>
+          <div>
+            <div class="qc-contact-label">Based In</div>
+            <div class="qc-contact-value">157 Judge Street, Watford, WD24 5AN<br />Serving Borehamwood &amp; surrounding areas</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div>
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;">BMB</span>
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:300;color:var(--gold);"> Renovation</span>
+        </div>
+        <p>We specialise in bespoke home interior renovations, combining elegance and functionality to create timeless living spaces across Watford and the surrounding area.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/people/BMB-Renovation/61560985672329/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/bmb_renovation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">in</a>
+          <a href="https://x.com/bmb_renovation" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="/services#bathroom-fitting">Bathroom Fitting</a></li>
+          <li><a href="/services#bathroom">Bathroom Renovation</a></li>
+          <li><a href="/services#kitchen">Kitchen Renovation</a></li>
+          <li><a href="/services#painting">Painting &amp; Decorating</a></li>
+          <li><a href="/services#loft">Loft Conversion</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <p class="footer-contact-text">157 Judge Street, Watford, Hertfordshire, WD24 5AN</p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📞</span>
+          <p class="footer-contact-text"><a href="tel:+447775758717">+44 7775 758 717</a></p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉️</span>
+          <p class="footer-contact-text"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">🕐</span>
+          <p class="footer-contact-text">Mon–Sat: 8:00 AM – 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BMB Renovation. All Rights Reserved. | <a href="/" style="color:#9CA3AF;">bmbrenovation.co.uk</a></p>
+      <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </div>
+  </div>
+</footer>
+
+<div id="sticky-cta" role="complementary" aria-label="Quick action buttons">
+  <a href="#quote-form" class="sticky-btn sticky-quote">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+    Free Quote
+  </a>
+  <a href="tel:+447775758717" class="sticky-btn sticky-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+</div>6:T1400,
+  // -- Header: always scrolled/white style --
+  const header = document.getElementById('site-header');
+  if (header) {
+    header.classList.add('scrolled');
+    window.addEventListener('scroll', () => { header.classList.add('scrolled'); }, { passive: true });
+  }
+
+  // -- Hamburger --
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  // -- FAQ accordion --
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i) {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+
+  // -- Scroll reveal --
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(function(el) { revealObserver.observe(el); });
+
+  // -- Form submission: POST to Formsubmit.co -> contact@bmbrenovation.co.uk --
+  ['main-quote-form', 'hero-form', 'contact-quote-form'].forEach(function(id) {
+    const form = document.getElementById(id);
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      function val(n) { const el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
+      const name = val('name'), phone = val('phone');
+      if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+      const btn = form.querySelector('[type="submit"]');
+      const orig = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      const payload = JSON.stringify({
+        access_key: 'b2398a20-017d-459d-a1bf-858b83488b97',
+        subject: 'New Quote - BMB Renovation (' + window.location.pathname + ')',
+        from_name: 'BMB Renovation Website',
+        name: name, phone: phone,
+        email: val('email') || '(not provided)',
+        project: val('project') || '(not specified)',
+        postcode: val('postcode') || '(not provided)',
+        message: val('message') || '(no message)',
+        contact_time: val('contact_time') || 'Any time',
+        page_url: window.location.href
+      });
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: payload
+      }).then(function(res) { return res.json(); }).then(function(data) {
+        if (data && (data.success === 'true' || data.success === true)) {
+          // Save to localStorage for admin dashboard
+          try {
+            const quotes = JSON.parse(localStorage.getItem('bmb_quotes') || '[]');
+            quotes.push({
+              id: Date.now().toString(36) + Math.random().toString(36).slice(2,7),
+              timestamp: new Date().toISOString(),
+              name: name, phone: phone,
+              email: val('email') || '(not provided)',
+              project: val('project') || '(not specified)',
+              postcode: val('postcode') || '(not provided)',
+              message: val('message') || '(no message)',
+              contact_time: val('contact_time') || 'Any time',
+              page: window.location.pathname,
+              status: 'new'
+            });
+            localStorage.setItem('bmb_quotes', JSON.stringify(quotes));
+          } catch(e) {}
+          try { if (typeof window !== 'undefined' && typeof window.gtag === 'function') { window.gtag('event', 'conversion', { 'send_to': 'AW-18105187591/0oU2CLXHoKgcEIf6nLlD' }); } } catch(e) {}
+          form.innerHTML = '<div style="text-align:center;padding:3rem 1rem;"><div style="font-size:3rem;margin-bottom:1rem;">&#x2705;</div><h3 style="font-family:\'Plus Jakarta Sans\',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ' + name + '!</h3><p style="color:#6B7280;font-size:0.9375rem;line-height:1.7;max-width:480px;margin:0 auto;">We have received your enquiry and will be in touch shortly.</p><p style="color:#9CA3AF;font-size:0.875rem;margin-top:1.25rem;font-style:italic;">You can get in touch yourself anytime before our team calls you back.</p></div>';
+        } else { throw new Error('failed'); }
+      }).catch(function() {
+        if (btn) { btn.disabled = false; btn.textContent = orig; }
+        alert('Something went wrong. Please call us on +44 7775 758 717 or email admin@bmbrenovation.co.uk');
+      });
+    });
+  });
+9:T4d2,{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"BMB Renovation","url":"https://bmbrenovation.co.uk","logo":"https://bmbrenovation.co.uk/favicon.svg","image":"https://bmbrenovation.co.uk/og-image.png","description":"BMB Renovation offers premium home, kitchen & bathroom renovation services in Watford, London & Hertfordshire. 15+ years of experience. Free consultation.","telephone":"+447775758717","email":"info@bmbrenovation.co.uk","priceRange":"££","address":{"@type":"PostalAddress","streetAddress":"157 Judge Street","addressLocality":"Watford","postalCode":"WD24 5AN","addressRegion":"Hertfordshire","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.6549,"longitude":-0.3978},"areaServed":["Watford","Bushey","Rickmansworth","St Albans","Hemel Hempstead","Borehamwood","Harrow","Croxley Green","Luton","Bedford","London"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"sameAs":["https://www.facebook.com/bmbrenovation","https://www.instagram.com/bmbrenovation"]}0:["-SetYf-Jyr8-cYNEDHzSW",[[["",{"children":["bathroom-fitting-borehamwood",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["bathroom-fitting-borehamwood",{"children":["__PAGE__",{},[["$L1",[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}],["$","$L5",null,{"code":"$6"}]],null],null],null]},[null,["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","bathroom-fitting-borehamwood","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/cce00b8a7d06f877.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en-GB","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$9"}}],["$","$La",null,{"strategy":"afterInteractive","src":"https://www.googletagmanager.com/gtag/js?id=AW-18105187591"}],["$","$La",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'AW-18105187591');\n          "}]]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$Lb",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$Lc",null,{}],["$","$Ld",null,{}]]}]}]]}]],null],null],["$Le",null]]]]
+e:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Bathroom Fitting Borehamwood | Free Quote | BMB Renovation"}],["$","meta","3",{"name":"description","content":"Expert bathroom fitting in Borehamwood. BMB Renovation is based nearby in Watford — shower fitting, bath fitting, full suite installation, tiling and flooring. Free no-obligation quote. Call +44 7775 758 717."}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","meta","5",{"name":"googlebot","content":"index, follow"}],["$","link","6",{"rel":"canonical","href":"https://bmbrenovation.co.uk/bathroom-fitting-borehamwood"}],["$","meta","7",{"property":"og:title","content":"Bathroom Fitting Borehamwood | Free Quote | BMB Renovation"}],["$","meta","8",{"property":"og:description","content":"Expert bathroom fitting in Borehamwood. BMB Renovation is based nearby in Watford — shower fitting, bath fitting, full suite installation, tiling and flooring. Free no-obligation quote. Call +44 7775 758 717."}],["$","meta","9",{"property":"og:image","content":"https://bmbrenovation.co.uk/images/03_luxury_bathroom.jpg"}],["$","meta","10",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","11",{"name":"twitter:title","content":"BMB Renovation | Premium Home Renovation & Building Services"}],["$","meta","12",{"name":"twitter:description","content":"BMB Renovation offers premium home, kitchen & bathroom renovation services in Watford, London & Hertfordshire."}],["$","meta","13",{"name":"twitter:image","content":"https://bmbrenovation.co.uk/og-image.png"}],["$","link","14",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","15",{"rel":"icon","href":"/favicon.svg"}],["$","meta","16",{"name":"next-size-adjust"}]]
+1:null

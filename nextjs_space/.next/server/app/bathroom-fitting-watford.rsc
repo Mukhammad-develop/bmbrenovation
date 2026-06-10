@@ -1,0 +1,1387 @@
+5:I[2656,["4755","static/chunks/app/bathroom-fitting-watford/page-c4aae2030b76983f.js"],"default"]
+7:I[4707,[],""]
+8:I[6423,[],""]
+a:I[8003,["4438","static/chunks/4438-fad40e47ec4bdb81.js","8003","static/chunks/8003-6952ddab17ca698a.js","3185","static/chunks/app/layout-adad83731295e52f.js"],""]
+b:I[2798,["4438","static/chunks/4438-fad40e47ec4bdb81.js","8003","static/chunks/8003-6952ddab17ca698a.js","3185","static/chunks/app/layout-adad83731295e52f.js"],"ThemeProvider"]
+c:I[3606,["4438","static/chunks/4438-fad40e47ec4bdb81.js","8003","static/chunks/8003-6952ddab17ca698a.js","3185","static/chunks/app/layout-adad83731295e52f.js"],"Toaster"]
+d:I[4215,["4438","static/chunks/4438-fad40e47ec4bdb81.js","8003","static/chunks/8003-6952ddab17ca698a.js","3185","static/chunks/app/layout-adad83731295e52f.js"],"ChunkLoadErrorHandler"]
+2:Tc0d,[{"@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", "name": "BMB Renovation", "url": "https://bmbrenovation.co.uk/bathroom-fitting-watford", "logo": "https://bmbrenovation.co.uk/favicon.svg", "image": "https://bmbrenovation.co.uk/og-image.png", "description": "Expert bathroom fitting in Watford. BMB Renovation is based right here in Watford \u2014 shower fitting, bath fitting, full suite installation, tiling and flooring. Free no-obligation quote. Call +44 7775 758 717.", "telephone": "+447775758717", "email": "info@bmbrenovation.co.uk", "priceRange": "££", "address": {"@type": "PostalAddress", "streetAddress": "157 Judge Street", "addressLocality": "Watford", "postalCode": "WD24 5AN", "addressRegion": "Hertfordshire", "addressCountry": "GB"}, "areaServed": {"@type": "City", "name": "Watford"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "16:00"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "58"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does a bathroom fitting in Watford cost?", "acceptedAnswer": {"@type": "Answer", "text": "The cost of a bathroom fitting in Watford depends on the size of the room, the suite and materials chosen, and the scope of work required. BMB Renovation offers a free, no-obligation written quote — call +44 7775 758 717 to arrange a home visit."}}, {"@type": "Question", "name": "How long does a bathroom fitting in Watford take?", "acceptedAnswer": {"@type": "Answer", "text": "Most bathroom fitting projects in Watford are completed within 1 to 2 weeks. Larger or more complex projects may take longer. We agree a clear timetable with you before work starts."}}, {"@type": "Question", "name": "Does BMB Renovation cover Watford?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — BMB Renovation is based in Watford (WD24 5AN) and regularly carries out bathroom fitting projects across Watford and the surrounding area. We offer a free home visit and written quote at no charge."}}, {"@type": "Question", "name": "Do you handle all the trades — plumbing, tiling and electrics?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our in-house team covers every trade involved in a bathroom project: plumbing, tiling, waterproofing, flooring, lighting and decorating. You deal with one team throughout and there are no subcontractors."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bmbrenovation.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Areas Served", "item": "https://bmbrenovation.co.uk/locations"}, {"@type": "ListItem", "position": 3, "name": "Bathroom Fitting Watford", "item": "https://bmbrenovation.co.uk/bathroom-fitting-watford"}]}]3:T7771,
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: #141414;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── TOKENS ── */
+    :root {
+      --gold: #C8A97E;
+      --gold-dark: #B8996E;
+      --gold-light: rgba(200,169,126,0.12);
+      --dark: #0a0a0a;
+      --gray-950: #0a0a0a;
+      --gray-900: #111827;
+      --gray-700: #374151;
+      --gray-600: #4B5563;
+      --gray-500: #6B7280;
+      --gray-400: #9CA3AF;
+      --gray-200: #E5E7EB;
+      --gray-100: #F3F4F6;
+      --gray-50:  #F9FAFB;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0/0.04),0 1px 3px 0 rgb(0 0 0/0.08);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0/0.06),0 2px 4px -2px rgb(0 0 0/0.06);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0/0.08),0 4px 6px -4px rgb(0 0 0/0.06);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px -6px rgb(0 0 0/0.06);
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.025em; line-height: 1.15; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.75rem); font-weight: 800; }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; }
+    h3 { font-size: 1.25rem; font-weight: 700; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    p  { line-height: 1.7; color: var(--gray-600); }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+    @media(min-width:640px){ .container { padding: 0 1.5rem; } }
+    .section { padding: 5rem 0; }
+    .section-sm { padding: 3.5rem 0; }
+    .section-lg { padding: 6rem 0; }
+    @media(min-width:768px){ .section { padding: 7rem 0; } }
+
+    /* ── LABEL CHIP ── */
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      border-radius: 9999px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700; font-size: 0.9375rem;
+      cursor: pointer; border: none; transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 4px 16px rgba(200,169,126,0.35); }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .btn-dark { background: var(--gray-900); color: #fff; }
+    .btn-dark:hover { background: #1f2937; transform: translateY(-1px); }
+    .btn-ghost { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+    .btn-outline-gold { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+    .btn-outline-gold:hover { background: var(--gold); color: #fff; }
+    .btn-sm { padding: 0.625rem 1.375rem; font-size: 0.875rem; }
+    .btn-lg { padding: 1rem 2.25rem; font-size: 1rem; }
+
+    /* ── HEADER ── */
+    #site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 999; transition: background 0.3s ease, box-shadow 0.3s ease; }
+    #site-header.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .logo { display: flex; align-items: center; }
+    .logo-bmb { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; transition: color 0.3s; }
+    #site-header.scrolled .logo-bmb { color: var(--gray-900); }
+    .logo-reno { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 300; letter-spacing: -0.03em; color: var(--gold); margin-left: 4px; }
+    .header-nav { display: none; gap: 0.25rem; }
+    @media(min-width:1024px){ .header-nav { display: flex; } }
+    .nav-link { padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.88); transition: all 0.2s; }
+    .nav-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    #site-header.scrolled .nav-link { color: var(--gray-700); }
+    #site-header.scrolled .nav-link:hover { color: var(--gold); background: var(--gray-100); }
+    .header-cta { display: flex; align-items: center; gap: 0.75rem; }
+    .header-call { display: none; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; background: #fff; color: var(--gray-900); transition: all 0.2s; }
+    @media(min-width:640px){ .header-call { display: flex; } }
+    #site-header.scrolled .header-call { background: var(--gray-900); color: #fff; }
+    .header-call:hover { opacity: 0.9; transform: translateY(-1px); }
+    .hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; border: none; background: transparent; cursor: pointer; border-radius: 8px; padding: 8px; }
+    .hamburger span { display: block; height: 2px; width: 24px; border-radius: 2px; background: #fff; transition: all 0.3s; }
+    #site-header.scrolled .hamburger span { background: var(--gray-900); }
+    @media(min-width:1024px){ .hamburger { display: none; } }
+    #mobile-menu { display: none; background: #fff; border-top: 1px solid var(--gray-100); box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 1.5rem; }
+    #mobile-menu.open { display: block; }
+    .mobile-nav-link { display: block; padding: 0.75rem 1rem; font-size: 1rem; font-weight: 500; color: var(--gray-700); border-radius: 0.5rem; transition: all 0.2s; }
+    .mobile-nav-link:hover { color: var(--gold); background: var(--gold-light); }
+    .mobile-cta { display: block; margin-top: 1rem; padding: 0.875rem; text-align: center; background: var(--gray-900); color: #fff; border-radius: 0.75rem; font-weight: 700; font-size: 0.9375rem; }
+
+    /* ── PROXIMITY BANNER ── */
+    #proximity-banner { background: var(--gold-light); border-bottom: 1px solid rgba(200,169,126,0.2); padding: 0.625rem 0; position: relative; z-index: 998; }
+    .proximity-inner { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; font-size: 0.8125rem; font-weight: 500; color: var(--gray-700); text-align: center; }
+    .proximity-inner a { color: var(--gold); font-weight: 700; }
+    .proximity-inner a:hover { text-decoration: underline; }
+
+    /* ── HERO ── */
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.25) 100%); }
+    .hero-content { position: relative; z-index: 2; width: 100%; padding-top: 80px; }
+    .hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+    @media(min-width:1024px){ .hero-grid { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); font-size: 0.8125rem; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+    .hero-eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .hero-h1 { color: #fff; margin-bottom: 1.25rem; }
+    .hero-h1 span { color: var(--gold); }
+    .hero-sub { font-size: 1.0625rem; color: rgba(255,255,255,0.78); margin-bottom: 2rem; max-width: 460px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 0.875rem; margin-bottom: 2.5rem; }
+    .trust-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .badge { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.375rem 0.875rem; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(6px); font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.85); }
+    .badge-check { color: var(--gold); font-size: 0.875rem; }
+
+    /* ── QUOTE FORM CARD ── */
+    .quote-card { background: #fff; border-radius: 1.25rem; padding: 2rem; box-shadow: var(--shadow-xl); }
+    .quote-card-heading { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.375rem; }
+    .quote-card-sub { font-size: 0.8125rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+    .form-row { display: grid; gap: 1rem; }
+    @media(min-width:480px){ .form-row-2 { grid-template-columns: 1fr 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.375rem; }
+    .form-label { font-size: 0.8125rem; font-weight: 600; color: var(--gray-700); }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--gray-200); border-radius: 0.625rem; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: var(--gray-900); background: #fff; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--gray-400); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,169,126,0.15); }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; padding: 0.9375rem; background: var(--gold); color: #fff; border: none; border-radius: 9999px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 16px rgba(200,169,126,0.35); margin-top: 0.5rem; }
+    .form-submit:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,169,126,0.45); }
+    .form-note { font-size: 0.75rem; color: var(--gray-400); text-align: center; margin-top: 0.625rem; }
+    .form-note strong { color: var(--gray-500); }
+
+    /* ── STATS BAR ── */
+    .stats-bar { background: var(--gray-950); padding: 2.5rem 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; }
+    @media(min-width:768px){ .stats-grid { grid-template-columns: repeat(4,1fr); } }
+    .stat-item { text-align: center; }
+    .stat-number { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.25rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 0.8125rem; color: #9CA3AF; margin-top: 0.375rem; }
+
+    /* ── SECTION HEADER ── */
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header h2 { color: var(--gray-900); margin-top: 0.5rem; }
+    .section-header p { max-width: 560px; margin: 1rem auto 0; }
+
+    /* ── PROBLEM SECTION ── */
+    .problem-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .problem-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .problem-grid { grid-template-columns: repeat(3,1fr); } }
+    .problem-card { background: var(--gray-50); border-radius: 1rem; padding: 1.75rem; border: 1px solid var(--gray-100); transition: box-shadow 0.2s, transform 0.2s; }
+    .problem-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .problem-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--gold-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.375rem; }
+    .problem-card h3 { color: var(--gray-900); font-size: 1.0625rem; margin-bottom: 0.5rem; }
+
+    /* ── INCLUDES ── */
+    .includes-grid { display: grid; gap: 0.75rem; }
+    @media(min-width:640px){ .includes-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .includes-grid { grid-template-columns: repeat(3,1fr); } }
+    .include-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 1.125rem 1.25rem; border-radius: 0.875rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); transition: border-color 0.2s; }
+    .include-item:hover { border-color: var(--gold); }
+    .include-check { width: 22px; height: 22px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.6875rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .include-item p { font-size: 0.9375rem; color: var(--gray-700); font-weight: 500; margin: 0; }
+
+    /* ── WHY BMB ── */
+    .why-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .why-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .why-grid { grid-template-columns: repeat(4,1fr); } }
+    .why-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.75rem; transition: background 0.2s; }
+    .why-card:hover { background: rgba(255,255,255,0.1); }
+    .why-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(200,169,126,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.375rem; margin-bottom: 1.125rem; }
+    .why-card h3 { color: #fff; font-size: 1.0625rem; margin-bottom: 0.5rem; }
+    .why-card p { color: #9CA3AF; font-size: 0.875rem; }
+
+    /* ── TRUST ── */
+    .trust-grid { display: grid; gap: 1.25rem; }
+    @media(min-width:640px){ .trust-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .trust-grid { grid-template-columns: repeat(4,1fr); } }
+    .trust-card { border-radius: 1rem; padding: 1.75rem; background: #fff; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); text-align: center; transition: box-shadow 0.2s, transform 0.2s; }
+    .trust-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .trust-emoji { font-size: 2rem; margin-bottom: 0.75rem; }
+    .trust-card h3 { color: var(--gray-900); font-size: 1rem; margin-bottom: 0.375rem; }
+    .trust-card p { font-size: 0.875rem; color: var(--gray-500); margin: 0; }
+
+    /* ── PORTFOLIO ── */
+    .portfolio-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .portfolio-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .portfolio-grid { grid-template-columns: repeat(3,1fr); } }
+    .portfolio-card { border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-md); background: #fff; transition: transform 0.25s, box-shadow 0.25s; }
+    .portfolio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+    .portfolio-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+    .portfolio-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .portfolio-card:hover .portfolio-img img { transform: scale(1.05); }
+    .portfolio-badge { position: absolute; top: 0.875rem; left: 0.875rem; background: var(--gold); color: #fff; padding: 0.3rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .portfolio-body { padding: 1.375rem; }
+    .portfolio-location { font-size: 0.75rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.375rem; }
+    .portfolio-body h3 { color: var(--gray-900); margin-bottom: 0.5rem; }
+    .portfolio-body p { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1rem; }
+    .portfolio-cta { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.875rem; font-weight: 700; color: var(--gold); transition: gap 0.2s; }
+    .portfolio-card:hover .portfolio-cta { gap: 0.625rem; }
+
+    /* ── BEFORE / AFTER ── */
+    .before-after-grid { display: grid; gap: 2rem; align-items: center; }
+    @media(min-width:1024px){ .before-after-grid { grid-template-columns: 1fr 1fr; } }
+    .ba-image-wrap { position: relative; border-radius: 1.25rem; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-xl); }
+    .ba-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .ba-label { position: absolute; bottom: 1rem; padding: 0.4rem 1rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 700; }
+    .ba-label-before { left: 1rem; background: rgba(0,0,0,0.65); color: #fff; }
+    .ba-label-after { right: 1rem; background: var(--gold); color: #fff; }
+
+    /* ── PROCESS ── */
+    .process-grid { display: grid; gap: 1.5rem; }
+    @media(min-width:640px){ .process-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .process-grid { grid-template-columns: repeat(5,1fr); } }
+    .process-step { position: relative; text-align: center; padding: 1.75rem 1.25rem; background: #fff; border-radius: 1rem; border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm); }
+    .process-number { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.125rem; font-weight: 800; margin: 0 auto 1rem; }
+    .process-step h3 { font-size: 0.9375rem; color: var(--gray-900); margin-bottom: 0.5rem; }
+    .process-step p { font-size: 0.8125rem; color: var(--gray-500); margin: 0; }
+
+    /* ── AREAS ── */
+    .areas-flex { display: flex; flex-wrap: wrap; gap: 0.625rem; margin-top: 1.5rem; }
+    .area-chip { padding: 0.5rem 1.125rem; border-radius: 9999px; background: var(--gold-light); color: var(--gray-700); font-size: 0.875rem; font-weight: 600; border: 1.5px solid rgba(200,169,126,0.25); transition: background 0.2s, color 0.2s; }
+    .area-chip:hover { background: var(--gold); color: #fff; }
+    .area-chip.primary { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+    /* ── PRICE ── */
+    .price-factors { display: grid; gap: 0.875rem; }
+    @media(min-width:640px){ .price-factors { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .price-factors { grid-template-columns: repeat(3,1fr); } }
+    .price-factor { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; border-radius: 0.875rem; background: var(--gray-50); border: 1px solid var(--gray-100); }
+    .pf-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .price-factor p { font-size: 0.9rem; color: var(--gray-700); margin: 0; font-weight: 500; }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { border: 1.5px solid var(--gray-100); border-radius: 0.875rem; overflow: hidden; background: #fff; }
+    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: transparent; border: none; cursor: pointer; text-align: left; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: var(--gray-900); transition: color 0.2s; }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; font-weight: 300; color: var(--gray-600); transition: background 0.2s, transform 0.2s; }
+    .faq-item.open .faq-icon { background: var(--gold); color: #fff; transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; padding: 0 1.5rem; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.25rem; }
+    .faq-answer p { font-size: 0.9rem; color: var(--gray-600); margin: 0; }
+
+    /* ── CONTACT SECTION ── */
+    .contact-grid { display: grid; gap: 2.5rem; align-items: start; }
+    @media(min-width:1024px){ .contact-grid { grid-template-columns: 2fr 3fr; gap: 4rem; } }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .ci-icon { width: 48px; height: 48px; border-radius: 0.75rem; background: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem; }
+    .ci-label { font-size: 0.8125rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.2rem; }
+    .ci-value { font-size: 0.9rem; color: var(--gray-600); }
+    .ci-value a { color: var(--gray-600); }
+    .ci-value a:hover { color: var(--gold); }
+
+    /* ── FINAL CTA ── */
+    .final-cta-section { position: relative; padding: 6rem 0; overflow: hidden; }
+    .final-cta-bg { position: absolute; inset: 0; }
+    .final-cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .final-cta-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.87); }
+    .final-cta-content { position: relative; z-index: 2; text-align: center; }
+    .final-cta-content h2 { color: #fff; margin-bottom: 1.25rem; }
+    .final-cta-content h2 span { color: var(--gold); }
+    .final-cta-content p { color: rgba(255,255,255,0.72); max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.0625rem; }
+    .final-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+    .final-trust-line { font-size: 0.875rem; color: rgba(255,255,255,0.45); font-weight: 500; }
+    .final-trust-line span { color: var(--gold); font-weight: 700; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--gray-950); color: #fff; }
+    .footer-grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; padding: 4rem 0 2rem; }
+    @media(min-width:640px){ .footer-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.5fr; } }
+    .footer-brand p { color: #9CA3AF; font-size: 0.875rem; line-height: 1.7; margin: 1rem 0 1.5rem; }
+    .footer-social { display: flex; gap: 0.75rem; }
+    .footer-social a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: background 0.2s; }
+    .footer-social a:hover { background: var(--gold); }
+    .footer-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; color: #fff; margin-bottom: 1.25rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-col ul li a { font-size: 0.875rem; color: #9CA3AF; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; }
+    .footer-contact-icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
+    .footer-contact-text { font-size: 0.875rem; color: #9CA3AF; line-height: 1.5; }
+    .footer-contact-text a { color: #9CA3AF; transition: color 0.2s; }
+    .footer-contact-text a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 1.75rem 0; display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+    @media(min-width:640px){ .footer-bottom { flex-direction: row; justify-content: space-between; } }
+    .footer-bottom p { font-size: 0.8125rem; color: #6B7280; }
+    .back-to-top { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; border: none; cursor: pointer; transition: background 0.2s; }
+    .back-to-top:hover { background: var(--gold-dark); }
+
+    /* ── STICKY MOBILE CTA ── */
+    #sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 -4px 16px rgba(0,0,0,0.15); }
+    @media(min-width:1024px){ #sticky-cta { display: none; } }
+    .sticky-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; font-weight: 700; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .sticky-btn:hover { opacity: 0.9; }
+    .sticky-quote { background: var(--gold); color: #fff; }
+    .sticky-call { background: var(--gray-900); color: #fff; }
+
+    /* ── MID-PAGE CTA STRIP ── */
+    .cta-strip { background: var(--gold-light); border-radius: 1.25rem; padding: 2.5rem; text-align: center; border: 1.5px solid rgba(200,169,126,0.2); }
+    .cta-strip h3 { color: var(--gray-900); margin-bottom: 0.75rem; font-size: 1.375rem; }
+    .cta-strip p { color: var(--gray-600); font-size: 0.9375rem; margin-bottom: 1.5rem; }
+    .cta-strip-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.875rem; }
+
+    /* ── UTILITIES ── */
+    .text-center { text-align: center; }
+    .text-gold { color: var(--gold); }
+    .mt-1 { margin-top: 0.5rem; } .mt-2 { margin-top: 1rem; } .mt-3 { margin-top: 1.5rem; }
+    .mt-4 { margin-top: 2rem; } .mt-5 { margin-top: 2.5rem; } .mt-6 { margin-top: 3rem; }
+    .mb-2 { margin-bottom: 1rem; } .mb-3 { margin-bottom: 1.5rem; }
+    .bg-dark { background: var(--gray-950); } .bg-light { background: var(--gray-50); }
+    .divider { height: 1px; background: var(--gray-100); margin: 0; }
+
+    /* ── SCROLL ANIMATION ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+  
+
+  /* ── HEADER OVERRIDE: always white bg, black text ── */
+  #site-header {
+    background: #fff !important;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.08) !important;
+  }
+  /* Logo: BMBRENOVATION — all black, bold, uppercase */
+  .logo-bmb {
+    color: #111827 !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.02em !important;
+    text-transform: uppercase !important;
+  }
+  /* Hide the old gold "Renovation" span (now replaced in HTML, but safe fallback) */
+  .logo-reno {
+    display: none !important;
+  }
+  .nav-link {
+    color: #374151 !important;
+  }
+  .nav-link:hover {
+    color: var(--gold) !important;
+    background: var(--gray-100) !important;
+  }
+  .header-call {
+    display: flex !important;
+    background: #111827 !important;
+    color: #fff !important;
+  }
+  .header-call:hover { opacity: 0.9; }
+  .hamburger span { background: #111827 !important; }
+
+  /* ── HERO: centred single column layout ── */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  /* Keep H1 centred */
+  .hero-h1 { text-align: center !important; }
+  /* Sub-paragraph centred, max-width so lines don't run too long */
+  .hero-sub {
+    text-align: center !important;
+    max-width: 580px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  /* CTA buttons centred under text */
+  .hero-btns {
+    justify-content: center !important;
+  }
+  /* Eyebrow chip centred */
+  .hero-eyebrow {
+    display: inline-flex !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  /* Trust badges centred */
+  .trust-badges {
+    justify-content: center !important;
+  }
+  /* Reassurance text centred */
+  .reassurance-text {
+    text-align: center !important;
+  }
+  /* hide old hero-form wrapper if it somehow remains */
+  .hero-quote-panel { display: none !important; }
+
+  /* ── REASSURANCE TEXT ── */
+  .reassurance-text {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.65);
+    margin-top: 0.625rem;
+    font-style: italic;
+  }
+  .reassurance-text-dark {
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+    margin-top: 0.625rem;
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* ── COMBINED QUOTE + CONTACT SECTION ── */
+  #quote-form {
+    scroll-margin-top: 90px;
+  }
+  .qc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media(min-width: 1024px) {
+    .qc-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+  /* Form card (left col) */
+  .qc-form-card {
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 2.25rem;
+    box-shadow: var(--shadow-xl);
+    border: 1.5px solid var(--gray-100);
+  }
+  /* Contact info (right col) */
+  .qc-info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .qc-info-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--gray-900);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .qc-info-para {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .qc-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.375rem;
+  }
+  .qc-contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 0.75rem;
+    background: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.125rem;
+  }
+  .qc-contact-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+  }
+  .qc-contact-value {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
+  .qc-contact-value a {
+    color: var(--gray-600);
+    transition: color 0.2s;
+  }
+  .qc-contact-value a:hover {
+    color: var(--gold);
+  }
+4:Ta9ec,<div id="proximity-banner">
+  <div class="container">
+    <div class="proximity-inner">
+      <span>🚿 BMB Renovation — Based right here in Watford. Professional bathroom fitting on your doorstep.</span>
+      <a href="#quote-form">Get a Free Quote →</a>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="BMB Renovation Home">
+        <span class="logo-bmb">BMBRENOVATION</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/portfolio" class="nav-link">Portfolio</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:+447775758717" class="header-call">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" role="navigation" aria-label="Mobile menu">
+    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="/services" class="mobile-nav-link">Services</a>
+    <a href="/portfolio" class="mobile-nav-link">Portfolio</a>
+    <a href="/contact" class="mobile-nav-link">Contact</a>
+    <a href="tel:+447775758717" class="mobile-cta">📞 Call +44 7775 758 717</a>
+  </div>
+
+<section id="hero" aria-label="Hero section">
+  <div class="hero-bg">
+    <img src="/images/03_luxury_bathroom.jpg"
+         alt="Professional bathroom fitting in Watford by BMB Renovation"
+         loading="eager" fetchpriority="high" />
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content section-lg">
+    <div class="container">
+      <div class="hero-grid">
+
+        
+        <div>
+          <div class="hero-eyebrow">
+            <div class="hero-eyebrow-dot"></div>
+            Bathroom Fitting Specialists · Based in Watford
+          </div>
+
+          <h1 class="hero-h1">
+            Expert Bathroom<br />
+            Fitting in<br />
+            <span>Watford</span>
+          </h1>
+
+          <p class="hero-sub">
+            We are right here in Watford — your local bathroom fitting team. Whether you need a full suite installed, a new shower fitted, or a bathroom transformation from start to finish, BMB Renovation handles the whole job: plumbing, tiling, flooring, lighting, and every finishing detail.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#quote-form" class="btn btn-gold btn-lg">
+              Get a Free Quote
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +44 7775 758 717
+            </a>
+          </div>
+          <p class="reassurance-text">No obligation, only friendly advice.</p>
+
+          <div class="trust-badges">
+            <span class="badge"><span class="badge-check">✓</span> Watford Based</span>
+            <span class="badge"><span class="badge-check">✓</span> Free No-Obligation Quote</span>
+            <span class="badge"><span class="badge-check">✓</span> Bathroom Fitting Specialists</span>
+            <span class="badge"><span class="badge-check">✓</span> Premium Finish</span>
+            <span class="badge"><span class="badge-check">✓</span> Full Service Team</span>
+          </div>
+        </div>
+
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar" aria-label="Company statistics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-number">15+</div><p class="stat-label">Years Experience</p></div>
+      <div class="stat-item reveal reveal-delay-1"><div class="stat-number">2K+</div><p class="stat-label">Projects Completed</p></div>
+      <div class="stat-item reveal reveal-delay-2"><div class="stat-number">3K+</div><p class="stat-label">Happy Customers</p></div>
+      <div class="stat-item reveal reveal-delay-3"><div class="stat-number">5★</div><p class="stat-label">Customer Rating</p></div>
+    </div>
+  </div>
+</div>
+
+<section class="section bg-light" aria-labelledby="problem-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Sound Familiar?</span>
+      <h2 id="problem-heading">Looking for a Reliable Bathroom Fitter in Watford?</h2>
+      <p>You know what you want — a new suite installed properly, a shower that works exactly as it should, a bathroom that looks and feels finished. The challenge is finding a Watford bathroom fitter you can trust to do it right, first time.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">🚿</div>
+        <h3>You Need Your Bathroom Suite Fitted Properly</h3>
+        <p>You have chosen your suite or already have the products — you just need a skilled, reliable team to install everything correctly. Good bathroom fitting is about more than connecting the pipes: it is waterproofing, levelling, sealing, tiling, and making sure every element works together perfectly.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-1">
+        <div class="problem-icon">🔍</div>
+        <h3>Finding a Fitter You Can Trust Is Harder Than It Should Be</h3>
+        <p>Watford has no shortage of people who will fit a bathroom. What is harder to find is a team that shows up on time, communicates clearly, prices honestly, and finishes the job to a proper standard. BMB Renovation is based right here in WD24 — our reputation is built locally.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-2">
+        <div class="problem-icon">🏡</div>
+        <h3>A Bathroom That Looks Like It Was Done Right</h3>
+        <p>There is a clear difference between a bathroom that has been thrown together and one that has been installed with care. Straight tiles, a properly sealed bath or shower tray, aligned fittings, no visible gaps or shortcuts. That is the standard we bring to every Watford bathroom we fit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="includes-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">What's Included</span>
+      <h2 id="includes-heading">Everything You Need for a Complete Bathroom Fit in Watford</h2>
+      <p>Our bathroom fitting service covers every element of the installation, from removing the old suite to handing over a clean, fully functioning bathroom. One team, one quote, no loose ends.</p>
+    </div>
+
+    <div class="includes-grid">
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Shower fitting — enclosure, tray and screen installation</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Bath fitting — freestanding, panel or shower bath</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>Toilet fitting — close-coupled, wall-hung or back-to-wall</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Basin and sink fitting — pedestal, countertop or inset</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Vanity unit fitting and bathroom furniture installation</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>All plumbing connections — water supply, waste and drainage</p></div>
+      <div class="include-item reveal"><div class="include-check">✓</div><p>Wall and floor tiling — preparation, waterproofing and grouting</p></div>
+      <div class="include-item reveal reveal-delay-1"><div class="include-check">✓</div><p>Bathroom flooring installation — tiles, LVT or vinyl</p></div>
+      <div class="include-item reveal reveal-delay-2"><div class="include-check">✓</div><p>Lighting and extractor fan fitting</p></div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="#quote-form" class="btn btn-gold">Get a Free Bathroom Fitting Quote</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-dark" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label" style="color:var(--gold)">Why Choose Us</span>
+      <h2 id="why-heading" style="color:#fff">Why Watford Homeowners Choose BMB Renovation to Fit Their Bathroom</h2>
+      <p style="color:#9CA3AF">We live and work here in Watford. When you choose BMB Renovation, you are working with a local team whose reputation depends on the quality of every job they do — not a national firm that has moved on by the time problems appear.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">📍</div>
+        <h3>Based Right Here in Watford</h3>
+        <p>Our base is in WD24 — not a call centre elsewhere. When you enquire, you speak directly to the team who will fit your bathroom. Quick visits, fast quotes, easy to reach.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">🚿</div>
+        <h3>Bathroom Fitting Specialists</h3>
+        <p>Bathroom fitting is what we do. We know how to install a shower tray that does not leak, tile a wet wall properly, and position fittings so everything lines up and works correctly.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🔧</div>
+        <h3>All Trades In-House</h3>
+        <p>Plumbing, tiling, electrical finishing, carpentry — our own team handles every trade in a bathroom fit. No subcontractors, no coordination delays, no gaps in accountability.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">💬</div>
+        <h3>Straight-Talking Pricing</h3>
+        <p>Clear written quotes before work starts. No hidden charges, no extras tacked on afterwards. You know exactly what you are getting and what you are paying.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🏆</div>
+        <h3>15+ Years of Experience</h3>
+        <p>Over fifteen years fitting and renovating bathrooms across Watford and Hertfordshire. We have seen every type of property and we know how to get the job done to a consistent standard.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">🛁</div>
+        <h3>Supply or Fit — Your Choice</h3>
+        <p>Already have your suite? We will fit it. Want us to source quality products too? We can handle that. Either way, the installation is done properly and backed by our workmanship.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">📋</div>
+        <h3>Free Home Visit in Watford</h3>
+        <p>We come to your Watford home, assess the bathroom, discuss your plans and give you a clear written quote. Free, no pressure, and no commitment required.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">✨</div>
+        <h3>Clean, Precise Finish</h3>
+        <p>The details matter — silicone lines, grout joints, fixture alignment. We check every element before we consider the job finished and hand over a bathroom that is ready to use.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="#quote-form" class="btn btn-gold btn-lg">Start with a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">You Can Count On Us</span>
+      <h2 id="trust-heading">Trusted by Watford Homeowners and Landlords for Bathroom Fitting</h2>
+      <p>Letting a trades team into your bathroom requires real trust. Here is how we earn — and keep — yours throughout the project.</p>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-emoji">📝</div>
+        <h3>Written Quote Before Work Starts</h3>
+        <p>Every bathroom fit starts with a clear, itemised written quote. You know exactly what is included and what it costs before we touch a single fitting.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-1">
+        <div class="trust-emoji">🤝</div>
+        <h3>Honest &amp; Communicative</h3>
+        <p>We keep you updated throughout the installation. If anything unexpected comes up — an old pipe, a wall that is not square — we tell you straightaway, not at the end.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-2">
+        <div class="trust-emoji">🧹</div>
+        <h3>Tidy Working Process</h3>
+        <p>We protect your home while we work and leave the bathroom clean and ready when we are done. The rest of your property is treated with the same respect as the room we are fitting.</p>
+      </div>
+      <div class="trust-card reveal reveal-delay-3">
+        <div class="trust-emoji">🎯</div>
+        <h3>Waterproof and Finished Properly</h3>
+        <p>Every wet area is properly tanked and sealed. Grout joints are straight and consistent. Silicone is applied cleanly and neatly. These are the things that make a bathroom look and stay right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light" aria-labelledby="portfolio-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Our Work</span>
+      <h2 id="portfolio-heading">Bathroom Fitting Projects — Examples of Our Work in Watford</h2>
+      <p>From compact en-suites to full family bathrooms, every Watford property is different. These are representative examples of the bathroom fitting work we carry out across WD17, WD18, WD24 and WD25. <em>Images represent our typical project standard.</em></p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal">
+        <div class="portfolio-img">
+          <img src="/images/03_luxury_bathroom.jpg" alt="Full bathroom suite fitting in Watford WD17" loading="lazy" />
+          <span class="portfolio-badge">Full Suite Fit</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Watford WD17</p>
+          <h3>Full Bathroom Suite Installation</h3>
+          <p>Complete bathroom fitting in a WD17 semi-detached. New close-coupled toilet, pedestal basin, full-length bath with shower screen, wall-hung vanity unit, full wall tiling, LVT flooring, and recessed lighting — fitted and finished by our team in one smooth project.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal reveal-delay-1">
+        <div class="portfolio-img">
+          <img src="/images/12_bathroom_before_after.jpg" alt="En-suite bathroom fitting in Watford WD24" loading="lazy" />
+          <span class="portfolio-badge">En-Suite Fit</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Watford WD24 / Holywell</p>
+          <h3>En-Suite — Walk-In Shower Installation</h3>
+          <p>En-suite fitting in a WD24 family home. Walk-in shower with linear drain, wall-hung toilet, compact vanity with built-in basin, full wall tiling in large-format porcelain, and heated flooring — a tight space transformed into a clean, considered en-suite.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal reveal-delay-2">
+        <div class="portfolio-img">
+          <img src="/images/09_tile_work.jpg" alt="Rental property bathroom fitting in Watford WD18" loading="lazy" />
+          <span class="portfolio-badge">Landlord Fit</span>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-location">Watford WD18 / Oxhey</p>
+          <h3>Rental Property Bathroom Fitting</h3>
+          <p>Practical, durable bathroom fitting for a Watford landlord in WD18. New suite, low-maintenance wall tiles, waterproof vinyl flooring, and a properly installed shower over bath — built to a standard that stands up to rental use and is easy to maintain between tenants.</p>
+          <span class="portfolio-cta">Want a similar result? Get a Free Quote →</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="/portfolio" class="btn btn-dark">View Full Portfolio</a>
+      &nbsp;&nbsp;
+      <a href="#quote-form" class="btn btn-gold">Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="ba-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Transformation</span>
+      <h2 id="ba-heading">See What a Properly Fitted Bathroom Looks Like</h2>
+      <p>The difference between a bathroom that has been installed quickly and one that has been fitted properly is visible immediately — in the tiles, the sealant lines, the alignment of fittings, and how the space holds up over time.</p>
+    </div>
+
+    <div class="before-after-grid">
+      <div class="reveal">
+        <div class="ba-image-wrap">
+          <img src="/images/12_bathroom_before_after.jpg"
+               alt="Bathroom before fitting — tired dated bathroom in Watford"
+               loading="lazy" />
+          <span class="ba-label ba-label-before">Before</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="ba-image-wrap">
+          <img src="/images/03_luxury_bathroom.jpg"
+               alt="Bathroom after fitting — professionally installed bathroom in Watford"
+               loading="lazy" />
+          <span class="ba-label ba-label-after">After</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal mt-5" style="max-width:640px; margin-left:auto; margin-right:auto; text-align:center;">
+      <h3 style="color:var(--gray-900); margin-bottom:1rem;">From Old and Worn to Clean and Fitted Right</h3>
+      <p style="margin-bottom:1.5rem;">A typical bathroom fitting project with BMB Renovation in Watford involves removing the old suite, preparing the walls and floor properly, fitting the new suite and all connections, tiling, flooring, and finishing every detail — left ready to use from day one.</p>
+      <a href="#quote-form" class="btn btn-gold btn-lg">Request a Free Quote for Your Bathroom</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">How It Works</span>
+      <h2 id="process-heading">Your Bathroom Fitting in Watford — Step by Step</h2>
+      <p>We have made the process straightforward from start to finish. Here is exactly what to expect from your first enquiry to your completed bathroom.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-number">1</div>
+        <h3>Get in Touch</h3>
+        <p>Call us or fill in the free quote form. Tell us a bit about your bathroom and what you are looking to have fitted.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-number">2</div>
+        <h3>Free Home Visit</h3>
+        <p>We come to your Watford home, look at the bathroom, take measurements, and talk through your requirements, products and budget. No charge, no pressure.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-number">3</div>
+        <h3>Clear Written Quote</h3>
+        <p>You receive a full itemised written quote. Every element is costed clearly — fitting, tiling, plumbing, flooring. No hidden extras. Take your time to decide.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-number">4</div>
+        <h3>Fitting Begins</h3>
+        <p>Our Watford-based team arrives on the agreed date and gets to work. We keep the site tidy, minimise disruption, and keep you updated throughout.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="process-number">5</div>
+        <h3>Final Check &amp; Handover</h3>
+        <p>We walk through the finished bathroom with you, test all fittings and connections, check every detail, and hand over clean and ready to use.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="#quote-form" class="btn btn-gold">Start Step 1 — Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="areas-heading">
+  <div class="container">
+    <div style="display:grid; gap:3rem; align-items:center;" class="before-after-grid">
+
+      <div class="reveal">
+        <span class="section-label">Service Area</span>
+        <h2 id="areas-heading" style="color:var(--gray-900); margin-top:0.5rem; margin-bottom:1.25rem;">Bathroom Fitting in Watford &amp; the WD Postcodes</h2>
+        <p style="margin-bottom:1.25rem;">Our base is at 157 Judge Street, Watford WD24 — so covering WD17, WD18, WD19, WD24 and WD25 is no problem. Whether you are in the town centre, Holywell, Oxhey, Leavesden or out towards Abbots Langley, we are your local team.</p>
+        <p style="margin-bottom:1.5rem;">We also regularly fit bathrooms in Bushey, Rickmansworth, Croxley Green, Borehamwood, St Albans, Hemel Hempstead and Harrow. Not sure if we cover your street? Just give us a call.</p>
+        <a href="#quote-form" class="btn btn-gold">Check if We Cover Your Area</a>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <p style="font-size:0.875rem; font-weight:700; color:var(--gray-500); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1rem;">Areas We Serve</p>
+        <div class="areas-flex">
+          <span class="area-chip primary">Watford WD17</span>
+          <span class="area-chip primary">Watford WD24</span>
+          <span class="area-chip primary">Watford WD25</span>
+          <span class="area-chip">Bushey WD23</span>
+          <span class="area-chip">Rickmansworth WD3</span>
+          <span class="area-chip">Croxley Green</span>
+          <span class="area-chip">Oxhey WD19</span>
+          <span class="area-chip">Abbots Langley</span>
+          <span class="area-chip">Borehamwood</span>
+          <span class="area-chip">St Albans</span>
+          <span class="area-chip">Hemel Hempstead</span>
+          <span class="area-chip">Harrow</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light" aria-labelledby="price-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Pricing Guide</span>
+      <h2 id="price-heading">How Much Does Bathroom Fitting Cost in Watford?</h2>
+      <p>Bathroom fitting costs in Watford vary depending on the scope of the installation and the products being fitted. The most accurate way to find out your cost is a free, no-obligation quote — we come to you, assess the job, and give you a real figure.</p>
+    </div>
+
+    <div class="price-factors reveal">
+      <div class="price-factor"><div class="pf-dot"></div><p>Number and type of fixtures being fitted — suite, shower, bath</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Plumbing adjustments or new pipework required</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Wall tiling — area, tile format and pattern complexity</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Floor tiling or other flooring type and area</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Electrical work — lighting, extractor fan, heated flooring</p></div>
+      <div class="price-factor"><div class="pf-dot"></div><p>Supply and fit vs fit only — your products or ours</p></div>
+    </div>
+
+    <div class="cta-strip mt-5 reveal">
+      <h3>The Simplest Way to Find Out Your Cost</h3>
+      <p>Request a free quote from BMB Renovation. We will visit your Watford home, assess the bathroom, and give you a clear, honest figure — no vague estimates, no pressure to proceed.</p>
+      <div class="cta-strip-btns">
+        <a href="#quote-form" class="btn btn-gold">Get My Free Quote</a>
+        <a href="tel:+447775758717" class="btn btn-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Speak to Our Team
+        </a>
+      </div>
+        <p class="reassurance-text-dark">No obligation, only friendly advice.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="faq-heading">
+  <div class="container" style="max-width:800px;">
+    <div class="section-header reveal">
+      <span class="section-label">FAQs</span>
+      <h2 id="faq-heading">Frequently Asked Questions — Bathroom Fitting Watford</h2>
+    </div>
+
+    <div class="faq-list" id="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How much does bathroom fitting cost in Watford?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Costs vary depending on the scope of the fitting and the products involved. A straightforward suite swap can start from a few hundred pounds for the labour alone; a full fitting including tiling, flooring, new plumbing connections and electrical work will cost more. The best way to get an accurate figure is a free, no-obligation quote from our team — we assess your actual bathroom and give you a clear written price.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can you fit a bathroom suite I have already bought?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — fit-only is absolutely fine. Many of our Watford clients source their own suite from B&amp;Q, Bathstore, Victorian Plumbing, or similar, and have us handle the fitting. We check the products on arrival and let you know if anything needs addressing. Our quote for a fit-only project covers the installation labour, plumbing connections, any tiling and flooring, and the full completion of the bathroom.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is the quote really free and with no obligation?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — completely free and with absolutely no obligation. We visit your Watford home, look at the bathroom, discuss your requirements and give you a clear written quote. You take your time to review it and decide whether to proceed. No pressure and no charge for the visit.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How long does a bathroom fitting take in Watford?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Most standard bathroom fittings take between 4 and 10 working days depending on the scope. A simple suite swap with minimal tiling can be faster; a full fitting with new tiling, flooring, and electrical work will take a little longer. We give you a clear timeline as part of the free consultation so you can plan around the disruption.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you handle the plumbing, tiling and electrical work too?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — our team covers all trades involved in a bathroom fit: plumbing (connections, waste, water supply), tiling (wall and floor), flooring, electrical finishing (lighting, extractor fan), and all carpentry and finishing work. You do not need to find separate contractors. One team handles the complete installation from start to finish.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What is the difference between bathroom fitting and bathroom renovation?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Bathroom fitting focuses on the installation of a new suite or components — shower, bath, toilet, basin, vanity — within the existing layout of the room, including all associated plumbing, tiling, flooring and finishing. Bathroom renovation is a broader term that may include structural changes, moving walls, redesigning the layout, or a full strip-back-to-brick transformation. BMB Renovation handles both — if you are not sure which applies to your project, just get in touch and we will advise.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you work with Watford landlords on rental properties?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. We fit bathrooms for Watford landlords regularly — from a quick suite replacement to a full practical refit before a new tenancy. We understand the need for durable, low-maintenance products and can work to tight turnarounds to reduce void time. Get in touch to discuss your Watford rental property and we will tailor the quote accordingly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you cover all parts of Watford — WD17, WD18, WD24, WD25?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — we are based in Watford (WD24) and cover all Watford postcodes including WD17, WD18, WD19, WD24 and WD25, as well as nearby areas including Bushey, Oxhey, Abbots Langley, Croxley Green, Rickmansworth and beyond. Not sure whether we cover your address? Just give us a call or drop a message and we will confirm immediately.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I use my bathroom during the fitting?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>A bathroom fitting typically means the room is out of use while the work is in progress — usually between four and ten days. We work efficiently to keep this period as short as possible and will give you a clear schedule before we start so you can plan around it. Most clients find the disruption manageable, particularly if there is a second bathroom or WC in the property.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="final-cta-section" aria-labelledby="final-cta-heading">
+  <div class="final-cta-bg">
+    <img src="/images/01_hero_luxury_interior.jpg"
+         alt="Premium bathroom fitting by BMB Renovation Watford" loading="lazy" />
+  </div>
+  <div class="final-cta-overlay"></div>
+  <div class="container final-cta-content reveal">
+    <span class="section-label">Ready to Get Started?</span>
+    <h2 id="final-cta-heading">
+      Ready to Have Your <span>Bathroom Fitted in Watford?</span>
+    </h2>
+    <p>Contact BMB Renovation today for a free, no-obligation quote. Whether you need a full suite installed, a new shower fitted, or a complete bathroom transformation — we are right here in Watford and ready to get it done properly.</p>
+    <div class="final-cta-btns">
+      <a href="#quote-form" class="btn btn-gold btn-lg">Get a Free Quote</a>
+      <a href="tel:+447775758717" class="btn btn-ghost btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call +44 7775 758 717
+      </a>
+    </div>
+        <p class="final-trust-line">No obligation — <span>only friendly advice</span>.</p>
+    <p class="final-trust-line">
+      <span>Based right here in Watford</span> &nbsp;•&nbsp; <span>Free quote</span> &nbsp;•&nbsp; <span>No obligation</span> &nbsp;•&nbsp; <span>Bathroom fitting specialists</span>
+    </p>
+  </div>
+</section>
+
+<section class="section" id="quote-form" aria-labelledby="qf-heading">
+  <div class="container">
+    <div class="qc-grid">
+
+      <!-- LEFT: Quote Form -->
+      <div class="qc-form-card reveal">
+        <p class="quote-card-heading">Get Your Free Quote</p>
+        <p class="quote-card-sub">No obligation &middot; Free site visit &middot; Clear written quote</p>
+        <form id="main-quote-form" novalidate>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label class="form-label" for="qf-name">Your Name *</label>
+              <input class="form-input" id="qf-name" name="name" type="text" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="qf-phone">Phone Number *</label>
+              <input class="form-input" id="qf-phone" name="phone" type="tel" placeholder="+44 7XXX XXX XXX" required />
+            </div>
+          </div>
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-email">Email Address</label>
+              <input class="form-input" id="qf-email" name="email" type="email" placeholder="john@example.com" />
+            </div>
+          </div>
+          <div class="form-row form-row-2 mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-project">Project Type</label>
+              <select class="form-select" id="qf-project" name="project">
+                <option value="">Select project type</option>
+                <option>Full Bathroom Renovation</option>
+              <option>Bathroom Fitting / Suite Installation</option>
+              <option>Shower Installation</option>
+              <option>Bathroom Tiling</option>
+              <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="qf-postcode">Location / Postcode</label>
+              <input class="form-input" id="qf-postcode" name="postcode" type="text" placeholder="e.g. WD17 2AB" />
+            </div>
+          </div>
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-message">Tell Us About Your Project</label>
+              <textarea class="form-textarea" id="qf-message" name="message" placeholder="Describe your bathroom fitting project — size, style, any specific requirements..."></textarea>
+            </div>
+          </div>
+          <div class="form-row mt-1">
+            <div class="form-group">
+              <label class="form-label" for="qf-time">Preferred Contact Time</label>
+              <select class="form-select" id="qf-time" name="contact_time">
+                <option value="">Any time</option>
+                <option>Morning (8am&ndash;12pm)</option>
+                <option>Afternoon (12pm&ndash;5pm)</option>
+                <option>Evening (after 5pm)</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">Request Free Quote &rarr;</button>
+          <p class="form-note"><strong>No obligation, only friendly advice.</strong><br />Your details are safe with us. We will only contact you about your enquiry.</p>
+        </form>
+      </div>
+
+      <!-- RIGHT: Get in Touch info -->
+      <div class="reveal">
+        <span class="qc-info-label">Get in Touch</span>
+        <h2 class="qc-info-heading" id="qf-heading">Get a Free Bathroom Fitting Quote in Watford</h2>
+        <p class="qc-info-para">We are based right here in Watford. Tell us about your bathroom fitting and we will arrange a free visit, take a look, and give you a clear, honest, no-obligation quote.</p>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128222;</div>
+          <div>
+            <div class="qc-contact-label">Phone</div>
+            <div class="qc-contact-value"><a href="tel:+447775758717">+44 7775 758 717</a></div>
+          </div>
+        </div>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#9993;</div>
+          <div>
+            <div class="qc-contact-label">Email</div>
+            <div class="qc-contact-value"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></div>
+          </div>
+        </div>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128336;</div>
+          <div>
+            <div class="qc-contact-label">Working Hours</div>
+            <div class="qc-contact-value">Monday &ndash; Saturday: 8:00 AM &ndash; 5:00 PM</div>
+          </div>
+        </div>
+
+        <div class="qc-contact-item">
+          <div class="qc-contact-icon">&#128205;</div>
+          <div>
+            <div class="qc-contact-label">Based In</div>
+            <div class="qc-contact-value">157 Judge Street, Watford, WD24 5AN<br />Serving Watford &amp; surrounding areas</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div>
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;">BMB</span>
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:300;color:var(--gold);"> Renovation</span>
+        </div>
+        <p>We specialise in bespoke home interior renovations, combining elegance and functionality to create timeless living spaces across Watford and the surrounding area.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/people/BMB-Renovation/61560985672329/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/bmb_renovation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">in</a>
+          <a href="https://x.com/bmb_renovation" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">𝕏</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="/services#bathroom-fitting">Bathroom Fitting</a></li>
+          <li><a href="/services#bathroom">Bathroom Renovation</a></li>
+          <li><a href="/services#kitchen">Kitchen Renovation</a></li>
+          <li><a href="/services#painting">Painting &amp; Decorating</a></li>
+          <li><a href="/services#loft">Loft Conversion</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📍</span>
+          <p class="footer-contact-text">157 Judge Street, Watford, Hertfordshire, WD24 5AN</p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">📞</span>
+          <p class="footer-contact-text"><a href="tel:+447775758717">+44 7775 758 717</a></p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">✉️</span>
+          <p class="footer-contact-text"><a href="mailto:info@bmbrenovation.co.uk">info@bmbrenovation.co.uk</a></p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">🕐</span>
+          <p class="footer-contact-text">Mon–Sat: 8:00 AM – 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 BMB Renovation. All Rights Reserved. | <a href="/" style="color:#9CA3AF;">bmbrenovation.co.uk</a></p>
+      <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </div>
+  </div>
+</footer>
+
+<div id="sticky-cta" role="complementary" aria-label="Quick action buttons">
+  <a href="#quote-form" class="sticky-btn sticky-quote">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+    Free Quote
+  </a>
+  <a href="tel:+447775758717" class="sticky-btn sticky-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+</div>6:T1400,
+  // -- Header: always scrolled/white style --
+  const header = document.getElementById('site-header');
+  if (header) {
+    header.classList.add('scrolled');
+    window.addEventListener('scroll', () => { header.classList.add('scrolled'); }, { passive: true });
+  }
+
+  // -- Hamburger --
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  // -- FAQ accordion --
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i) {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+
+  // -- Scroll reveal --
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(function(el) { revealObserver.observe(el); });
+
+  // -- Form submission: POST to Formsubmit.co -> contact@bmbrenovation.co.uk --
+  ['main-quote-form', 'hero-form', 'contact-quote-form'].forEach(function(id) {
+    const form = document.getElementById(id);
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      function val(n) { const el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
+      const name = val('name'), phone = val('phone');
+      if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+      const btn = form.querySelector('[type="submit"]');
+      const orig = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      const payload = JSON.stringify({
+        access_key: 'b2398a20-017d-459d-a1bf-858b83488b97',
+        subject: 'New Quote - BMB Renovation (' + window.location.pathname + ')',
+        from_name: 'BMB Renovation Website',
+        name: name, phone: phone,
+        email: val('email') || '(not provided)',
+        project: val('project') || '(not specified)',
+        postcode: val('postcode') || '(not provided)',
+        message: val('message') || '(no message)',
+        contact_time: val('contact_time') || 'Any time',
+        page_url: window.location.href
+      });
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: payload
+      }).then(function(res) { return res.json(); }).then(function(data) {
+        if (data && (data.success === 'true' || data.success === true)) {
+          // Save to localStorage for admin dashboard
+          try {
+            const quotes = JSON.parse(localStorage.getItem('bmb_quotes') || '[]');
+            quotes.push({
+              id: Date.now().toString(36) + Math.random().toString(36).slice(2,7),
+              timestamp: new Date().toISOString(),
+              name: name, phone: phone,
+              email: val('email') || '(not provided)',
+              project: val('project') || '(not specified)',
+              postcode: val('postcode') || '(not provided)',
+              message: val('message') || '(no message)',
+              contact_time: val('contact_time') || 'Any time',
+              page: window.location.pathname,
+              status: 'new'
+            });
+            localStorage.setItem('bmb_quotes', JSON.stringify(quotes));
+          } catch(e) {}
+          try { if (typeof window !== 'undefined' && typeof window.gtag === 'function') { window.gtag('event', 'conversion', { 'send_to': 'AW-18105187591/0oU2CLXHoKgcEIf6nLlD' }); } } catch(e) {}
+          form.innerHTML = '<div style="text-align:center;padding:3rem 1rem;"><div style="font-size:3rem;margin-bottom:1rem;">&#x2705;</div><h3 style="font-family:\'Plus Jakarta Sans\',sans-serif;color:#111827;margin-bottom:0.75rem;">Thank You, ' + name + '!</h3><p style="color:#6B7280;font-size:0.9375rem;line-height:1.7;max-width:480px;margin:0 auto;">We have received your enquiry and will be in touch shortly.</p><p style="color:#9CA3AF;font-size:0.875rem;margin-top:1.25rem;font-style:italic;">You can get in touch yourself anytime before our team calls you back.</p></div>';
+        } else { throw new Error('failed'); }
+      }).catch(function() {
+        if (btn) { btn.disabled = false; btn.textContent = orig; }
+        alert('Something went wrong. Please call us on +44 7775 758 717 or email admin@bmbrenovation.co.uk');
+      });
+    });
+  });
+9:T4d2,{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"BMB Renovation","url":"https://bmbrenovation.co.uk","logo":"https://bmbrenovation.co.uk/favicon.svg","image":"https://bmbrenovation.co.uk/og-image.png","description":"BMB Renovation offers premium home, kitchen & bathroom renovation services in Watford, London & Hertfordshire. 15+ years of experience. Free consultation.","telephone":"+447775758717","email":"info@bmbrenovation.co.uk","priceRange":"££","address":{"@type":"PostalAddress","streetAddress":"157 Judge Street","addressLocality":"Watford","postalCode":"WD24 5AN","addressRegion":"Hertfordshire","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.6549,"longitude":-0.3978},"areaServed":["Watford","Bushey","Rickmansworth","St Albans","Hemel Hempstead","Borehamwood","Harrow","Croxley Green","Luton","Bedford","London"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"sameAs":["https://www.facebook.com/bmbrenovation","https://www.instagram.com/bmbrenovation"]}0:["-SetYf-Jyr8-cYNEDHzSW",[[["",{"children":["bathroom-fitting-watford",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["bathroom-fitting-watford",{"children":["__PAGE__",{},[["$L1",[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}],["$","$L5",null,{"code":"$6"}]],null],null],null]},[null,["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","bathroom-fitting-watford","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/cce00b8a7d06f877.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en-GB","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"src":"https://apps.abacus.ai/chatllm/appllm-lib.js"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$9"}}],["$","$La",null,{"strategy":"afterInteractive","src":"https://www.googletagmanager.com/gtag/js?id=AW-18105187591"}],["$","$La",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'AW-18105187591');\n          "}]]}],["$","body",null,{"className":"__variable_0d7163 __variable_646807 __variable_3c557b font-sans","children":["$","$Lb",null,{"attribute":"class","defaultTheme":"light","enableSystem":false,"disableTransitionOnChange":true,"children":[["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}],["$","$Lc",null,{}],["$","$Ld",null,{}]]}]}]]}]],null],null],["$Le",null]]]]
+e:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Bathroom Fitting Watford | Free Quote | BMB Renovation"}],["$","meta","3",{"name":"description","content":"Expert bathroom fitting in Watford. BMB Renovation is based right here in Watford — shower fitting, bath fitting, full suite installation, tiling and flooring. Free no-obligation quote. Call +44 7775 758 717."}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","meta","5",{"name":"googlebot","content":"index, follow"}],["$","link","6",{"rel":"canonical","href":"https://bmbrenovation.co.uk/bathroom-fitting-watford"}],["$","meta","7",{"property":"og:title","content":"Bathroom Fitting Watford | Free Quote | BMB Renovation"}],["$","meta","8",{"property":"og:description","content":"Expert bathroom fitting in Watford. BMB Renovation is based right here in Watford — shower fitting, bath fitting, full suite installation, tiling and flooring. Free no-obligation quote. Call +44 7775 758 717."}],["$","meta","9",{"property":"og:image","content":"https://bmbrenovation.co.uk/images/03_luxury_bathroom.jpg"}],["$","meta","10",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","11",{"name":"twitter:title","content":"BMB Renovation | Premium Home Renovation & Building Services"}],["$","meta","12",{"name":"twitter:description","content":"BMB Renovation offers premium home, kitchen & bathroom renovation services in Watford, London & Hertfordshire."}],["$","meta","13",{"name":"twitter:image","content":"https://bmbrenovation.co.uk/og-image.png"}],["$","link","14",{"rel":"shortcut icon","href":"/favicon.svg"}],["$","link","15",{"rel":"icon","href":"/favicon.svg"}],["$","meta","16",{"name":"next-size-adjust"}]]
+1:null

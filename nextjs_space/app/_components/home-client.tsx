@@ -72,13 +72,24 @@ export default function HomeClient() {
       {/* HERO */}
       <section className="relative h-screen min-h-[600px] max-h-[900px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src="/images/01_hero_luxury_interior.webp"
-            alt="Luxury home interior renovation by BMB Renovation"
-            fill
-            className="object-cover"
-            priority
-          />
+          <picture>
+            <source
+              media="(max-width: 640px)"
+              srcSet="/images/01_hero_luxury_interior_mobile.webp"
+              type="image/webp"
+            />
+            <source
+              srcSet="/images/01_hero_luxury_interior.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/01_hero_luxury_interior.webp"
+              alt="Luxury home interior renovation by BMB Renovation"
+              className="w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30" />
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 w-full">
@@ -151,12 +162,19 @@ export default function HomeClient() {
             <AnimatedSection direction="left">
               <div className="relative">
                 <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/15_elegant_hallway.webp"
-                    alt="BMB Renovation elegant interior design"
-                    fill
-                    className="object-cover"
-                  />
+                  <picture>
+                    <source
+                      media="(max-width: 640px)"
+                      srcSet="/images/15_elegant_hallway_mobile.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      src="/images/15_elegant_hallway.webp"
+                      alt="BMB Renovation elegant interior design"
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-[#C8A97E] text-white p-6 rounded-lg shadow-xl hidden sm:block">
                   <div className="text-3xl font-display font-bold"><Counter end={15} suffix="+" /></div>
@@ -201,12 +219,19 @@ export default function HomeClient() {
               <AnimatedSection key={i} delay={i * 0.1}>
                 <Link href={service?.href ?? '/services'} className="group block">
                   <div className="relative aspect-[16/10] rounded-lg overflow-hidden">
-                    <Image
-                      src={service?.img ?? '/images/01_hero_luxury_interior.webp'}
-                      alt={service?.title ?? 'Service'}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    <picture>
+                      <source
+                        media="(max-width: 640px)"
+                        srcSet={service?.img ? service.img.replace('.webp', '_mobile.webp') : '/images/01_hero_luxury_interior_mobile.webp'}
+                        type="image/webp"
+                      />
+                      <img
+                        src={service?.img ?? '/images/01_hero_luxury_interior.webp'}
+                        alt={service?.title ?? 'Service'}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </picture>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <div className="flex items-center gap-3 mb-2">
@@ -274,12 +299,19 @@ export default function HomeClient() {
             </AnimatedSection>
             <AnimatedSection direction="right">
               <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
-                <Image
-                  src="/images/13_modern_kitchen_bright.webp"
-                  alt="Modern kitchen interior by BMB Renovation"
-                  fill
-                  className="object-cover"
-                />
+                <picture>
+                  <source
+                    media="(max-width: 640px)"
+                    srcSet="/images/13_modern_kitchen_bright_mobile.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/images/13_modern_kitchen_bright.webp"
+                    alt="Modern kitchen interior by BMB Renovation"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
             </AnimatedSection>
           </div>
@@ -349,12 +381,19 @@ export default function HomeClient() {
       {/* CTA */}
       <section className="py-20 sm:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src="/images/06_hardwood_flooring.webp"
-            alt="BMB Renovation premium interiors"
-            fill
-            className="object-cover"
-          />
+          <picture>
+            <source
+              media="(max-width: 640px)"
+              srcSet="/images/06_hardwood_flooring_mobile.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/06_hardwood_flooring.webp"
+              alt="BMB Renovation premium interiors"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gray-900/85" />
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 text-center">

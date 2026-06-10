@@ -20,5 +20,26 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-  return <HomeClient />
+  return (
+    <>
+      <link
+        rel="preload"
+        href="/images/01_hero_luxury_interior_mobile.webp"
+        as="image"
+        type="image/webp"
+        media="(max-width: 640px)"
+        fetchPriority="high"
+      />
+      <link
+        rel="preload"
+        href="/images/01_hero_luxury_interior.webp"
+        as="image"
+        type="image/webp"
+        media="(min-width: 641px)"
+        fetchPriority="high"
+      />
+      <HomeClient />
+    </>
+  )
 }
+

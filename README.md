@@ -93,29 +93,49 @@ npm run blog:run -- --mock  # no API key: template post, for testing the pipelin
 ```
 
 24/7 automation: the repo includes `.github/workflows/autoblog.yml` which runs
-the engine **daily at 06:23 UTC** and commits new content. To enable it, add
+the engine **hourly** and commits new content (it only generates when a post is
+due per your Publishing Schedule setting, and only rebuilds + commits when
+content actually changed). To enable it, add
 `OPENAI_API_KEY` as a repo secret (GitHub → Settings → Secrets and variables →
-Actions). The live site picks new posts up on the next rebuild & deploy
-(automatic if your host deploys from GitHub; otherwise add your FTP/SSH deploy
-step to the workflow).
+Actions). The live site picks new posts up via the cPanel cron deploy below.
 
 ### Admin panel
 
 `/admin/blog` (same access code as `/admin/quotes`) shows engine activity, the
-keyword pool size, and every post with preview. To publish / unpublish / delete
-posts or trigger generation from the panel, paste a **GitHub fine-grained
-personal access token** for the repo with **Contents: Read & write** and
-**Actions: Read & write** — it is kept in the browser tab's session storage
-only, never in code. Without a token the panel is read-only.
+keyword pool size, and every post with preview. Connecting a **GitHub
+fine-grained personal access token** (repo scope: **Contents: Read & write** +
+**Actions: Read & write**) unlocks the controls. The token is remembered in the
+browser's localStorage — renew it from the same spot before its 90-day expiry.
+
+Controls:
+
+- **Publishing Schedule** — posts per day, `0`–`24`. `0` pauses generation;
+  any other value is evenly spaced through the day (e.g. `8` = one post every
+  3 hours). Saved to `public/blog-content/settings.json`; the hourly workflow
+  run only generates when a post is due.
+- **Generate a Post Now** — forces one post immediately, ignoring the schedule.
+- **Publish / Unpublish / Delete** per post (goes live at the next build).
+- **Performance** — paste a GA4 Measurement ID (`G-…`) to enable analytics
+  site-wide, and a Looker Studio embed URL to see the report (search vs.
+  own-site visits) inside the panel.
+- **Search Indexing** — one-click `site:` checks per post, plus links to
+  Google Search Console (submit `sitemap.xml` there once; posts take
+  days–weeks to appear in Google).
+
+Without a token the panel is fully read-only.
 
 ### Configuration
 
 Everything is controlled from `nextjs_space/scripts/autoblog/config.json`:
 
-- `model`, `temperature`, `postsPerRun`, `autoPublish` (false = review drafts first)
+- `writerModel` / `reviewModel` — drafting (high-volume) and fact-check models
+- `temperature`, `postsPerRun`, `autoPublish` (false = review drafts first)
 - `keywordSeeds` — services, locations and modifiers used for research
 - `approvedFacts` — the ONLY claims the AI may make about the company
 - `cta` — the closing pitch block appended to every post
+
+Runtime knobs (schedule, GA4 id, analytics embed) live in
+`public/blog-content/settings.json` — edit from the admin panel, not by hand.
 
 ### Honest limitations
 

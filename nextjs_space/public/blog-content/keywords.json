@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-30T10:28:36.436Z",
-  "nextSeedIndex": 36,
+  "updatedAt": "2026-07-30T10:32:44.607Z",
+  "nextSeedIndex": 48,
   "pool": [
     {
       "keyword": "kitchen renovation cost watford",
@@ -39,6 +39,12 @@
       "firstSeen": "2026-07-30T07:45:05.938Z"
     },
     {
+      "keyword": "kitchen installation cost uk",
+      "score": 5,
+      "source": "kitchen fitting Hemel Hempstead",
+      "firstSeen": "2026-07-30T10:32:42.869Z"
+    },
+    {
       "keyword": "kitchen fitters watford",
       "score": 4,
       "source": "kitchen fitting Watford",
@@ -61,6 +67,12 @@
       "score": 4,
       "source": "kitchen fitting St Albans",
       "firstSeen": "2026-07-30T10:28:35.152Z"
+    },
+    {
+      "keyword": "kitchen fitters hemel hempstead",
+      "score": 4,
+      "source": "kitchen fitting Hemel Hempstead",
+      "firstSeen": "2026-07-30T10:32:42.869Z"
     },
     {
       "keyword": "fitted kitchens watford",

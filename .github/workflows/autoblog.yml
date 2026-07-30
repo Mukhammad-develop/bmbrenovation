@@ -32,7 +32,9 @@ jobs:
 
       - name: Install dependencies
         working-directory: nextjs_space
-        run: npm ci
+        # --legacy-peer-deps: the project has a pre-existing @typescript-eslint
+        # peer conflict; local installs already rely on this flag.
+        run: npm ci --legacy-peer-deps
 
       - name: Run autoblog engine
         working-directory: nextjs_space

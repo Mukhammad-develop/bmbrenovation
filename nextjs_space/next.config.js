@@ -26,6 +26,20 @@ const nextConfig = {
         async headers() {
     return [
       {
+        // The host's nginx proxy cache honors Next's default
+        // "s-maxage=31536000" on prerendered pages and caches HTML for a
+        // year — new blog posts would never appear. Force revalidation on
+        // all page routes (paths without a file extension, excluding
+        // _next/images which keep their immutable caching below).
+        source: '/:path((?!_next/|images/)[^.]*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+        ],
+      },
+      {
         // Apply security & cache headers to all routes
         source: '/(.*)',
         headers: [

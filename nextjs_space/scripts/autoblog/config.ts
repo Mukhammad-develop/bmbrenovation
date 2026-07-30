@@ -6,7 +6,8 @@ import type { KeywordSeeds } from './keywords'
 
 export interface AutoBlogConfig {
   siteUrl: string
-  model: string
+  writerModel: string // high-volume drafting + topic selection (e.g. gpt-5.6-luna)
+  reviewModel: string // stronger model for the fact-check pass (e.g. gpt-5.6-terra)
   temperature: number
   postsPerRun: number
   autoPublish: boolean

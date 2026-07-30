@@ -1,6 +1,7 @@
 {
   "siteUrl": "https://bmbrenovation.co.uk",
-  "model": "gpt-4o-mini",
+  "writerModel": "gpt-5.6-luna",
+  "reviewModel": "gpt-5.6-terra",
   "temperature": 0.7,
   "postsPerRun": 1,
   "autoPublish": true,

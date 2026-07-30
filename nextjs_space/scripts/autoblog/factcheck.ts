@@ -26,7 +26,7 @@ export async function factCheckDraft(
 ): Promise<{ blocks: Draft['blocks']; faq: Draft['faq']; report: BlogPost['factCheck'] }> {
   const result = await chatJson<FactCheckResult>({
     apiKey,
-    model: config.model,
+    model: config.reviewModel,
     temperature: 0.2,
     maxTokens: 6000,
     system: `You are a meticulous fact-checker for a UK home renovation company's blog.

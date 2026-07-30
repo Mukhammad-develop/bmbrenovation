@@ -33,7 +33,7 @@ export async function selectTopic(
 ): Promise<{ keyword: string; angle: string }> {
   const result = await chatJson<{ keyword: string; angle: string }>({
     apiKey,
-    model: config.model,
+    model: config.writerModel,
     temperature: 0.5,
     maxTokens: 300,
     system:
@@ -62,7 +62,7 @@ export async function writeDraft(
 
   const draft = await chatJson<Draft>({
     apiKey,
-    model: config.model,
+    model: config.writerModel,
     temperature: config.temperature,
     maxTokens: 6000,
     system: WRITER_SYSTEM,
@@ -152,6 +152,6 @@ export function assemblePost(
     blocks: enforceCtas(draft.blocks, config),
     faq: draft.faq,
     factCheck,
-    generatedBy: `autoblog/1.0 (${config.model})`,
+    generatedBy: `autoblog/1.0 (writer: ${config.writerModel}, review: ${config.reviewModel})`,
   }
 }

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-30T06:49:03.422Z",
-  "nextSeedIndex": 0,
+  "updatedAt": "2026-07-30T07:03:28.943Z",
+  "nextSeedIndex": 12,
   "pool": [
     {
       "keyword": "kitchen renovation cost watford",
@@ -9,16 +9,40 @@
       "firstSeen": "2026-07-30T06:49:03.421Z"
     },
     {
+      "keyword": "how much does a loft conversion cost uk",
+      "score": 7,
+      "source": "mock",
+      "firstSeen": "2026-07-30T06:49:03.422Z"
+    },
+    {
       "keyword": "bathroom fitting ideas for small bathrooms",
       "score": 6,
       "source": "mock",
       "firstSeen": "2026-07-30T06:49:03.422Z"
     },
     {
-      "keyword": "how much does a loft conversion cost uk",
-      "score": 7,
-      "source": "mock",
-      "firstSeen": "2026-07-30T06:49:03.422Z"
+      "keyword": "how much does kitchen fitting cost uk",
+      "score": 5,
+      "source": "kitchen fitting Watford",
+      "firstSeen": "2026-07-30T07:03:21.935Z"
+    },
+    {
+      "keyword": "how much does a kitchen fitter cost uk",
+      "score": 5,
+      "source": "kitchen fitting Watford",
+      "firstSeen": "2026-07-30T07:03:21.935Z"
+    },
+    {
+      "keyword": "kitchen fitters watford",
+      "score": 4,
+      "source": "kitchen fitting Watford",
+      "firstSeen": "2026-07-30T07:03:21.934Z"
+    },
+    {
+      "keyword": "fitted kitchens watford",
+      "score": 1,
+      "source": "kitchen fitting Watford",
+      "firstSeen": "2026-07-30T07:03:21.935Z"
     }
   ]
 }

@@ -128,6 +128,49 @@ Everything is controlled from `nextjs_space/scripts/autoblog/config.json`:
 
 ---
 
+## 🚀 Automated Deployment (cPanel / unlimitedwebhosting)
+
+The GitHub Action can also **build the static site and upload it to cPanel
+automatically** after every content run — fully hands-free. Building Next.js on
+the cPanel server itself is not viable on shared hosting (memory limits), so
+the Action builds the site and uploads only the finished static files via FTPS.
+
+### One-time setup (~5 minutes)
+
+1. In cPanel → **FTP Accounts**, create an FTP account (or use your main
+   cPanel login).
+2. In the GitHub repo → **Settings → Secrets and variables → Actions**:
+   - **Variables** tab → `FTP_HOST` = your server hostname (e.g.
+     `ftp.bmbrenovation.co.uk` or the server name from your welcome email)
+   - **Secrets** tab → `FTP_USERNAME` and `FTP_PASSWORD` = the FTP credentials
+3. Done. The `deploy` job in `.github/workflows/autoblog.yml` activates
+   automatically on the next run (it stays dormant until `FTP_HOST` exists).
+
+### What happens each run
+
+1. Engine generates a new post and commits it.
+2. `deploy` job builds the static export (`STATIC_EXPORT=true npm run build`
+   → `nextjs_space/out/`).
+3. [FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action) syncs
+   `out/` to `public_html/` over FTPS — only changed files are uploaded after
+   the first (large) sync. `.well-known/` (SSL validation) is never touched,
+   and nothing is deleted server-side.
+
+### Notes
+
+- Deploys to `public_html/` by default — if your site lives in a subdirectory
+  or addon-domain folder, adjust `server-dir` in the workflow.
+- If FTPS fails on your server, change `protocol: ftps` to `ftp` in the
+  workflow (less secure — try FTPS first).
+- If you have SSH access on your plan, the deploy can be switched to faster
+  `rsync` over SSH instead — ask and it can be swapped in.
+- Static export can't send the security headers from `next.config.js`; if you
+  want them on cPanel, they can be replicated in `.htaccess`.
+- To deploy manually instead: `cd nextjs_space && STATIC_EXPORT=true npm run build`,
+  then upload the contents of `out/` to `public_html/`.
+
+---
+
 ## 📁 Project Structure
 
 ```

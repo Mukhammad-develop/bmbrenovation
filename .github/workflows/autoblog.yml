@@ -53,3 +53,44 @@ jobs:
             git commit -m "autoblog: generated content $(date -u +%Y-%m-%d)"
             git push
           fi
+
+  # Builds the static site and uploads it to cPanel (unlimitedwebhosting).
+  # Dormant until these are configured on the repo:
+  #   variable FTP_HOST     (Settings → Secrets and variables → Actions → Variables)
+  #   secrets  FTP_USERNAME, FTP_PASSWORD
+  deploy:
+    needs: generate
+    if: vars.FTP_HOST != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: nextjs_space/package-lock.json
+
+      - name: Install dependencies
+        working-directory: nextjs_space
+        run: npm ci --legacy-peer-deps
+
+      - name: Build static export
+        working-directory: nextjs_space
+        env:
+          STATIC_EXPORT: 'true'
+        run: npm run build
+
+      - name: Deploy to cPanel via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ vars.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: nextjs_space/out/
+          server-dir: public_html/
+          # Never touch SSL validation files or anything outside the site files.
+          exclude: |
+            .well-known/**

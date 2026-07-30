@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
+// STATIC_EXPORT=true (used by the deploy workflow) builds a plain-HTML static
+// export into out/ for cPanel upload. headers() is incompatible with export
+// mode, so it is skipped there (set equivalent rules via .htaccess on cPanel).
+const isExport = !!process.env.STATIC_EXPORT;
+
 const nextConfig = {
-  // Comment out or remove 'export' if running as a persistent Node.js App on cPanel
-  // output: 'export',
+  ...(isExport ? { output: 'export' } : {}),
   images: {
     unoptimized: true,
   },
@@ -16,7 +20,10 @@ const nextConfig = {
     cpus: 1,
     optimizePackageImports: ['lucide-react'],
   },
-  async headers() {
+  ...(isExport
+    ? {}
+    : {
+        async headers() {
     return [
       {
         // Apply security & cache headers to all routes
@@ -68,7 +75,8 @@ const nextConfig = {
         ],
       },
     ];
-  },
+        },
+      }),
 };
 
 module.exports = nextConfig;

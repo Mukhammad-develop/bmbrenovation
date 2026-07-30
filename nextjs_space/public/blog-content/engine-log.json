@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-07-30T10:41:18.737Z",
+      "finishedAt": "2026-07-30T10:41:59.464Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "how much does it cost to replace a kitchen tap uk",
+      "slug": "how-much-does-it-cost-to-replace-a-kitchen-tap-uk",
+      "postStatus": "published",
+      "claimsChecked": 58,
+      "claimsRemoved": 10
+    },
+    {
       "startedAt": "2026-07-30T10:32:39.120Z",
       "finishedAt": "2026-07-30T10:33:24.340Z",
       "mode": "openai",

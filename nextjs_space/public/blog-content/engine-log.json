@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-07-30T10:28:31.008Z",
+      "finishedAt": "2026-07-30T10:29:10.918Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "how much does a loft conversion cost uk",
+      "slug": "how-much-does-a-loft-conversion-cost-uk",
+      "postStatus": "published",
+      "claimsChecked": 48,
+      "claimsRemoved": 8
+    },
+    {
       "startedAt": "2026-07-30T07:45:01.286Z",
       "finishedAt": "2026-07-30T07:45:44.747Z",
       "mode": "openai",

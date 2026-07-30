@@ -107,8 +107,10 @@ export default function AdminBlogPage() {
 
   const [index, setIndex] = useState<BlogIndex | null>(null)
   const [runs, setRuns] = useState<EngineRun[]>([])
+  const [allRuns, setAllRuns] = useState<EngineRun[]>([])
   const [keywordCount, setKeywordCount] = useState<number>(0)
   const [loadError, setLoadError] = useState('')
+  const [gscInput, setGscInput] = useState('')
 
   const [ghToken, setGhToken] = useState('')
   const [ghInput, setGhInput] = useState('')
@@ -135,11 +137,13 @@ export default function AdminBlogPage() {
       ])
       setIndex(idx)
       setRuns((log.runs || []).slice(0, 10))
+      setAllRuns(log.runs || [])
       setKeywordCount((kw as KeywordPool).pool?.length ?? 0)
       setSettings(st)
       setFreqInput(String(st.postsPerDay ?? 1))
       setGa4Input(st.ga4MeasurementId || '')
       setEmbedInput(st.analyticsEmbedUrl || '')
+      setGscInput(st.gscVerification || '')
       setLoadError('')
     } catch {
       setLoadError('Could not load blog content files. The engine may not have run yet on this deployment.')
@@ -340,6 +344,21 @@ export default function AdminBlogPage() {
   const lastRun = runs[0]
   const statusColor: Record<string, string> = { ok: '#22c55e', 'no-topics': '#f59e0b', 'not-due': '#94a3b8', error: '#f87171', published: '#22c55e', draft: '#f59e0b' }
 
+  // ── RESULTS COMPUTATIONS ───────────────────────────────────────────────────
+  const okRuns = allRuns.filter((r) => r.status === 'ok')
+  const nowMs = Date.now()
+  const last14 = Array.from({ length: 14 }, (_, i) => {
+    const d = new Date(nowMs - (13 - i) * 86400000)
+    const key = d.toISOString().slice(0, 10)
+    return { key, label: `${d.getUTCDate()}/${d.getUTCMonth() + 1}`, count: okRuns.filter((r) => r.startedAt.startsWith(key)).length }
+  })
+  const maxDaily = Math.max(1, ...last14.map((d) => d.count))
+  const last7Total = last14.slice(-7).reduce((s, d) => s + d.count, 0)
+  const claimsChecked = allRuns.reduce((s, r) => s + (r.claimsChecked || 0), 0)
+  const claimsRemoved = allRuns.reduce((s, r) => s + (r.claimsRemoved || 0), 0)
+  const oldestPost = posts.length > 0 ? posts[posts.length - 1].publishedAt : null
+  const daysLive = oldestPost ? Math.max(1, Math.ceil((nowMs - new Date(oldestPost).getTime()) / 86400000)) : 0
+
   const btn = (bg: string, border: string, color: string): React.CSSProperties => ({
     padding: '0.4rem 0.875rem', borderRadius: '0.5rem', fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer',
     background: bg, border: `1px solid ${border}`, color,
@@ -393,6 +412,41 @@ export default function AdminBlogPage() {
               <div style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.45)', marginTop: '0.25rem' }}>{s.label}</div>
             </div>
           ))}
+        </div>
+
+        {/* Results */}
+        <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '1rem', padding: '1.5rem', marginBottom: '2rem' }}>
+          <h3 style={{ margin: '0 0 1rem', fontSize: '1rem', fontWeight: 700 }}>📈 Auto-SEO Results</h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(130px,1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+            {[
+              { label: 'Days live', value: daysLive, color: '#C8A97E' },
+              { label: 'Posts generated', value: okRuns.length, color: '#22c55e' },
+              { label: 'Posts/day (7d avg)', value: (last7Total / 7).toFixed(1), color: '#60a5fa' },
+              { label: 'Claims fact-checked', value: claimsChecked, color: '#a78bfa' },
+              { label: 'Unsafe claims removed', value: claimsRemoved, color: '#f59e0b' },
+            ].map((s) => (
+              <div key={s.label} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '0.75rem', padding: '0.875rem' }}>
+                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: s.color, lineHeight: 1 }}>{s.value}</div>
+                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', marginTop: '0.35rem' }}>{s.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Posts per day — last 14 days</div>
+          <div style={{ display: 'flex', alignItems: 'flex-end', gap: '4px' }}>
+            {last14.map((d) => (
+              <div key={d.key} title={`${d.label}: ${d.count} post${d.count === 1 ? '' : 's'}`} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px' }}>
+                <span style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.55)', minHeight: '0.9rem' }}>{d.count > 0 ? d.count : ''}</span>
+                <div style={{ width: '100%', height: `${Math.max(4, (d.count / maxDaily) * 56)}px`, borderRadius: '3px', background: d.count > 0 ? '#C8A97E' : 'rgba(255,255,255,0.08)' }} />
+                <span style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.3)' }}>{d.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.08)', fontSize: '0.8125rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap', color: 'rgba(255,255,255,0.55)' }}>
+            <span>{settings?.ga4MeasurementId ? '✅ GA4 connected — visits tracked' : '⚠️ GA4 not set up — visit stats unavailable (Performance section below)'}</span>
+            <span>{settings?.gscVerification ? '✅ Search Console verified' : '⚠️ Search Console not verified (Search Indexing section below)'}</span>
+          </div>
         </div>
 
         {/* Controls: generate + GitHub token */}
@@ -555,6 +609,24 @@ export default function AdminBlogPage() {
             <a href="https://search.google.com/search-console" target="_blank" rel="noreferrer" style={{ ...btn('rgba(255,255,255,0.06)', 'rgba(255,255,255,0.12)', '#fff'), textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
               Open Search Console
             </a>
+          </div>
+
+          <div style={{ marginTop: '1.25rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <p style={{ margin: '0 0 0.625rem', fontSize: '0.8125rem', color: 'rgba(255,255,255,0.45)' }}>
+              <strong style={{ color: '#C8A97E' }}>Verify your site in Search Console</strong> (one-time, unlocks impressions/clicks/position per post): Add property → URL prefix <code>https://bmbrenovation.co.uk</code> → choose the <strong>HTML tag</strong> method → copy only the long code inside <code>content="…"</code> → paste it here. It goes live with the next build, then click <strong>Verify</strong> in Search Console.
+            </p>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <input
+                type="text"
+                value={gscInput}
+                onChange={(e) => setGscInput(e.target.value)}
+                placeholder="Search Console verification code"
+                style={{ flex: 1, minWidth: '200px', padding: '0.625rem 0.875rem', borderRadius: '0.5rem', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontSize: '0.8125rem', outline: 'none' }}
+              />
+              <button onClick={() => saveSettings({ gscVerification: gscInput.trim() })} disabled={settingsBusy || !ghToken} style={{ padding: '0.625rem 1rem', borderRadius: '0.5rem', background: 'rgba(200,169,126,0.15)', border: '1px solid rgba(200,169,126,0.35)', color: '#C8A97E', fontSize: '0.8125rem', fontWeight: 600, cursor: ghToken ? 'pointer' : 'not-allowed' }}>
+                Save verification
+              </button>
+            </div>
           </div>
         </div>
 

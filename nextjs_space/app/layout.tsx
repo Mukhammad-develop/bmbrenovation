@@ -12,19 +12,23 @@ export const dynamic = 'force-static'
 
 // Optional GA4 (in addition to the Google Ads tag below): set ga4MeasurementId
 // in public/blog-content/settings.json from /admin/blog; injected at build time.
-function getGa4Id(): string {
+function getBlogSettings(): { ga4MeasurementId: string; gscVerification: string } {
   try {
     const s = JSON.parse(
       fs.readFileSync(path.join(process.cwd(), 'public', 'blog-content', 'settings.json'), 'utf-8'),
     )
-    const id = typeof s.ga4MeasurementId === 'string' ? s.ga4MeasurementId.trim() : ''
-    return /^G-[A-Z0-9]+$/i.test(id) ? id : ''
+    return {
+      ga4MeasurementId: typeof s.ga4MeasurementId === 'string' ? s.ga4MeasurementId.trim() : '',
+      gscVerification: typeof s.gscVerification === 'string' ? s.gscVerification.trim() : '',
+    }
   } catch {
-    return ''
+    return { ga4MeasurementId: '', gscVerification: '' }
   }
 }
 
-const ga4Id = getGa4Id()
+const blogSettings = getBlogSettings()
+const ga4Id = /^G-[A-Z0-9]+$/i.test(blogSettings.ga4MeasurementId) ? blogSettings.ga4MeasurementId : ''
+const gscId = blogSettings.gscVerification
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-sans' })
 const jakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-display' })
@@ -46,6 +50,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://bmbrenovation.co.uk',
   },
+  // Google Search Console site verification (set from /admin/blog).
+  ...(gscId ? { verification: { google: gscId } } : {}),
   openGraph: {
     type: 'website',
     locale: 'en_GB',

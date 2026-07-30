@@ -72,6 +72,7 @@ const DEFAULT_SETTINGS: BlogSettings = {
   postsPerDay: 1,
   ga4MeasurementId: '',
   analyticsEmbedUrl: '',
+  gscVerification: '',
   updatedAt: new Date().toISOString(),
 }
 

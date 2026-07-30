@@ -85,5 +85,6 @@ export interface BlogSettings {
   postsPerDay: number
   ga4MeasurementId: string // e.g. "G-XXXXXXX" — empty = GA4 disabled
   analyticsEmbedUrl: string // Looker Studio embed URL shown in the admin panel
+  gscVerification: string // Google Search Console HTML meta verification token
   updatedAt: string
 }

@@ -45,6 +45,7 @@ function b64encode(str: string): string {
 
 async function gh(token: string, path: string, options: RequestInit = {}) {
   const res = await fetch(`https://api.github.com${path}`, {
+    cache: 'no-store',
     ...options,
     headers: {
       Accept: 'application/vnd.github+json',
@@ -61,7 +62,7 @@ async function gh(token: string, path: string, options: RequestInit = {}) {
 }
 
 async function ghGetFile(token: string, path: string): Promise<{ sha: string; content: string }> {
-  const data = await gh(token, `/repos/${GH_REPO}/contents/${path}?ref=${GH_BRANCH}`)
+  const data = await gh(token, `/repos/${GH_REPO}/contents/${path}?ref=${GH_BRANCH}&t=${Date.now()}`)
   const content = decodeURIComponent(escape(atob((data.content || '').replace(/\n/g, ''))))
   return { sha: data.sha, content }
 }
@@ -71,6 +72,23 @@ async function ghPutFile(token: string, path: string, content: string, sha: stri
     method: 'PUT',
     body: JSON.stringify({ message, content: b64encode(content), sha, branch: GH_BRANCH }),
   })
+}
+
+// Read-modify-write with conflict retry: another writer (engine run, second
+// tab) may bump the file between our read and write → GitHub answers 409.
+async function ghUpdateFile(token: string, path: string, message: string, mutate: (content: string) => string) {
+  let lastErr: any
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const file = await ghGetFile(token, path)
+      await ghPutFile(token, path, mutate(file.content), file.sha, message)
+      return
+    } catch (err: any) {
+      lastErr = err
+      if (!/409/.test(err?.message || '')) throw err
+    }
+  }
+  throw lastErr
 }
 
 async function ghDeleteFile(token: string, path: string, sha: string, message: string) {
@@ -181,10 +199,11 @@ export default function AdminBlogPage() {
     }
     setSettingsBusy(true)
     try {
-      const file = await ghGetFile(ghToken, SETTINGS_PATH)
-      const current = JSON.parse(file.content)
-      const updated = { ...current, ...patch, updatedAt: new Date().toISOString() }
-      await ghPutFile(ghToken, SETTINGS_PATH, JSON.stringify(updated, null, 2) + '\n', file.sha, 'autoblog(admin): update settings')
+      let updated: any = null
+      await ghUpdateFile(ghToken, SETTINGS_PATH, 'autoblog(admin): update settings', (content) => {
+        updated = { ...JSON.parse(content), ...patch, updatedAt: new Date().toISOString() }
+        return JSON.stringify(updated, null, 2) + '\n'
+      })
       setSettings(updated)
       setNotice('Settings saved — live after the next site rebuild & deploy (up to ~15 min).')
     } catch (err: any) {
@@ -194,11 +213,10 @@ export default function AdminBlogPage() {
     }
   }
 
-  // Commit a new index.json to GitHub.
+  // Commit a new index.json to GitHub (with conflict retry).
   const commitIndex = async (updated: BlogIndex, message: string) => {
     if (!ghToken) throw new Error('Add a GitHub token first')
-    const file = await ghGetFile(ghToken, INDEX_PATH)
-    await ghPutFile(ghToken, INDEX_PATH, JSON.stringify(updated, null, 2) + '\n', file.sha, message)
+    await ghUpdateFile(ghToken, INDEX_PATH, message, () => JSON.stringify(updated, null, 2) + '\n')
   }
 
   const setStatus = async (slug: string, status: 'draft' | 'published') => {

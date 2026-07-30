@@ -1,0 +1,53 @@
+name: AutoBlog Engine
+
+# Runs the autoblog engine daily and commits the generated content back.
+# Can also be started manually (Actions tab → AutoBlog Engine → Run workflow)
+# or from the site's /admin/blog panel via workflow_dispatch.
+#
+# Required repo secret: OPENAI_API_KEY
+#
+# Note: this commits new posts into the repo. The live site picks them up on
+# the next build & deploy (automatic if your host deploys from GitHub;
+# otherwise extend this workflow with your FTP/SSH deploy step).
+
+on:
+  schedule:
+    - cron: '23 6 * * *' # daily at 06:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: nextjs_space/package-lock.json
+
+      - name: Install dependencies
+        working-directory: nextjs_space
+        run: npm ci
+
+      - name: Run autoblog engine
+        working-directory: nextjs_space
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: npm run blog:run
+
+      - name: Commit generated content
+        run: |
+          git config user.name "bmb-autoblog[bot]"
+          git config user.email "autoblog@bmbrenovation.co.uk"
+          git add nextjs_space/public/blog-content nextjs_space/public/sitemap.xml
+          if git diff --cached --quiet; then
+            echo "No new content generated."
+          else
+            git commit -m "autoblog: generated content $(date -u +%Y-%m-%d)"
+            git push
+          fi

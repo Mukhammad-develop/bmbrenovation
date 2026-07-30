@@ -12,10 +12,9 @@
       "static/chunks/fd9d1056-c9e6f969021aa03b.js",
       "static/chunks/2117-f03976cd5ba1fad0.js",
       "static/chunks/main-app-87a41ad86aa84192.js",
-      "static/css/e628872e2f4ca3f4.css",
+      "static/css/0d432c01213f7de6.css",
       "static/chunks/4438-fad40e47ec4bdb81.js",
-      "static/chunks/8003-6952ddab17ca698a.js",
-      "static/chunks/app/layout-adad83731295e52f.js"
+      "static/chunks/app/layout-8b765d82f1dd7d4d.js"
     ],
     "/about/page": [
       "static/chunks/webpack-d010c2642a3f3db7.js",
@@ -26,6 +25,13 @@
       "static/chunks/5878-29374b656983d351.js",
       "static/chunks/9225-456f317b7f0eeb30.js",
       "static/chunks/app/about/page-0ae817a068eb6155.js"
+    ],
+    "/admin/blog/page": [
+      "static/chunks/webpack-d010c2642a3f3db7.js",
+      "static/chunks/fd9d1056-c9e6f969021aa03b.js",
+      "static/chunks/2117-f03976cd5ba1fad0.js",
+      "static/chunks/main-app-87a41ad86aa84192.js",
+      "static/chunks/app/admin/blog/page-3f8096ff638bd51c.js"
     ],
     "/admin/quotes/page": [
       "static/chunks/webpack-d010c2642a3f3db7.js",
@@ -174,6 +180,15 @@
       "static/chunks/main-app-87a41ad86aa84192.js",
       "static/chunks/app/bathroom-renovation-watford/page-2c43e5573e4b13b2.js"
     ],
+    "/blog/[slug]/page": [
+      "static/chunks/webpack-d010c2642a3f3db7.js",
+      "static/chunks/fd9d1056-c9e6f969021aa03b.js",
+      "static/chunks/2117-f03976cd5ba1fad0.js",
+      "static/chunks/main-app-87a41ad86aa84192.js",
+      "static/chunks/8839-3f43fc87f1f9b53c.js",
+      "static/chunks/9225-456f317b7f0eeb30.js",
+      "static/chunks/app/blog/[slug]/page-9ac8e257b25585b7.js"
+    ],
     "/blog/page": [
       "static/chunks/webpack-d010c2642a3f3db7.js",
       "static/chunks/fd9d1056-c9e6f969021aa03b.js",
@@ -181,9 +196,8 @@
       "static/chunks/main-app-87a41ad86aa84192.js",
       "static/chunks/8839-3f43fc87f1f9b53c.js",
       "static/chunks/5878-29374b656983d351.js",
-      "static/chunks/8003-6952ddab17ca698a.js",
       "static/chunks/9225-456f317b7f0eeb30.js",
-      "static/chunks/app/blog/page-4d0304607e2f2b2e.js"
+      "static/chunks/app/blog/page-ac6dc4c2b71cc8d1.js"
     ],
     "/contact/page": [
       "static/chunks/webpack-d010c2642a3f3db7.js",
@@ -344,7 +358,7 @@
       "static/chunks/8839-3f43fc87f1f9b53c.js",
       "static/chunks/5878-29374b656983d351.js",
       "static/chunks/9225-456f317b7f0eeb30.js",
-      "static/chunks/app/locations/page-0935ebe7c930b513.js"
+      "static/chunks/app/locations/page-000f22167eb5e722.js"
     ],
     "/page": [
       "static/chunks/webpack-d010c2642a3f3db7.js",

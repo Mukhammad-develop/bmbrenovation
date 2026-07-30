@@ -1,0 +1,41 @@
+{
+  "siteUrl": "https://bmbrenovation.co.uk",
+  "model": "gpt-4o-mini",
+  "temperature": 0.7,
+  "postsPerRun": 1,
+  "autoPublish": true,
+  "daemonIntervalHours": 24,
+  "minWords": 900,
+  "maxWords": 1400,
+  "seedBatchSize": 12,
+  "company": {
+    "name": "BMB Renovation",
+    "phone": "+44 7775 758 717",
+    "phoneHref": "+447775758717",
+    "email": "contact@bmbrenovation.co.uk",
+    "address": "157 Judge Street, Watford, WD24 5AN",
+    "areas": ["Watford", "Bushey", "Rickmansworth", "St Albans", "Hemel Hempstead", "Borehamwood", "Harrow", "Croxley Green", "Luton", "Bedford"],
+    "services": ["Kitchen Fitting", "Kitchen Renovation", "Bathroom Fitting", "Bathroom Renovation", "House Renovation", "House Extension", "Loft Conversion", "Painting & Decorations", "Flooring", "Tiling", "Carpentry", "General Handy Man Work"]
+  },
+  "approvedFacts": [
+    "BMB Renovation is a home renovation company based at 157 Judge Street, Watford WD24 5AN.",
+    "BMB Renovation can be reached on +44 7775 758 717 or contact@bmbrenovation.co.uk.",
+    "BMB Renovation offers free, no-obligation quotes.",
+    "Services include kitchen fitting & renovation, bathroom fitting & renovation, house renovation, house extensions, loft conversions, painting & decorating, flooring, tiling, carpentry and general handyman work.",
+    "All plumbing, tiling, electrical and cabinet installation work is handled in-house.",
+    "Service areas: Watford, Bushey, Rickmansworth, St Albans, Hemel Hempstead, Borehamwood, Harrow, Croxley Green, Luton and Bedford (Hertfordshire, North London & Bedfordshire)."
+  ],
+  "servicePageTypes": ["kitchen-fitting", "kitchen-renovation", "bathroom-fitting", "bathroom-renovation"],
+  "locationSlugs": ["watford", "bushey", "rickmansworth", "st-albans", "hemel-hempstead", "borehamwood", "harrow", "croxley-green", "luton", "bedford"],
+  "keywordSeeds": {
+    "servicePhrases": ["kitchen fitting", "kitchen renovation", "bathroom fitting", "bathroom renovation", "house extension", "loft conversion"],
+    "locations": ["Watford", "Bushey", "Rickmansworth", "St Albans", "Hemel Hempstead", "Borehamwood", "Harrow", "Croxley Green", "Luton", "Bedford"],
+    "modifiers": ["cost", "price", "ideas", "how much does", "near me", "company", "design ideas", "on a budget", "before and after", "2026"]
+  },
+  "cta": {
+    "heading": "Get a Free, No-Obligation Quote",
+    "text": "BMB Renovation handles kitchens, bathrooms and full home renovations across Watford, Hertfordshire, North London & Bedfordshire — all trades in-house. Tell us about your project today.",
+    "buttonText": "Get My Free Quote",
+    "href": "/contact"
+  }
+}

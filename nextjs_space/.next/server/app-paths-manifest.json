@@ -1,6 +1,7 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/about/page": "app/about/page.js",
+  "/admin/blog/page": "app/admin/blog/page.js",
   "/admin/quotes/page": "app/admin/quotes/page.js",
   "/bathroom-fitting-bedford/page": "app/bathroom-fitting-bedford/page.js",
   "/bathroom-fitting-borehamwood/page": "app/bathroom-fitting-borehamwood/page.js",
@@ -22,6 +23,7 @@
   "/bathroom-renovation-rickmansworth/page": "app/bathroom-renovation-rickmansworth/page.js",
   "/bathroom-renovation-st-albans/page": "app/bathroom-renovation-st-albans/page.js",
   "/bathroom-renovation-watford/page": "app/bathroom-renovation-watford/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
   "/blog/page": "app/blog/page.js",
   "/contact/page": "app/contact/page.js",
   "/kitchen-fitting-bedford/page": "app/kitchen-fitting-bedford/page.js",

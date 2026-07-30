@@ -128,46 +128,57 @@ Everything is controlled from `nextjs_space/scripts/autoblog/config.json`:
 
 ---
 
-## 🚀 Automated Deployment (cPanel / unlimitedwebhosting)
+## 🚀 Automated Deployment (cPanel Node.js App / unlimitedwebhosting)
 
-The GitHub Action can also **build the static site and upload it to cPanel
-automatically** after every content run — fully hands-free. Building Next.js on
-the cPanel server itself is not viable on shared hosting (memory limits), so
-the Action builds the site and uploads only the finished static files via FTPS.
+The live site runs as a **cPanel Node.js application** (CloudLinux Passenger):
 
-### One-time setup (~5 minutes)
+- App URI: `bmbrenovation.co.uk/`
+- App root: `/home/bmbrenov/public_html/nextjs_space`
+- Serves via `server.js` → `next start` (NOT static files — so `out/` uploads
+  do nothing for this setup)
 
-1. In cPanel → **FTP Accounts**, create an FTP account (or use your main
-   cPanel login).
-2. In the GitHub repo → **Settings → Secrets and variables → Actions**:
-   - **Variables** tab → `FTP_HOST` = your server hostname (e.g.
-     `ftp.bmbrenovation.co.uk` or the server name from your welcome email)
-   - **Secrets** tab → `FTP_USERNAME` and `FTP_PASSWORD` = the FTP credentials
-3. Done. The `deploy` job in `.github/workflows/autoblog.yml` activates
-   automatically on the next run (it stays dormant until `FTP_HOST` exists).
+The GitHub Action can deploy automatically after every content run. There are
+two ways — pick the one that matches your hosting access.
 
-### What happens each run
+### Option A — SSH deploy from the GitHub Action (recommended)
 
-1. Engine generates a new post and commits it.
-2. `deploy` job builds the static export (`STATIC_EXPORT=true npm run build`
-   → `nextjs_space/out/`).
-3. [FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action) syncs
-   `out/` to `public_html/` over FTPS — only changed files are uploaded after
-   the first (large) sync. `.well-known/` (SSL validation) is never touched,
-   and nothing is deleted server-side.
+The Action SSHes into the server after each content commit and runs
+`git pull` → `npm ci` → `npm run build` (your existing low-memory build
+script) → touches `tmp/restart.txt` to restart the Passenger app.
 
-### Notes
+One-time setup:
 
-- Deploys to `public_html/` by default — if your site lives in a subdirectory
-  or addon-domain folder, adjust `server-dir` in the workflow.
-- If FTPS fails on your server, change `protocol: ftps` to `ftp` in the
-  workflow (less secure — try FTPS first).
-- If you have SSH access on your plan, the deploy can be switched to faster
-  `rsync` over SSH instead — ask and it can be swapped in.
-- Static export can't send the security headers from `next.config.js`; if you
-  want them on cPanel, they can be replicated in `.htaccess`.
-- To deploy manually instead: `cd nextjs_space && STATIC_EXPORT=true npm run build`,
-  then upload the contents of `out/` to `public_html/`.
+1. Make sure SSH access is enabled on your hosting plan (unlimitedwebhosting:
+   ask support to enable it if cPanel → **SSH Access** is unavailable).
+2. In cPanel → **SSH Access → Manage SSH Keys**: generate a key pair (or import
+   one) and **authorise** it.
+3. The server copy of the site must be a **git clone** of this repo at
+   `/home/bmbrenov/public_html` (e.g. via cPanel → **Git Version Control**).
+   If you originally uploaded files by FTP, re-create it as a clone once.
+4. In the GitHub repo → **Settings → Secrets and variables → Actions**:
+   - **Variables** tab → `SSH_HOST` = your server hostname
+   - **Secrets** tab → `SSH_USER` (usually your cPanel username) and
+     `SSH_KEY` (the **private** key matching the authorised public key)
+5. Done — the `deploy` job in `.github/workflows/autoblog.yml` activates on the
+   next run (it stays dormant until `SSH_HOST` exists).
+
+### Option B — cPanel cron (no SSH from GitHub needed)
+
+If SSH isn't available, let the server pull updates itself on a schedule.
+cPanel → **Cron Jobs** → add (every 15 minutes):
+
+```bash
+cd /home/bmbrenov/public_html && git pull --ff-only && cd nextjs_space && npm ci --legacy-peer-deps && npm run build && mkdir -p tmp && touch tmp/restart.txt
+```
+
+New posts appear on the live site within ~15 minutes of the daily generation,
+plus build time. Requires the same git-clone setup as Option A.
+
+### Manual deploy (what happens without either option)
+
+After any content commit: on the server, `git pull`, then
+`cd nextjs_space && npm run build`, then restart the app in cPanel →
+**Setup Node.js App → Restart**. New posts only go live after this.
 
 ---
 

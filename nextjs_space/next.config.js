@@ -90,6 +90,34 @@ const nextConfig = {
       },
     ];
         },
+
+        // 301 redirects for legacy WordPress URLs (pre-rebuild site). Google
+        // still crawls these (27 pages in Search Console 404 report); send
+        // them to the closest modern equivalent instead of dying on a 404.
+        async redirects() {
+          return [
+            { source: '/home', destination: '/', permanent: true },
+            { source: '/about-us', destination: '/about', permanent: true },
+            { source: '/contact-us', destination: '/contact', permanent: true },
+            { source: '/our-services', destination: '/services', permanent: true },
+            { source: '/privacy', destination: '/', permanent: true },
+            { source: '/kitchen-fitting', destination: '/services', permanent: true },
+            { source: '/bathroom-renovations', destination: '/services', permanent: true },
+            { source: '/house-renovation', destination: '/services', permanent: true },
+            { source: '/loft-conversion', destination: '/services', permanent: true },
+            { source: '/tiling', destination: '/services', permanent: true },
+            { source: '/flooring', destination: '/services', permanent: true },
+            { source: '/carpentry', destination: '/services', permanent: true },
+            { source: '/painting-decorations', destination: '/services', permanent: true },
+            { source: '/general-handy-man-work', destination: '/services', permanent: true },
+            { source: '/areas/:path*', destination: '/locations', permanent: true },
+            { source: '/hello-world', destination: '/', permanent: true },
+            { source: '/sample-page', destination: '/', permanent: true },
+            { source: '/author/:path*', destination: '/', permanent: true },
+            { source: '/category/:path*', destination: '/', permanent: true },
+            { source: '/wp-content/:path*', destination: '/', permanent: true },
+          ]
+        },
       }),
 };
 

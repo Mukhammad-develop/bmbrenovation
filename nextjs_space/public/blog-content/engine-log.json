@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-07-30T12:35:22.736Z",
+      "finishedAt": "2026-07-30T12:36:08.349Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen installation near me cost",
+      "slug": "kitchen-installation-near-me-cost",
+      "postStatus": "published",
+      "claimsChecked": 68,
+      "claimsRemoved": 6
+    },
+    {
       "startedAt": "2026-07-30T11:57:11.441Z",
       "finishedAt": "2026-07-30T11:57:54.350Z",
       "mode": "openai",

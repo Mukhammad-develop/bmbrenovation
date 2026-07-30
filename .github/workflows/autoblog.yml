@@ -6,9 +6,9 @@ name: AutoBlog Engine
 #
 # Required repo secret: OPENAI_API_KEY
 #
-# Note: this commits new posts into the repo. The live site picks them up on
-# the next build & deploy (automatic if your host deploys from GitHub;
-# otherwise extend this workflow with your FTP/SSH deploy step).
+# Note: this commits new posts AND the compiled site (.next) into the repo.
+# The cPanel server never builds — its cron (scripts/deploy-cpanel.sh) pulls
+# the repo and restarts the Passenger app. See README → Automated Deployment.
 
 on:
   schedule:
@@ -60,31 +60,3 @@ jobs:
             git commit -m "autoblog: content + build $(date -u +%Y-%m-%d)"
             git push
           fi
-
-  # Deploys to the cPanel Node.js app (CloudLinux Passenger) via SSH:
-  # pulls the new content on the server, rebuilds there (the server's Node
-  # already handles the low-memory build script), and restarts the app.
-  # Dormant until these are configured on the repo:
-  #   variable SSH_HOST  (Settings → Secrets and variables → Actions → Variables)
-  #   secrets  SSH_USER, SSH_KEY (private key whose public half is authorised
-  #            in cPanel → SSH Access → Manage SSH Keys)
-  deploy:
-    needs: generate
-    if: vars.SSH_HOST != ''
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy on cPanel via SSH (pull, build, restart)
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ vars.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            set -e
-            cd /home/bmbrenov/public_html
-            git pull --ff-only
-            cd nextjs_space
-            npm ci --legacy-peer-deps
-            npm run build
-            mkdir -p tmp && touch tmp/restart.txt
-            echo "Deployed: build finished and app restarted."

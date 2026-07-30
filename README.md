@@ -137,48 +137,41 @@ The live site runs as a **cPanel Node.js application** (CloudLinux Passenger):
 - Serves via `server.js` → `next start` (NOT static files — so `out/` uploads
   do nothing for this setup)
 
-The GitHub Action can deploy automatically after every content run. There are
-two ways — pick the one that matches your hosting access.
+The GitHub Action deploys automatically after every content run — **the site
+is built in the Action and the compiled output (`.next`) is committed to the
+repo**. The server never builds: a cron on cPanel pulls the repo and restarts
+the Passenger app (`scripts/deploy-cpanel.sh`). This is required because
+CloudLinux shared-hosting thread/memory limits make Next.js builds fail on
+the server (SWC cannot spawn threads under LVE).
 
-### Option A — SSH deploy from the GitHub Action (recommended)
+### Setup (one-time)
 
-The Action SSHes into the server after each content commit and runs
-`git pull` → `npm ci` → `npm run build` (your existing low-memory build
-script) → touches `tmp/restart.txt` to restart the Passenger app.
+1. The server copy of the site must be a **git clone** of this repo at
+   `/home/bmbrenov/public_html`.
+2. cPanel → **Cron Jobs** → add (every 15 minutes):
 
-One-time setup:
+   ```bash
+   bash /home/bmbrenov/public_html/scripts/deploy-cpanel.sh >> /home/bmbrenov/autoblog-deploy.log 2>&1
+   ```
 
-1. Make sure SSH access is enabled on your hosting plan (unlimitedwebhosting:
-   ask support to enable it if cPanel → **SSH Access** is unavailable).
-2. In cPanel → **SSH Access → Manage SSH Keys**: generate a key pair (or import
-   one) and **authorise** it.
-3. The server copy of the site must be a **git clone** of this repo at
-   `/home/bmbrenov/public_html` (e.g. via cPanel → **Git Version Control**).
-   If you originally uploaded files by FTP, re-create it as a clone once.
-4. In the GitHub repo → **Settings → Secrets and variables → Actions**:
-   - **Variables** tab → `SSH_HOST` = your server hostname
-   - **Secrets** tab → `SSH_USER` (usually your cPanel username) and
-     `SSH_KEY` (the **private** key matching the authorised public key)
-5. Done — the `deploy` job in `.github/workflows/autoblog.yml` activates on the
-   next run (it stays dormant until `SSH_HOST` exists).
+3. Done. The script pulls every 15 min; when a new commit arrives it updates
+   runtime dependencies if package files changed (`npm ci --omit=dev`), then
+   touches `tmp/restart.txt` so Passenger reloads with the new build.
 
-### Option B — cPanel cron (no SSH from GitHub needed)
+### Manual deploy
 
-If SSH isn't available, let the server pull updates itself on a schedule.
-cPanel → **Cron Jobs** → add (every 15 minutes):
+Same thing by hand in cPanel → Terminal:
 
 ```bash
-cd /home/bmbrenov/public_html && git pull --ff-only && cd nextjs_space && npm ci --legacy-peer-deps && npm run build && mkdir -p tmp && touch tmp/restart.txt
+cd /home/bmbrenov/public_html && git pull --ff-only
+cd nextjs_space && mkdir -p tmp && touch tmp/restart.txt
 ```
 
-New posts appear on the live site within ~15 minutes of the daily generation,
-plus build time. Requires the same git-clone setup as Option A.
+### Note on SSH
 
-### Manual deploy (what happens without either option)
-
-After any content commit: on the server, `git pull`, then
-`cd nextjs_space && npm run build`, then restart the app in cPanel →
-**Setup Node.js App → Restart**. New posts only go live after this.
+SSH access is not enabled on this hosting account (ports closed — enable via
+support ticket if ever wanted). It is **not needed**: the git-based deploy
+above covers everything. The old SSH deploy job was removed from the workflow.
 
 ---
 

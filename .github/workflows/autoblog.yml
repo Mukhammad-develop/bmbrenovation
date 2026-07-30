@@ -42,15 +42,22 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: npm run blog:run
 
-      - name: Commit generated content
+      # The cPanel server cannot build (CloudLinux thread/memory limits), so
+      # the build happens here and the finished .next output is committed.
+      # The server-side cron (scripts/deploy-cpanel.sh) just pulls + restarts.
+      - name: Build site
+        working-directory: nextjs_space
+        run: npm run build
+
+      - name: Commit generated content and build output
         run: |
           git config user.name "bmb-autoblog[bot]"
           git config user.email "autoblog@bmbrenovation.co.uk"
-          git add nextjs_space/public/blog-content nextjs_space/public/sitemap.xml
+          git add nextjs_space/public/blog-content nextjs_space/public/sitemap.xml nextjs_space/.next
           if git diff --cached --quiet; then
             echo "No new content generated."
           else
-            git commit -m "autoblog: generated content $(date -u +%Y-%m-%d)"
+            git commit -m "autoblog: content + build $(date -u +%Y-%m-%d)"
             git push
           fi
 

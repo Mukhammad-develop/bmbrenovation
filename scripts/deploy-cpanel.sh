@@ -9,12 +9,16 @@ set -e
 
 cd /home/bmbrenov/public_html
 before=$(git rev-parse HEAD)
-git pull --ff-only -q
-after=$(git rev-parse HEAD)
+git fetch origin -q
+after=$(git rev-parse origin/main)
 
 if [ "$before" = "$after" ]; then
   exit 0
 fi
+
+# Mirror the repo exactly: restores deleted/corrupted tracked files and
+# discards stray local edits (plain `git pull` does neither).
+git reset --hard origin/main -q
 
 # Runtime dependencies only change when package files do (rare).
 cd nextjs_space

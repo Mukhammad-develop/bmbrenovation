@@ -8,10 +8,12 @@ export const dynamic = 'force-static'
 // Same access code + session key as /admin/quotes — one login for both.
 const PASS = 'bmb2026'
 const SESSION_KEY = 'bmb_admin_auth'
-const GH_TOKEN_KEY = 'bmb_gh_pat'
+const GH_TOKEN_KEY = 'bmb_gh_pat' // persisted in localStorage so it survives sessions
+const GH_TOKEN_SAVED_KEY = 'bmb_gh_pat_saved'
 const GH_REPO = 'Mukhammad-develop/bmbrenovation'
 const GH_BRANCH = 'main'
 const INDEX_PATH = 'nextjs_space/public/blog-content/index.json'
+const SETTINGS_PATH = 'nextjs_space/public/blog-content/settings.json'
 const POSTS_DIR = 'nextjs_space/public/blog-content/posts'
 const WORKFLOW_FILE = 'autoblog.yml'
 
@@ -92,22 +94,34 @@ export default function AdminBlogPage() {
 
   const [ghToken, setGhToken] = useState('')
   const [ghInput, setGhInput] = useState('')
+  const [tokenSavedAt, setTokenSavedAt] = useState('')
+  const [showTokenInput, setShowTokenInput] = useState(false)
   const [busy, setBusy] = useState('')
   const [notice, setNotice] = useState('')
   const [previewSlug, setPreviewSlug] = useState<string | null>(null)
   const [preview, setPreview] = useState<any>(null)
+  const [settings, setSettings] = useState<any>(null)
+  const [freqInput, setFreqInput] = useState('1')
+  const [ga4Input, setGa4Input] = useState('')
+  const [embedInput, setEmbedInput] = useState('')
+  const [settingsBusy, setSettingsBusy] = useState(false)
 
   const loadData = useCallback(async () => {
     try {
       const bust = `?t=${Date.now()}`
-      const [idx, log, kw] = await Promise.all([
+      const [idx, log, kw, st] = await Promise.all([
         fetch(`/blog-content/index.json${bust}`).then((r) => r.json()),
         fetch(`/blog-content/engine-log.json${bust}`).then((r) => r.json()),
         fetch(`/blog-content/keywords.json${bust}`).then((r) => r.json()),
+        fetch(`/blog-content/settings.json${bust}`).then((r) => r.json()),
       ])
       setIndex(idx)
       setRuns((log.runs || []).slice(0, 10))
       setKeywordCount((kw as KeywordPool).pool?.length ?? 0)
+      setSettings(st)
+      setFreqInput(String(st.postsPerDay ?? 1))
+      setGa4Input(st.ga4MeasurementId || '')
+      setEmbedInput(st.analyticsEmbedUrl || '')
       setLoadError('')
     } catch {
       setLoadError('Could not load blog content files. The engine may not have run yet on this deployment.')
@@ -117,8 +131,11 @@ export default function AdminBlogPage() {
   useEffect(() => {
     setMounted(true)
     if (sessionStorage.getItem(SESSION_KEY) === '1') setAuthed(true)
-    const saved = sessionStorage.getItem(GH_TOKEN_KEY)
-    if (saved) setGhToken(saved)
+    const saved = localStorage.getItem(GH_TOKEN_KEY)
+    if (saved) {
+      setGhToken(saved)
+      setTokenSavedAt(localStorage.getItem(GH_TOKEN_SAVED_KEY) || '')
+    }
   }, [])
 
   useEffect(() => {
@@ -137,15 +154,44 @@ export default function AdminBlogPage() {
   }
 
   const saveToken = () => {
-    sessionStorage.setItem(GH_TOKEN_KEY, ghInput.trim())
-    setGhToken(ghInput.trim())
+    const token = ghInput.trim()
+    if (!token) return
+    const savedAt = new Date().toISOString()
+    localStorage.setItem(GH_TOKEN_KEY, token)
+    localStorage.setItem(GH_TOKEN_SAVED_KEY, savedAt)
+    setGhToken(token)
+    setTokenSavedAt(savedAt)
     setGhInput('')
-    setNotice('GitHub token saved for this session.')
+    setShowTokenInput(false)
+    setNotice('GitHub token saved in this browser — it stays until you disconnect it.')
   }
 
   const clearToken = () => {
-    sessionStorage.removeItem(GH_TOKEN_KEY)
+    localStorage.removeItem(GH_TOKEN_KEY)
+    localStorage.removeItem(GH_TOKEN_SAVED_KEY)
     setGhToken('')
+    setTokenSavedAt('')
+  }
+
+  // Commit a settings.json change to GitHub (schedule, GA4 id, analytics embed).
+  const saveSettings = async (patch: Record<string, any>) => {
+    if (!ghToken) {
+      setNotice('Connect a GitHub token first to change settings.')
+      return
+    }
+    setSettingsBusy(true)
+    try {
+      const file = await ghGetFile(ghToken, SETTINGS_PATH)
+      const current = JSON.parse(file.content)
+      const updated = { ...current, ...patch, updatedAt: new Date().toISOString() }
+      await ghPutFile(ghToken, SETTINGS_PATH, JSON.stringify(updated, null, 2) + '\n', file.sha, 'autoblog(admin): update settings')
+      setSettings(updated)
+      setNotice('Settings saved — live after the next site rebuild & deploy (up to ~15 min).')
+    } catch (err: any) {
+      setNotice(`Failed: ${err.message}`)
+    } finally {
+      setSettingsBusy(false)
+    }
   }
 
   // Commit a new index.json to GitHub.
@@ -274,7 +320,7 @@ export default function AdminBlogPage() {
   const published = posts.filter((p) => p.status === 'published')
   const drafts = posts.filter((p) => p.status === 'draft')
   const lastRun = runs[0]
-  const statusColor: Record<string, string> = { ok: '#22c55e', 'no-topics': '#f59e0b', error: '#f87171', published: '#22c55e', draft: '#f59e0b' }
+  const statusColor: Record<string, string> = { ok: '#22c55e', 'no-topics': '#f59e0b', 'not-due': '#94a3b8', error: '#f87171', published: '#22c55e', draft: '#f59e0b' }
 
   const btn = (bg: string, border: string, color: string): React.CSSProperties => ({
     padding: '0.4rem 0.875rem', borderRadius: '0.5rem', fontSize: '0.75rem', fontWeight: 600, cursor: 'pointer',
@@ -346,15 +392,18 @@ export default function AdminBlogPage() {
           </div>
 
           <div style={{ marginTop: '1.25rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-            {ghToken ? (
+            {ghToken && !showTokenInput ? (
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '0.8125rem', color: '#4ade80' }}>🔑 GitHub connected (this session only)</span>
+                <span style={{ fontSize: '0.8125rem', color: '#4ade80' }}>
+                  🔑 GitHub connected{tokenSavedAt && <> · saved {new Date(tokenSavedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</>} · tokens live ~90 days, renew before expiry
+                </span>
+                <button onClick={() => setShowTokenInput(true)} style={btn('rgba(96,165,250,0.1)', 'rgba(96,165,250,0.25)', '#93c5fd')}>Renew token</button>
                 <button onClick={clearToken} style={btn('rgba(239,68,68,0.1)', 'rgba(239,68,68,0.2)', '#f87171')}>Disconnect</button>
               </div>
             ) : (
               <div>
                 <p style={{ margin: '0 0 0.625rem', fontSize: '0.8125rem', color: 'rgba(255,255,255,0.5)' }}>
-                  To publish, delete or trigger generation from this panel, paste a <strong style={{ color: '#C8A97E' }}>GitHub fine-grained personal access token</strong> for the <code>{GH_REPO}</code> repo with <strong>Contents: Read &amp; write</strong> and <strong>Actions: Read &amp; write</strong> permissions. It stays in this browser tab only — without it the panel is read-only.
+                  To publish, delete, change the schedule or trigger generation, paste a <strong style={{ color: '#C8A97E' }}>GitHub fine-grained personal access token</strong> for the <code>{GH_REPO}</code> repo with <strong>Contents: Read &amp; write</strong> and <strong>Actions: Read &amp; write</strong> permissions. It is remembered in this browser (localStorage) until you disconnect — renew it here before its 90-day expiry. Without it the panel is read-only.
                 </p>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                   <input
@@ -365,12 +414,53 @@ export default function AdminBlogPage() {
                     style={{ flex: 1, minWidth: '220px', padding: '0.625rem 0.875rem', borderRadius: '0.5rem', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontSize: '0.8125rem', outline: 'none' }}
                   />
                   <button onClick={saveToken} disabled={!ghInput.trim()} style={{ padding: '0.625rem 1.25rem', borderRadius: '0.5rem', background: 'rgba(34,197,94,0.15)', border: '1px solid rgba(34,197,94,0.3)', color: '#4ade80', fontSize: '0.8125rem', fontWeight: 600, cursor: ghInput.trim() ? 'pointer' : 'not-allowed' }}>
-                    Connect
+                    {ghToken ? 'Save new token' : 'Connect'}
                   </button>
+                  {ghToken && (
+                    <button onClick={() => { setShowTokenInput(false); setGhInput('') }} style={btn('rgba(255,255,255,0.06)', 'rgba(255,255,255,0.12)', '#fff')}>Cancel</button>
+                  )}
                 </div>
               </div>
             )}
           </div>
+        </div>
+
+        {/* Schedule */}
+        <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '1rem', padding: '1.5rem', marginBottom: '2rem' }}>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div>
+              <h3 style={{ margin: '0 0 0.25rem', fontSize: '1rem', fontWeight: 700 }}>Publishing Schedule</h3>
+              <p style={{ margin: 0, fontSize: '0.8125rem', color: 'rgba(255,255,255,0.45)' }}>
+                The engine checks hourly and keeps posts evenly spaced through the day.
+              </p>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <input
+                type="number"
+                min={0}
+                max={24}
+                value={freqInput}
+                onChange={(e) => setFreqInput(e.target.value)}
+                style={{ width: '72px', padding: '0.625rem 0.75rem', borderRadius: '0.5rem', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontSize: '1rem', fontWeight: 700, textAlign: 'center', outline: 'none' }}
+              />
+              <span style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)' }}>posts / day</span>
+              <button
+                onClick={() => saveSettings({ postsPerDay: Math.min(24, Math.max(0, parseInt(freqInput, 10) || 0)) })}
+                disabled={settingsBusy || !ghToken}
+                style={{ padding: '0.625rem 1.25rem', borderRadius: '0.5rem', background: ghToken ? 'linear-gradient(135deg, #C8A97E, #a07850)' : 'rgba(255,255,255,0.08)', border: 'none', color: ghToken ? '#fff' : 'rgba(255,255,255,0.3)', fontSize: '0.8125rem', fontWeight: 700, cursor: ghToken ? 'pointer' : 'not-allowed' }}
+              >
+                {settingsBusy ? 'Saving…' : 'Save schedule'}
+              </button>
+            </div>
+          </div>
+          <p style={{ margin: '0.875rem 0 0', fontSize: '0.8125rem', color: '#C8A97E' }}>
+            {(() => {
+              const n = Math.min(24, Math.max(0, parseInt(freqInput, 10) || 0))
+              if (n === 0) return '⏸ Generation is paused — set above 0 to resume.'
+              if (n === 1) return '▶ 1 post per day.'
+              return `▶ ${n} posts per day — one roughly every ${(24 / n).toFixed(1)} hours.`
+            })()}
+          </p>
         </div>
 
         {/* Engine log */}
@@ -391,6 +481,63 @@ export default function AdminBlogPage() {
               ))}
             </div>
           )}
+        </div>
+
+        {/* Performance */}
+        <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '1rem', padding: '1.5rem', marginBottom: '2rem' }}>
+          <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 700 }}>Performance</h3>
+          <p style={{ margin: '0 0 1rem', fontSize: '0.8125rem', color: 'rgba(255,255,255,0.45)' }}>
+            Visit stats live in Google Analytics 4 + Looker Studio (both free). One-time setup:
+            ① create a GA4 property at <a href="https://analytics.google.com" target="_blank" rel="noreferrer" style={{ color: '#C8A97E' }}>analytics.google.com</a> and paste its Measurement ID below — it goes live site-wide after the next build.
+            ② build a report at <a href="https://lookerstudio.google.com" target="_blank" rel="noreferrer" style={{ color: '#C8A97E' }}>lookerstudio.google.com</a> (GA4 source; filter pages containing <code>/blog</code>; break down by source/medium to see search vs. own-site visits) → Share → Embed → paste the embed URL.
+          </p>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.625rem' }}>
+            <input
+              type="text"
+              value={ga4Input}
+              onChange={(e) => setGa4Input(e.target.value)}
+              placeholder="GA4 Measurement ID (G-XXXXXXX)"
+              style={{ flex: 1, minWidth: '200px', padding: '0.625rem 0.875rem', borderRadius: '0.5rem', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontSize: '0.8125rem', outline: 'none' }}
+            />
+            <button onClick={() => saveSettings({ ga4MeasurementId: ga4Input.trim() })} disabled={settingsBusy || !ghToken} style={{ padding: '0.625rem 1rem', borderRadius: '0.5rem', background: 'rgba(200,169,126,0.15)', border: '1px solid rgba(200,169,126,0.35)', color: '#C8A97E', fontSize: '0.8125rem', fontWeight: 600, cursor: ghToken ? 'pointer' : 'not-allowed' }}>
+              Save GA4 ID
+            </button>
+          </div>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <input
+              type="text"
+              value={embedInput}
+              onChange={(e) => setEmbedInput(e.target.value)}
+              placeholder="Looker Studio embed URL (https://lookerstudio.google.com/embed/…)"
+              style={{ flex: 1, minWidth: '200px', padding: '0.625rem 0.875rem', borderRadius: '0.5rem', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontSize: '0.8125rem', outline: 'none' }}
+            />
+            <button onClick={() => saveSettings({ analyticsEmbedUrl: embedInput.trim() })} disabled={settingsBusy || !ghToken} style={{ padding: '0.625rem 1rem', borderRadius: '0.5rem', background: 'rgba(200,169,126,0.15)', border: '1px solid rgba(200,169,126,0.35)', color: '#C8A97E', fontSize: '0.8125rem', fontWeight: 600, cursor: ghToken ? 'pointer' : 'not-allowed' }}>
+              Save report
+            </button>
+          </div>
+          {settings?.analyticsEmbedUrl && (
+            <iframe
+              src={settings.analyticsEmbedUrl}
+              style={{ width: '100%', height: '420px', border: 'none', borderRadius: '0.75rem', marginTop: '1rem', background: '#fff' }}
+              title="Blog performance report"
+            />
+          )}
+        </div>
+
+        {/* Search indexing */}
+        <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '1rem', padding: '1.5rem', marginBottom: '2rem' }}>
+          <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 700 }}>Search Indexing</h3>
+          <p style={{ margin: '0 0 0.875rem', fontSize: '0.8125rem', color: 'rgba(255,255,255,0.45)' }}>
+            New posts typically take days to weeks to appear in Google. To speed it up, submit the sitemap once in <a href="https://search.google.com/search-console" target="_blank" rel="noreferrer" style={{ color: '#C8A97E' }}>Google Search Console</a> (free) — that is also the authoritative place to track impressions and clicks per post.
+          </p>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <a href="https://www.google.com/search?q=site%3Abmbrenovation.co.uk%2Fblog" target="_blank" rel="noreferrer" style={{ ...btn('rgba(96,165,250,0.1)', 'rgba(96,165,250,0.25)', '#93c5fd'), textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+              🔎 Check all indexed posts on Google
+            </a>
+            <a href="https://search.google.com/search-console" target="_blank" rel="noreferrer" style={{ ...btn('rgba(255,255,255,0.06)', 'rgba(255,255,255,0.12)', '#fff'), textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+              Open Search Console
+            </a>
+          </div>
         </div>
 
         {/* Posts */}
@@ -426,6 +573,9 @@ export default function AdminBlogPage() {
                       View live →
                     </a>
                   )}
+                  <a href={`https://www.google.com/search?q=site%3Abmbrenovation.co.uk%2Fblog%2F${p.slug}`} target="_blank" rel="noreferrer" title="Check if this exact post is indexed on Google" style={{ ...btn('rgba(255,255,255,0.06)', 'rgba(255,255,255,0.12)', 'rgba(255,255,255,0.6)'), textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+                    🔎 Indexed?
+                  </a>
                   <div style={{ marginLeft: 'auto', display: 'flex', gap: '0.5rem' }}>
                     {p.status === 'draft' ? (
                       <button onClick={() => setStatus(p.slug, 'published')} disabled={!ghToken || busy === p.slug} style={btn('rgba(34,197,94,0.12)', 'rgba(34,197,94,0.3)', '#4ade80')}>

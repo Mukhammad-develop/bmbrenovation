@@ -300,7 +300,14 @@
 
 
 
+
   <!-- Blog Posts -->
+  <url>
+    <loc>https://bmbrenovation.co.uk/blog/kitchen-fitters-watford</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://bmbrenovation.co.uk/blog/how-much-does-it-cost-to-replace-a-kitchen-tap-uk</loc>
     <lastmod>2026-07-30</lastmod>

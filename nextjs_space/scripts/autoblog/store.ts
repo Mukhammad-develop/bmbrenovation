@@ -4,7 +4,7 @@
 
 import fs from 'fs'
 import path from 'path'
-import type { BlogIndex, BlogPost, EngineLog, EngineRun, KeywordPool } from '../../lib/blog-types'
+import type { BlogIndex, BlogPost, BlogSettings, EngineLog, EngineRun, KeywordPool } from '../../lib/blog-types'
 
 const ROOT = process.cwd()
 export const CONTENT_DIR = path.join(ROOT, 'public', 'blog-content')
@@ -12,6 +12,7 @@ export const POSTS_DIR = path.join(CONTENT_DIR, 'posts')
 const INDEX_FILE = path.join(CONTENT_DIR, 'index.json')
 const KEYWORDS_FILE = path.join(CONTENT_DIR, 'keywords.json')
 const LOG_FILE = path.join(CONTENT_DIR, 'engine-log.json')
+const SETTINGS_FILE = path.join(CONTENT_DIR, 'settings.json')
 const SITEMAP_FILE = path.join(ROOT, 'public', 'sitemap.xml')
 
 const MAX_LOG_RUNS = 100
@@ -65,6 +66,33 @@ export function appendLog(run: EngineRun) {
   log.runs.unshift(run)
   log.runs = log.runs.slice(0, MAX_LOG_RUNS)
   writeJson(LOG_FILE, log)
+}
+
+const DEFAULT_SETTINGS: BlogSettings = {
+  postsPerDay: 1,
+  ga4MeasurementId: '',
+  analyticsEmbedUrl: '',
+  updatedAt: new Date().toISOString(),
+}
+
+export function loadSettings(): BlogSettings {
+  const s = readJson<BlogSettings>(SETTINGS_FILE, DEFAULT_SETTINGS)
+  // Clamp to the supported range: 0 (paused) … 24 (hourly).
+  s.postsPerDay = Math.min(24, Math.max(0, Math.floor(Number(s.postsPerDay) || 0)))
+  return { ...DEFAULT_SETTINGS, ...s, postsPerDay: s.postsPerDay }
+}
+
+// How many posts should exist by this moment, for even spacing through the day
+// (UTC): e.g. postsPerDay=8 → one post every 3 hours.
+export function duePostsToday(postsPerDay: number, now = new Date()): number {
+  const minutes = now.getUTCHours() * 60 + now.getUTCMinutes()
+  return Math.floor((postsPerDay * minutes) / 1440)
+}
+
+// Successful generations since UTC midnight (manual + scheduled both count).
+export function successfulRunsToday(log: EngineLog, now = new Date()): number {
+  const today = now.toISOString().slice(0, 10)
+  return log.runs.filter((r) => r.status === 'ok' && r.startedAt.startsWith(today)).length
 }
 
 export function slugify(text: string): string {

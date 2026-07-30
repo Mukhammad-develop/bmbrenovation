@@ -5,8 +5,26 @@ import { Toaster } from '@/components/ui/sonner'
 import { ChunkLoadErrorHandler } from '@/components/chunk-load-error-handler'
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import fs from 'fs'
+import path from 'path'
 
 export const dynamic = 'force-static'
+
+// Optional GA4 (in addition to the Google Ads tag below): set ga4MeasurementId
+// in public/blog-content/settings.json from /admin/blog; injected at build time.
+function getGa4Id(): string {
+  try {
+    const s = JSON.parse(
+      fs.readFileSync(path.join(process.cwd(), 'public', 'blog-content', 'settings.json'), 'utf-8'),
+    )
+    const id = typeof s.ga4MeasurementId === 'string' ? s.ga4MeasurementId.trim() : ''
+    return /^G-[A-Z0-9]+$/i.test(id) ? id : ''
+  } catch {
+    return ''
+  }
+}
+
+const ga4Id = getGa4Id()
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-sans' })
 const jakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-display' })
@@ -103,6 +121,19 @@ export default function RootLayout({
             gtag('config', 'AW-18105187591');
           `}
         </Script>
+        {ga4Id && (
+          <>
+            <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`} />
+            <Script id="ga4-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${ga4Id}');
+              `}
+            </Script>
+          </>
+        )}
       </head>
       <body className={`${dmSans.variable} ${jakartaSans.variable} ${jetbrainsMono.variable} font-sans`}>
         <ThemeProvider

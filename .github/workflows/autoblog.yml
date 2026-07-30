@@ -11,8 +11,10 @@ name: AutoBlog Engine
 # the repo and restarts the Passenger app. See README → Automated Deployment.
 
 on:
+  # Hourly — the engine itself decides whether a post is due, based on
+  # postsPerDay in public/blog-content/settings.json (set from /admin/blog).
   schedule:
-    - cron: '23 6 * * *' # daily at 06:23 UTC
+    - cron: '23 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -40,16 +42,31 @@ jobs:
         working-directory: nextjs_space
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: npm run blog:run
+        # Manual dispatch (admin "Generate Now") bypasses the cadence gate;
+        # scheduled runs respect postsPerDay from settings.json.
+        run: npm run blog:run ${{ github.event_name == 'workflow_dispatch' && '-- --force' || '' }}
+
+      # Only rebuild & commit when the engine actually produced content —
+      # idle hourly runs (not-due) must not churn the repo.
+      - name: Check for new content
+        id: content
+        run: |
+          if git status --porcelain nextjs_space/public/blog-content nextjs_space/public/sitemap.xml | grep -q .; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
 
       # The cPanel server cannot build (CloudLinux thread/memory limits), so
       # the build happens here and the finished .next output is committed.
       # The server-side cron (scripts/deploy-cpanel.sh) just pulls + restarts.
       - name: Build site
+        if: steps.content.outputs.changed == 'true'
         working-directory: nextjs_space
         run: npm run build
 
       - name: Commit generated content and build output
+        if: steps.content.outputs.changed == 'true'
         run: |
           git config user.name "bmb-autoblog[bot]"
           git config user.email "autoblog@bmbrenovation.co.uk"

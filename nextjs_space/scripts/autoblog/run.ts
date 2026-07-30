@@ -13,12 +13,13 @@ import { refreshKeywordPool, pickCandidates } from './keywords'
 import { selectTopic, writeDraft, assemblePost } from './pipeline'
 import { factCheckDraft } from './factcheck'
 import { MOCK_KEYWORDS, buildMockPost } from './mock'
-import { loadIndex, loadKeywords, saveKeywords, savePost, appendLog, slugify, postExists, updateSitemap } from './store'
+import { loadIndex, loadKeywords, saveKeywords, savePost, appendLog, slugify, postExists, updateSitemap, loadSettings, loadLog, duePostsToday, successfulRunsToday } from './store'
 import type { EngineRun } from '../../lib/blog-types'
 
 const args = process.argv.slice(2)
 const MOCK = args.includes('--mock')
 const DAEMON = args.includes('--daemon')
+const FORCE = args.includes('--force') // bypass the postsPerDay cadence (manual runs)
 const postsFlag = args.indexOf('--posts')
 const POSTS_OVERRIDE = postsFlag !== -1 ? parseInt(args[postsFlag + 1] ?? '', 10) : undefined
 
@@ -31,6 +32,18 @@ function uniqueSlug(base: string): string {
 async function generateOne(mode: 'openai' | 'mock'): Promise<EngineRun> {
   const startedAt = new Date().toISOString()
   const config = loadConfig()
+
+  // Cadence gate (scheduled runs only): honour postsPerDay from settings.json.
+  // 0 = paused; otherwise generate only if we're behind the even-spacing curve.
+  if (mode === 'openai' && !FORCE) {
+    const settings = loadSettings()
+    const done = successfulRunsToday(loadLog())
+    const due = duePostsToday(settings.postsPerDay)
+    if (settings.postsPerDay === 0 || done >= due) {
+      return { startedAt, finishedAt: new Date().toISOString(), mode, status: 'not-due' }
+    }
+  }
+
   const index = loadIndex()
   const keywords = loadKeywords()
 

@@ -66,7 +66,7 @@ export interface EngineRun {
   startedAt: string
   finishedAt: string
   mode: 'openai' | 'mock'
-  status: 'ok' | 'no-topics' | 'error'
+  status: 'ok' | 'no-topics' | 'not-due' | 'error'
   keyword?: string
   slug?: string
   postStatus?: PostStatus
@@ -77,4 +77,13 @@ export interface EngineRun {
 
 export interface EngineLog {
   runs: EngineRun[] // newest first, capped
+}
+
+// Runtime settings editable from the admin panel (public/blog-content/settings.json).
+// postsPerDay: 0 = paused, 1-24 = that many posts per day, evenly spaced.
+export interface BlogSettings {
+  postsPerDay: number
+  ga4MeasurementId: string // e.g. "G-XXXXXXX" — empty = GA4 disabled
+  analyticsEmbedUrl: string // Looker Studio embed URL shown in the admin panel
+  updatedAt: string
 }

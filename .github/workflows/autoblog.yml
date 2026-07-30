@@ -20,6 +20,11 @@ on:
 permissions:
   contents: write
 
+# Never let two runs overlap (scheduled + manual dispatch).
+concurrency:
+  group: autoblog
+  cancel-in-progress: false
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -67,13 +72,28 @@ jobs:
 
       - name: Commit generated content and build output
         if: steps.content.outputs.changed == 'true'
+        # The repo has several writers (this workflow, admin panel commits,
+        # source pushes). If the push loses the race, re-sync to the latest
+        # main and regenerate instead of failing.
         run: |
           git config user.name "bmb-autoblog[bot]"
           git config user.email "autoblog@bmbrenovation.co.uk"
-          git add nextjs_space/public/blog-content nextjs_space/public/sitemap.xml nextjs_space/.next
-          if git diff --cached --quiet; then
-            echo "No new content generated."
-          else
-            git commit -m "autoblog: content + build $(date -u +%Y-%m-%d)"
-            git push
-          fi
+          for attempt in 1 2 3; do
+            git add nextjs_space/public/blog-content nextjs_space/public/sitemap.xml nextjs_space/.next
+            if git diff --cached --quiet; then
+              echo "Nothing to commit."
+              exit 0
+            fi
+            git commit -q -m "autoblog: content + build $(date -u +%Y-%m-%d)"
+            if git push origin main; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt) — syncing to latest and regenerating."
+            git fetch origin -q
+            git reset --hard origin/main -q
+            git clean -fdq -- nextjs_space/public/blog-content nextjs_space/.next
+            (cd nextjs_space && npm run blog:run -- --force && npm run build)
+          done
+          echo "Failed to push after 3 attempts."
+          exit 1

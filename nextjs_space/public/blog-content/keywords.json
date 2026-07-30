@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-30T07:03:28.943Z",
-  "nextSeedIndex": 12,
+  "updatedAt": "2026-07-30T07:45:06.791Z",
+  "nextSeedIndex": 24,
   "pool": [
     {
       "keyword": "kitchen renovation cost watford",
@@ -33,10 +33,22 @@
       "firstSeen": "2026-07-30T07:03:21.935Z"
     },
     {
+      "keyword": "how much does it cost to replace a kitchen tap uk",
+      "score": 5,
+      "source": "kitchen fitting Rickmansworth",
+      "firstSeen": "2026-07-30T07:45:05.938Z"
+    },
+    {
       "keyword": "kitchen fitters watford",
       "score": 4,
       "source": "kitchen fitting Watford",
       "firstSeen": "2026-07-30T07:03:21.934Z"
+    },
+    {
+      "keyword": "kitchen fitters rickmansworth",
+      "score": 4,
+      "source": "kitchen fitting Rickmansworth",
+      "firstSeen": "2026-07-30T07:45:05.938Z"
     },
     {
       "keyword": "fitted kitchens watford",

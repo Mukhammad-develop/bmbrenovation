@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-07-30T07:45:01.286Z",
+      "finishedAt": "2026-07-30T07:45:44.747Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen renovation cost watford",
+      "slug": "kitchen-renovation-cost-watford",
+      "postStatus": "published",
+      "claimsChecked": 46,
+      "claimsRemoved": 8
+    },
+    {
       "startedAt": "2026-07-30T07:03:21.278Z",
       "finishedAt": "2026-07-30T07:04:10.973Z",
       "mode": "openai",

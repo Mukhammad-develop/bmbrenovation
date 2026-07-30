@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-30T11:34:42.640Z",
-  "nextSeedIndex": 96,
+  "updatedAt": "2026-07-30T11:57:17.047Z",
+  "nextSeedIndex": 108,
   "pool": [
     {
       "keyword": "kitchen renovation cost watford",
@@ -123,6 +123,18 @@
       "firstSeen": "2026-07-30T11:34:39.092Z"
     },
     {
+      "keyword": "kitchen fitters bedford",
+      "score": 4,
+      "source": "kitchen fitting Bedford",
+      "firstSeen": "2026-07-30T11:57:12.983Z"
+    },
+    {
+      "keyword": "kitchen fitters bedfordshire",
+      "score": 4,
+      "source": "kitchen fitting Bedford",
+      "firstSeen": "2026-07-30T11:57:12.983Z"
+    },
+    {
       "keyword": "fitted kitchens watford",
       "score": 1,
       "source": "kitchen fitting Watford",
@@ -133,6 +145,18 @@
       "score": 1,
       "source": "kitchen fitting cost Luton",
       "firstSeen": "2026-07-30T11:34:39.550Z"
+    },
+    {
+      "keyword": "fitted kitchens bedford",
+      "score": 1,
+      "source": "kitchen fitting Bedford",
+      "firstSeen": "2026-07-30T11:57:12.983Z"
+    },
+    {
+      "keyword": "kitchen fitter jobs bedford",
+      "score": -2,
+      "source": "kitchen fitting Bedford",
+      "firstSeen": "2026-07-30T11:57:12.983Z"
     }
   ]
 }

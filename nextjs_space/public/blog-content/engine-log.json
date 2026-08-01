@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-01T06:47:54.515Z",
+      "finishedAt": "2026-08-01T06:48:34.163Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen fitting cost london",
+      "slug": "kitchen-fitting-cost-london",
+      "postStatus": "published",
+      "claimsChecked": 48,
+      "claimsRemoved": 11
+    },
+    {
       "startedAt": "2026-08-01T03:58:10.476Z",
       "finishedAt": "2026-08-01T03:58:10.476Z",
       "mode": "openai",

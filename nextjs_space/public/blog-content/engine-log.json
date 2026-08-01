@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-01T14:03:11.448Z",
+      "finishedAt": "2026-08-01T14:03:54.727Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "independent kitchen fitters st albans",
+      "slug": "independent-kitchen-fitters-st-albans",
+      "postStatus": "published",
+      "claimsChecked": 32,
+      "claimsRemoved": 6
+    },
+    {
       "startedAt": "2026-08-01T11:38:36.171Z",
       "finishedAt": "2026-08-01T11:38:36.171Z",
       "mode": "openai",

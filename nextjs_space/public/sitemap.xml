@@ -310,7 +310,14 @@
 
 
 
+
   <!-- Blog Posts -->
+  <url>
+    <loc>https://bmbrenovation.co.uk/blog/independent-kitchen-fitters-st-albans</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://bmbrenovation.co.uk/blog/kitchen-fitting-cost-london</loc>
     <lastmod>2026-08-01</lastmod>

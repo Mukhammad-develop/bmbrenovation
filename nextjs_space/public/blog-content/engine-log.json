@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-02T09:26:57.910Z",
+      "finishedAt": "2026-08-02T09:27:37.781Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen fitters hemel hempstead",
+      "slug": "kitchen-fitters-hemel-hempstead",
+      "postStatus": "published",
+      "claimsChecked": 45,
+      "claimsRemoved": 5
+    },
+    {
       "startedAt": "2026-08-02T04:01:20.579Z",
       "finishedAt": "2026-08-02T04:01:20.579Z",
       "mode": "openai",

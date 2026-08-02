@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-02T19:40:31.072Z",
+      "finishedAt": "2026-08-02T19:41:19.048Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen makeovers on a budget near me",
+      "slug": "kitchen-makeovers-on-a-budget-near-me",
+      "postStatus": "published",
+      "claimsChecked": 54,
+      "claimsRemoved": 5
+    },
+    {
       "startedAt": "2026-08-02T17:29:26.025Z",
       "finishedAt": "2026-08-02T17:29:26.025Z",
       "mode": "openai",

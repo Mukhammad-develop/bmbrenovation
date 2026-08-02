@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-02T14:04:21.237Z",
+      "finishedAt": "2026-08-02T14:05:09.654Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen fitting cost wren",
+      "slug": "kitchen-fitting-cost-wren",
+      "postStatus": "published",
+      "claimsChecked": 48,
+      "claimsRemoved": 15
+    },
+    {
       "startedAt": "2026-08-02T11:39:32.936Z",
       "finishedAt": "2026-08-02T11:39:32.937Z",
       "mode": "openai",

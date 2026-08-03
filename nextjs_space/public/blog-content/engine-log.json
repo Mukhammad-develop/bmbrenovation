@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-03T07:53:52.075Z",
+      "finishedAt": "2026-08-03T07:54:46.099Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen renovation before and after cost",
+      "slug": "kitchen-renovation-before-and-after-cost",
+      "postStatus": "published",
+      "claimsChecked": 52,
+      "claimsRemoved": 11
+    },
+    {
       "startedAt": "2026-08-03T04:03:24.504Z",
       "finishedAt": "2026-08-03T04:03:24.505Z",
       "mode": "openai",

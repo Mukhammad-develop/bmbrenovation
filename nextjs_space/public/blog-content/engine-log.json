@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-03T17:23:40.199Z",
+      "finishedAt": "2026-08-03T17:24:46.249Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen renovation ideas on a budget",
+      "slug": "kitchen-renovation-ideas-on-a-budget",
+      "postStatus": "published",
+      "claimsChecked": 52,
+      "claimsRemoved": 10
+    },
+    {
       "startedAt": "2026-08-03T11:51:10.736Z",
       "finishedAt": "2026-08-03T11:51:10.736Z",
       "mode": "openai",

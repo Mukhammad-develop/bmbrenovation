@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-03T07:53:57.503Z",
-  "nextSeedIndex": 252,
+  "updatedAt": "2026-08-03T17:23:45.736Z",
+  "nextSeedIndex": 264,
   "pool": [
     {
       "keyword": "kitchen renovation cost watford",
@@ -789,6 +789,12 @@
       "firstSeen": "2026-08-03T07:53:54.886Z"
     },
     {
+      "keyword": "bathroom fitters rickmansworth",
+      "score": 4,
+      "source": "bathroom fitting Rickmansworth",
+      "firstSeen": "2026-08-03T17:23:44.889Z"
+    },
+    {
       "keyword": "kitchen fitting ideas",
       "score": 3,
       "source": "kitchen fitting ideas",
@@ -1201,6 +1207,12 @@
       "score": 1,
       "source": "bathroom fitting Watford",
       "firstSeen": "2026-08-03T07:53:52.230Z"
+    },
+    {
+      "keyword": "are toilet seat fittings universal",
+      "score": 1,
+      "source": "bathroom fitting Rickmansworth",
+      "firstSeen": "2026-08-03T17:23:44.889Z"
     },
     {
       "keyword": "kitchen fitter jobs bedford",

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-03T17:23:45.736Z",
-  "nextSeedIndex": 264,
+  "updatedAt": "2026-08-03T22:31:12.177Z",
+  "nextSeedIndex": 276,
   "pool": [
     {
       "keyword": "kitchen renovation cost watford",
@@ -795,6 +795,12 @@
       "firstSeen": "2026-08-03T17:23:44.889Z"
     },
     {
+      "keyword": "bathroom fitters st albans",
+      "score": 4,
+      "source": "bathroom fitting St Albans",
+      "firstSeen": "2026-08-03T22:31:10.834Z"
+    },
+    {
       "keyword": "kitchen fitting ideas",
       "score": 3,
       "source": "kitchen fitting ideas",
@@ -1213,6 +1219,18 @@
       "score": 1,
       "source": "bathroom fitting Rickmansworth",
       "firstSeen": "2026-08-03T17:23:44.889Z"
+    },
+    {
+      "keyword": "bathroom fitting st albans",
+      "score": 1,
+      "source": "bathroom fitting St Albans",
+      "firstSeen": "2026-08-03T22:31:10.834Z"
+    },
+    {
+      "keyword": "bathroom installation st albans",
+      "score": 1,
+      "source": "bathroom fitting St Albans",
+      "firstSeen": "2026-08-03T22:31:10.834Z"
     },
     {
       "keyword": "kitchen fitter jobs bedford",

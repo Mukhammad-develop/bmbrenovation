@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-03T22:31:06.374Z",
+      "finishedAt": "2026-08-03T22:32:01.729Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen installation cost uk",
+      "slug": "kitchen-installation-cost-uk",
+      "postStatus": "published",
+      "claimsChecked": 51,
+      "claimsRemoved": 10
+    },
+    {
       "startedAt": "2026-08-03T17:23:40.199Z",
       "finishedAt": "2026-08-03T17:24:46.249Z",
       "mode": "openai",

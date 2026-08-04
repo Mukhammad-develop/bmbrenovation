@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-04T21:42:45.423Z",
+      "finishedAt": "2026-08-04T21:43:29.699Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "how much is a new kitchen renovation",
+      "slug": "how-much-is-a-new-kitchen-renovation",
+      "postStatus": "published",
+      "claimsChecked": 43,
+      "claimsRemoved": 14
+    },
+    {
       "startedAt": "2026-08-04T04:35:18.833Z",
       "finishedAt": "2026-08-04T04:35:18.833Z",
       "mode": "openai",

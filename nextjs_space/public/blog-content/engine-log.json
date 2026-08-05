@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-05T16:56:56.809Z",
+      "finishedAt": "2026-08-05T16:57:56.511Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen fitting price work",
+      "slug": "kitchen-fitting-price-work",
+      "postStatus": "published",
+      "claimsChecked": 58,
+      "claimsRemoved": 4
+    },
+    {
       "startedAt": "2026-08-05T12:21:26.721Z",
       "finishedAt": "2026-08-05T12:22:21.681Z",
       "mode": "openai",

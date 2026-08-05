@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-05T22:32:25.065Z",
+      "finishedAt": "2026-08-05T22:33:15.326Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen renovation cost per square foot",
+      "slug": "kitchen-renovation-cost-per-square-foot",
+      "postStatus": "published",
+      "claimsChecked": 48,
+      "claimsRemoved": 9
+    },
+    {
       "startedAt": "2026-08-05T16:56:56.809Z",
       "finishedAt": "2026-08-05T16:57:56.511Z",
       "mode": "openai",

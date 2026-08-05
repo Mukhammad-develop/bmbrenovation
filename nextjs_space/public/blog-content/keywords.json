@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-05T16:57:02.198Z",
-  "nextSeedIndex": 324,
+  "updatedAt": "2026-08-05T22:32:30.561Z",
+  "nextSeedIndex": 336,
   "pool": [
     {
       "keyword": "kitchen renovation cost watford",
@@ -489,6 +489,18 @@
       "firstSeen": "2026-08-03T07:53:52.230Z"
     },
     {
+      "keyword": "bathroom fitting labour cost uk",
+      "score": 5,
+      "source": "bathroom fitting Luton",
+      "firstSeen": "2026-08-05T22:32:27.019Z"
+    },
+    {
+      "keyword": "labour cost for fitting bathroom suite",
+      "score": 5,
+      "source": "bathroom fitting Luton",
+      "firstSeen": "2026-08-05T22:32:27.019Z"
+    },
+    {
       "keyword": "kitchen fitters watford",
       "score": 4,
       "source": "kitchen fitting Watford",
@@ -817,6 +829,18 @@
       "score": 4,
       "source": "bathroom fitting Harrow",
       "firstSeen": "2026-08-05T12:21:29.606Z"
+    },
+    {
+      "keyword": "bathroom fitters luton",
+      "score": 4,
+      "source": "bathroom fitting Luton",
+      "firstSeen": "2026-08-05T22:32:27.019Z"
+    },
+    {
+      "keyword": "small bathroom fitters luton",
+      "score": 4,
+      "source": "bathroom fitting Luton",
+      "firstSeen": "2026-08-05T22:32:27.019Z"
     },
     {
       "keyword": "kitchen fitting ideas",
@@ -1255,6 +1279,18 @@
       "score": 1,
       "source": "bathroom fitting Hemel Hempstead",
       "firstSeen": "2026-08-04T21:42:49.153Z"
+    },
+    {
+      "keyword": "bathroom fitting luton",
+      "score": 1,
+      "source": "bathroom fitting Luton",
+      "firstSeen": "2026-08-05T22:32:27.019Z"
+    },
+    {
+      "keyword": "bathroom installation luton",
+      "score": 1,
+      "source": "bathroom fitting Luton",
+      "firstSeen": "2026-08-05T22:32:27.019Z"
     },
     {
       "keyword": "kitchen fitter jobs bedford",

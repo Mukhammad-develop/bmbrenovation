@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-05T06:48:24.959Z",
-  "nextSeedIndex": 300,
+  "updatedAt": "2026-08-05T12:21:32.295Z",
+  "nextSeedIndex": 312,
   "pool": [
     {
       "keyword": "kitchen renovation cost watford",
@@ -811,6 +811,12 @@
       "score": 4,
       "source": "bathroom fitting Borehamwood",
       "firstSeen": "2026-08-05T06:48:22.810Z"
+    },
+    {
+      "keyword": "bathroom fitters harrow",
+      "score": 4,
+      "source": "bathroom fitting Harrow",
+      "firstSeen": "2026-08-05T12:21:29.606Z"
     },
     {
       "keyword": "kitchen fitting ideas",

@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-05T06:48:19.608Z",
+      "finishedAt": "2026-08-05T06:49:03.431Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen renovation cost estimator",
+      "slug": "kitchen-renovation-cost-estimator",
+      "postStatus": "published",
+      "claimsChecked": 48,
+      "claimsRemoved": 9
+    },
+    {
       "startedAt": "2026-08-05T03:41:41.924Z",
       "finishedAt": "2026-08-05T03:41:41.924Z",
       "mode": "openai",

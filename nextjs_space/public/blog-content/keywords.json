@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-04T21:42:50.886Z",
-  "nextSeedIndex": 288,
+  "updatedAt": "2026-08-05T06:48:24.959Z",
+  "nextSeedIndex": 300,
   "pool": [
     {
       "keyword": "kitchen renovation cost watford",
@@ -807,6 +807,12 @@
       "firstSeen": "2026-08-04T21:42:49.153Z"
     },
     {
+      "keyword": "bathroom fitters borehamwood",
+      "score": 4,
+      "source": "bathroom fitting Borehamwood",
+      "firstSeen": "2026-08-05T06:48:22.810Z"
+    },
+    {
       "keyword": "kitchen fitting ideas",
       "score": 3,
       "source": "kitchen fitting ideas",
@@ -1249,6 +1255,12 @@
       "score": -2,
       "source": "kitchen fitting Bedford",
       "firstSeen": "2026-07-30T11:57:12.983Z"
+    },
+    {
+      "keyword": "bathroom fitting jobs",
+      "score": -2,
+      "source": "bathroom fitting Borehamwood",
+      "firstSeen": "2026-08-05T06:48:22.810Z"
     }
   ]
 }

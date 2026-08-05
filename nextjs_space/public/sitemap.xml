@@ -319,7 +319,14 @@
 
 
 
+
   <!-- Blog Posts -->
+  <url>
+    <loc>https://bmbrenovation.co.uk/blog/kitchen-renovation-cost-estimator</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://bmbrenovation.co.uk/blog/how-much-is-a-new-kitchen-renovation</loc>
     <lastmod>2026-08-04</lastmod>

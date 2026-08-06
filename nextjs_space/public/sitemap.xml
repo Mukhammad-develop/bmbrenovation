@@ -324,7 +324,14 @@
 
 
 
+
   <!-- Blog Posts -->
+  <url>
+    <loc>https://bmbrenovation.co.uk/blog/bathroom-fitters-before-and-after</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://bmbrenovation.co.uk/blog/kitchen-renovation-cost-average</loc>
     <lastmod>2026-08-06</lastmod>

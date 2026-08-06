@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-06T14:44:13.486Z",
+      "finishedAt": "2026-08-06T14:45:08.046Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "bathroom fitters before and after",
+      "slug": "bathroom-fitters-before-and-after",
+      "postStatus": "published",
+      "claimsChecked": 46,
+      "claimsRemoved": 5
+    },
+    {
       "startedAt": "2026-08-06T12:23:50.803Z",
       "finishedAt": "2026-08-06T12:24:46.350Z",
       "mode": "openai",

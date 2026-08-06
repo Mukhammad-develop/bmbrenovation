@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-06T12:23:50.803Z",
+      "finishedAt": "2026-08-06T12:24:46.350Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen renovation cost average",
+      "slug": "kitchen-renovation-cost-average",
+      "postStatus": "published",
+      "claimsChecked": 49,
+      "claimsRemoved": 6
+    },
+    {
       "startedAt": "2026-08-06T03:46:58.152Z",
       "finishedAt": "2026-08-06T03:46:58.152Z",
       "mode": "openai",

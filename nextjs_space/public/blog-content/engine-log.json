@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-07T18:07:57.683Z",
+      "finishedAt": "2026-08-07T18:08:52.551Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen renovation cost diy",
+      "slug": "kitchen-renovation-cost-diy",
+      "postStatus": "published",
+      "claimsChecked": 49,
+      "claimsRemoved": 14
+    },
+    {
       "startedAt": "2026-08-07T11:13:23.091Z",
       "finishedAt": "2026-08-07T11:14:13.076Z",
       "mode": "openai",

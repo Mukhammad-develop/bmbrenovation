@@ -326,7 +326,14 @@
 
 
 
+
   <!-- Blog Posts -->
+  <url>
+    <loc>https://bmbrenovation.co.uk/blog/kitchen-renovation-cost-diy</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://bmbrenovation.co.uk/blog/cost-bath-fitter-before-and-after</loc>
     <lastmod>2026-08-07</lastmod>

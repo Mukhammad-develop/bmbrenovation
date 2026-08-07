@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-07T23:53:07.345Z",
+      "finishedAt": "2026-08-07T23:53:53.538Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen remodel on a budget before and after",
+      "slug": "kitchen-remodel-on-a-budget-before-and-after",
+      "postStatus": "published",
+      "claimsChecked": 54,
+      "claimsRemoved": 9
+    },
+    {
       "startedAt": "2026-08-07T18:07:57.683Z",
       "finishedAt": "2026-08-07T18:08:52.551Z",
       "mode": "openai",

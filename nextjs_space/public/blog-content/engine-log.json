@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-07T11:13:23.091Z",
+      "finishedAt": "2026-08-07T11:14:13.076Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "cost bath fitter before and after",
+      "slug": "cost-bath-fitter-before-and-after",
+      "postStatus": "published",
+      "claimsChecked": 52,
+      "claimsRemoved": 17
+    },
+    {
       "startedAt": "2026-08-07T00:46:22.917Z",
       "finishedAt": "2026-08-07T00:46:22.918Z",
       "mode": "openai",

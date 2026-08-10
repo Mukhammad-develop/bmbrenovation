@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-07T23:53:12.915Z",
-  "nextSeedIndex": 396,
+  "updatedAt": "2026-08-10T21:07:17.167Z",
+  "nextSeedIndex": 408,
   "pool": [
     {
       "keyword": "kitchen renovation cost watford",
@@ -1873,6 +1873,12 @@
       "score": 1,
       "source": "bathroom renovation St Albans",
       "firstSeen": "2026-08-07T23:53:11.611Z"
+    },
+    {
+      "keyword": "bathroom renovation hemel hempstead",
+      "score": 1,
+      "source": "bathroom renovation Hemel Hempstead",
+      "firstSeen": "2026-08-10T21:07:15.412Z"
     },
     {
       "keyword": "kitchen fitter jobs bedford",

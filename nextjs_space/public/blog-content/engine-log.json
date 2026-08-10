@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-10T21:07:11.566Z",
+      "finishedAt": "2026-08-10T21:07:57.838Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "fitted kitchen on a budget",
+      "slug": "fitted-kitchen-on-a-budget",
+      "postStatus": "published",
+      "claimsChecked": 43,
+      "claimsRemoved": 1
+    },
+    {
       "startedAt": "2026-08-10T02:39:52.647Z",
       "finishedAt": "2026-08-10T02:39:52.648Z",
       "mode": "openai",

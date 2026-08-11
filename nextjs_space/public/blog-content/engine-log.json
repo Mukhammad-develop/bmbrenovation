@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-11T06:10:25.627Z",
+      "finishedAt": "2026-08-11T06:11:17.210Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen renovation price",
+      "slug": "kitchen-renovation-price",
+      "postStatus": "published",
+      "claimsChecked": 45,
+      "claimsRemoved": 9
+    },
+    {
       "startedAt": "2026-08-11T02:33:03.437Z",
       "finishedAt": "2026-08-11T02:33:03.438Z",
       "mode": "openai",

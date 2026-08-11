@@ -330,7 +330,14 @@
 
 
 
+
   <!-- Blog Posts -->
+  <url>
+    <loc>https://bmbrenovation.co.uk/blog/how-much-does-a-kitchen-fitter-cost-uk</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://bmbrenovation.co.uk/blog/kitchen-renovation-price</loc>
     <lastmod>2026-08-11</lastmod>

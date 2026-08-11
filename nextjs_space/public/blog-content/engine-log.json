@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-11T23:09:02.023Z",
+      "finishedAt": "2026-08-11T23:09:53.734Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "how much does a kitchen fitter cost uk",
+      "slug": "how-much-does-a-kitchen-fitter-cost-uk",
+      "postStatus": "published",
+      "claimsChecked": 47,
+      "claimsRemoved": 8
+    },
+    {
       "startedAt": "2026-08-11T07:43:30.183Z",
       "finishedAt": "2026-08-11T07:43:30.183Z",
       "mode": "openai",

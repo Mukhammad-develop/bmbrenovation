@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-12T05:10:46.584Z",
+      "finishedAt": "2026-08-12T05:11:44.363Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen renovation near me cost",
+      "slug": "kitchen-renovation-near-me-cost",
+      "postStatus": "published",
+      "claimsChecked": 54,
+      "claimsRemoved": 7
+    },
+    {
       "startedAt": "2026-08-12T03:01:23.281Z",
       "finishedAt": "2026-08-12T03:01:23.282Z",
       "mode": "openai",

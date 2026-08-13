@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-13T00:03:34.799Z",
+      "finishedAt": "2026-08-13T00:03:34.800Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-08-12T06:49:03.022Z",
       "finishedAt": "2026-08-12T06:49:03.023Z",
       "mode": "openai",

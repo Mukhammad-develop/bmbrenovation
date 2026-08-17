@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-12T05:10:52.062Z",
-  "nextSeedIndex": 444,
+  "updatedAt": "2026-08-17T07:28:34.867Z",
+  "nextSeedIndex": 456,
   "pool": [
     {
       "keyword": "kitchen renovation cost watford",
@@ -685,6 +685,12 @@
       "score": 5,
       "source": "bathroom renovation Bushey",
       "firstSeen": "2026-08-07T11:13:28.270Z"
+    },
+    {
+      "keyword": "bathroom renovation labour cost uk",
+      "score": 5,
+      "source": "bathroom renovation Luton",
+      "firstSeen": "2026-08-17T07:28:31.323Z"
     },
     {
       "keyword": "kitchen fitters watford",
@@ -1903,6 +1909,12 @@
       "score": 1,
       "source": "bathroom renovation Harrow",
       "firstSeen": "2026-08-11T23:09:04.822Z"
+    },
+    {
+      "keyword": "bathroom renovation luton",
+      "score": 1,
+      "source": "bathroom renovation Luton",
+      "firstSeen": "2026-08-17T07:28:31.323Z"
     },
     {
       "keyword": "kitchen fitter jobs bedford",

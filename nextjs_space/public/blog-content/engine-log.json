@@ -1,6 +1,17 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-17T07:28:29.352Z",
+      "finishedAt": "2026-08-17T07:29:23.476Z",
+      "mode": "openai",
+      "status": "ok",
+      "keyword": "kitchen renovation price range",
+      "slug": "kitchen-renovation-price-range",
+      "postStatus": "published",
+      "claimsChecked": 47,
+      "claimsRemoved": 12
+    },
+    {
       "startedAt": "2026-08-17T03:16:46.918Z",
       "finishedAt": "2026-08-17T03:16:46.918Z",
       "mode": "openai",

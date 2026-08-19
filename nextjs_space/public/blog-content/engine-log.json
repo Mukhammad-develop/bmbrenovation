@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-19T01:57:18.255Z",
+      "finishedAt": "2026-08-19T01:57:18.255Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-08-18T03:13:34.545Z",
       "finishedAt": "2026-08-18T03:13:34.546Z",
       "mode": "openai",
@@ -785,15 +791,6 @@
       "status": "ok",
       "keyword": "how much does a loft conversion cost uk",
       "slug": "how-much-does-a-loft-conversion-cost-uk",
-      "postStatus": "published"
-    },
-    {
-      "startedAt": "2026-07-30T06:49:03.422Z",
-      "finishedAt": "2026-07-30T06:49:03.424Z",
-      "mode": "mock",
-      "status": "ok",
-      "keyword": "kitchen renovation cost watford",
-      "slug": "kitchen-renovation-cost-watford",
       "postStatus": "published"
     }
   ]

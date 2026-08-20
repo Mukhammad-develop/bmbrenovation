@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-20T01:56:42.471Z",
+      "finishedAt": "2026-08-20T01:56:42.472Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-08-19T03:15:18.227Z",
       "finishedAt": "2026-08-19T03:15:18.229Z",
       "mode": "openai",
@@ -778,17 +784,6 @@
       "postStatus": "published",
       "claimsChecked": 46,
       "claimsRemoved": 8
-    },
-    {
-      "startedAt": "2026-07-30T07:03:21.278Z",
-      "finishedAt": "2026-07-30T07:04:10.973Z",
-      "mode": "openai",
-      "status": "ok",
-      "keyword": "bathroom fitting ideas for small bathrooms",
-      "slug": "bathroom-fitting-ideas-for-small-bathrooms",
-      "postStatus": "published",
-      "claimsChecked": 52,
-      "claimsRemoved": 0
     }
   ]
 }

@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-21T03:27:14.575Z",
+      "finishedAt": "2026-08-21T03:27:14.575Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-08-21T02:02:50.916Z",
       "finishedAt": "2026-08-21T02:02:50.917Z",
       "mode": "openai",
@@ -763,17 +769,6 @@
       "postStatus": "published",
       "claimsChecked": 58,
       "claimsRemoved": 10
-    },
-    {
-      "startedAt": "2026-07-30T10:32:39.120Z",
-      "finishedAt": "2026-07-30T10:33:24.340Z",
-      "mode": "openai",
-      "status": "ok",
-      "keyword": "how much does kitchen fitting cost uk",
-      "slug": "how-much-does-kitchen-fitting-cost-uk",
-      "postStatus": "published",
-      "claimsChecked": 54,
-      "claimsRemoved": 8
     }
   ]
 }

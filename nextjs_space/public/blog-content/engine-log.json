@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-21T02:02:50.916Z",
+      "finishedAt": "2026-08-21T02:02:50.917Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-08-20T03:14:46.833Z",
       "finishedAt": "2026-08-20T03:14:46.834Z",
       "mode": "openai",
@@ -767,17 +773,6 @@
       "slug": "how-much-does-kitchen-fitting-cost-uk",
       "postStatus": "published",
       "claimsChecked": 54,
-      "claimsRemoved": 8
-    },
-    {
-      "startedAt": "2026-07-30T10:28:31.008Z",
-      "finishedAt": "2026-07-30T10:29:10.918Z",
-      "mode": "openai",
-      "status": "ok",
-      "keyword": "how much does a loft conversion cost uk",
-      "slug": "how-much-does-a-loft-conversion-cost-uk",
-      "postStatus": "published",
-      "claimsChecked": 48,
       "claimsRemoved": 8
     }
   ]

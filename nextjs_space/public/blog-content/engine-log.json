@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-22T03:12:30.596Z",
+      "finishedAt": "2026-08-22T03:12:30.597Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-08-22T01:55:12.919Z",
       "finishedAt": "2026-08-22T01:55:12.919Z",
       "mode": "openai",
@@ -758,12 +764,6 @@
       "postStatus": "published",
       "claimsChecked": 48,
       "claimsRemoved": 5
-    },
-    {
-      "startedAt": "2026-07-30T11:07:25.928Z",
-      "finishedAt": "2026-07-30T11:07:25.929Z",
-      "mode": "openai",
-      "status": "not-due"
     }
   ]
 }

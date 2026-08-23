@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-23T03:26:56.259Z",
+      "finishedAt": "2026-08-23T03:26:56.259Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-08-23T02:04:33.245Z",
       "finishedAt": "2026-08-23T02:04:33.246Z",
       "mode": "openai",
@@ -748,17 +754,6 @@
       "postStatus": "published",
       "claimsChecked": 52,
       "claimsRemoved": 14
-    },
-    {
-      "startedAt": "2026-07-30T11:14:28.307Z",
-      "finishedAt": "2026-07-30T11:15:07.739Z",
-      "mode": "openai",
-      "status": "ok",
-      "keyword": "kitchen fitters rickmansworth",
-      "slug": "kitchen-fitters-rickmansworth",
-      "postStatus": "published",
-      "claimsChecked": 52,
-      "claimsRemoved": 5
     }
   ]
 }

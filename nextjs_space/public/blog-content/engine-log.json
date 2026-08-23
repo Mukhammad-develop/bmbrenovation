@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-23T02:04:33.245Z",
+      "finishedAt": "2026-08-23T02:04:33.246Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-08-22T03:12:30.596Z",
       "finishedAt": "2026-08-22T03:12:30.597Z",
       "mode": "openai",
@@ -752,17 +758,6 @@
       "slug": "kitchen-fitters-rickmansworth",
       "postStatus": "published",
       "claimsChecked": 52,
-      "claimsRemoved": 5
-    },
-    {
-      "startedAt": "2026-07-30T11:07:26.219Z",
-      "finishedAt": "2026-07-30T11:08:17.946Z",
-      "mode": "openai",
-      "status": "ok",
-      "keyword": "kitchen fitters watford",
-      "slug": "kitchen-fitters-watford",
-      "postStatus": "published",
-      "claimsChecked": 48,
       "claimsRemoved": 5
     }
   ]

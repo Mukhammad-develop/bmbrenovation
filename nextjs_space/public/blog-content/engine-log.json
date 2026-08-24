@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-24T02:02:19.771Z",
+      "finishedAt": "2026-08-24T02:02:19.772Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-08-23T03:26:56.259Z",
       "finishedAt": "2026-08-23T03:26:56.259Z",
       "mode": "openai",
@@ -743,17 +749,6 @@
       "postStatus": "published",
       "claimsChecked": 43,
       "claimsRemoved": 4
-    },
-    {
-      "startedAt": "2026-07-30T11:34:37.124Z",
-      "finishedAt": "2026-07-30T11:35:25.706Z",
-      "mode": "openai",
-      "status": "ok",
-      "keyword": "how much is a fitted kitchen from wickes",
-      "slug": "how-much-is-a-fitted-kitchen-from-wickes",
-      "postStatus": "published",
-      "claimsChecked": 52,
-      "claimsRemoved": 14
     }
   ]
 }

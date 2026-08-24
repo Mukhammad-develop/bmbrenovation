@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-24T03:28:37.364Z",
+      "finishedAt": "2026-08-24T03:28:37.365Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-08-24T02:02:19.771Z",
       "finishedAt": "2026-08-24T02:02:19.772Z",
       "mode": "openai",
@@ -738,17 +744,6 @@
       "postStatus": "published",
       "claimsChecked": 68,
       "claimsRemoved": 6
-    },
-    {
-      "startedAt": "2026-07-30T11:57:11.441Z",
-      "finishedAt": "2026-07-30T11:57:54.350Z",
-      "mode": "openai",
-      "status": "ok",
-      "keyword": "kitchen fitting labour cost uk",
-      "slug": "kitchen-fitting-labour-cost-uk",
-      "postStatus": "published",
-      "claimsChecked": 43,
-      "claimsRemoved": 4
     }
   ]
 }

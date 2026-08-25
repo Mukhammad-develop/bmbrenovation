@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-08-25T03:16:53.888Z",
+      "finishedAt": "2026-08-25T03:16:53.889Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-08-25T01:57:34.952Z",
       "finishedAt": "2026-08-25T01:57:34.952Z",
       "mode": "openai",
@@ -728,17 +734,6 @@
       "finishedAt": "2026-07-30T12:57:03.040Z",
       "mode": "openai",
       "status": "not-due"
-    },
-    {
-      "startedAt": "2026-07-30T12:46:59.449Z",
-      "finishedAt": "2026-07-30T12:47:40.089Z",
-      "mode": "openai",
-      "status": "ok",
-      "keyword": "kitchen fitting cost calculator uk",
-      "slug": "kitchen-fitting-cost-calculator-uk",
-      "postStatus": "published",
-      "claimsChecked": 47,
-      "claimsRemoved": 11
     }
   ]
 }

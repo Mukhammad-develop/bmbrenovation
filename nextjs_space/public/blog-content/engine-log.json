@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-09-05T00:12:28.601Z",
+      "finishedAt": "2026-09-05T00:12:28.601Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-09-04T00:15:07.973Z",
       "finishedAt": "2026-09-04T00:15:07.974Z",
       "mode": "openai",
@@ -723,17 +729,6 @@
       "finishedAt": "2026-07-31T10:02:37.151Z",
       "mode": "openai",
       "status": "not-due"
-    },
-    {
-      "startedAt": "2026-07-31T07:20:40.135Z",
-      "finishedAt": "2026-07-31T07:21:29.969Z",
-      "mode": "openai",
-      "status": "ok",
-      "keyword": "kitchen fitting cost per unit uk",
-      "slug": "kitchen-fitting-cost-per-unit-uk",
-      "postStatus": "published",
-      "claimsChecked": 67,
-      "claimsRemoved": 21
     }
   ]
 }

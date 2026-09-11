@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-09-11T00:16:26.068Z",
+      "finishedAt": "2026-09-11T00:16:26.068Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-09-10T00:20:21.816Z",
       "finishedAt": "2026-09-10T00:20:21.816Z",
       "mode": "openai",
@@ -713,17 +719,6 @@
       "finishedAt": "2026-07-31T20:39:31.191Z",
       "mode": "openai",
       "status": "not-due"
-    },
-    {
-      "startedAt": "2026-07-31T18:49:43.451Z",
-      "finishedAt": "2026-07-31T18:50:32.933Z",
-      "mode": "openai",
-      "status": "ok",
-      "keyword": "how much does ikea kitchen fitting cost",
-      "slug": "how-much-does-ikea-kitchen-fitting-cost",
-      "postStatus": "published",
-      "claimsChecked": 35,
-      "claimsRemoved": 12
     }
   ]
 }

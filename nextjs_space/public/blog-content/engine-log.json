@@ -1,6 +1,12 @@
 {
   "runs": [
     {
+      "startedAt": "2026-09-26T01:41:52.628Z",
+      "finishedAt": "2026-09-26T01:41:52.629Z",
+      "mode": "openai",
+      "status": "not-due"
+    },
+    {
       "startedAt": "2026-09-25T01:38:36.869Z",
       "finishedAt": "2026-09-25T01:38:36.870Z",
       "mode": "openai",
@@ -696,12 +702,6 @@
     {
       "startedAt": "2026-08-02T00:17:49.400Z",
       "finishedAt": "2026-08-02T00:17:49.401Z",
-      "mode": "openai",
-      "status": "not-due"
-    },
-    {
-      "startedAt": "2026-08-01T23:17:24.237Z",
-      "finishedAt": "2026-08-01T23:17:24.237Z",
       "mode": "openai",
       "status": "not-due"
     }
